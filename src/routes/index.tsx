@@ -1,16 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroObsidian from "@/assets/hero-obsidian.jpg";
 import portraitNuria from "@/assets/portrait-nuria.jpg";
-import projectGyotaku from "@/assets/project-gyotaku.jpg";
-import projectBlindwords from "@/assets/project-blindwords.jpg";
-import projectApolo from "@/assets/project-apolo.jpg";
 import postVibe from "@/assets/post-vibe.jpg";
 import postHabitat from "@/assets/post-habitat.jpg";
 import postPortfolio from "@/assets/post-portfolio.jpg";
+import { projects } from "@/data/projects";
 
-const SITE_TITLE = "Srta Serifa — Núria López · Diseño, táctica y producto";
+const SITE_TITLE = "Srta Serifa — Portfolio en construcción";
 const SITE_DESCRIPTION =
-  "Portfolio de Núria López (Srta Serifa), Head of Design en Apolo. Branding, tipografía, producto digital y MVPs construidos con criterio visual y rigor táctico.";
+  "El nuevo portfolio de Núria López, Srta Serifa, está en construcción. Diseño, táctica y producto desde Barcelona.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,47 +27,8 @@ export const Route = createFileRoute("/")({
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),
-  component: Index,
+  component: ConstructionPage,
 });
-
-type Project = {
-  num: string;
-  title: string;
-  type: string;
-  description: string;
-  image: string;
-  alt: string;
-};
-
-const projects: Project[] = [
-  {
-    num: "01",
-    title: "Del gyotaku al branding",
-    type: "Identidad · Branding",
-    description:
-      "Diseñar una marca con verdad partiendo de la técnica japonesa de estampación de peces. Textura, gesto y memoria material.",
-    image: projectGyotaku,
-    alt: "Estampación gyotaku en negro sobre papel crema como base de un sistema de identidad",
-  },
-  {
-    num: "02",
-    title: "Blind Words",
-    type: "Tipografía inclusiva",
-    description:
-      "Tipografía que fusiona Braille y alfabeto latino en un mismo glifo. Campaña internacional con Citizen (Canadá).",
-    image: projectBlindwords,
-    alt: "Espécimen tipográfico de Blind Words con letras blancas y puntos Braille sobre fondo negro",
-  },
-  {
-    num: "03",
-    title: "universoapolo.com",
-    type: "Web · Galardonada con LAUS",
-    description:
-      "Una web con un LAUS debajo del brazo. Dirección de arte y diseño de producto para la consultora de branding Apolo.",
-    image: projectApolo,
-    alt: "Mockup de la web universoapolo.com con galardón LAUS de diseño gráfico",
-  },
-];
 
 const posts = [
   {
@@ -111,7 +70,46 @@ const faqs = [
   },
 ];
 
-function Index() {
+function ConstructionPage() {
+  return (
+    <main className="relative min-h-screen overflow-hidden bg-[#f1f2f4] p-3 text-[#171717] sm:p-6">
+      <div className="relative mx-auto flex min-h-[calc(100vh-24px)] max-w-[1180px] flex-col overflow-hidden rounded-[28px] border border-black/8 bg-white shadow-[0_20px_80px_rgba(0,0,0,.06)] sm:min-h-[calc(100vh-48px)]">
+        <header className="flex items-center justify-between px-6 py-6 sm:px-10">
+          <p className="text-sm font-semibold tracking-[-0.02em]">Srta Serifa</p>
+          <span className="rounded-full bg-[#f1f2f4] px-4 py-2 text-xs text-black/55">Barcelona · 2026</span>
+        </header>
+
+        <div className="relative z-10 flex flex-1 flex-col justify-between px-6 pb-8 pt-12 sm:px-10 sm:pb-10 lg:px-16 lg:pt-16">
+          <div className="max-w-[900px]">
+            <div className="mb-8 flex items-center gap-4">
+              <img src={portraitNuria} alt="Retrato de Núria López" className="size-16 rounded-full object-cover grayscale" />
+              <div><p className="font-semibold tracking-[-0.025em]">Núria López</p><p className="mt-1 text-sm text-black/45">Diseño · Táctica · Producto</p></div>
+            </div>
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-black/38">Algo nuevo está tomando forma</p>
+            <h1 className="mt-5 text-[clamp(3.6rem,10vw,9.5rem)] font-medium leading-[0.88] tracking-[-0.075em]">
+              Portfolio<br />en construcción<span className="text-black/25">.</span>
+            </h1>
+            <p className="mt-8 max-w-xl text-base leading-relaxed text-black/52 sm:text-lg">
+              Estoy ordenando proyectos, ideas y aprendizajes para enseñar el trabajo como merece. Mientras tanto, si tienes algo entre manos, hablemos.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <a href="mailto:hola@srtaserifa.com" className="rounded-xl bg-[#171717] px-6 py-3.5 text-sm font-medium text-white shadow-lg shadow-black/10">hola@srtaserifa.com ↗</a>
+              <a href="https://www.linkedin.com/in/nurialopez" className="rounded-xl border border-black/10 bg-white px-6 py-3.5 text-sm font-medium shadow-sm">LinkedIn</a>
+            </div>
+          </div>
+
+          <footer className="mt-16 flex flex-col gap-3 border-t border-black/8 pt-6 text-xs text-black/38 sm:flex-row sm:items-center sm:justify-between">
+            <p>© 2026 Núria López · Srta Serifa</p><p>Diseñando la siguiente versión</p>
+          </footer>
+        </div>
+
+        <div aria-hidden className="pointer-events-none absolute -bottom-28 -right-24 size-[420px] rounded-full opacity-[0.09] sm:size-[600px]" style={{ backgroundImage: `url(${heroObsidian})`, backgroundPosition: "center", backgroundSize: "cover" }} />
+      </div>
+    </main>
+  );
+}
+
+export function Portfolio() {
   return (
     <div className="min-h-screen bg-[#f1f2f4] px-3 py-3 text-[#171717] sm:px-6 sm:py-6">
       <div className="mx-auto max-w-[1180px] overflow-hidden rounded-[28px] border border-black/8 bg-[#e9eaed] shadow-[0_20px_80px_rgba(0,0,0,.06)]">
@@ -119,7 +117,7 @@ function Index() {
           <a href="#top" className="text-sm font-semibold tracking-[-0.02em]">Srta Serifa</a>
           <ul className="hidden items-center gap-7 text-[13px] md:flex">
             <li><a href="#sobre-mi" className="hover:opacity-50">Sobre mí</a></li>
-            <li><a href="#proyectos" className="hover:opacity-50">Proyectos</a></li>
+            <li><a href="/proyectos" className="hover:opacity-50">Proyectos</a></li>
             <li><a href="#servicios" className="hover:opacity-50">Servicios</a></li>
             <li><a href="#criterio" className="hover:opacity-50">Criterio</a></li>
             <li><a href="#contacto" className="hover:opacity-50">Contacto</a></li>
@@ -152,7 +150,7 @@ function Index() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href="mailto:hola@srtaserifa.com" className="rounded-xl bg-[#171717] px-6 py-3.5 text-sm font-medium text-white shadow-lg shadow-black/10">Escríbeme ↗</a>
-                <a href="#proyectos" className="rounded-xl border border-black/10 bg-white px-6 py-3.5 text-sm font-medium shadow-sm">Ver proyectos</a>
+                <a href="/proyectos" className="rounded-xl border border-black/10 bg-white px-6 py-3.5 text-sm font-medium shadow-sm">Ver proyectos</a>
               </div>
             </div>
             <div aria-hidden className="absolute -bottom-24 -right-20 hidden size-[380px] opacity-12 lg:block" style={{ backgroundImage: `url(${heroObsidian})`, backgroundSize: "cover", borderRadius: "999px" }} />
@@ -183,6 +181,7 @@ function Index() {
                 </article>
               ))}
             </div>
+            <a href="/proyectos" className="mt-8 inline-flex rounded-xl border border-black/10 bg-white px-6 py-3.5 text-sm font-medium shadow-sm">Ver todos los proyectos →</a>
           </section>
 
           <section id="servicios" className="rounded-[24px] border border-black/8 bg-white px-6 py-12 sm:px-12 lg:px-16">
