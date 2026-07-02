@@ -113,439 +113,110 @@ const faqs = [
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans">
-      {/* Navigation */}
-      <nav
-        aria-label="Navegación principal"
-        className="fixed top-0 z-50 w-full border-b border-white/5 bg-background/80 px-6 py-4 backdrop-blur-md"
-      >
-        <div className="mx-auto flex max-w-6xl items-center justify-between">
-          <a
-            href="#top"
-            className="font-mono text-[11px] uppercase tracking-[0.2em] text-foreground"
-          >
-            Srtaserifa <span className="text-muted-foreground">/ 26</span>
-          </a>
-          <ul className="hidden gap-8 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground sm:flex">
-            <li>
-              <a href="#proyectos" className="transition-colors hover:text-foreground">
-                Proyectos
-              </a>
-            </li>
-            <li>
-              <a href="#criterio" className="transition-colors hover:text-foreground">
-                Criterio
-              </a>
-            </li>
-            <li>
-              <a href="#sobre-mi" className="transition-colors hover:text-foreground">
-                Sobre mí
-              </a>
-            </li>
-            <li>
-              <a href="#contacto" className="transition-colors hover:text-foreground">
-                Contacto
-              </a>
-            </li>
+    <div className="min-h-screen bg-[#f1f2f4] px-3 py-3 text-[#171717] sm:px-6 sm:py-6">
+      <div className="mx-auto max-w-[1180px] overflow-hidden rounded-[28px] border border-black/8 bg-[#e9eaed] shadow-[0_20px_80px_rgba(0,0,0,.06)]">
+        <nav aria-label="Navegación principal" className="flex h-16 items-center justify-between px-5 sm:px-8">
+          <a href="#top" className="text-sm font-semibold tracking-[-0.02em]">Srta Serifa</a>
+          <ul className="hidden items-center gap-7 text-[13px] md:flex">
+            <li><a href="#sobre-mi" className="hover:opacity-50">Sobre mí</a></li>
+            <li><a href="#proyectos" className="hover:opacity-50">Proyectos</a></li>
+            <li><a href="#servicios" className="hover:opacity-50">Servicios</a></li>
+            <li><a href="#criterio" className="hover:opacity-50">Criterio</a></li>
+            <li><a href="#contacto" className="hover:opacity-50">Contacto</a></li>
           </ul>
-          <a
-            href="#contacto"
-            className="rounded-full border border-border px-4 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-primary hover:text-primary-foreground sm:hidden"
-          >
-            Contacto
-          </a>
-        </div>
-      </nav>
+          <div className="flex items-center gap-2">
+            <a href="https://www.linkedin.com/in/nurialopez" aria-label="LinkedIn" className="grid size-9 place-items-center rounded-xl border border-black/8 bg-white text-xs shadow-sm">in</a>
+            <a href="#contacto" className="rounded-xl bg-[#171717] px-4 py-2 text-xs font-medium text-white">Hablemos</a>
+          </div>
+        </nav>
 
-      <main id="top" className="pt-24">
-        {/* Hero */}
-        <section className="relative overflow-hidden px-6 pb-24 pt-12">
-          <div className="mx-auto max-w-6xl">
-            <p className="animate-fade-up font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              Núria López · 1992 · Head of Design @ Apolo
+        <main id="top" className="space-y-3 p-3 pt-0">
+          <section className="relative overflow-hidden rounded-[24px] border border-black/8 bg-white px-6 py-8 sm:px-12 sm:py-12 lg:px-16 lg:py-14">
+            <div className="flex items-start justify-between gap-5">
+              <div className="flex items-center gap-4">
+                <img src={portraitNuria} alt="Retrato de Núria López" className="size-20 rounded-full object-cover grayscale sm:size-24" />
+                <div>
+                  <p className="text-xl font-semibold tracking-[-0.03em]">Núria López</p>
+                  <p className="mt-1 text-sm text-black/50">Head of Design · Apolo</p>
+                </div>
+              </div>
+              <span className="hidden rounded-full bg-[#dff8d8] px-4 py-2 text-xs sm:inline-flex">● Disponible para conversar</span>
+            </div>
+            <div className="mt-12 max-w-[780px] sm:mt-16">
+              <p className="mb-4 text-xs font-medium uppercase tracking-[0.16em] text-black/45">Diseño · Táctica · Producto</p>
+              <h1 className="text-[clamp(2.7rem,7vw,6.3rem)] font-medium leading-[0.98] tracking-[-0.065em] text-balance">
+                Diseño ideas que se convierten en marcas y productos con peso.
+              </h1>
+              <p className="mt-7 max-w-[640px] text-base leading-relaxed text-black/58 sm:text-lg">
+                Lidero diseño en Apolo y construyo identidades, experiencias digitales y MVPs que conectan estrategia, criterio visual y negocio.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a href="mailto:hola@srtaserifa.com" className="rounded-xl bg-[#171717] px-6 py-3.5 text-sm font-medium text-white shadow-lg shadow-black/10">Escríbeme ↗</a>
+                <a href="#proyectos" className="rounded-xl border border-black/10 bg-white px-6 py-3.5 text-sm font-medium shadow-sm">Ver proyectos</a>
+              </div>
+            </div>
+            <div aria-hidden className="absolute -bottom-24 -right-20 hidden size-[380px] opacity-12 lg:block" style={{ backgroundImage: `url(${heroObsidian})`, backgroundSize: "cover", borderRadius: "999px" }} />
+          </section>
+
+          <section id="sobre-mi" className="rounded-[24px] border border-black/8 bg-white px-6 py-12 sm:px-12 lg:px-16">
+            <p className="text-sm text-black/48">Sobre mí.</p>
+            <p className="mt-6 max-w-[980px] text-[clamp(1.65rem,3.3vw,3.35rem)] font-medium leading-[1.14] tracking-[-0.045em]">
+              Soy Núria López. Concibo el diseño como un dialecto entre lo que es y lo que podría ser: una herramienta para hacer visible lo invisible, construir significado y abrir nuevas relaciones entre <span className="text-black/35">ideas, personas y sistemas.</span>
             </p>
-            <h1 className="animate-fade-up mt-6 font-display text-[clamp(3rem,12vw,9rem)] font-bold leading-[0.95] tracking-tight text-balance">
-              Diseño<span className="text-accent">*</span>
-              <br />
-              táctica<span className="text-accent">*</span>
-              <br />
-              <span className="italic">producto</span>
-              <span className="text-accent">*</span>
-            </h1>
-            <div className="mt-12 grid gap-10 md:grid-cols-[1fr_minmax(0,2fr)] md:gap-16">
-              <div className="relative">
-                <img
-                  src={portraitNuria}
-                  alt="Retrato en blanco y negro de Núria López, diseñadora y Head of Design en Apolo"
-                  width={800}
-                  height={1024}
-                  className="aspect-[4/5] w-full max-w-[260px] object-cover grayscale outline -outline-offset-1 outline-white/10"
-                />
-              </div>
-              <div className="animate-fade-up max-w-[58ch] text-pretty">
-                <p className="text-xl font-light leading-relaxed text-foreground/90">
-                  Soy <strong className="font-medium">Núria López</strong>. Lidero el equipo de diseño en Apolo,
-                  una consultora de branding y producción audiovisual que propulsa marcas mediante creatividad y estrategia.
-                </p>
-                <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-                  <em>Srtaserifa</em> es mi espacio personal — donde el diseño se convierte en conversación.
-                  Como la obsidiana: <span className="text-foreground">táctil, profunda, con capas que revelan sentido</span> al
-                  observar con atención. Trabajo desde el diseño, el producto digital y la táctica que traduce ideas,
-                  cuestiona estructuras y abre nuevas posibilidades.
-                </p>
-              </div>
+            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-black/8 pt-7 text-sm text-black/58">
+              <a href="mailto:hola@srtaserifa.com">✉ hola@srtaserifa.com</a><span>·</span><span>⌖ Barcelona</span><span>·</span><span>Head of Design @ Apolo</span>
             </div>
-          </div>
+            <dl className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-black/8 sm:grid-cols-4">
+              {[["12+", "Años diseñando"], ["LAUS", "Diseño reconocido"], ["Citizen", "Colaboración internacional"], ["∞", "Curiosidad aplicada"]].map(([value, label]) => (
+                <div key={label} className="bg-[#fafafa] p-6 sm:p-8"><dd className="text-3xl font-semibold tracking-[-0.05em]">{value}</dd><dt className="mt-2 text-xs text-black/48">{label}</dt></div>
+              ))}
+            </dl>
+          </section>
 
-          {/* Decorative obsidian band */}
-          <div
-            aria-hidden
-            className="pointer-events-none mt-20 h-32 w-full bg-cover bg-center opacity-60"
-            style={{ backgroundImage: `url(${heroObsidian})` }}
-          />
-        </section>
-
-        {/* Capabilities */}
-        <section
-          aria-labelledby="capacidades-heading"
-          className="border-y border-border bg-surface px-6 py-20"
-        >
-          <div className="mx-auto max-w-6xl">
-            <h2
-              id="capacidades-heading"
-              className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground"
-            >
-              Capacidades
-            </h2>
-            <div className="mt-12 grid gap-12 md:grid-cols-3">
-              <article className="border-l border-accent/40 pl-6">
-                <h3 className="font-display text-3xl italic">Proyectos</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  Diseño productos digitales, marcas y webs que existen de verdad: cosas que la
-                  gente usa, compra o visita. No solo conceptos bonitos.
-                </p>
-              </article>
-              <article className="border-l border-accent/40 pl-6">
-                <h3 className="font-display text-3xl italic">MVPs</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  Ayudo a convertir ideas en productos reales combinando diseño, no-code e
-                  inteligencia artificial. De la idea al despliegue sin perder criterio.
-                </p>
-              </article>
-              <article className="border-l border-accent/40 pl-6">
-                <h3 className="font-display text-3xl italic">Criterio</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  Escribo sobre oficio, táctica y decisiones de diseño para ver el trabajo
-                  con más perspectiva y menos humo.
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        {/* Projects */}
-        <section
-          id="proyectos"
-          aria-labelledby="proyectos-heading"
-          className="px-6 py-24"
-        >
-          <div className="mx-auto max-w-6xl">
-            <div className="mb-16 flex items-end justify-between">
-              <h2
-                id="proyectos-heading"
-                className="font-display text-5xl italic leading-none"
-              >
-                Proyectos
-              </h2>
-              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-                Selección 2023—2026
-              </span>
-            </div>
-
-            <div className="space-y-24">
+          <section id="proyectos" className="rounded-[24px] border border-black/8 bg-white px-6 py-12 sm:px-12 lg:px-16">
+            <div className="max-w-2xl"><p className="text-sm text-black/48">Trabajo seleccionado.</p><h2 className="mt-4 text-[clamp(2.4rem,5vw,5rem)] font-medium leading-none tracking-[-0.06em]">Proyectos con estrategia, materia y resultados.</h2></div>
+            <div className="mt-12 grid gap-5 md:grid-cols-2">
               {projects.map((p, i) => (
-                <article
-                  key={p.num}
-                  className={`grid items-center gap-8 md:grid-cols-2 md:gap-16 ${
-                    i % 2 === 1 ? "md:[&>figure]:order-2" : ""
-                  }`}
-                >
-                  <figure className="group relative overflow-hidden">
-                    <img
-                      src={p.image}
-                      alt={p.alt}
-                      width={1024}
-                      height={1280}
-                      loading="lazy"
-                      className="aspect-[4/5] w-full object-cover outline -outline-offset-1 outline-white/10 transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-                    />
-                  </figure>
-                  <div className="min-w-0">
-                    <div className="flex items-center gap-3">
-                      <span className="font-mono text-[10px] tracking-widest text-muted-foreground">
-                        — {p.num}
-                      </span>
-                      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent">
-                        {p.type}
-                      </span>
-                    </div>
-                    <h3 className="mt-4 font-display text-4xl leading-tight md:text-5xl">
-                      {p.title}
-                    </h3>
-                    <p className="mt-6 max-w-[42ch] text-base leading-relaxed text-muted-foreground">
-                      {p.description}
-                    </p>
-                    <a
-                      href="#contacto"
-                      className="mt-8 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.25em] text-foreground transition-colors hover:text-accent"
-                    >
-                      Ver caso de estudio
-                      <span aria-hidden>→</span>
-                    </a>
-                  </div>
+                <article key={p.num} className={i === 0 ? "md:col-span-2" : ""}>
+                  <div className="group overflow-hidden rounded-[20px] bg-[#ececee]"><img src={p.image} alt={p.alt} loading="lazy" className={`w-full object-cover transition duration-700 group-hover:scale-[1.02] ${i === 0 ? "aspect-[16/8]" : "aspect-[4/3]"}`} /></div>
+                  <div className="flex items-start justify-between gap-6 px-1 py-5"><div><p className="text-xs text-black/45">{p.type}</p><h3 className="mt-2 text-2xl font-semibold tracking-[-0.04em]">{p.title}</h3><p className="mt-3 max-w-xl text-sm leading-relaxed text-black/52">{p.description}</p></div><span className="grid size-10 shrink-0 place-items-center rounded-full border border-black/10">↗</span></div>
                 </article>
               ))}
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Criterio / Blog */}
-        <section
-          id="criterio"
-          aria-labelledby="criterio-heading"
-          className="border-t border-border bg-surface/50 px-6 py-24"
-        >
-          <div className="mx-auto max-w-6xl">
-            <div className="mb-16 flex items-end justify-between">
-              <div>
-                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-                  NOTE© — Journal
-                </p>
-                <h2
-                  id="criterio-heading"
-                  className="mt-3 font-display text-5xl italic leading-none"
-                >
-                  Criterio
-                </h2>
-              </div>
-              <a
-                href="#"
-                className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground transition-colors hover:text-foreground"
-              >
-                Suscríbete →
-              </a>
+          <section id="servicios" className="rounded-[24px] border border-black/8 bg-white px-6 py-12 sm:px-12 lg:px-16">
+            <p className="text-sm text-black/48">Lo que hago.</p><h2 className="mt-4 max-w-3xl text-[clamp(2.4rem,5vw,5rem)] font-medium leading-none tracking-[-0.06em]">Diseño que ayuda a avanzar.</h2>
+            <div className="mt-12 grid gap-px overflow-hidden rounded-2xl bg-black/10 md:grid-cols-2">
+              {[
+                ["01", "Identidad & Branding", "Sistemas visuales con una idea sólida detrás y capacidad real para crecer."],
+                ["02", "Producto digital", "Webs y experiencias que alinean utilidad, tono de marca y conversión."],
+                ["03", "Dirección creativa", "Criterio, narrativa y acompañamiento para equipos y marcas en movimiento."],
+                ["04", "MVPs & IA", "De la idea al producto funcional combinando diseño, no-code e inteligencia artificial."],
+              ].map(([num, title, text]) => <article key={num} className="bg-[#fafafa] p-7 sm:p-9"><span className="text-xs text-black/38">{num}</span><h3 className="mt-10 text-2xl font-semibold tracking-[-0.04em]">{title}</h3><p className="mt-3 max-w-md text-sm leading-relaxed text-black/52">{text}</p></article>)}
             </div>
+          </section>
 
-            <ul className="divide-y divide-border">
-              {posts.map((post) => (
-                <li key={post.title}>
-                  <a
-                    href="#"
-                    className="group grid grid-cols-[80px_minmax(0,1fr)_auto] items-center gap-5 py-6 transition-colors sm:grid-cols-[120px_minmax(0,1fr)_auto] sm:gap-8"
-                  >
-                    <img
-                      src={post.image}
-                      alt={post.alt}
-                      width={160}
-                      height={160}
-                      loading="lazy"
-                      className="aspect-square w-full object-cover outline -outline-offset-1 outline-white/10"
-                    />
-                    <div className="min-w-0">
-                      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                        {post.date}
-                      </p>
-                      <h3 className="mt-2 font-display text-xl leading-snug transition-colors group-hover:text-accent sm:text-2xl">
-                        {post.title}
-                      </h3>
-                    </div>
-                    <span
-                      aria-hidden
-                      className="hidden font-mono text-xs text-muted-foreground transition-transform group-hover:translate-x-1 sm:block"
-                    >
-                      →
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        {/* Sobre mí */}
-        <section
-          id="sobre-mi"
-          aria-labelledby="sobre-mi-heading"
-          className="px-6 py-24"
-        >
-          <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[1fr_minmax(0,1.5fr)] md:gap-20">
-            <div>
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-                Sobre mí
-              </p>
-              <h2
-                id="sobre-mi-heading"
-                className="mt-3 font-display text-4xl italic leading-tight"
-              >
-                Diseño como dialecto.
-              </h2>
+          <section id="criterio" className="rounded-[24px] border border-black/8 bg-white px-6 py-12 sm:px-12 lg:px-16">
+            <div className="flex items-end justify-between gap-6"><div><p className="text-sm text-black/48">NOTE© — Journal.</p><h2 className="mt-4 text-[clamp(2.4rem,5vw,5rem)] font-medium leading-none tracking-[-0.06em]">Criterio compartido.</h2></div><span className="hidden text-sm text-black/45 sm:block">Ideas sobre oficio y táctica.</span></div>
+            <div className="mt-12 divide-y divide-black/10">
+              {posts.map((post) => <article key={post.title} className="grid grid-cols-[88px_1fr_auto] items-center gap-5 py-5 sm:grid-cols-[120px_1fr_auto]"><img src={post.image} alt={post.alt} className="aspect-[4/3] w-full rounded-xl object-cover" /><div><p className="text-xs text-black/42">{post.date}</p><h3 className="mt-2 text-lg font-semibold tracking-[-0.03em] sm:text-2xl">{post.title}</h3></div><span className="text-xl">↗</span></article>)}
             </div>
-            <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
-              <p>
-                Concibo el diseño como un dialecto entre lo que es y lo que podría ser. Una
-                herramienta de lectura, interpretación y transformación del presente.
-              </p>
-              <p>
-                Una forma de hacer visible lo invisible, de construir significado y abrir
-                nuevas formas de relación entre <span className="text-foreground">ideas, personas y sistemas</span>.
-              </p>
-              <dl className="mt-8 grid grid-cols-2 gap-6 border-t border-border pt-8">
-                <div>
-                  <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                    Base
-                  </dt>
-                  <dd className="mt-1 font-display text-lg">Barcelona</dd>
-                </div>
-                <div>
-                  <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                    Rol
-                  </dt>
-                  <dd className="mt-1 font-display text-lg">Head of Design</dd>
-                </div>
-                <div>
-                  <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                    Equipo
-                  </dt>
-                  <dd className="mt-1 font-display text-lg">Apolo</dd>
-                </div>
-                <div>
-                  <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                    Reconocimientos
-                  </dt>
-                  <dd className="mt-1 font-display text-lg">LAUS · Citizen</dd>
-                </div>
-              </dl>
-            </div>
-          </div>
-        </section>
+          </section>
 
-        {/* FAQ */}
-        <section
-          aria-labelledby="faq-heading"
-          className="border-y border-border bg-surface px-6 py-24"
-        >
-          <div className="mx-auto max-w-3xl">
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              FAQ
-            </p>
-            <h2
-              id="faq-heading"
-              className="mt-3 font-display text-4xl italic leading-tight"
-            >
-              Preguntas que me hacen a menudo.
-            </h2>
+          <section className="rounded-[24px] border border-black/8 bg-white px-6 py-12 sm:px-12 lg:px-16">
+            <p className="text-sm text-black/48">Preguntas frecuentes.</p><h2 className="mt-4 max-w-3xl text-[clamp(2.4rem,5vw,5rem)] font-medium leading-none tracking-[-0.06em]">Antes de trabajar juntos.</h2>
+            <div className="mt-10 divide-y divide-black/10">{faqs.map((f) => <details key={f.q} className="group py-6"><summary className="flex cursor-pointer list-none justify-between gap-6 text-lg font-semibold tracking-[-0.025em]"><span>{f.q}</span><span className="transition-transform group-open:rotate-45">＋</span></summary><p className="mt-4 max-w-3xl text-sm leading-relaxed text-black/52">{f.a}</p></details>)}</div>
+          </section>
 
-            <div className="mt-12 divide-y divide-border">
-              {faqs.map((f) => (
-                <details key={f.q} className="group py-6">
-                  <summary className="flex cursor-pointer list-none items-start justify-between gap-6">
-                    <span className="font-display text-xl leading-snug">{f.q}</span>
-                    <span
-                      aria-hidden
-                      className="mt-1 font-mono text-lg text-muted-foreground transition-transform group-open:rotate-45"
-                    >
-                      +
-                    </span>
-                  </summary>
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
+          <section id="contacto" className="rounded-[24px] bg-[#171717] px-6 py-16 text-white sm:px-12 sm:py-20 lg:px-16">
+            <p className="text-sm text-white/45">Contacto.</p><h2 className="mt-5 max-w-4xl text-[clamp(3rem,7vw,7rem)] font-medium leading-[0.96] tracking-[-0.065em]">Hagamos algo que merezca existir.</h2><p className="mt-7 max-w-xl text-base leading-relaxed text-white/55">Cuéntame en qué estás trabajando. Respondo siempre que el proyecto encaje con el momento.</p>
+            <div className="mt-10 flex flex-wrap gap-3"><a href="mailto:hola@srtaserifa.com" className="rounded-xl bg-white px-6 py-3.5 text-sm font-medium text-black">hola@srtaserifa.com ↗</a><a href="https://www.universoapolo.com/contacto" className="rounded-xl border border-white/15 px-6 py-3.5 text-sm">Trabajar vía Apolo</a></div>
+          </section>
+        </main>
 
-        {/* Contact CTA */}
-        <section
-          id="contacto"
-          aria-labelledby="contacto-heading"
-          className="relative overflow-hidden px-6 py-32 text-center"
-        >
-          <div
-            aria-hidden
-            className="absolute inset-0 -z-10 bg-cover bg-center opacity-30"
-            style={{ backgroundImage: `url(${heroObsidian})` }}
-          />
-          <div
-            aria-hidden
-            className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-background/70 to-background"
-          />
-          <div className="mx-auto max-w-3xl">
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              Contacto
-            </p>
-            <h2
-              id="contacto-heading"
-              className="mt-4 font-display text-[clamp(2.5rem,8vw,5rem)] font-bold italic leading-[1.05] text-balance"
-            >
-              ¿Creamos algo con <span className="text-accent">peso</span>?
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
-              Cuéntame en qué estás trabajando. Respondo siempre que el proyecto encaje con el momento.
-            </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <a
-                href="mailto:hola@srtaserifa.com"
-                className="inline-flex items-center gap-3 rounded-full bg-primary px-8 py-4 font-mono text-xs uppercase tracking-[0.25em] text-primary-foreground transition-transform hover:scale-[1.02]"
-              >
-                hola@srtaserifa.com
-              </a>
-              <a
-                href="https://www.universoapolo.com/contacto"
-                className="inline-flex items-center gap-3 rounded-full border border-border px-8 py-4 font-mono text-xs uppercase tracking-[0.25em] text-foreground transition-colors hover:border-accent hover:text-accent"
-              >
-                Vía Apolo →
-              </a>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      {/* Footer */}
-      <footer className="border-t border-border bg-background px-6 py-16">
-        <div className="mx-auto grid max-w-6xl gap-12 sm:grid-cols-3">
-          <div>
-            <p className="font-display text-2xl italic">Srtaserifa</p>
-            <p className="mt-2 max-w-xs text-xs leading-relaxed text-muted-foreground">
-              Espacio personal de Núria López. Diseño, táctica y producto desde Barcelona.
-            </p>
-          </div>
-          <nav aria-label="Sígueme">
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              Sígueme
-            </p>
-            <ul className="mt-4 space-y-2 text-sm">
-              <li><a href="https://www.instagram.com/srtaserifa" className="hover:text-accent">Instagram</a></li>
-              <li><a href="https://www.linkedin.com/in/nurialopez" className="hover:text-accent">LinkedIn</a></li>
-              <li><a href="https://www.behance.net/srtaserifa" className="hover:text-accent">Behance</a></li>
-              <li><a href="#" className="hover:text-accent">Twitter</a></li>
-            </ul>
-          </nav>
-          <nav aria-label="Navegación pie">
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              Mapa
-            </p>
-            <ul className="mt-4 space-y-2 text-sm">
-              <li><a href="#proyectos" className="hover:text-accent">Proyectos</a></li>
-              <li><a href="#criterio" className="hover:text-accent">Criterio</a></li>
-              <li><a href="#sobre-mi" className="hover:text-accent">Sobre mí</a></li>
-              <li><a href="#contacto" className="hover:text-accent">Contacto</a></li>
-            </ul>
-          </nav>
-        </div>
-        <p className="mx-auto mt-16 max-w-6xl border-t border-border pt-8 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-          © 2026 Núria López · Hecho con criterio
-        </p>
-      </footer>
+        <footer className="flex flex-col gap-5 px-7 py-8 text-xs text-black/45 sm:flex-row sm:items-center sm:justify-between"><p>© 2026 Núria López · Hecho con criterio</p><div className="flex gap-5"><a href="https://www.instagram.com/srtaserifa">Instagram</a><a href="https://www.linkedin.com/in/nurialopez">LinkedIn</a><a href="https://www.behance.net/srtaserifa">Behance</a></div></footer>
+      </div>
     </div>
   );
 }
