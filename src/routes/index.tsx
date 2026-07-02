@@ -93,8 +93,8 @@ function ConstructionPage() {
               Estoy ordenando proyectos, ideas y aprendizajes para enseñar el trabajo como merece. Mientras tanto, si tienes algo entre manos, hablemos.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
-              <a href="mailto:hola@srtaserifa.com" className="rounded-xl bg-[#171717] px-6 py-3.5 text-sm font-medium text-white shadow-lg shadow-black/10">hola@srtaserifa.com ↗</a>
-              <a href="https://www.linkedin.com/in/nurialopez" className="rounded-xl border border-black/10 bg-white px-6 py-3.5 text-sm font-medium shadow-sm">LinkedIn</a>
+              <a href="mailto:srtaserifa@icloud.com" className="rounded-xl bg-[#171717] px-6 py-3.5 text-sm font-medium text-white shadow-lg shadow-black/10">srtaserifa@icloud.com ↗</a>
+              <a href="https://www.linkedin.com/in/srtaserifa/" className="rounded-xl border border-black/10 bg-white px-6 py-3.5 text-sm font-medium shadow-sm">LinkedIn</a>
             </div>
           </div>
 
@@ -123,7 +123,7 @@ export function Portfolio() {
             <li><a href="#contacto" className="hover:opacity-50">Contacto</a></li>
           </ul>
           <div className="flex items-center gap-2">
-            <a href="https://www.linkedin.com/in/nurialopez" aria-label="LinkedIn" className="grid size-9 place-items-center rounded-xl border border-black/8 bg-white text-xs shadow-sm">in</a>
+            <a href="https://www.linkedin.com/in/srtaserifa/" aria-label="LinkedIn" className="grid size-9 place-items-center rounded-xl border border-black/8 bg-white text-xs shadow-sm">in</a>
             <a href="#contacto" className="rounded-xl bg-[#171717] px-4 py-2 text-xs font-medium text-white">Hablemos</a>
           </div>
         </nav>
@@ -149,7 +149,7 @@ export function Portfolio() {
                 Lidero diseño en Apolo y construyo identidades, experiencias digitales y MVPs que conectan estrategia, criterio visual y negocio.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href="mailto:hola@srtaserifa.com" className="rounded-xl bg-[#171717] px-6 py-3.5 text-sm font-medium text-white shadow-lg shadow-black/10">Escríbeme ↗</a>
+                <a href="mailto:srtaserifa@icloud.com" className="rounded-xl bg-[#171717] px-6 py-3.5 text-sm font-medium text-white shadow-lg shadow-black/10">Escríbeme ↗</a>
                 <a href="/proyectos" className="rounded-xl border border-black/10 bg-white px-6 py-3.5 text-sm font-medium shadow-sm">Ver proyectos</a>
               </div>
             </div>
@@ -162,7 +162,7 @@ export function Portfolio() {
               Soy Núria López. Concibo el diseño como un dialecto entre lo que es y lo que podría ser: una herramienta para hacer visible lo invisible, construir significado y abrir nuevas relaciones entre <span className="text-black/35">ideas, personas y sistemas.</span>
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-black/8 pt-7 text-sm text-black/58">
-              <a href="mailto:hola@srtaserifa.com">✉ hola@srtaserifa.com</a><span>·</span><span>⌖ Barcelona</span><span>·</span><span>Head of Design @ Apolo</span>
+              <a href="mailto:srtaserifa@icloud.com">✉ srtaserifa@icloud.com</a><span>·</span><span>⌖ Barcelona</span><span>·</span><span>Head of Design @ Apolo</span>
             </div>
             <dl className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-black/8 sm:grid-cols-4">
               {[["12+", "Años diseñando"], ["LAUS", "Diseño reconocido"], ["Citizen", "Colaboración internacional"], ["∞", "Curiosidad aplicada"]].map(([value, label]) => (
@@ -210,11 +210,11 @@ export function Portfolio() {
 
           <section id="contacto" className="rounded-[24px] bg-[#171717] px-6 py-16 text-white sm:px-12 sm:py-20 lg:px-16">
             <p className="text-sm text-white/45">Contacto.</p><h2 className="mt-5 max-w-4xl text-[clamp(3rem,7vw,7rem)] font-medium leading-[0.96] tracking-[-0.065em]">Hagamos algo que merezca existir.</h2><p className="mt-7 max-w-xl text-base leading-relaxed text-white/55">Cuéntame en qué estás trabajando. Respondo siempre que el proyecto encaje con el momento.</p>
-            <div className="mt-10 flex flex-wrap gap-3"><a href="mailto:hola@srtaserifa.com" className="rounded-xl bg-white px-6 py-3.5 text-sm font-medium text-black">hola@srtaserifa.com ↗</a><a href="https://www.universoapolo.com/contacto" className="rounded-xl border border-white/15 px-6 py-3.5 text-sm">Trabajar vía Apolo</a></div>
+            <div className="mt-10 flex flex-wrap gap-3"><a href="mailto:srtaserifa@icloud.com" className="rounded-xl bg-white px-6 py-3.5 text-sm font-medium text-black">srtaserifa@icloud.com ↗</a><a href="https://www.universoapolo.com/contacto" className="rounded-xl border border-white/15 px-6 py-3.5 text-sm">Trabajar vía Apolo</a></div>
           </section>
         </main>
 
-        <footer className="flex flex-col gap-5 px-7 py-8 text-xs text-black/45 sm:flex-row sm:items-center sm:justify-between"><p>© 2026 Núria López · Hecho con criterio</p><div className="flex gap-5"><a href="https://www.instagram.com/srtaserifa">Instagram</a><a href="https://www.linkedin.com/in/nurialopez">LinkedIn</a><a href="https://www.behance.net/srtaserifa">Behance</a></div></footer>
+        <footer className="flex flex-col gap-5 px-7 py-8 text-xs text-black/45 sm:flex-row sm:items-center sm:justify-between"><p>© 2026 Núria López · Hecho con criterio</p><div className="flex gap-5"><a href="https://www.instagram.com/srtaserifa">Instagram</a><a href="https://www.linkedin.com/in/srtaserifa/">LinkedIn</a><a href="https://www.behance.net/srtaserifa">Behance</a></div></footer>
       </div>
     </div>
   );

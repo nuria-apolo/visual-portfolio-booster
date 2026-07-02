@@ -66,7 +66,7 @@ function ProjectsPage() {
           <section className="rounded-[24px] bg-[#171717] px-6 py-14 text-white sm:px-12 sm:py-20 lg:px-16">
             <p className="text-sm text-white/45">¿Tienes algo entre manos?</p>
             <h2 className="mt-5 max-w-4xl text-[clamp(3rem,7vw,7rem)] font-medium leading-[0.96] tracking-[-0.065em]">El siguiente proyecto puede ser el tuyo.</h2>
-            <a href="mailto:hola@srtaserifa.com" className="mt-9 inline-flex rounded-xl bg-white px-6 py-3.5 text-sm font-medium text-black">hola@srtaserifa.com ↗</a>
+            <a href="mailto:srtaserifa@icloud.com" className="mt-9 inline-flex rounded-xl bg-white px-6 py-3.5 text-sm font-medium text-black">srtaserifa@icloud.com ↗</a>
           </section>
         </main>
 

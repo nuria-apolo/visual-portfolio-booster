@@ -114,7 +114,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           url: "/",
           sameAs: [
             "https://www.instagram.com/srtaserifa",
-            "https://www.linkedin.com/in/nurialopez",
+            "https://www.linkedin.com/in/srtaserifa/",
             "https://www.behance.net/srtaserifa",
           ],
         }),
