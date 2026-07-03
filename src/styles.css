@@ -150,6 +150,19 @@
   }
 }
 
+@keyframes construction-paperclip-wiggle {
+  0%,
+  100% {
+    transform: rotate(0) scale(1);
+  }
+  35% {
+    transform: rotate(-13deg) scale(1.12);
+  }
+  70% {
+    transform: rotate(8deg) scale(1.06);
+  }
+}
+
 @keyframes construction-ambient {
   0%,
   100% {
@@ -223,31 +236,60 @@
   position: absolute;
   left: 50%;
   top: 0;
+  opacity: 0;
+  --tag-start-r: -24deg;
+  --tag-drift-x: 3px;
+  --tag-drift-y: -5px;
+  --tag-drift-r: 1.2deg;
+  animation:
+    construction-tag-drop 1.75s cubic-bezier(0.22, 0.78, 0.24, 1.02) forwards,
+    construction-tag-drift 4.8s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.construction-tag-inner {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
   padding: 0.75rem 1.15rem;
   border-radius: 999px;
   color: #111;
+  cursor: default;
   font-family: var(--font-sans);
   font-size: 0.78rem;
   font-weight: 650;
   letter-spacing: -0.025em;
   text-transform: uppercase;
   white-space: nowrap;
-  opacity: 0;
-  --tag-start-r: -24deg;
-  --tag-drift-x: 3px;
-  --tag-drift-y: -5px;
-  --tag-drift-r: 1.2deg;
   box-shadow:
     0 1px 0 rgb(0 0 0 / 3%),
     0 10px 20px rgb(0 0 0 / 0.04);
-  animation:
-    construction-tag-drop 1.75s cubic-bezier(0.22, 0.78, 0.24, 1.02) forwards,
-    construction-tag-drift 4.8s ease-in-out infinite;
-  transform-origin: center;
-  will-change: transform, opacity;
+  transition:
+    transform 420ms var(--ease-out-expo),
+    box-shadow 420ms ease,
+    filter 420ms ease;
+  will-change: transform;
+}
+
+.construction-tag:has(.construction-tag-inner:hover) {
+  z-index: 20;
+}
+
+.construction-tag-inner:hover {
+  filter: saturate(1.08);
+  transform: translateY(-8px) rotate(2deg) scale(1.06);
+  box-shadow:
+    0 2px 0 rgb(0 0 0 / 4%),
+    0 18px 34px rgb(0 0 0 / 0.13);
+}
+
+.construction-tag:nth-child(even) .construction-tag-inner:hover {
+  transform: translateY(-7px) rotate(-2.5deg) scale(1.055);
+}
+
+.construction-tag-inner:hover svg {
+  animation: construction-paperclip-wiggle 520ms ease both;
 }
 
 .construction-intro-left,
@@ -267,10 +309,26 @@
   animation-delay: 180ms;
 }
 
-.construction-portrait {
+.construction-portrait-shell {
+  display: inline-flex;
   animation:
     construction-portrait-pop 0.85s var(--ease-out-expo) 100ms both,
     construction-portrait-float 4s ease-in-out 1.1s infinite;
+}
+
+.construction-portrait {
+  cursor: default;
+  transition:
+    transform 420ms var(--ease-out-expo),
+    filter 420ms ease,
+    box-shadow 420ms ease;
+  will-change: transform;
+}
+
+.construction-portrait:hover {
+  filter: saturate(1.08);
+  transform: translateY(-5px) rotate(5deg) scale(1.14);
+  box-shadow: 0 12px 26px rgb(0 0 0 / 0.2);
 }
 
 .construction-title {
@@ -345,7 +403,7 @@
     height: 220px;
   }
 
-  .construction-tag {
+  .construction-tag-inner {
     gap: 0.4rem;
     padding: 0.55rem 0.8rem;
     font-size: 0.62rem;
@@ -420,7 +478,7 @@
     animation: none;
   }
 
-  .construction-portrait {
+  .construction-portrait-shell {
     animation-name: construction-portrait-pop, none;
   }
 }

@@ -95,11 +95,13 @@ function ConstructionPage() {
       <div className="construction-copy relative z-10 mx-auto flex w-full max-w-[1180px] flex-col items-center text-center sm:px-10 sm:pt-[25vh]">
         <div className="construction-intro flex items-center justify-center gap-3 text-[1.15rem] font-medium tracking-[-0.03em] text-black/70 sm:text-xl">
           <span className="construction-intro-left">Hola</span>
-          <img
-            src={portraitNuria}
-            alt="Retrato de Núria López"
-            className="construction-portrait size-10 rounded-full object-cover shadow-[0_3px_12px_rgba(0,0,0,.16)] sm:size-12"
-          />
+          <span className="construction-portrait-shell rounded-full">
+            <img
+              src={portraitNuria}
+              alt="Retrato de Núria López"
+              className="construction-portrait size-10 rounded-full object-cover shadow-[0_3px_12px_rgba(0,0,0,.16)] sm:size-12"
+            />
+          </span>
           <span className="construction-intro-right">soy srtaserifa</span>
         </div>
 
@@ -117,29 +119,31 @@ function ConstructionPage() {
       </div>
 
       <div
-        className="construction-tags pointer-events-none absolute bottom-0 left-1/2 h-[270px] w-[620px] max-w-full -translate-x-1/2"
+        className="construction-tags absolute bottom-0 left-1/2 h-[270px] w-[620px] max-w-full -translate-x-1/2"
         aria-hidden="true"
       >
         {constructionTags.map(([label, color], index) => (
           <span
             key={label}
-            className={`construction-tag construction-tag-${index + 1} ${color}`}
+            className={`construction-tag construction-tag-${index + 1}`}
             style={{
               animationDelay: `${560 + index * 120}ms, ${2700 + index * 120}ms`,
             }}
           >
-            <svg
-              viewBox="0 0 24 24"
-              className="size-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="m16.5 6.5-7.9 7.9a3 3 0 0 0 4.2 4.2l8.6-8.6a5 5 0 0 0-7.1-7.1l-9.1 9.2a7 7 0 0 0 9.9 9.9l7.2-7.2" />
-            </svg>
-            {label}
+            <span className={`construction-tag-inner ${color}`}>
+              <svg
+                viewBox="0 0 24 24"
+                className="size-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="m16.5 6.5-7.9 7.9a3 3 0 0 0 4.2 4.2l8.6-8.6a5 5 0 0 0-7.1-7.1l-9.1 9.2a7 7 0 0 0 9.9 9.9l7.2-7.2" />
+              </svg>
+              {label}
+            </span>
           </span>
         ))}
       </div>
