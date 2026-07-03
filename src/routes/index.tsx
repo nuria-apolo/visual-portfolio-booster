@@ -78,73 +78,68 @@ const faqs = [
   },
 ];
 
+const constructionTags = [
+  ["Estrategia", "bg-[#ffc400]"],
+  ["Marca", "bg-[#49d8a1]"],
+  ["Sistemas", "bg-[#f3f3f3]"],
+  ["IA", "bg-[#c8f36c]"],
+  ["Branding", "bg-[#ff7848]"],
+  ["Producto", "bg-[#8dceff]"],
+  ["Dirección", "bg-[#f4b5dc]"],
+  ["Identidad", "bg-[#c6adff]"],
+] as const;
+
 function ConstructionPage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#f1f2f4] p-3 text-[#171717] sm:p-6">
-      <div className="relative mx-auto flex min-h-[calc(100vh-24px)] max-w-[1180px] flex-col overflow-hidden rounded-[28px] border border-black/8 bg-white shadow-[0_20px_80px_rgba(0,0,0,.06)] sm:min-h-[calc(100vh-48px)]">
-        <header className="flex items-center justify-between px-6 py-6 sm:px-10">
-          <p className="text-sm font-semibold tracking-[-0.02em]">Srta Serifa</p>
-          <span className="rounded-full bg-[#f1f2f4] px-4 py-2 text-xs text-black/55">
-            Barcelona · 2026
-          </span>
-        </header>
-
-        <div className="relative z-10 flex flex-1 flex-col justify-between px-6 pb-8 pt-12 sm:px-10 sm:pb-10 lg:px-16 lg:pt-16">
-          <div className="max-w-[900px]">
-            <div className="mb-8 flex items-center gap-4">
-              <img
-                src={portraitNuria}
-                alt="Retrato de Núria López"
-                className="size-16 rounded-full object-cover grayscale"
-              />
-              <div>
-                <p className="font-semibold tracking-[-0.025em]">Núria López</p>
-                <p className="mt-1 text-sm text-black/45">Diseño · Táctica · Producto</p>
-              </div>
-            </div>
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-black/38">
-              Algo nuevo está tomando forma
-            </p>
-            <h1 className="mt-5 text-[clamp(3.6rem,10vw,9.5rem)] font-medium leading-[0.88] tracking-[-0.075em]">
-              Portfolio
-              <br />
-              en construcción<span className="text-black/25">.</span>
-            </h1>
-            <p className="mt-8 max-w-xl text-base leading-relaxed text-black/52 sm:text-lg">
-              Estoy ordenando proyectos, ideas y aprendizajes para enseñar el trabajo como merece.
-              Mientras tanto, si tienes algo entre manos, hablemos.
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <a
-                href="mailto:srtaserifa@icloud.com"
-                className="rounded-xl bg-[#171717] px-6 py-3.5 text-sm font-medium text-white shadow-lg shadow-black/10"
-              >
-                srtaserifa@icloud.com ↗
-              </a>
-              <a
-                href="https://www.linkedin.com/in/srtaserifa/"
-                className="rounded-xl border border-black/10 bg-white px-6 py-3.5 text-sm font-medium shadow-sm"
-              >
-                LinkedIn
-              </a>
-            </div>
-          </div>
-
-          <footer className="mt-16 flex flex-col gap-3 border-t border-black/8 pt-6 text-xs text-black/38 sm:flex-row sm:items-center sm:justify-between">
-            <p>© 2026 Núria López · Srta Serifa</p>
-            <p>Diseñando la siguiente versión</p>
-          </footer>
+    <main className="construction-page relative min-h-[860px] overflow-hidden bg-[#f7f7f7] text-[#111] sm:min-h-[100svh]">
+      <div className="construction-copy relative z-10 mx-auto flex w-full max-w-[1180px] flex-col items-center px-5 pt-[19vh] text-center sm:px-10 sm:pt-[25vh]">
+        <div className="flex items-center justify-center gap-3 text-base font-medium tracking-[-0.02em] text-black/70 sm:text-xl">
+          <span>Hola</span>
+          <img
+            src={portraitNuria}
+            alt="Retrato de Núria López"
+            className="size-10 rounded-full object-cover shadow-[0_3px_12px_rgba(0,0,0,.16)] sm:size-12"
+          />
+          <span>soy srtaserifa</span>
         </div>
 
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -bottom-28 -right-24 size-[420px] rounded-full opacity-[0.09] sm:size-[600px]"
-          style={{
-            backgroundImage: `url(${heroObsidian})`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-          }}
-        />
+        <h1 className="mt-4 max-w-[1040px] font-display text-[clamp(3rem,4.35vw,5.55rem)] font-medium leading-[0.98] tracking-[-0.045em] text-balance">
+          El <em className="font-normal">diseño</em> es un <em className="font-normal">dialecto</em>
+          <br className="hidden sm:block" /> entre el mundo que es y el
+          <br className="hidden sm:block" /> mundo que podría ser
+        </h1>
+
+        <p className="mt-7 max-w-[710px] text-[15px] leading-[1.35] tracking-[-0.015em] text-black/65 sm:text-xl">
+          Desde una identidad visual hasta un producto digital, el diseño convierte la complejidad
+          en algo que las personas pueden entender, usar y hacer suyo. Y yo me encargo de hacerlo
+          realidad ;)
+        </p>
+      </div>
+
+      <div
+        className="construction-tags pointer-events-none absolute bottom-0 left-1/2 h-[270px] w-[620px] max-w-full -translate-x-1/2"
+        aria-hidden="true"
+      >
+        {constructionTags.map(([label, color], index) => (
+          <span
+            key={label}
+            className={`construction-tag construction-tag-${index + 1} ${color}`}
+            style={{ animationDelay: `${620 + index * 145}ms` }}
+          >
+            <svg
+              viewBox="0 0 24 24"
+              className="size-5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="m16.5 6.5-7.9 7.9a3 3 0 0 0 4.2 4.2l8.6-8.6a5 5 0 0 0-7.1-7.1l-9.1 9.2a7 7 0 0 0 9.9 9.9l7.2-7.2" />
+            </svg>
+            {label}
+          </span>
+        ))}
       </div>
     </main>
   );
