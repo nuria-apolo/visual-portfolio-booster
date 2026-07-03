@@ -91,18 +91,25 @@
 @keyframes construction-tag-drop {
   0% {
     opacity: 0;
-    transform: translate(var(--tag-x), -75vh) rotate(calc(var(--tag-r) - 22deg));
+    transform: translate(var(--tag-x), calc(var(--tag-y) - 55vh)) rotate(calc(var(--tag-r) - 26deg))
+      scale(0.92);
   }
-  68% {
+  58% {
     opacity: 1;
-    transform: translate(var(--tag-x), calc(var(--tag-y) + 12px)) rotate(calc(var(--tag-r) + 4deg));
+    transform: translate(var(--tag-x), calc(var(--tag-y) + 18px)) rotate(calc(var(--tag-r) + 8deg))
+      scale(1.02);
   }
-  82% {
-    transform: translate(var(--tag-x), calc(var(--tag-y) - 6px)) rotate(calc(var(--tag-r) - 2deg));
+  74% {
+    transform: translate(var(--tag-x), calc(var(--tag-y) - 10px)) rotate(calc(var(--tag-r) - 4deg))
+      scale(0.985);
+  }
+  88% {
+    transform: translate(var(--tag-x), calc(var(--tag-y) + 4px)) rotate(calc(var(--tag-r) + 2deg))
+      scale(1.01);
   }
   100% {
     opacity: 1;
-    transform: translate(var(--tag-x), var(--tag-y)) rotate(var(--tag-r));
+    transform: translate(var(--tag-x), var(--tag-y)) rotate(var(--tag-r)) scale(1);
   }
 }
 
@@ -123,9 +130,12 @@
   text-transform: uppercase;
   white-space: nowrap;
   opacity: 0;
-  box-shadow: 0 1px 0 rgb(0 0 0 / 3%);
-  animation: construction-tag-drop 1.15s cubic-bezier(0.22, 0.9, 0.35, 1.12) forwards;
+  box-shadow:
+    0 1px 0 rgb(0 0 0 / 3%),
+    0 10px 20px rgb(0 0 0 / 0.04);
+  animation: construction-tag-drop 1.45s cubic-bezier(0.2, 0.9, 0.24, 1.02) forwards;
   transform-origin: center;
+  will-change: transform, opacity;
 }
 
 .construction-tag-1 {

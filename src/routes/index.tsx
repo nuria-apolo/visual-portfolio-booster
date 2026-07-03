@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroObsidian from "@/assets/hero-obsidian.jpg";
-import portraitNuria from "@/assets/portrait-nuria.jpg";
+import portraitNuria from "@/assets/portrait-nuria-new.png";
 import portraitFramer from "@/assets/nuria-framer.jpg";
 import postVibe from "@/assets/post-vibe.jpg";
 import postHabitat from "@/assets/post-habitat.jpg";
