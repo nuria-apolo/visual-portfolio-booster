@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -32,8 +33,8 @@
   --color-surface: var(--surface);
   --color-ink: var(--ink);
 
-  --font-display: "Playfair Display", ui-serif, Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -88,6 +89,17 @@
   }
 }
 
+@keyframes fade-up-soft {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 @keyframes construction-tag-drop {
   0% {
     opacity: 0;
@@ -138,6 +150,22 @@
   will-change: transform, opacity;
 }
 
+.construction-intro {
+  animation-delay: 120ms;
+}
+
+.construction-title {
+  animation-name: fade-up-soft;
+  animation-duration: 0.95s;
+  animation-timing-function: var(--ease-out-expo);
+  animation-fill-mode: both;
+  animation-delay: 220ms;
+}
+
+.construction-body {
+  animation-delay: 360ms;
+}
+
 .construction-tag-1 {
   --tag-x: -285px;
   --tag-y: 10px;
@@ -180,9 +208,13 @@
 }
 
 @media (max-width: 640px) {
+  .construction-copy {
+    padding-top: 0;
+  }
+
   .construction-tags {
-    width: 390px;
-    height: 260px;
+    width: 360px;
+    height: 220px;
   }
 
   .construction-tag {
@@ -196,43 +228,43 @@
     height: 0.85rem;
   }
   .construction-tag-1 {
-    --tag-x: -172px;
-    --tag-y: 8px;
+    --tag-x: -138px;
+    --tag-y: 4px;
     --tag-r: -42deg;
   }
   .construction-tag-2 {
-    --tag-x: -62px;
-    --tag-y: 16px;
+    --tag-x: -28px;
+    --tag-y: 6px;
     --tag-r: 14deg;
   }
   .construction-tag-3 {
-    --tag-x: 54px;
-    --tag-y: 12px;
+    --tag-x: 78px;
+    --tag-y: 10px;
     --tag-r: 8deg;
   }
   .construction-tag-4 {
-    --tag-x: 48px;
-    --tag-y: 67px;
+    --tag-x: 70px;
+    --tag-y: 58px;
     --tag-r: 12deg;
   }
   .construction-tag-5 {
-    --tag-x: -142px;
-    --tag-y: 98px;
+    --tag-x: -118px;
+    --tag-y: 76px;
     --tag-r: 39deg;
   }
   .construction-tag-6 {
-    --tag-x: -55px;
-    --tag-y: 91px;
+    --tag-x: -14px;
+    --tag-y: 88px;
     --tag-r: 12deg;
   }
   .construction-tag-7 {
-    --tag-x: 70px;
-    --tag-y: 105px;
+    --tag-x: 88px;
+    --tag-y: 104px;
     --tag-r: -30deg;
   }
   .construction-tag-8 {
-    --tag-x: -5px;
-    --tag-y: 160px;
+    --tag-x: 8px;
+    --tag-y: 150px;
     --tag-r: 12deg;
   }
 }
@@ -245,6 +277,13 @@
 
 @media (prefers-reduced-motion: reduce) {
   .construction-tag {
+    animation-duration: 0.01ms;
+    animation-delay: 0ms !important;
+  }
+
+  .construction-intro,
+  .construction-title,
+  .construction-body {
     animation-duration: 0.01ms;
     animation-delay: 0ms !important;
   }
@@ -265,6 +304,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-size: 16px;
     -webkit-font-smoothing: antialiased;
   }
   ::selection {

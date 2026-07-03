@@ -91,9 +91,9 @@ const constructionTags = [
 
 function ConstructionPage() {
   return (
-    <main className="construction-page relative min-h-[860px] overflow-hidden bg-[#f7f7f7] text-[#111] sm:min-h-[100svh]">
-      <div className="construction-copy relative z-10 mx-auto flex w-full max-w-[1180px] flex-col items-center px-5 pt-[19vh] text-center sm:px-10 sm:pt-[25vh]">
-        <div className="flex items-center justify-center gap-3 text-base font-medium tracking-[-0.02em] text-black/70 sm:text-xl">
+    <main className="construction-page relative min-h-[100svh] overflow-hidden bg-[#f7f7f7] px-4 pb-[20rem] pt-[10.5rem] text-[#111] sm:px-0 sm:pb-[19rem] sm:pt-0">
+      <div className="construction-copy relative z-10 mx-auto flex w-full max-w-[1180px] flex-col items-center text-center sm:px-10 sm:pt-[25vh]">
+        <div className="construction-intro animate-fade-up flex items-center justify-center gap-3 text-[1.15rem] font-medium tracking-[-0.03em] text-black/70 sm:text-xl">
           <span>Hola</span>
           <img
             src={portraitNuria}
@@ -103,13 +103,13 @@ function ConstructionPage() {
           <span>soy srtaserifa</span>
         </div>
 
-        <h1 className="mt-4 max-w-[1040px] font-display text-[clamp(3rem,4.35vw,5.55rem)] font-medium leading-[0.98] tracking-[-0.045em] text-balance">
+        <h1 className="construction-title animate-fade-up mt-5 max-w-[18rem] font-display text-[3.45rem] leading-[0.92] tracking-[-0.04em] text-balance sm:mt-4 sm:max-w-[1040px] sm:text-[4.375rem] sm:leading-[0.98] sm:tracking-[-0.045em]">
           El <em className="font-normal">diseño</em> es un <em className="font-normal">dialecto</em>
           <br className="hidden sm:block" /> entre el mundo que es y el
           <br className="hidden sm:block" /> mundo que podría ser
         </h1>
 
-        <p className="mt-7 max-w-[710px] text-[15px] leading-[1.35] tracking-[-0.015em] text-black/65 sm:text-xl">
+        <p className="construction-body animate-fade-up mt-6 max-w-[19rem] text-base leading-[1.45] tracking-[-0.015em] text-black/65 sm:mt-7 sm:max-w-[710px] sm:text-base">
           Desde una identidad visual hasta un producto digital, el diseño convierte la complejidad
           en algo que las personas pueden entender, usar y hacer suyo. Y yo me encargo de hacerlo
           realidad ;)
