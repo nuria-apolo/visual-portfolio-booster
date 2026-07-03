@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroObsidian from "@/assets/hero-obsidian.jpg";
 import portraitNuria from "@/assets/portrait-nuria.jpg";
+import portraitFramer from "@/assets/nuria-framer.jpg";
 import postVibe from "@/assets/post-vibe.jpg";
 import postHabitat from "@/assets/post-habitat.jpg";
 import postPortfolio from "@/assets/post-portfolio.jpg";
@@ -38,18 +39,21 @@ const posts = [
   {
     date: "MAR 2026",
     title: "Vibe Coding: por qué ya no diseño «solo» pantallas.",
+    href: "https://grounded-focus-364680.framer.app/vibe-coding-por-que-ya-no-diseno-solo-pantallas",
     image: postVibe,
     alt: "Texturas oscuras de papel y tinta — pieza editorial Vibe Coding",
   },
   {
     date: "FEB 2026",
     title: "NOTE© #18 — El hábitat del diseño.",
+    href: "https://grounded-focus-364680.framer.app/18-el-habitat-del-diseno",
     image: postHabitat,
     alt: "Estudio de luz y sombra arquitectónica — ensayo El hábitat del diseño",
   },
   {
     date: "ENE 2026",
     title: "Qué poner en tu portfolio de diseño (y qué quitar ya).",
+    href: "https://grounded-focus-364680.framer.app/que-poner-en-tu-portfolio-de-diseno-grafico-(y-que-deberias-quitar-ya)",
     image: postPortfolio,
     alt: "Pila de láminas tipográficas — guía de portfolio de diseño gráfico",
   },
@@ -148,28 +152,31 @@ function ConstructionPage() {
 
 export function Portfolio() {
   return (
-    <div className="min-h-screen bg-[#f5f2eb] text-[#171713] selection:bg-[#ff4f1f] selection:text-white">
+    <div className="min-h-screen overflow-x-hidden bg-[#f5f2eb] text-[#171713] selection:bg-[#ff4f1f] selection:text-white">
       <nav
         className="sticky top-0 z-50 flex h-16 items-center justify-between border-b border-black/12 bg-[#f5f2eb]/90 px-5 backdrop-blur-xl sm:px-10 lg:px-16"
         aria-label="Navegación principal"
       >
-        <a href="#top" className="text-sm font-bold uppercase tracking-[-0.03em]">
-          Srta Serifa®
+        <a
+          href="#top"
+          className="rounded-full bg-black/[0.045] px-3 py-1.5 text-xs font-medium uppercase tracking-[-0.03em]"
+        >
+          Srtaserifa
         </a>
         <ul className="hidden items-center gap-8 text-xs font-medium uppercase tracking-[0.08em] md:flex">
           <li>
             <a className="transition hover:text-[#ff4f1f]" href="#trabajo">
-              Trabajo
+              Proyectos*
             </a>
           </li>
           <li>
             <a className="transition hover:text-[#ff4f1f]" href="#sobre-mi">
-              Sobre mí
+              Sobre mí*
             </a>
           </li>
           <li>
             <a className="transition hover:text-[#ff4f1f]" href="#criterio">
-              Criterio
+              Materia*
             </a>
           </li>
         </ul>
@@ -183,32 +190,34 @@ export function Portfolio() {
 
       <main id="top">
         <section className="grid min-h-[calc(100svh-4rem)] grid-rows-[1fr_auto] px-5 pb-6 pt-10 sm:px-10 lg:px-16 lg:pt-16">
-          <div className="grid content-between gap-12 lg:grid-cols-[1fr_280px]">
-            <div>
+          <div className="grid content-between gap-12 xl:grid-cols-[minmax(0,1fr)_280px]">
+            <div className="min-w-0">
               <div className="flex items-center gap-3 text-sm">
                 <img
-                  src={portraitNuria}
+                  src={portraitFramer}
                   alt="Retrato de Núria López"
                   className="size-11 rounded-full object-cover grayscale"
                 />
                 <p>
-                  <span className="font-semibold">Hola, soy Núria.</span>
+                  <span className="font-semibold">Soy Núria López (1992).</span>
                   <br />
                   <span className="text-black/50">Head of Design · Barcelona</span>
                 </p>
               </div>
-              <h1 className="mt-12 max-w-[1100px] text-[clamp(3.7rem,10vw,10rem)] font-medium leading-[0.84] tracking-[-0.08em]">
-                Diseño para hacer
+              <h1 className="mt-12 max-w-[1100px] text-[clamp(3.3rem,9vw,9rem)] font-medium leading-[0.84] tracking-[-0.08em]">
+                Diseño*táctica*
                 <br />
-                que las ideas <em className="font-display font-normal text-[#ff4f1f]">pesen.</em>
+                producto<span className="text-[#ff4f1f]">*</span>
               </h1>
             </div>
             <div className="self-end border-l border-black/15 pl-6 text-sm leading-relaxed text-black/60">
               <p>
-                Identidad, producto y dirección creativa para marcas que prefieren tener algo que
-                decir.
+                Lidero el equipo de diseño en Apolo, una consultora de branding y producción
+                audiovisual que ayuda a propulsar marcas mediante creatividad y estrategia.
               </p>
-              <p className="mt-5 font-medium text-black">Diseño · Táctica · Producto</p>
+              <p className="mt-5 font-medium text-black">
+                Srtaserifa es diseño convertido en conversación.
+              </p>
             </div>
           </div>
           <div className="mt-16 flex items-end justify-between border-t border-black/15 pt-5 text-xs uppercase tracking-[0.08em] text-black/50">
@@ -270,9 +279,13 @@ export function Portfolio() {
                             ? "Un mismo signo leído con los ojos y con las manos."
                             : "Dirección de arte, producto digital y una experiencia premiada."}
                       </p>
-                      <span className="grid size-12 place-items-center rounded-full border border-black/25 transition group-hover:rotate-45 group-hover:bg-[#ff4f1f] group-hover:text-white">
+                      <a
+                        href={project.href}
+                        aria-label={`Ver proyecto ${project.title}`}
+                        className="grid size-12 place-items-center rounded-full border border-black/25 transition group-hover:rotate-45 group-hover:bg-[#ff4f1f] group-hover:text-white"
+                      >
                         ↗
-                      </span>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -293,7 +306,7 @@ export function Portfolio() {
         >
           <div className="min-h-[420px] overflow-hidden lg:min-h-[720px]">
             <img
-              src={portraitNuria}
+              src={portraitFramer}
               alt="Núria López, diseñadora y Head of Design"
               className="h-full w-full object-cover grayscale"
             />
@@ -302,15 +315,14 @@ export function Portfolio() {
             <p className="text-xs uppercase tracking-[0.12em] text-white/45">Sobre mí</p>
             <div className="py-16">
               <p className="text-[clamp(2rem,4.2vw,4.5rem)] font-medium leading-[1.02] tracking-[-0.055em]">
-                Diseño como quien construye un lenguaje: para hacer visible lo invisible y convertir
-                una intuición en{" "}
-                <em className="font-display font-normal text-[#ff6a3d]">
-                  algo que otros puedan habitar.
-                </em>
+                Como la obsidiana: táctil, profunda, con capas que revelan sentido al observar con
+                atención.
               </p>
               <p className="mt-9 max-w-xl text-base leading-relaxed text-white/58">
-                Soy Núria López, Head of Design en Apolo. Combino estrategia, identidad y producto
-                digital para mover ideas desde la conversación hasta el mundo real.
+                Trabajo desde el diseño, el producto digital y la táctica que traduce ideas,
+                cuestiona estructuras y da forma a nuevas posibilidades. Concibo el diseño como un
+                dialecto entre lo que es y lo que podría ser: una herramienta de lectura,
+                interpretación y transformación del presente.
               </p>
             </div>
             <dl className="grid grid-cols-2 gap-px border border-white/15 sm:grid-cols-4">
@@ -386,8 +398,9 @@ export function Portfolio() {
           </div>
           <div className="mt-14 divide-y divide-black/15 border-y border-black/15">
             {posts.map((post) => (
-              <article
+              <a
                 key={post.title}
+                href={post.href}
                 className="group grid grid-cols-[72px_1fr_auto] items-center gap-5 py-5 sm:grid-cols-[130px_1fr_auto]"
               >
                 <img
@@ -406,7 +419,7 @@ export function Portfolio() {
                 <span className="text-2xl transition group-hover:-translate-y-1 group-hover:translate-x-1">
                   ↗
                 </span>
-              </article>
+              </a>
             ))}
           </div>
         </section>
