@@ -91,30 +91,100 @@
 @keyframes fade-up-soft {
   from {
     opacity: 0;
-    transform: translateY(28px) scale(0.985);
+    filter: blur(10px);
+    clip-path: inset(0 0 32% 0);
+    transform: translateY(38px) scale(0.975);
   }
   to {
     opacity: 1;
+    filter: blur(0);
+    clip-path: inset(0 0 0 0);
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes construction-intro-left {
+  from {
+    opacity: 0;
+    transform: translateX(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes construction-intro-right {
+  from {
+    opacity: 0;
+    transform: translateX(-22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes construction-portrait-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.25) rotate(-18deg);
+  }
+  68% {
+    opacity: 1;
+    transform: scale(1.13) rotate(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes construction-portrait-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-4px) rotate(2deg);
+  }
+}
+
+@keyframes construction-ambient {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translate3d(-4%, 2%, 0) scale(0.94);
+  }
+  50% {
+    opacity: 0.58;
+    transform: translate3d(5%, -4%, 0) scale(1.08);
   }
 }
 
 @keyframes construction-tag-drop {
   0% {
     opacity: 0;
-    transform: translate(var(--tag-x), calc(var(--tag-y) - 55vh)) rotate(calc(var(--tag-r) - 26deg))
-      scale(0.92);
+    transform: translate(0, -30vh) rotate(var(--tag-start-r)) scale(0.3);
   }
-  58% {
+  16% {
     opacity: 1;
-    transform: translate(var(--tag-x), calc(var(--tag-y) + 18px)) rotate(calc(var(--tag-r) + 8deg))
-      scale(1.02);
+    transform: translate(0, -28vh) rotate(calc(var(--tag-start-r) * -0.35)) scale(0.86);
   }
-  74% {
-    transform: translate(var(--tag-x), calc(var(--tag-y) - 10px)) rotate(calc(var(--tag-r) - 4deg))
+  48% {
+    transform: translate(var(--tag-mid-x), calc(var(--tag-y) - 84px))
+      rotate(calc(var(--tag-r) - 18deg)) scale(0.96);
+  }
+  70% {
+    opacity: 1;
+    transform: translate(var(--tag-x), calc(var(--tag-y) + 22px)) rotate(calc(var(--tag-r) + 10deg))
+      scale(1.04);
+  }
+  82% {
+    transform: translate(var(--tag-x), calc(var(--tag-y) - 11px)) rotate(calc(var(--tag-r) - 5deg))
       scale(0.985);
   }
-  88% {
+  92% {
     transform: translate(var(--tag-x), calc(var(--tag-y) + 4px)) rotate(calc(var(--tag-r) + 2deg))
       scale(1.01);
   }
@@ -122,6 +192,31 @@
     opacity: 1;
     transform: translate(var(--tag-x), var(--tag-y)) rotate(var(--tag-r)) scale(1);
   }
+}
+
+@keyframes construction-tag-drift {
+  0%,
+  100% {
+    transform: translate(var(--tag-x), var(--tag-y)) rotate(var(--tag-r));
+  }
+  50% {
+    transform: translate(
+        calc(var(--tag-x) + var(--tag-drift-x)),
+        calc(var(--tag-y) + var(--tag-drift-y))
+      )
+      rotate(calc(var(--tag-r) + var(--tag-drift-r)));
+  }
+}
+
+.construction-page::before {
+  position: absolute;
+  inset: 12% 20% 30%;
+  content: "";
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(255 255 255 / 0.9), transparent 68%);
+  filter: blur(28px);
+  animation: construction-ambient 8s ease-in-out infinite;
 }
 
 .construction-tag {
@@ -141,16 +236,41 @@
   text-transform: uppercase;
   white-space: nowrap;
   opacity: 0;
+  --tag-start-r: -24deg;
+  --tag-drift-x: 3px;
+  --tag-drift-y: -5px;
+  --tag-drift-r: 1.2deg;
   box-shadow:
     0 1px 0 rgb(0 0 0 / 3%),
     0 10px 20px rgb(0 0 0 / 0.04);
-  animation: construction-tag-drop 1.45s cubic-bezier(0.2, 0.9, 0.24, 1.02) forwards;
+  animation:
+    construction-tag-drop 1.75s cubic-bezier(0.22, 0.78, 0.24, 1.02) forwards,
+    construction-tag-drift 4.8s ease-in-out infinite;
   transform-origin: center;
   will-change: transform, opacity;
 }
 
-.construction-intro {
+.construction-intro-left,
+.construction-intro-right {
+  animation-duration: 0.8s;
+  animation-timing-function: var(--ease-out-expo);
+  animation-fill-mode: both;
+}
+
+.construction-intro-left {
+  animation-name: construction-intro-left;
   animation-delay: 120ms;
+}
+
+.construction-intro-right {
+  animation-name: construction-intro-right;
+  animation-delay: 180ms;
+}
+
+.construction-portrait {
+  animation:
+    construction-portrait-pop 0.85s var(--ease-out-expo) 100ms both,
+    construction-portrait-float 4s ease-in-out 1.1s infinite;
 }
 
 .construction-title {
@@ -167,41 +287,50 @@
 
 .construction-tag-1 {
   --tag-x: -285px;
+  --tag-mid-x: -150px;
   --tag-y: 10px;
   --tag-r: -48deg;
+  --tag-start-r: 28deg;
 }
 .construction-tag-2 {
   --tag-x: -90px;
+  --tag-mid-x: -38px;
   --tag-y: 8px;
   --tag-r: 16deg;
 }
 .construction-tag-3 {
   --tag-x: 105px;
+  --tag-mid-x: 52px;
   --tag-y: 18px;
   --tag-r: 10deg;
 }
 .construction-tag-4 {
   --tag-x: 75px;
+  --tag-mid-x: 38px;
   --tag-y: 84px;
   --tag-r: 14deg;
 }
 .construction-tag-5 {
   --tag-x: -180px;
+  --tag-mid-x: -82px;
   --tag-y: 118px;
   --tag-r: 43deg;
 }
 .construction-tag-6 {
   --tag-x: -60px;
+  --tag-mid-x: -26px;
   --tag-y: 108px;
   --tag-r: 14deg;
 }
 .construction-tag-7 {
   --tag-x: 120px;
+  --tag-mid-x: 58px;
   --tag-y: 114px;
   --tag-r: -33deg;
 }
 .construction-tag-8 {
   --tag-x: 15px;
+  --tag-mid-x: 8px;
   --tag-y: 184px;
   --tag-r: 14deg;
 }
@@ -228,41 +357,49 @@
   }
   .construction-tag-1 {
     --tag-x: -138px;
+    --tag-mid-x: -72px;
     --tag-y: 4px;
     --tag-r: -42deg;
   }
   .construction-tag-2 {
     --tag-x: -28px;
+    --tag-mid-x: -12px;
     --tag-y: 6px;
     --tag-r: 14deg;
   }
   .construction-tag-3 {
     --tag-x: 78px;
+    --tag-mid-x: 40px;
     --tag-y: 10px;
     --tag-r: 8deg;
   }
   .construction-tag-4 {
     --tag-x: 70px;
+    --tag-mid-x: 34px;
     --tag-y: 58px;
     --tag-r: 12deg;
   }
   .construction-tag-5 {
     --tag-x: -118px;
+    --tag-mid-x: -58px;
     --tag-y: 76px;
     --tag-r: 39deg;
   }
   .construction-tag-6 {
     --tag-x: -14px;
+    --tag-mid-x: -6px;
     --tag-y: 88px;
     --tag-r: 12deg;
   }
   .construction-tag-7 {
     --tag-x: 88px;
+    --tag-mid-x: 42px;
     --tag-y: 104px;
     --tag-r: -30deg;
   }
   .construction-tag-8 {
     --tag-x: 8px;
+    --tag-mid-x: 4px;
     --tag-y: 150px;
     --tag-r: 12deg;
   }
@@ -276,15 +413,15 @@
 
 @media (prefers-reduced-motion: reduce) {
   .construction-tag {
-    animation-duration: 0.01ms;
-    animation-delay: 0ms !important;
+    animation-name: construction-tag-drop, none;
   }
 
-  .construction-intro,
-  .construction-title,
-  .construction-body {
-    animation-duration: 0.01ms;
-    animation-delay: 0ms !important;
+  .construction-page::before {
+    animation: none;
+  }
+
+  .construction-portrait {
+    animation-name: construction-portrait-pop, none;
   }
 }
 

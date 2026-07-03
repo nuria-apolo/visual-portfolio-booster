@@ -93,14 +93,14 @@ function ConstructionPage() {
   return (
     <main className="construction-page relative min-h-[100svh] overflow-hidden bg-[#f7f7f7] px-4 pb-[20rem] pt-[10.5rem] text-[#111] sm:px-0 sm:pb-[19rem] sm:pt-0">
       <div className="construction-copy relative z-10 mx-auto flex w-full max-w-[1180px] flex-col items-center text-center sm:px-10 sm:pt-[25vh]">
-        <div className="construction-intro animate-fade-up flex items-center justify-center gap-3 text-[1.15rem] font-medium tracking-[-0.03em] text-black/70 sm:text-xl">
-          <span>Hola</span>
+        <div className="construction-intro flex items-center justify-center gap-3 text-[1.15rem] font-medium tracking-[-0.03em] text-black/70 sm:text-xl">
+          <span className="construction-intro-left">Hola</span>
           <img
             src={portraitNuria}
             alt="Retrato de Núria López"
-            className="size-10 rounded-full object-cover shadow-[0_3px_12px_rgba(0,0,0,.16)] sm:size-12"
+            className="construction-portrait size-10 rounded-full object-cover shadow-[0_3px_12px_rgba(0,0,0,.16)] sm:size-12"
           />
-          <span>soy srtaserifa</span>
+          <span className="construction-intro-right">soy srtaserifa</span>
         </div>
 
         <h1 className="construction-title animate-fade-up mt-5 max-w-[18rem] font-display text-[3.45rem] leading-[0.92] tracking-[-0.04em] text-balance sm:mt-4 sm:max-w-[1040px] sm:text-[4.375rem] sm:leading-[0.98] sm:tracking-[-0.045em]">
@@ -124,7 +124,9 @@ function ConstructionPage() {
           <span
             key={label}
             className={`construction-tag construction-tag-${index + 1} ${color}`}
-            style={{ animationDelay: `${620 + index * 145}ms` }}
+            style={{
+              animationDelay: `${560 + index * 120}ms, ${2700 + index * 120}ms`,
+            }}
           >
             <svg
               viewBox="0 0 24 24"
