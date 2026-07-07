@@ -114,8 +114,59 @@ function ConstructionPage() {
         <p className="construction-body animate-fade-up mt-6 max-w-[19rem] text-base leading-[1.45] tracking-[-0.015em] text-black/65 sm:mt-7 sm:max-w-[710px] sm:text-base">
           Desde una identidad visual hasta un producto digital, el diseño convierte la complejidad
           en algo que las personas pueden entender, usar y hacer suyo. Y yo me encargo de hacerlo
-          realidad ;)
+          realidad ;){" "}
+          <a
+            href="mailto:srtaserifa@icloud.com"
+            className="font-medium text-black underline decoration-black/30 underline-offset-4 transition hover:decoration-black"
+          >
+            Escríbeme aquí
+          </a>
+          .
         </p>
+
+        <ul className="construction-social animate-fade-up mt-8 flex items-center justify-center gap-5">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/srtaserifa/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn de Srta Serifa"
+              className="grid size-10 place-items-center rounded-full border border-black/15 text-black/70 transition hover:border-black hover:text-black"
+            >
+              <svg viewBox="0 0 24 24" className="size-4" fill="currentColor" aria-hidden="true">
+                <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.22 0z" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/srta.serifa/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram de Srta Serifa"
+              className="grid size-10 place-items-center rounded-full border border-black/15 text-black/70 transition hover:border-black hover:text-black"
+            >
+              <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://x.com/srtaserifa"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X de Srta Serifa"
+              className="grid size-10 place-items-center rounded-full border border-black/15 text-black/70 transition hover:border-black hover:text-black"
+            >
+              <svg viewBox="0 0 24 24" className="size-3.5" fill="currentColor" aria-hidden="true">
+                <path d="M18.244 2H21.5l-7.5 8.57L23 22h-6.79l-4.86-6.36L5.6 22H2.34l8.02-9.17L1.5 2h6.94l4.4 5.82L18.24 2zm-1.19 18h1.87L7.02 4H5.05l12 16z" />
+              </svg>
+            </a>
+          </li>
+        </ul>
       </div>
 
       <div
