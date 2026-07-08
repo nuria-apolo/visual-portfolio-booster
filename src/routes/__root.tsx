@@ -91,6 +91,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:description", content: "El diseño es traducción. Ayudo a empresas a convertir ideas complejas en marcas, productos digitales y experiencias con IA que las personas entienden." },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/5IvkhVTXJRYr4ehkdb9FHFXqhVE2/social-images/social-1783085051836-Captura_de_pantalla_2026-07-03_a_las_14.21.44.webp" },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/5IvkhVTXJRYr4ehkdb9FHFXqhVE2/social-images/social-1783085051836-Captura_de_pantalla_2026-07-03_a_las_14.21.44.webp" },
+      { name: "google-site-verification", content: "6tOVrCdlYPO3j39nKHcN0NQTDFk8HxaTBgDzFH1NW1A" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
