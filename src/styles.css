@@ -252,12 +252,12 @@
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  padding: 0.75rem 1.15rem;
+  padding: 0.95rem 1.45rem;
   border-radius: 999px;
   color: #111;
   cursor: default;
   font-family: var(--font-sans);
-  font-size: 0.78rem;
+  font-size: 1rem;
   font-weight: 650;
   letter-spacing: -0.025em;
   text-transform: uppercase;
@@ -270,6 +270,33 @@
     box-shadow 420ms ease,
     filter 420ms ease;
   will-change: transform;
+}
+
+.construction-tag-icon .construction-tag-inner {
+  justify-content: center;
+  width: 8.2rem;
+  height: 8.2rem;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.construction-icon-link,
+.construction-tag-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.construction-icon-link {
+  cursor: pointer;
+}
+
+.construction-tag-icon img {
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
 }
 
 .construction-tag:has(.construction-tag-inner:hover) {
@@ -290,6 +317,14 @@
 
 .construction-tag-inner:hover svg {
   animation: construction-paperclip-wiggle 520ms ease both;
+}
+
+.construction-tag-icon .construction-tag-inner:hover {
+  box-shadow: none;
+}
+
+.construction-tag-icon .construction-tag-inner:hover img {
+  animation: construction-paperclip-wiggle 680ms ease both;
 }
 
 .construction-intro-left,
@@ -344,53 +379,71 @@
 }
 
 .construction-tag-1 {
-  --tag-x: -285px;
-  --tag-mid-x: -150px;
-  --tag-y: 10px;
-  --tag-r: -48deg;
+  --tag-x: -430px;
+  --tag-mid-x: -210px;
+  --tag-y: 42px;
+  --tag-r: 8deg;
   --tag-start-r: 28deg;
 }
 .construction-tag-2 {
-  --tag-x: -90px;
-  --tag-mid-x: -38px;
-  --tag-y: 8px;
-  --tag-r: 16deg;
+  --tag-x: -95px;
+  --tag-mid-x: -45px;
+  --tag-y: 0px;
+  --tag-r: 15deg;
 }
 .construction-tag-3 {
-  --tag-x: 105px;
-  --tag-mid-x: 52px;
-  --tag-y: 18px;
-  --tag-r: 10deg;
+  --tag-x: 330px;
+  --tag-mid-x: 160px;
+  --tag-y: 30px;
+  --tag-r: 11deg;
 }
 .construction-tag-4 {
-  --tag-x: 75px;
-  --tag-mid-x: 38px;
-  --tag-y: 84px;
-  --tag-r: 14deg;
+  --tag-x: 150px;
+  --tag-mid-x: 75px;
+  --tag-y: 96px;
+  --tag-r: -13deg;
 }
 .construction-tag-5 {
-  --tag-x: -180px;
-  --tag-mid-x: -82px;
-  --tag-y: 118px;
-  --tag-r: 43deg;
+  --tag-x: -370px;
+  --tag-mid-x: -180px;
+  --tag-y: 142px;
+  --tag-r: 45deg;
 }
 .construction-tag-6 {
-  --tag-x: -60px;
-  --tag-mid-x: -26px;
-  --tag-y: 108px;
-  --tag-r: 14deg;
+  --tag-x: -100px;
+  --tag-mid-x: -45px;
+  --tag-y: 118px;
+  --tag-r: -32deg;
 }
 .construction-tag-7 {
-  --tag-x: 120px;
-  --tag-mid-x: 58px;
-  --tag-y: 114px;
-  --tag-r: -33deg;
+  --tag-x: 325px;
+  --tag-mid-x: 160px;
+  --tag-y: 140px;
+  --tag-r: -31deg;
 }
 .construction-tag-8 {
-  --tag-x: 15px;
-  --tag-mid-x: 8px;
-  --tag-y: 184px;
-  --tag-r: 14deg;
+  --tag-x: 55px;
+  --tag-mid-x: 25px;
+  --tag-y: 204px;
+  --tag-r: 13deg;
+}
+.construction-tag-9 {
+  --tag-x: 465px;
+  --tag-mid-x: 210px;
+  --tag-y: 198px;
+  --tag-r: 18deg;
+}
+.construction-tag-10 {
+  --tag-x: -150px;
+  --tag-mid-x: -70px;
+  --tag-y: 238px;
+  --tag-r: -12deg;
+}
+.construction-tag-11 {
+  --tag-x: 305px;
+  --tag-mid-x: 135px;
+  --tag-y: 262px;
+  --tag-r: -20deg;
 }
 
 @media (max-width: 640px) {
@@ -399,8 +452,8 @@
   }
 
   .construction-tags {
-    width: 360px;
-    height: 220px;
+    width: 390px;
+    height: 350px;
   }
 
   .construction-tag-inner {
@@ -409,57 +462,81 @@
     font-size: 0.62rem;
   }
 
+  .construction-tag-icon .construction-tag-inner {
+    width: 5.1rem;
+    height: 5.1rem;
+  }
+
   .construction-tag svg {
     width: 0.85rem;
     height: 0.85rem;
   }
+
   .construction-tag-1 {
-    --tag-x: -138px;
+    --tag-x: -142px;
     --tag-mid-x: -72px;
-    --tag-y: 4px;
-    --tag-r: -42deg;
+    --tag-y: 22px;
+    --tag-r: 8deg;
   }
   .construction-tag-2 {
     --tag-x: -28px;
     --tag-mid-x: -12px;
-    --tag-y: 6px;
-    --tag-r: 14deg;
+    --tag-y: 0px;
+    --tag-r: 15deg;
   }
   .construction-tag-3 {
-    --tag-x: 78px;
+    --tag-x: 74px;
     --tag-mid-x: 40px;
-    --tag-y: 10px;
-    --tag-r: 8deg;
+    --tag-y: 28px;
+    --tag-r: 10deg;
   }
   .construction-tag-4 {
-    --tag-x: 70px;
+    --tag-x: 62px;
     --tag-mid-x: 34px;
-    --tag-y: 58px;
-    --tag-r: 12deg;
+    --tag-y: 84px;
+    --tag-r: -12deg;
   }
   .construction-tag-5 {
-    --tag-x: -118px;
+    --tag-x: -130px;
     --tag-mid-x: -58px;
-    --tag-y: 76px;
-    --tag-r: 39deg;
+    --tag-y: 132px;
+    --tag-r: 44deg;
   }
   .construction-tag-6 {
-    --tag-x: -14px;
+    --tag-x: -30px;
     --tag-mid-x: -6px;
-    --tag-y: 88px;
-    --tag-r: 12deg;
+    --tag-y: 130px;
+    --tag-r: -31deg;
   }
   .construction-tag-7 {
     --tag-x: 88px;
     --tag-mid-x: 42px;
-    --tag-y: 104px;
+    --tag-y: 152px;
     --tag-r: -30deg;
   }
   .construction-tag-8 {
-    --tag-x: 8px;
+    --tag-x: -34px;
     --tag-mid-x: 4px;
-    --tag-y: 150px;
+    --tag-y: 212px;
     --tag-r: 12deg;
+  }
+  .construction-tag-9 {
+    --tag-x: 116px;
+    --tag-mid-x: 58px;
+    --tag-y: 216px;
+    --tag-r: 18deg;
+  }
+  .construction-tag-10 {
+    --tag-x: -118px;
+    --tag-mid-x: -56px;
+    --tag-y: 262px;
+    --tag-r: -12deg;
+  }
+  .construction-tag-11 {
+    --tag-x: 54px;
+    --tag-mid-x: 24px;
+    --tag-y: 292px;
+    --tag-r: -19deg;
   }
 }
 

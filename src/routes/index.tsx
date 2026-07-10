@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroObsidian from "@/assets/hero-obsidian.jpg";
 import portraitNuria from "@/assets/portrait-nuria-new.png";
+import apoloIcon from "@/assets/apolo.svg";
+import karmaIcon from "@/assets/karma.svg";
+import srtaIcon from "@/assets/srta.svg";
 import portraitFramer from "@/assets/nuria-framer.jpg";
 import postVibe from "@/assets/post-vibe.jpg";
 import postHabitat from "@/assets/post-habitat.jpg";
@@ -79,19 +82,32 @@ const faqs = [
 ];
 
 const constructionTags = [
-  ["Estrategia", "bg-[#ffc400]"],
-  ["Marca", "bg-[#49d8a1]"],
-  ["Sistemas", "bg-[#f3f3f3]"],
-  ["IA", "bg-[#c8f36c]"],
-  ["Branding", "bg-[#ff7848]"],
-  ["Producto", "bg-[#8dceff]"],
-  ["Dirección", "bg-[#f4b5dc]"],
-  ["Identidad", "bg-[#c6adff]"],
+  { kind: "pill", label: "Estrategia", color: "bg-[#ffc400]" },
+  {
+    kind: "icon",
+    label: "Apolo",
+    image: apoloIcon,
+    href: "https://universoapolo.com",
+  },
+  { kind: "pill", label: "Sistemas", color: "bg-[#f3f3f3]" },
+  { kind: "pill", label: "IA", color: "bg-[#c8f36c]" },
+  { kind: "pill", label: "Branding", color: "bg-[#ff7848]" },
+  { kind: "pill", label: "Marca", color: "bg-[#49d8a1]" },
+  { kind: "pill", label: "Dirección", color: "bg-[#f4b5dc]" },
+  { kind: "pill", label: "Identidad", color: "bg-[#c6adff]" },
+  { kind: "icon", label: "Srta Serifa", image: srtaIcon },
+  {
+    kind: "icon",
+    label: "Karma Financiero",
+    image: karmaIcon,
+    href: "https://karmafinanciero.com",
+  },
+  { kind: "pill", label: "Producto", color: "bg-[#8dceff]" },
 ] as const;
 
 function ConstructionPage() {
   return (
-    <main className="construction-page relative min-h-[100svh] overflow-hidden bg-[#f7f7f7] px-4 pb-[20rem] pt-[10.5rem] text-[#111] sm:px-0 sm:pb-[19rem] sm:pt-0">
+    <main className="construction-page relative min-h-[100svh] overflow-hidden bg-[#f7f7f7] px-4 pb-[24rem] pt-[10.5rem] text-[#111] sm:px-0 sm:pb-[28rem] sm:pt-0">
       <div className="construction-copy relative z-10 mx-auto flex w-full max-w-[1180px] flex-col items-center text-center sm:px-10 sm:pt-[25vh]">
         <div className="construction-intro flex items-center justify-center gap-3 text-[1.15rem] font-medium tracking-[-0.03em] text-black/70 sm:text-xl">
           <span className="construction-intro-left">Hola</span>
@@ -170,30 +186,49 @@ function ConstructionPage() {
       </div>
 
       <div
-        className="construction-tags absolute bottom-0 left-1/2 h-[270px] w-[620px] max-w-full -translate-x-1/2"
-        aria-hidden="true"
+        className="construction-tags absolute bottom-4 left-1/2 h-[430px] w-[1040px] max-w-full -translate-x-1/2"
       >
-        {constructionTags.map(([label, color], index) => (
+        {constructionTags.map((tag, index) => (
           <span
-            key={label}
-            className={`construction-tag construction-tag-${index + 1}`}
+            key={tag.label}
+            className={`construction-tag construction-tag-${index + 1} construction-tag-${tag.kind}`}
             style={{
               animationDelay: `${560 + index * 120}ms, ${2700 + index * 120}ms`,
             }}
           >
-            <span className={`construction-tag-inner ${color}`}>
-              <svg
-                viewBox="0 0 24 24"
-                className="size-5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="m16.5 6.5-7.9 7.9a3 3 0 0 0 4.2 4.2l8.6-8.6a5 5 0 0 0-7.1-7.1l-9.1 9.2a7 7 0 0 0 9.9 9.9l7.2-7.2" />
-              </svg>
-              {label}
+            <span className={`construction-tag-inner ${"color" in tag ? tag.color : ""}`}>
+              {tag.kind === "pill" ? (
+                <>
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="size-5"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="m16.5 6.5-7.9 7.9a3 3 0 0 0 4.2 4.2l8.6-8.6a5 5 0 0 0-7.1-7.1l-9.1 9.2a7 7 0 0 0 9.9 9.9l7.2-7.2" />
+                  </svg>
+                  {tag.label}
+                </>
+              ) : (
+                <>
+                  {"href" in tag ? (
+                    <a
+                      href={tag.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Ir a ${tag.label}`}
+                      className="construction-icon-link"
+                    >
+                      <img src={tag.image} alt="" draggable={false} />
+                    </a>
+                  ) : (
+                    <img src={tag.image} alt="" draggable={false} />
+                  )}
+                </>
+              )}
             </span>
           </span>
         ))}
