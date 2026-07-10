@@ -156,7 +156,7 @@ function ConstructionPage() {
           </li>
           <li>
             <a
-              href="https://www.instagram.com/srta.serifa/"
+              href="https://www.instagram.com/srtaserifa/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram de Srta Serifa"
@@ -528,7 +528,7 @@ export function Portfolio() {
             <p>srtaserifa@icloud.com · Barcelona</p>
             <div className="flex gap-6">
               <a href="https://www.linkedin.com/in/srtaserifa/">LinkedIn</a>
-              <a href="https://www.instagram.com/srtaserifa">Instagram</a>
+              <a href="https://www.instagram.com/srtaserifa/">Instagram</a>
               <a href="https://www.behance.net/srtaserifa">Behance</a>
             </div>
           </div>
