@@ -347,8 +347,25 @@ function FloatingBioMenu() {
             <h3>Destacado</h3>
             <p>Newsletter Note© (172 suscriptores)</p>
             <p>Mención workshop Figma.</p>
-            <p>Blind Words: 1º Premio Estatal Proyecto fin de Grado de Diseño Gráfico.</p>
-            <p>Premio al Proyecto Estudiante en Comunicación por Blind Words.</p>
+          </section>
+
+          <section className="bio-panel-section bio-feature-card">
+            <h3>Premios y reconocimientos</h3>
+            <p>
+              Blind Words: 1º Premio Estatal Proyecto fin de Grado de Diseño Gráfico,
+              Gaudeamus Proyecta.
+            </p>
+            <p>
+              Premio al Proyecto Estudiante en Comunicación por Blind Words, Asociación
+              Andaluza de Diseñadores.
+            </p>
+            <p>
+              Finalista en Premios Acento G y Premios Mestre por Proyecto fin de Grado.
+            </p>
+            <p>
+              Menciones en Favorite Design Book, Hightone, Selected Europe Book y medios de
+              diseño especializados.
+            </p>
           </section>
 
           <a className="bio-site-link" href="/" aria-label="Ir a srtaserifa.es">
