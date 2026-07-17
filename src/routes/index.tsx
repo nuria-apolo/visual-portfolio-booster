@@ -300,15 +300,16 @@ function FloatingBioMenu() {
           </header>
 
           <section className="bio-panel-section bio-panel-lede">
-            <p>Head of Design en Apolo, propulsora de marcas</p>
-            <p>Madrid y alrededores · Información de contacto</p>
+            <p>Head of Design en Apolo. Propulsora de Marcas</p>
+            <p>Madrid y alrededores · srtaserifa</p>
           </section>
 
           <section className="bio-panel-section">
             <h3>Bio</h3>
             <p>
-              Soy Núria López (1992). Lidero el equipo de diseño en Apolo… Concibo el
-              diseño como un dialecto entre lo que es y lo que podría ser.
+              Soy Núria López (1992). Lidero el equipo de diseño en Apolo. Creo que el
+              diseño debe ser ético, funcional, sostenible y estéticamente coherente.
+              Concibo el diseño como un dialecto entre lo que es y lo que podría ser.
             </p>
           </section>
 
@@ -320,13 +321,34 @@ function FloatingBioMenu() {
               <li>Producto digital</li>
               <li>Marca e identidad</li>
               <li>Dirección de Arte</li>
+              <li>Accesibilidad</li>
+              <li>Figma</li>
+              <li>Framer</li>
             </ul>
+          </section>
+
+          <section className="bio-panel-section">
+            <h3>Trayectoria</h3>
+            <p>
+              Experiencia en Apolo. Propulsora de Marcas, Karma Financiero y proyectos de
+              identidad, producto digital y comunicación visual.
+            </p>
+          </section>
+
+          <section className="bio-panel-section">
+            <h3>Formación y certificaciones</h3>
+            <p>
+              Escuela de Arte de Jerez. Formación en diseño gráfico, entornos digitales,
+              Framer, Figma para Makers y Claude Code.
+            </p>
           </section>
 
           <section className="bio-panel-section bio-feature-card">
             <h3>Destacado</h3>
             <p>Newsletter Note© (172 suscriptores)</p>
             <p>Mención workshop Figma.</p>
+            <p>Blind Words: 1º Premio Estatal Proyecto fin de Grado de Diseño Gráfico.</p>
+            <p>Premio al Proyecto Estudiante en Comunicación por Blind Words.</p>
           </section>
 
           <a className="bio-site-link" href="/" aria-label="Ir a srtaserifa.es">
