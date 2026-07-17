@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState, type CSSProperties } from "react";
 import heroObsidian from "@/assets/hero-obsidian.jpg";
 import portraitNuria from "@/assets/portrait-nuria-new.png";
 import apoloIcon from "@/assets/apolo.svg";
@@ -233,7 +234,107 @@ function ConstructionPage() {
           </span>
         ))}
       </div>
+
+      <FloatingBioMenu />
     </main>
+  );
+}
+
+const bioTitle = "Núria López";
+
+function FloatingBioMenu() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      <button
+        type="button"
+        className="bio-float-pill"
+        aria-label="Abrir biografía profesional"
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen(true)}
+      >
+        Bio
+      </button>
+
+      <div
+        className={`bio-panel-backdrop ${isOpen ? "is-open" : ""}`}
+        aria-hidden={!isOpen}
+        onClick={() => setIsOpen(false)}
+      />
+
+      <aside
+        className={`bio-panel ${isOpen ? "is-open" : ""}`}
+        aria-hidden={!isOpen}
+        aria-label="Biografía profesional de Núria López"
+      >
+        <button
+          type="button"
+          className="bio-panel-close"
+          aria-label="Cerrar biografía"
+          onClick={() => setIsOpen(false)}
+        >
+          ×
+        </button>
+
+        <div className="bio-panel-scroll">
+          <header className="bio-panel-header">
+            <p className="bio-panel-kicker">Biografía profesional</p>
+            <h2 className="bio-panel-title" aria-label={`${bioTitle} (srtaserifa)`}>
+              {bioTitle.split("").map((letter, index) => (
+                <span
+                  key={`${letter}-${index}`}
+                  style={{ "--bio-letter-index": index } as CSSProperties}
+                  aria-hidden="true"
+                >
+                  {letter === " " ? "\u00A0" : letter}
+                </span>
+              ))}
+              <span className="bio-verified" aria-label="Verificada" role="img">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9.6 16.7 5.7 12.8l1.45-1.45 2.45 2.45 7.25-7.25L18.3 8z" />
+                </svg>
+              </span>
+            </h2>
+            <p className="bio-panel-alias">(srtaserifa)</p>
+          </header>
+
+          <section className="bio-panel-section bio-panel-lede">
+            <p>Head of Design en Apolo, propulsora de marcas</p>
+            <p>Madrid y alrededores · Información de contacto</p>
+          </section>
+
+          <section className="bio-panel-section">
+            <h3>Bio</h3>
+            <p>
+              Soy Núria López (1992). Lidero el equipo de diseño en Apolo… Concibo el
+              diseño como un dialecto entre lo que es y lo que podría ser.
+            </p>
+          </section>
+
+          <section className="bio-panel-section">
+            <h3>Aptitudes</h3>
+            <ul className="bio-skill-list">
+              <li>Branding</li>
+              <li>No-code</li>
+              <li>Producto digital</li>
+              <li>Marca e identidad</li>
+              <li>Dirección de Arte</li>
+            </ul>
+          </section>
+
+          <section className="bio-panel-section bio-feature-card">
+            <h3>Destacado</h3>
+            <p>Newsletter Note© (172 suscriptores)</p>
+            <p>Mención workshop Figma.</p>
+          </section>
+
+          <a className="bio-site-link" href="/" aria-label="Ir a srtaserifa.es">
+            srtaserifa.es
+          </a>
+        </div>
+      </aside>
+    </>
   );
 }
 
