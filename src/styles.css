@@ -491,6 +491,12 @@
   --tag-y: 262px;
   --tag-r: -20deg;
 }
+.construction-tag-12 {
+  --tag-x: -455px;
+  --tag-mid-x: -210px;
+  --tag-y: 252px;
+  --tag-r: 7deg;
+}
 
 .bio-float-pill {
   position: fixed;
@@ -884,6 +890,12 @@
     --tag-mid-x: 24px;
     --tag-y: 292px;
     --tag-r: -19deg;
+  }
+  .construction-tag-12 {
+    --tag-x: -174px;
+    --tag-mid-x: -78px;
+    --tag-y: 224px;
+    --tag-r: 7deg;
   }
 
   .bio-float-pill {

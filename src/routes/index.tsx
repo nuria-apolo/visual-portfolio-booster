@@ -5,6 +5,7 @@ import portraitNuria from "@/assets/portrait-nuria-new.png";
 import apoloIcon from "@/assets/apolo.svg";
 import karmaIcon from "@/assets/karma.svg";
 import srtaIcon from "@/assets/srta.svg";
+import aprendeHistoriaArteIcon from "@/assets/aprende-historia-arte.png";
 import portraitFramer from "@/assets/nuria-framer.jpg";
 import postVibe from "@/assets/post-vibe.jpg";
 import postHabitat from "@/assets/post-habitat.jpg";
@@ -104,6 +105,12 @@ const constructionTags = [
     href: "https://karmafinanciero.com",
   },
   { kind: "pill", label: "Producto", color: "bg-[#8dceff]" },
+  {
+    kind: "icon",
+    label: "Aprende Historia del Arte",
+    image: aprendeHistoriaArteIcon,
+    href: "https://aprendehistoriadelarte.es",
+  },
 ] as const;
 
 function ConstructionPage() {
