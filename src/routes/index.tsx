@@ -11,10 +11,11 @@ import postVibe from "@/assets/post-vibe.jpg";
 import postHabitat from "@/assets/post-habitat.jpg";
 import postPortfolio from "@/assets/post-portfolio.jpg";
 import { projects } from "@/data/projects";
+import { SiteFooter } from "@/components/SiteFooter";
 
-const SITE_TITLE = "Srta Serifa — Portfolio en construcción";
+const SITE_TITLE = "Núria López — Synth Designer | Srta Serifa";
 const SITE_DESCRIPTION =
-  "El nuevo portfolio de Núria López, Srta Serifa, está en construcción. Diseño, táctica y producto desde Barcelona.";
+  "Núria López es Synth Designer. Trabaja entre diseño de producto, dirección creativa, tecnología e IA y desarrolla proyectos propios y publicaciones.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -24,11 +25,11 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "diseño gráfico, branding, tipografía, Head of Design, Apolo, portfolio diseñadora, MVP, producto digital, Núria López, Srta Serifa",
+          "Núria López, Srta Serifa, Synth Designer, diseño de producto, dirección creativa, tecnología, inteligencia artificial, proyectos propios, publicaciones",
       },
       { property: "og:title", content: SITE_TITLE },
       { property: "og:description", content: SITE_DESCRIPTION },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://srtaserifa.es/" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: heroObsidian },
       { name: "twitter:title", content: SITE_TITLE },
@@ -67,7 +68,7 @@ const posts = [
 const faqs = [
   {
     q: "¿Cómo impulso tu marca trabajando contigo en Apolo?",
-    a: "Como Head of Design en Apolo Propulsora de Marcas, integro diseño táctico, tipografía y producto digital para convertir identidades en motores de crecimiento. El resultado: marcas que venden más y conectan más profundo.",
+    a: "Como Synth Designer en Apolo Propulsora de Marcas, integro diseño, pensamiento y tecnología para convertir identidades y productos en experiencias que las personas entienden.",
   },
   {
     q: "¿En qué proyectos de Apolo participas directamente?",
@@ -115,7 +116,8 @@ const constructionTags = [
 
 function ConstructionPage() {
   return (
-    <main className="construction-page relative min-h-[100svh] overflow-hidden bg-[#f7f7f7] px-4 pb-[24rem] pt-[10.5rem] text-[#111] sm:px-0 sm:pb-[28rem] sm:pt-0">
+    <>
+      <main className="construction-page relative min-h-[100svh] overflow-hidden bg-[#f7f7f7] px-4 pb-[24rem] pt-[10.5rem] text-[#111] sm:px-0 sm:pb-[28rem] sm:pt-0">
       <div className="construction-copy relative z-10 mx-auto flex w-full max-w-[1180px] flex-col items-center text-center sm:px-10 sm:pt-[25vh]">
         <div className="construction-intro flex items-center justify-center gap-3 text-[1.15rem] font-medium tracking-[-0.03em] text-black/70 sm:text-xl">
           <span className="construction-intro-left">Hola</span>
@@ -242,10 +244,12 @@ function ConstructionPage() {
         ))}
       </div>
 
-      <FloatingBioMenu />
-    </main>
+      </main>
+      <SiteFooter variant="floating" />
+    </>
   );
 }
+
 
 const bioTitle = "Núria López";
 
@@ -307,7 +311,7 @@ function FloatingBioMenu() {
           </header>
 
           <section className="bio-panel-section bio-panel-lede">
-            <p>Head of Design en Apolo. Propulsora de Marcas</p>
+            <p>Synth Designer en Apolo. Propulsora de Marcas</p>
             <p>Madrid y alrededores · srtaserifa</p>
           </section>
 
@@ -435,7 +439,7 @@ export function Portfolio() {
                 <p>
                   <span className="font-semibold">Soy Núria López (1992).</span>
                   <br />
-                  <span className="text-black/50">Head of Design · Barcelona</span>
+                  <span className="text-black/50">Synth Designer · Barcelona</span>
                 </p>
               </div>
               <h1 className="mt-12 max-w-[1100px] text-[clamp(3.3rem,9vw,9rem)] font-medium leading-[0.84] tracking-[-0.08em]">
@@ -541,7 +545,7 @@ export function Portfolio() {
           <div className="min-h-[420px] overflow-hidden lg:min-h-[720px]">
             <img
               src={portraitFramer}
-              alt="Núria López, diseñadora y Head of Design"
+              alt="Núria López, Synth Designer"
               className="h-full w-full object-cover grayscale"
             />
           </div>
@@ -575,7 +579,7 @@ export function Portfolio() {
           </div>
         </section>
 
-        <section className="px-5 py-20 sm:px-10 lg:px-16 lg:py-28">
+        <section id="rol" className="px-5 py-20 sm:px-10 lg:px-16 lg:py-28">
           <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
             <div>
               <p className="text-xs uppercase tracking-[0.12em] text-black/45">Cómo puedo ayudar</p>
@@ -682,10 +686,7 @@ export function Portfolio() {
         </section>
       </main>
 
-      <footer className="flex flex-col gap-3 bg-[#171713] px-5 py-8 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-16">
-        <p>© 2026 Núria López · Srta Serifa</p>
-        <p>Diseñado con intención. Construido con curiosidad.</p>
-      </footer>
+      <SiteFooter variant="dark" />
     </div>
   );
 }

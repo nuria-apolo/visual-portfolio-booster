@@ -1,10 +1,7 @@
-<!-- LOVABLE:BEGIN -->
+<!-- PROJECT:BEGIN -->
 > [!IMPORTANT]
-> This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
-> published git history — force pushing, or rebasing/amending/squashing commits
-> that are already pushed — as it rewrites history on Lovable's side and the
-> user will likely lose their project history.
+> GitHub is the source of truth for this portfolio. Changes are made locally,
+> committed to `main`, pushed to GitHub, and deployed to Cloudflare Workers.
+> Do not rewrite published history with force-pushes, rebases, amend, or squash.
 >
-> Commits you push to the connected branch sync back to Lovable and show up in
-> the editor, so keep the branch in a working state.
-<!-- LOVABLE:END -->
+<!-- PROJECT:END -->

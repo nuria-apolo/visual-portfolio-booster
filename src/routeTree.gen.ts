@@ -9,14 +9,39 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SobreMiRouteImport } from './routes/sobre-mi'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as RolRouteImport } from './routes/rol'
+import { Route as PublicacionesRouteImport } from './routes/publicaciones'
 import { Route as ProyectosRouteImport } from './routes/proyectos'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
+import { Route as LegalRouteImport } from './routes/legal'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PublicacionesIndexRouteImport } from './routes/publicaciones.index'
+import { Route as ProyectosIndexRouteImport } from './routes/proyectos.index'
+import { Route as PublicacionesTreintaMililitrosRouteImport } from './routes/publicaciones.treinta-mililitros'
+import { Route as ProyectosKarmaFinancieroRouteImport } from './routes/proyectos.karma-financiero'
+import { Route as ProyectosBlindWordsRouteImport } from './routes/proyectos.blind-words'
+import { Route as ProyectosAprendeHistoriaDelArteRouteImport } from './routes/proyectos.aprende-historia-del-arte'
 
+const SobreMiRoute = SobreMiRouteImport.update({
+  id: '/sobre-mi',
+  path: '/sobre-mi',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RolRoute = RolRouteImport.update({
+  id: '/rol',
+  path: '/rol',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PublicacionesRoute = PublicacionesRouteImport.update({
+  id: '/publicaciones',
+  path: '/publicaciones',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProyectosRoute = ProyectosRouteImport.update({
@@ -29,53 +54,185 @@ const PortfolioRoute = PortfolioRouteImport.update({
   path: '/portfolio',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LegalRoute = LegalRouteImport.update({
+  id: '/legal',
+  path: '/legal',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PublicacionesIndexRoute = PublicacionesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => PublicacionesRoute,
+} as any)
+const ProyectosIndexRoute = ProyectosIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ProyectosRoute,
+} as any)
+const PublicacionesTreintaMililitrosRoute =
+  PublicacionesTreintaMililitrosRouteImport.update({
+    id: '/treinta-mililitros',
+    path: '/treinta-mililitros',
+    getParentRoute: () => PublicacionesRoute,
+  } as any)
+const ProyectosKarmaFinancieroRoute =
+  ProyectosKarmaFinancieroRouteImport.update({
+    id: '/karma-financiero',
+    path: '/karma-financiero',
+    getParentRoute: () => ProyectosRoute,
+  } as any)
+const ProyectosBlindWordsRoute = ProyectosBlindWordsRouteImport.update({
+  id: '/blind-words',
+  path: '/blind-words',
+  getParentRoute: () => ProyectosRoute,
+} as any)
+const ProyectosAprendeHistoriaDelArteRoute =
+  ProyectosAprendeHistoriaDelArteRouteImport.update({
+    id: '/aprende-historia-del-arte',
+    path: '/aprende-historia-del-arte',
+    getParentRoute: () => ProyectosRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/legal': typeof LegalRoute
   '/portfolio': typeof PortfolioRoute
-  '/proyectos': typeof ProyectosRoute
+  '/proyectos': typeof ProyectosRouteWithChildren
+  '/publicaciones': typeof PublicacionesRouteWithChildren
+  '/rol': typeof RolRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sobre-mi': typeof SobreMiRoute
+  '/proyectos/aprende-historia-del-arte': typeof ProyectosAprendeHistoriaDelArteRoute
+  '/proyectos/blind-words': typeof ProyectosBlindWordsRoute
+  '/proyectos/karma-financiero': typeof ProyectosKarmaFinancieroRoute
+  '/publicaciones/treinta-mililitros': typeof PublicacionesTreintaMililitrosRoute
+  '/proyectos/': typeof ProyectosIndexRoute
+  '/publicaciones/': typeof PublicacionesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/legal': typeof LegalRoute
   '/portfolio': typeof PortfolioRoute
-  '/proyectos': typeof ProyectosRoute
+  '/rol': typeof RolRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sobre-mi': typeof SobreMiRoute
+  '/proyectos/aprende-historia-del-arte': typeof ProyectosAprendeHistoriaDelArteRoute
+  '/proyectos/blind-words': typeof ProyectosBlindWordsRoute
+  '/proyectos/karma-financiero': typeof ProyectosKarmaFinancieroRoute
+  '/publicaciones/treinta-mililitros': typeof PublicacionesTreintaMililitrosRoute
+  '/proyectos': typeof ProyectosIndexRoute
+  '/publicaciones': typeof PublicacionesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/legal': typeof LegalRoute
   '/portfolio': typeof PortfolioRoute
-  '/proyectos': typeof ProyectosRoute
+  '/proyectos': typeof ProyectosRouteWithChildren
+  '/publicaciones': typeof PublicacionesRouteWithChildren
+  '/rol': typeof RolRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sobre-mi': typeof SobreMiRoute
+  '/proyectos/aprende-historia-del-arte': typeof ProyectosAprendeHistoriaDelArteRoute
+  '/proyectos/blind-words': typeof ProyectosBlindWordsRoute
+  '/proyectos/karma-financiero': typeof ProyectosKarmaFinancieroRoute
+  '/publicaciones/treinta-mililitros': typeof PublicacionesTreintaMililitrosRoute
+  '/proyectos/': typeof ProyectosIndexRoute
+  '/publicaciones/': typeof PublicacionesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/portfolio' | '/proyectos' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/legal'
+    | '/portfolio'
+    | '/proyectos'
+    | '/publicaciones'
+    | '/rol'
+    | '/sitemap.xml'
+    | '/sobre-mi'
+    | '/proyectos/aprende-historia-del-arte'
+    | '/proyectos/blind-words'
+    | '/proyectos/karma-financiero'
+    | '/publicaciones/treinta-mililitros'
+    | '/proyectos/'
+    | '/publicaciones/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/portfolio' | '/proyectos' | '/sitemap.xml'
-  id: '__root__' | '/' | '/portfolio' | '/proyectos' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/legal'
+    | '/portfolio'
+    | '/rol'
+    | '/sitemap.xml'
+    | '/sobre-mi'
+    | '/proyectos/aprende-historia-del-arte'
+    | '/proyectos/blind-words'
+    | '/proyectos/karma-financiero'
+    | '/publicaciones/treinta-mililitros'
+    | '/proyectos'
+    | '/publicaciones'
+  id:
+    | '__root__'
+    | '/'
+    | '/legal'
+    | '/portfolio'
+    | '/proyectos'
+    | '/publicaciones'
+    | '/rol'
+    | '/sitemap.xml'
+    | '/sobre-mi'
+    | '/proyectos/aprende-historia-del-arte'
+    | '/proyectos/blind-words'
+    | '/proyectos/karma-financiero'
+    | '/publicaciones/treinta-mililitros'
+    | '/proyectos/'
+    | '/publicaciones/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LegalRoute: typeof LegalRoute
   PortfolioRoute: typeof PortfolioRoute
-  ProyectosRoute: typeof ProyectosRoute
+  ProyectosRoute: typeof ProyectosRouteWithChildren
+  PublicacionesRoute: typeof PublicacionesRouteWithChildren
+  RolRoute: typeof RolRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SobreMiRoute: typeof SobreMiRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sobre-mi': {
+      id: '/sobre-mi'
+      path: '/sobre-mi'
+      fullPath: '/sobre-mi'
+      preLoaderRoute: typeof SobreMiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rol': {
+      id: '/rol'
+      path: '/rol'
+      fullPath: '/rol'
+      preLoaderRoute: typeof RolRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/publicaciones': {
+      id: '/publicaciones'
+      path: '/publicaciones'
+      fullPath: '/publicaciones'
+      preLoaderRoute: typeof PublicacionesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/proyectos': {
@@ -92,6 +249,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/legal': {
+      id: '/legal'
+      path: '/legal'
+      fullPath: '/legal'
+      preLoaderRoute: typeof LegalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -99,15 +263,103 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/publicaciones/': {
+      id: '/publicaciones/'
+      path: '/'
+      fullPath: '/publicaciones/'
+      preLoaderRoute: typeof PublicacionesIndexRouteImport
+      parentRoute: typeof PublicacionesRoute
+    }
+    '/proyectos/': {
+      id: '/proyectos/'
+      path: '/'
+      fullPath: '/proyectos/'
+      preLoaderRoute: typeof ProyectosIndexRouteImport
+      parentRoute: typeof ProyectosRoute
+    }
+    '/publicaciones/treinta-mililitros': {
+      id: '/publicaciones/treinta-mililitros'
+      path: '/treinta-mililitros'
+      fullPath: '/publicaciones/treinta-mililitros'
+      preLoaderRoute: typeof PublicacionesTreintaMililitrosRouteImport
+      parentRoute: typeof PublicacionesRoute
+    }
+    '/proyectos/karma-financiero': {
+      id: '/proyectos/karma-financiero'
+      path: '/karma-financiero'
+      fullPath: '/proyectos/karma-financiero'
+      preLoaderRoute: typeof ProyectosKarmaFinancieroRouteImport
+      parentRoute: typeof ProyectosRoute
+    }
+    '/proyectos/blind-words': {
+      id: '/proyectos/blind-words'
+      path: '/blind-words'
+      fullPath: '/proyectos/blind-words'
+      preLoaderRoute: typeof ProyectosBlindWordsRouteImport
+      parentRoute: typeof ProyectosRoute
+    }
+    '/proyectos/aprende-historia-del-arte': {
+      id: '/proyectos/aprende-historia-del-arte'
+      path: '/aprende-historia-del-arte'
+      fullPath: '/proyectos/aprende-historia-del-arte'
+      preLoaderRoute: typeof ProyectosAprendeHistoriaDelArteRouteImport
+      parentRoute: typeof ProyectosRoute
+    }
   }
 }
 
+interface ProyectosRouteChildren {
+  ProyectosAprendeHistoriaDelArteRoute: typeof ProyectosAprendeHistoriaDelArteRoute
+  ProyectosBlindWordsRoute: typeof ProyectosBlindWordsRoute
+  ProyectosKarmaFinancieroRoute: typeof ProyectosKarmaFinancieroRoute
+  ProyectosIndexRoute: typeof ProyectosIndexRoute
+}
+
+const ProyectosRouteChildren: ProyectosRouteChildren = {
+  ProyectosAprendeHistoriaDelArteRoute: ProyectosAprendeHistoriaDelArteRoute,
+  ProyectosBlindWordsRoute: ProyectosBlindWordsRoute,
+  ProyectosKarmaFinancieroRoute: ProyectosKarmaFinancieroRoute,
+  ProyectosIndexRoute: ProyectosIndexRoute,
+}
+
+const ProyectosRouteWithChildren = ProyectosRoute._addFileChildren(
+  ProyectosRouteChildren,
+)
+
+interface PublicacionesRouteChildren {
+  PublicacionesTreintaMililitrosRoute: typeof PublicacionesTreintaMililitrosRoute
+  PublicacionesIndexRoute: typeof PublicacionesIndexRoute
+}
+
+const PublicacionesRouteChildren: PublicacionesRouteChildren = {
+  PublicacionesTreintaMililitrosRoute: PublicacionesTreintaMililitrosRoute,
+  PublicacionesIndexRoute: PublicacionesIndexRoute,
+}
+
+const PublicacionesRouteWithChildren = PublicacionesRoute._addFileChildren(
+  PublicacionesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LegalRoute: LegalRoute,
   PortfolioRoute: PortfolioRoute,
-  ProyectosRoute: ProyectosRoute,
+  ProyectosRoute: ProyectosRouteWithChildren,
+  PublicacionesRoute: PublicacionesRouteWithChildren,
+  RolRoute: RolRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SobreMiRoute: SobreMiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

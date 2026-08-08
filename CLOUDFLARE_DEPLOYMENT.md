@@ -6,7 +6,7 @@ Este proyecto se despliega como Cloudflare Worker con assets estáticos generado
 
 1. Los cambios se hacen en este repo local.
 2. Se suben a `main` en GitHub.
-3. GitHub Actions ejecuta `pnpm run build`.
+3. GitHub Actions ejecuta `bun install --frozen-lockfile` y `bun run build`.
 4. Wrangler despliega la salida generada en `.output/server` como Worker `srtaserifa`.
 
 ## Secretos necesarios en GitHub
@@ -21,9 +21,10 @@ El token necesita permisos de edición para Workers en la cuenta de Cloudflare.
 ## Comandos locales
 
 ```bash
-pnpm run build
-pnpm run preview:cloudflare
-pnpm run deploy:cloudflare
+bun install --frozen-lockfile
+bun run build
+bun run preview:cloudflare
+bun run deploy:cloudflare
 ```
 
 ## Dominio

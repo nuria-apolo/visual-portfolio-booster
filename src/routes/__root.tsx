@@ -7,29 +7,24 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SiteFooter } from "@/components/SiteFooter";
+import { FloatingSiteMenu } from "@/components/FloatingSiteMenu";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
-        </div>
+    <div className="not-found-page">
+      <div className="not-found-content">
+        <p className="not-found-kicker">Error 404</p>
+        <h1>Esta página se ha ido por otro dialecto.</h1>
+        <p>El enlace que buscas no existe o ya no está disponible.</p>
+        <Link to="/" className="not-found-link">
+          Volver a la Home ↗
+        </Link>
       </div>
+      <SiteFooter variant="floating" />
     </div>
   );
 }
@@ -37,9 +32,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -56,13 +48,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
             Try again
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+            className="inline-flex items-center justify-center rounded-full border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
             Go home
           </a>
@@ -83,14 +75,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "es_ES" },
       { name: "twitter:card", content: "summary_large_image" },
-      { title: "Nuria López * Brand & Product Designer" },
-      { property: "og:title", content: "Nuria López * Brand & Product Designer" },
-      { name: "twitter:title", content: "Nuria López * Brand & Product Designer" },
-      { name: "description", content: "El diseño es traducción. Ayudo a empresas a convertir ideas complejas en marcas, productos digitales y experiencias con IA que las personas entienden." },
-      { property: "og:description", content: "El diseño es traducción. Ayudo a empresas a convertir ideas complejas en marcas, productos digitales y experiencias con IA que las personas entienden." },
-      { name: "twitter:description", content: "El diseño es traducción. Ayudo a empresas a convertir ideas complejas en marcas, productos digitales y experiencias con IA que las personas entienden." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/5IvkhVTXJRYr4ehkdb9FHFXqhVE2/social-images/social-1783085051836-Captura_de_pantalla_2026-07-03_a_las_14.21.44.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/5IvkhVTXJRYr4ehkdb9FHFXqhVE2/social-images/social-1783085051836-Captura_de_pantalla_2026-07-03_a_las_14.21.44.webp" },
+      { title: "Núria López — Synth Designer | Srta Serifa" },
+      { property: "og:title", content: "Núria López — Synth Designer | Srta Serifa" },
+      { name: "twitter:title", content: "Núria López — Synth Designer | Srta Serifa" },
+      {
+        name: "description",
+        content:
+          "Núria López es Synth Designer. Trabaja entre diseño de producto, dirección creativa, tecnología e IA y desarrolla proyectos propios y publicaciones.",
+      },
+      {
+        property: "og:description",
+        content:
+          "Núria López es Synth Designer. Trabaja entre diseño de producto, dirección creativa, tecnología e IA y desarrolla proyectos propios y publicaciones.",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Núria López es Synth Designer. Trabaja entre diseño de producto, dirección creativa, tecnología e IA y desarrolla proyectos propios y publicaciones.",
+      },
       { name: "google-site-verification", content: "6tOVrCdlYPO3j39nKHcN0NQTDFk8HxaTBgDzFH1NW1A" },
     ],
     links: [
@@ -110,13 +112,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "Person",
           name: "Núria López",
           alternateName: "Srta Serifa",
-          jobTitle: "Head of Design",
+          jobTitle: "Synth Designer",
           worksFor: { "@type": "Organization", name: "Apolo — Propulsora de Marcas" },
-          url: "/",
+          url: "https://srtaserifa.es/",
           sameAs: [
             "https://www.instagram.com/srtaserifa/",
             "https://www.linkedin.com/in/srtaserifa/",
-            "https://www.behance.net/srtaserifa",
+            "https://x.com/srtaserifa",
           ],
         }),
       },
@@ -149,6 +151,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <FloatingSiteMenu />
     </QueryClientProvider>
   );
 }
