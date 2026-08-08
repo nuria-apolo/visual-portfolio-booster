@@ -140,7 +140,7 @@ function ConstructionPage() {
           en algo que las personas pueden entender, usar y hacer suyo. Y yo me encargo de hacerlo
           realidad ;){" "}
           <a
-            href="mailto:srtaserifa@icloud.es"
+            href="mailto:srtaserifa@icloud.com"
             className="font-medium text-black underline decoration-black/30 underline-offset-4 transition hover:decoration-black"
           >
             Escríbeme aquí
@@ -415,7 +415,7 @@ export function Portfolio() {
           </li>
         </ul>
         <a
-          href="mailto:srtaserifa@icloud.es"
+          href="mailto:srtaserifa@icloud.com"
           className="rounded-full border border-black/20 px-4 py-2 text-xs font-semibold transition hover:bg-black hover:text-white"
         >
           Hablemos ↗
@@ -666,13 +666,13 @@ export function Portfolio() {
             ¿Tienes algo entre manos?
           </p>
           <a
-            href="mailto:srtaserifa@icloud.es"
+            href="mailto:srtaserifa@icloud.com"
             className="mt-12 block border-y border-black/30 py-10 text-[clamp(3.2rem,9vw,9rem)] font-medium leading-[0.9] tracking-[-0.075em] transition hover:pl-4"
           >
             Hablemos<span className="font-display font-normal">.</span> ↗
           </a>
           <div className="mt-8 flex flex-col gap-5 text-sm sm:flex-row sm:items-center sm:justify-between">
-            <p>srtaserifa@icloud.es · Barcelona</p>
+            <p>srtaserifa@icloud.com · Barcelona</p>
             <div className="flex gap-6">
               <a href="https://www.linkedin.com/in/srtaserifa/">LinkedIn</a>
               <a href="https://www.instagram.com/srtaserifa/">Instagram</a>
