@@ -118,10 +118,10 @@ function ProjectsPage() {
               El siguiente proyecto puede ser el tuyo.
             </h2>
             <a
-              href="mailto:srtaserifa@icloud.com"
+              href="mailto:srtaserifa@icloud.es"
               className="mt-9 inline-flex rounded-xl bg-white px-6 py-3.5 text-sm font-medium text-black"
             >
-              srtaserifa@icloud.com ↗
+              srtaserifa@icloud.es ↗
             </a>
           </section>
         </main>
