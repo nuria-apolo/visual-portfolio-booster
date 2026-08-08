@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import projectBlindwords from "@/assets/blindwords-framer.png";
 import projectBlindwordsDetail1 from "@/assets/blindwords-detail-1.png";
 import projectBlindwordsDetail2 from "@/assets/blindwords-detail-2.png";
+import karmaApp from "@/assets/karma-app.png";
+import aprendeHistoriaArteProject from "@/assets/aprende-historia-arte-project.png";
 import { ProjectCaseStudy } from "@/components/ProjectCaseStudy";
 import { projects } from "@/data/projects";
 
@@ -34,6 +36,20 @@ function BlindWordsPage() {
       }
       heroImage={blindWordsProject?.image ?? projectBlindwords}
       heroAlt={blindWordsProject?.alt ?? "Espécimen tipográfico de Blind Words"}
+      relatedProjects={[
+        {
+          title: "Karma Financiero",
+          href: "/proyectos/karma-financiero",
+          image: karmaApp,
+          alt: "Pantalla de acceso de Karma Financiero",
+        },
+        {
+          title: "Aprende Historia del Arte",
+          href: "/proyectos/aprende-historia-del-arte",
+          image: aprendeHistoriaArteProject,
+          alt: "Collage de esculturas clásicas con gafas de sol y una escena pictórica central",
+        },
+      ]}
       pending
       sections={[
         {

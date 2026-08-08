@@ -26,6 +26,12 @@ export type ProjectCaseStudyProps = {
   heroImage: string;
   heroAlt: string;
   sections: CaseStudySection[];
+  relatedProjects: Array<{
+    title: string;
+    href: string;
+    image: string;
+    alt: string;
+  }>;
   pending?: boolean;
 };
 
@@ -37,6 +43,7 @@ export function ProjectCaseStudy({
   heroImage,
   heroAlt,
   sections,
+  relatedProjects,
   pending = false,
 }: ProjectCaseStudyProps) {
   return (
@@ -111,6 +118,19 @@ export function ProjectCaseStudy({
         </div>
 
         <div className="case-study-footer-link">
+          <section className="case-study-related" aria-labelledby="case-study-related-title">
+            <h2 id="case-study-related-title">Otros proyectos</h2>
+            <div className="case-study-related-grid">
+              {relatedProjects.map((project) => (
+                <a className="case-study-related-card" href={project.href} key={project.href}>
+                  <span className="case-study-related-media">
+                    <img src={project.image} alt={project.alt} loading="lazy" />
+                  </span>
+                  <h3>{project.title}</h3>
+                </a>
+              ))}
+            </div>
+          </section>
           <a href="/proyectos" className="project-button">
             Volver a proyectos <span aria-hidden="true">↗</span>
           </a>

@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import karmaApp from "@/assets/karma-app.png";
+import aprendeHistoriaArteProject from "@/assets/aprende-historia-arte-project.png";
+import blindWordsImage from "@/assets/blindwords-framer.png";
 import { ProjectCaseStudy } from "@/components/ProjectCaseStudy";
 
 export const Route = createFileRoute("/proyectos/karma-financiero")({
@@ -26,6 +28,20 @@ function KarmaFinancieroPage() {
       intro="Una plataforma para gestionar dinero entre personas sin convertir cada conversación sobre gastos en una pequeña auditoría."
       heroImage={karmaApp}
       heroAlt="Pantalla de acceso de Karma Financiero con una propuesta para gestionar el dinero compartido"
+      relatedProjects={[
+        {
+          title: "Aprende Historia del Arte",
+          href: "/proyectos/aprende-historia-del-arte",
+          image: aprendeHistoriaArteProject,
+          alt: "Collage de esculturas clásicas con gafas de sol y una escena pictórica central",
+        },
+        {
+          title: "Blind Words",
+          href: "/proyectos/blind-words",
+          image: blindWordsImage,
+          alt: "Espécimen tipográfico de Blind Words con letras blancas y puntos Braille",
+        },
+      ]}
       sections={[
         {
           id: "intro",
