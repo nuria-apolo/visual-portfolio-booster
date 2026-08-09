@@ -115,12 +115,13 @@ function BlindWordsCitizenPage() {
                 />
               ) : (
                 <div className="citizen-article-video-placeholder">
-                  <p>
-                    Este vídeo se carga desde YouTube y puede utilizar cookies de terceros.
-                  </p>
-                  <button type="button" onClick={() => setVideoRequested(true)}>
-                    Cargar vídeo ↗
-                  </button>
+                  <img src="/video-posters/citizen-braille-nails.png" alt="" loading="lazy" />
+                  <button
+                    type="button"
+                    onClick={() => setVideoRequested(true)}
+                    aria-label="Ver vídeo de la campaña de Citizen con Blind Words"
+                  />
+                  <p>Al cargarlo, YouTube puede utilizar cookies de terceros.</p>
                 </div>
               )}
             </div>
