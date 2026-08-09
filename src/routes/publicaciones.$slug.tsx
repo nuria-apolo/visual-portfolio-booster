@@ -101,17 +101,19 @@ function ArticlePage() {
     <div className="editorial-page">
       <main>
         <article className="article-page">
-          <nav className="book-breadcrumbs article-breadcrumbs" aria-label="Migas de pan">
-            <a href="/">Inicio</a>
-            <span aria-hidden="true">/</span>
-            <a href="/publicaciones">Publicaciones</a>
-            <span aria-hidden="true">/</span>
-            <span aria-current="page">{article.title}</span>
-          </nav>
           <header className="article-hero">
-            <p className="editorial-kicker">
-              {article.category} · {article.readingTime}
-            </p>
+            <div className="article-meta">
+              <p className="editorial-kicker">
+                {article.category} · {article.readingTime}
+              </p>
+              <nav className="book-breadcrumbs article-breadcrumbs" aria-label="Migas de pan">
+                <a href="/">Inicio</a>
+                <span aria-hidden="true">/</span>
+                <a href="/publicaciones">Publicaciones</a>
+                <span aria-hidden="true">/</span>
+                <span aria-current="page">{article.title}</span>
+              </nav>
+            </div>
             <h1>{article.title}</h1>
             <p className="article-excerpt">{article.excerpt}</p>
             <p className="article-byline">Por Núria López · 9 de agosto de 2026</p>
@@ -141,8 +143,8 @@ function ArticlePage() {
             <aside className="article-aside" aria-label="Sobre este artículo">
               <p className="editorial-kicker">En esta nota</p>
               <p>{article.description}</p>
-              <a className="editorial-link" href="/rol">
-                Ver servicios de diseño ↗
+              <a className="project-button article-aside-button" href="/rol">
+                Ver servicios de diseño <span aria-hidden="true">↗</span>
               </a>
             </aside>
           </div>
