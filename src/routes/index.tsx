@@ -13,9 +13,9 @@ import postPortfolio from "@/assets/post-portfolio.jpg";
 import { projects } from "@/data/projects";
 import { SiteFooter } from "@/components/SiteFooter";
 
-const SITE_TITLE = "Núria López — Synth Designer | Srta Serifa";
+const SITE_TITLE = "Núria López — Brand Systems + Digital Products | Srtaserifa";
 const SITE_DESCRIPTION =
-  "Núria López es Synth Designer. Trabaja entre diseño de producto, dirección creativa, tecnología e IA y desarrolla proyectos propios y publicaciones.";
+  "Portfolio de Núria López, Head of Design en Apolo. Brand systems, identidad, estrategia y diseño de productos digitales.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

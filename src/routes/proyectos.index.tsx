@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useRef } from "react";
 import apoloIcon from "@/assets/apolo.svg";
 import karmaIcon from "@/assets/karma.svg";
 import srtaIcon from "@/assets/srta.svg";
 import aprendeHistoriaArteIcon from "@/assets/aprende-historia-arte.png";
-import aprendeHistoriaArteProject from "@/assets/aprende-historia-arte-project.png";
+import aprendeHistoriaArteInterface from "@/assets/aprende-historia-arte-interface.png";
 import karmaApp from "@/assets/karma-app.png";
 import { projects } from "@/data/projects";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -58,7 +59,7 @@ const personalProjects: PersonalProject[] = [
   {
     num: "02",
     title: "Aprende Historia del Arte",
-    category: "Educación · Cultura · Producto digital",
+    category: "Producto digital · Aprendizaje",
     copy: [
       "Una plataforma gratuita para aprender Historia del Arte de una forma más clara, cercana y fácil de explorar.",
       "El proyecto nace de una pregunta bastante sencilla: ¿cómo diseñar una experiencia digital que invite a aprender sin parecer un libro de texto trasladado a una pantalla?",
@@ -66,8 +67,8 @@ const personalProjects: PersonalProject[] = [
     ],
     state: "Activo",
     href: "/proyectos/aprende-historia-del-arte",
-    image: aprendeHistoriaArteProject,
-    alt: "Collage de esculturas clásicas con gafas de sol y una escena pictórica central",
+    image: aprendeHistoriaArteInterface,
+    alt: "Interfaz de Aprende Historia del Arte con una pregunta sobre arte y una respuesta clara",
   },
   blindWordsProject
     ? {
@@ -108,6 +109,12 @@ export const Route = createFileRoute("/proyectos/")({
 });
 
 function ProjectsPage() {
+  const projectsRailRef = useRef<HTMLDivElement>(null);
+
+  const moveProjects = (direction: number) => {
+    projectsRailRef.current?.scrollBy({ left: direction * projectsRailRef.current.clientWidth * 0.62, behavior: "smooth" });
+  };
+
   return (
     <div className="projects-page">
       <div className="projects-shell">
@@ -158,22 +165,31 @@ function ProjectsPage() {
                 Productos, plataformas y experimentos que construyo para explorar una idea, entender
                 un problema o comprobar si algo que tengo en la cabeza puede existir de verdad.
               </p>
-              <p className="projects-hero-note">
-                No todos están terminados. Algunos probablemente nunca lo estén.
-              </p>
             </div>
           </header>
 
           <section aria-label="Todos los proyectos" className="projects-grid-section">
-            <div className="projects-project-stack">
+            <div className="projects-gallery-heading">
+              <h2>PLAYGROUND</h2>
+              <div className="projects-gallery-controls" aria-label="Navegar por proyectos">
+                <button type="button" onClick={() => moveProjects(-1)} aria-label="Proyectos anteriores">
+                  <span aria-hidden="true">←</span>
+                </button>
+                <button type="button" onClick={() => moveProjects(1)} aria-label="Proyectos siguientes">
+                  <span aria-hidden="true">→</span>
+                </button>
+              </div>
+            </div>
+            <div className="projects-project-stack" ref={projectsRailRef}>
               {personalProjects.map((project, index) => (
                 <article
                   key={project.num}
+                  id={`proyecto-${project.num}`}
                   className={`projects-project-card ${index === 0 ? "projects-project-card-featured" : ""}`}
                 >
                   <a
                     href={project.href}
-                    className={`projects-project-media group ${project.isIcon ? "project-icon-media" : ""} ${project.title === "Karma Financiero" ? "project-karma-media" : ""}`}
+                    className={`projects-project-media group ${project.isIcon ? "project-icon-media" : ""} ${project.title === "Karma Financiero" ? "project-karma-media" : ""} ${project.title === "Aprende Historia del Arte" ? "project-aprende-media" : ""} ${project.title === "Blind Words" ? "project-blind-media" : ""}`}
                     aria-label={`Ver proyecto: ${project.title}`}
                   >
                     <img
@@ -181,11 +197,10 @@ function ProjectsPage() {
                       alt={project.alt}
                       loading={index === 0 ? "eager" : "lazy"}
                     />
-                    {index !== 0 && <span className="project-media-label">{project.category}</span>}
                   </a>
                   <div className="projects-project-copy">
                     <span className="project-eyebrow">
-                      {index === 0 ? project.category : `${project.num} · ${project.state}`}
+                      {project.category}
                     </span>
                     <h2>{project.title}</h2>
                     <div className="project-featured-description">
@@ -194,7 +209,7 @@ function ProjectsPage() {
                       ))}
                     </div>
                     <a href={project.href} className="project-button">
-                      Ver proyecto <span aria-hidden="true">↗</span>
+                      VER PROYECTO <span aria-hidden="true">↗</span>
                     </a>
                   </div>
                 </article>

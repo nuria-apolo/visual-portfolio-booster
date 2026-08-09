@@ -13,9 +13,9 @@ import perplexityIcon from "@/assets/perplexity-badge.png";
 import affinityIcon from "@/assets/affinity-badge.png";
 import { SiteFooter } from "@/components/SiteFooter";
 
-const TITLE = "Sobre mí — Núria López · Srta Serifa";
+const TITLE = "Sobre mi — Brand Systems + Digital Products | Srtaserifa";
 const DESCRIPTION =
-  "Conoce a Núria López, Srta Serifa: una diseñadora que trabaja entre producto, dirección creativa, tecnología, IA y proyectos editoriales propios.";
+  "Conoce a Núria López, Head of Design en Apolo y creadora de Srtaserifa. Su trabajo conecta estrategia, sistemas de marca, identidad y diseño de productos digitales.";
 
 export const Route = createFileRoute("/sobre-mi")({
   head: () => ({
@@ -26,8 +26,48 @@ export const Route = createFileRoute("/sobre-mi")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: "https://srtaserifa.es/sobre-mi" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
     ],
     links: [{ rel: "canonical", href: "https://srtaserifa.es/sobre-mi" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
+          name: TITLE,
+          description: DESCRIPTION,
+          url: "https://srtaserifa.es/sobre-mi",
+          mainEntity: {
+            "@type": "Person",
+            "@id": "https://srtaserifa.es/sobre-mi#nuria-lopez",
+            name: "Núria López",
+            alternateName: "Srtaserifa",
+            url: "https://srtaserifa.es/sobre-mi",
+            jobTitle: "Head of Design",
+            worksFor: {
+              "@type": "Organization",
+              name: "Apolo",
+              url: "https://universoapolo.com",
+            },
+            knowsAbout: [
+              "Brand Systems",
+              "Product Design",
+              "Brand Identity",
+              "UX/UI",
+              "Design Systems",
+              "Creative Direction",
+            ],
+            sameAs: [
+              "https://www.linkedin.com/in/srtaserifa/",
+              "https://www.instagram.com/srtaserifa/",
+              "https://x.com/srtaserifa",
+            ],
+          },
+        }),
+      },
+    ],
   }),
   component: AboutPage,
 });

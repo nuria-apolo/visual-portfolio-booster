@@ -29,7 +29,7 @@ export function SiteFooter({ variant = "light" }: SiteFooterProps) {
           <a href="/" className="site-footer-brand" aria-label="Ir a la Home de Srta Serifa">
             srtaserifa
           </a>
-          <p>Diseño, estrategia y producto digital para marcas con algo que decir.</p>
+          <p>Brand systems + digital products para marcas con algo que decir.</p>
           <small>© 2026 Núria López · Srta Serifa</small>
         </div>
 

@@ -20,9 +20,6 @@ function LegalPage() {
   return (
     <div className="legal-page">
       <header className="legal-header">
-        <a href="/" className="legal-brand">
-          srtaserifa
-        </a>
         <a href="/" className="legal-back-link">
           Volver a la Home ↗
         </a>

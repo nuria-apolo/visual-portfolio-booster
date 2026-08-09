@@ -75,23 +75,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "es_ES" },
       { name: "twitter:card", content: "summary_large_image" },
-      { title: "Núria López — Synth Designer | Srta Serifa" },
-      { property: "og:title", content: "Núria López — Synth Designer | Srta Serifa" },
-      { name: "twitter:title", content: "Núria López — Synth Designer | Srta Serifa" },
+      { title: "Núria López — Brand Systems + Digital Products | Srtaserifa" },
+      {
+        property: "og:title",
+        content: "Núria López — Brand Systems + Digital Products | Srtaserifa",
+      },
+      {
+        name: "twitter:title",
+        content: "Núria López — Brand Systems + Digital Products | Srtaserifa",
+      },
       {
         name: "description",
         content:
-          "Núria López es Synth Designer. Trabaja entre diseño de producto, dirección creativa, tecnología e IA y desarrolla proyectos propios y publicaciones.",
+          "Portfolio de Núria López, Head of Design en Apolo. Brand systems, identidad, estrategia y diseño de productos digitales.",
       },
       {
         property: "og:description",
         content:
-          "Núria López es Synth Designer. Trabaja entre diseño de producto, dirección creativa, tecnología e IA y desarrolla proyectos propios y publicaciones.",
+          "Portfolio de Núria López, Head of Design en Apolo. Brand systems, identidad, estrategia y diseño de productos digitales.",
       },
       {
         name: "twitter:description",
         content:
-          "Núria López es Synth Designer. Trabaja entre diseño de producto, dirección creativa, tecnología e IA y desarrolla proyectos propios y publicaciones.",
+          "Portfolio de Núria López, Head of Design en Apolo. Brand systems, identidad, estrategia y diseño de productos digitales.",
       },
       { name: "google-site-verification", content: "6tOVrCdlYPO3j39nKHcN0NQTDFk8HxaTBgDzFH1NW1A" },
     ],

@@ -23,9 +23,6 @@ function BookPage() {
   return (
     <div className="editorial-page">
       <header className="editorial-header">
-        <a href="/" className="editorial-brand">
-          srtaserifa
-        </a>
         <a
           href="/publicaciones"
           className="book-close-button"

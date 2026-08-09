@@ -28,9 +28,6 @@ function BlindWordsCitizenPage() {
   return (
     <div className="editorial-page citizen-article-page">
       <header className="editorial-header">
-        <a href="/" className="editorial-brand">
-          srtaserifa
-        </a>
         <a
           href="/proyectos/blind-words"
           className="book-close-button"
