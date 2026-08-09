@@ -29,8 +29,8 @@ function LegalPage() {
         <p className="legal-kicker">Información del sitio</p>
         <h1>Textos legales.</h1>
         <p className="legal-intro">
-          Esta página reúne la información sobre el uso de esta web y las formas de contacto con
-          Srta Serifa.
+          Esta página reúne la información sobre el uso de esta web, el tratamiento de datos y las
+          formas de contacto con Srta Serifa.
         </p>
 
         <section id="aviso-legal" className="legal-section">
@@ -38,14 +38,15 @@ function LegalPage() {
           <div>
             <h2>Aviso legal</h2>
             <p>
-              Esta web pertenece a Núria López, que se presenta profesionalmente bajo la marca Srta
-              Serifa. Para cualquier consulta relacionada con el sitio puedes escribir a
-              srtaserifa@icloud.com.
+              Titular: Núria López. Nombre profesional: Srta Serifa. Domicilio: C/ Sierra Nevada,
+              7, 11406 Jerez de la Frontera. NIF: 32086159D. Para cualquier consulta relacionada
+              con el sitio puedes escribir a srtaserifa@icloud.com.
             </p>
             <p>
-              Los contenidos, textos, imágenes y elementos gráficos de esta web están protegidos por
-              la normativa aplicable de propiedad intelectual. No se permite su reproducción o
-              reutilización sin autorización previa.
+              Esta web es el portfolio y espacio profesional personal de Núria López. Los contenidos,
+              textos, imágenes y elementos gráficos están protegidos por la normativa aplicable de
+              propiedad intelectual. No se permite su reproducción o reutilización sin autorización
+              previa.
             </p>
           </div>
         </section>
@@ -55,14 +56,24 @@ function LegalPage() {
           <div>
             <h2>Privacidad</h2>
             <p>
-              Si escribes a través del correo electrónico, los datos incluidos en el mensaje se
-              utilizarán únicamente para responder a tu consulta y mantener la comunicación
-              solicitada.
+              La responsable del tratamiento es Núria López. Si escribes a través del correo
+              electrónico, se tratarán los datos que incluyas en el mensaje para responder a tu
+              consulta, gestionar una posible colaboración o mantener la comunicación solicitada.
             </p>
             <p>
-              No se venden ni se ceden datos personales con fines comerciales. Puedes solicitar
-              información, rectificación o eliminación de los datos tratados escribiendo a
-              srtaserifa@icloud.com.
+              La base jurídica será la adopción de medidas precontractuales cuando la consulta esté
+              relacionada con una posible colaboración o servicio, el interés legítimo en gestionar
+              las comunicaciones y, cuando corresponda, el cumplimiento de obligaciones legales.
+              Los datos se conservarán durante el tiempo necesario para atender la consulta y,
+              después, durante los plazos legales aplicables para atender posibles responsabilidades.
+            </p>
+            <p>
+              No se venden ni se ceden datos personales con fines comerciales. Podrán intervenir
+              proveedores técnicos de correo y alojamiento necesarios para prestar el servicio. No
+              se elaboran perfiles ni se toman decisiones automatizadas. Puedes ejercer los derechos
+              de acceso, rectificación, supresión, limitación, oposición y portabilidad escribiendo
+              a srtaserifa@icloud.com. También puedes reclamar ante la Agencia Española de Protección
+              de Datos.
             </p>
           </div>
         </section>
@@ -72,9 +83,16 @@ function LegalPage() {
           <div>
             <h2>Cookies</h2>
             <p>
-              Esta web no utiliza herramientas propias de analítica, publicidad comportamental ni
-              perfiles de usuario en esta versión. Los servicios externos necesarios para cargar
-              recursos, como las fuentes web, pueden realizar sus propias solicitudes técnicas.
+              Esta web no utiliza cookies propias de analítica, publicidad comportamental ni perfiles
+              de usuario. Puede utilizar recursos técnicos necesarios para servir la web y cargar
+              fuentes externas. Estos proveedores pueden recibir datos técnicos de la conexión según
+              sus propias políticas.
+            </p>
+            <p>
+              El vídeo de YouTube incluido en un proyecto no se carga automáticamente. Solo se
+              solicita a YouTube cuando pulsas el botón para verlo; en ese momento pueden aplicarse
+              cookies y tratamientos del propio proveedor. Puedes consultar la política de privacidad
+              de YouTube antes de cargarlo.
             </p>
           </div>
         </section>

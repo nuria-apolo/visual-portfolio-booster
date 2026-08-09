@@ -4391,6 +4391,43 @@ body:has(.construction-page) {
   border: 0;
 }
 
+.citizen-article-video-placeholder {
+  display: grid;
+  height: 100%;
+  place-content: center;
+  gap: 1.25rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.citizen-article-video-placeholder p {
+  max-width: 30rem;
+  margin: 0;
+  color: rgb(23 23 23 / 0.68);
+  line-height: 1.5;
+}
+
+.citizen-article-video-placeholder button {
+  justify-self: center;
+  border: 1px solid #171717;
+  border-radius: 999px;
+  padding: 0.7rem 1.1rem;
+  background: #171717;
+  color: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    transform 180ms var(--ease-out-expo);
+}
+
+.citizen-article-video-placeholder button:hover,
+.citizen-article-video-placeholder button:focus-visible {
+  background: #343434;
+  transform: translateY(-2px);
+}
+
 .citizen-article-cta {
   margin-top: clamp(5rem, 10vw, 9rem);
   padding: clamp(2rem, 5vw, 4rem);

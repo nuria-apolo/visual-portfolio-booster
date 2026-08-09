@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import campaignImage from "@/assets/blind-citizen-campaign.png";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -25,6 +26,8 @@ export const Route = createFileRoute("/proyectos/blind-words-citizen")({
 });
 
 function BlindWordsCitizenPage() {
+  const [videoRequested, setVideoRequested] = useState(false);
+
   return (
     <div className="editorial-page citizen-article-page">
       <header className="editorial-header">
@@ -102,13 +105,24 @@ function BlindWordsCitizenPage() {
             </div>
 
             <div className="citizen-article-video">
-              <iframe
-                src="https://www.youtube.com/embed/cI9YfVWejVM?rel=0&modestbranding=1"
-                title="Campaña audiovisual de Citizen con Blind Words"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
+              {videoRequested ? (
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/cI9YfVWejVM?rel=0&modestbranding=1"
+                  title="Campaña audiovisual de Citizen con Blind Words"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              ) : (
+                <div className="citizen-article-video-placeholder">
+                  <p>
+                    Este vídeo se carga desde YouTube y puede utilizar cookies de terceros.
+                  </p>
+                  <button type="button" onClick={() => setVideoRequested(true)}>
+                    Cargar vídeo ↗
+                  </button>
+                </div>
+              )}
             </div>
 
             <aside className="citizen-article-cta">
