@@ -116,11 +116,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
+          "@id": "https://srtaserifa.es/sobre-mi#nuria-lopez",
           name: "Núria López",
-          alternateName: "Srta Serifa",
-          jobTitle: "Synth Designer",
-          worksFor: { "@type": "Organization", name: "Apolo — Propulsora de Marcas" },
-          url: "https://srtaserifa.es/",
+          alternateName: "Srtaserifa",
+          jobTitle: "Head of Design",
+          worksFor: {
+            "@type": "Organization",
+            name: "Apolo",
+            url: "https://universoapolo.com",
+          },
+          url: "https://srtaserifa.es/sobre-mi",
+          knowsAbout: [
+            "Brand Systems",
+            "Product Design",
+            "Brand Identity",
+            "UX/UI",
+            "Design Systems",
+            "Creative Direction",
+          ],
           sameAs: [
             "https://www.instagram.com/srtaserifa/",
             "https://www.linkedin.com/in/srtaserifa/",
