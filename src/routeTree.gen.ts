@@ -20,6 +20,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as PublicacionesIndexRouteImport } from './routes/publicaciones.index'
 import { Route as ProyectosIndexRouteImport } from './routes/proyectos.index'
 import { Route as PublicacionesTreintaMililitrosRouteImport } from './routes/publicaciones.treinta-mililitros'
+import { Route as PublicacionesSlugRouteImport } from './routes/publicaciones.$slug'
 import { Route as ProyectosKarmaFinancieroRouteImport } from './routes/proyectos.karma-financiero'
 import { Route as ProyectosBlindWordsCitizenRouteImport } from './routes/proyectos.blind-words-citizen'
 import { Route as ProyectosBlindWordsRouteImport } from './routes/proyectos.blind-words'
@@ -81,6 +82,11 @@ const PublicacionesTreintaMililitrosRoute =
     path: '/treinta-mililitros',
     getParentRoute: () => PublicacionesRoute,
   } as any)
+const PublicacionesSlugRoute = PublicacionesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => PublicacionesRoute,
+} as any)
 const ProyectosKarmaFinancieroRoute =
   ProyectosKarmaFinancieroRouteImport.update({
     id: '/karma-financiero',
@@ -118,6 +124,7 @@ export interface FileRoutesByFullPath {
   '/proyectos/blind-words': typeof ProyectosBlindWordsRoute
   '/proyectos/blind-words-citizen': typeof ProyectosBlindWordsCitizenRoute
   '/proyectos/karma-financiero': typeof ProyectosKarmaFinancieroRoute
+  '/publicaciones/$slug': typeof PublicacionesSlugRoute
   '/publicaciones/treinta-mililitros': typeof PublicacionesTreintaMililitrosRoute
   '/proyectos/': typeof ProyectosIndexRoute
   '/publicaciones/': typeof PublicacionesIndexRoute
@@ -133,6 +140,7 @@ export interface FileRoutesByTo {
   '/proyectos/blind-words': typeof ProyectosBlindWordsRoute
   '/proyectos/blind-words-citizen': typeof ProyectosBlindWordsCitizenRoute
   '/proyectos/karma-financiero': typeof ProyectosKarmaFinancieroRoute
+  '/publicaciones/$slug': typeof PublicacionesSlugRoute
   '/publicaciones/treinta-mililitros': typeof PublicacionesTreintaMililitrosRoute
   '/proyectos': typeof ProyectosIndexRoute
   '/publicaciones': typeof PublicacionesIndexRoute
@@ -151,6 +159,7 @@ export interface FileRoutesById {
   '/proyectos/blind-words': typeof ProyectosBlindWordsRoute
   '/proyectos/blind-words-citizen': typeof ProyectosBlindWordsCitizenRoute
   '/proyectos/karma-financiero': typeof ProyectosKarmaFinancieroRoute
+  '/publicaciones/$slug': typeof PublicacionesSlugRoute
   '/publicaciones/treinta-mililitros': typeof PublicacionesTreintaMililitrosRoute
   '/proyectos/': typeof ProyectosIndexRoute
   '/publicaciones/': typeof PublicacionesIndexRoute
@@ -170,6 +179,7 @@ export interface FileRouteTypes {
     | '/proyectos/blind-words'
     | '/proyectos/blind-words-citizen'
     | '/proyectos/karma-financiero'
+    | '/publicaciones/$slug'
     | '/publicaciones/treinta-mililitros'
     | '/proyectos/'
     | '/publicaciones/'
@@ -185,6 +195,7 @@ export interface FileRouteTypes {
     | '/proyectos/blind-words'
     | '/proyectos/blind-words-citizen'
     | '/proyectos/karma-financiero'
+    | '/publicaciones/$slug'
     | '/publicaciones/treinta-mililitros'
     | '/proyectos'
     | '/publicaciones'
@@ -202,6 +213,7 @@ export interface FileRouteTypes {
     | '/proyectos/blind-words'
     | '/proyectos/blind-words-citizen'
     | '/proyectos/karma-financiero'
+    | '/publicaciones/$slug'
     | '/publicaciones/treinta-mililitros'
     | '/proyectos/'
     | '/publicaciones/'
@@ -297,6 +309,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PublicacionesTreintaMililitrosRouteImport
       parentRoute: typeof PublicacionesRoute
     }
+    '/publicaciones/$slug': {
+      id: '/publicaciones/$slug'
+      path: '/$slug'
+      fullPath: '/publicaciones/$slug'
+      preLoaderRoute: typeof PublicacionesSlugRouteImport
+      parentRoute: typeof PublicacionesRoute
+    }
     '/proyectos/karma-financiero': {
       id: '/proyectos/karma-financiero'
       path: '/karma-financiero'
@@ -349,11 +368,13 @@ const ProyectosRouteWithChildren = ProyectosRoute._addFileChildren(
 )
 
 interface PublicacionesRouteChildren {
+  PublicacionesSlugRoute: typeof PublicacionesSlugRoute
   PublicacionesTreintaMililitrosRoute: typeof PublicacionesTreintaMililitrosRoute
   PublicacionesIndexRoute: typeof PublicacionesIndexRoute
 }
 
 const PublicacionesRouteChildren: PublicacionesRouteChildren = {
+  PublicacionesSlugRoute: PublicacionesSlugRoute,
   PublicacionesTreintaMililitrosRoute: PublicacionesTreintaMililitrosRoute,
   PublicacionesIndexRoute: PublicacionesIndexRoute,
 }

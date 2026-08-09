@@ -7,10 +7,12 @@ import aprendeHistoriaArteIcon from "@/assets/aprende-historia-arte.png";
 import aprendeHistoriaArteInterface from "@/assets/aprende-historia-arte-interface.png";
 import karmaApp from "@/assets/karma-app.png";
 import { projects } from "@/data/projects";
+import { expertiseTags } from "@/data/expertise";
 import { SiteFooter } from "@/components/SiteFooter";
 
-const TITLE = "Proyectos — Srta Serifa · Núria López";
-const DESCRIPTION = "Productos, plataformas y experimentos personales de Núria López.";
+const TITLE = "Proyectos — Brand Systems + Digital Products | Srtaserifa";
+const DESCRIPTION =
+  "Proyectos personales de Núria López (Srtaserifa) sobre sistemas de marca, productos digitales, UX/UI, identidad, tecnología, investigación y experimentación.";
 
 const personalProjectTags = [
   { kind: "pill", label: "Estrategia", color: "bg-[#ffc400]" },
@@ -45,7 +47,7 @@ const personalProjects: PersonalProject[] = [
   {
     num: "01",
     title: "Karma Financiero",
-    category: "Producto digital · Finanzas compartidas",
+    category: "Brand system · Digital product · Fintech",
     copy: [
       "Una plataforma para gestionar dinero entre personas sin convertir cada conversación sobre gastos en una pequeña auditoría.",
       "Karma Financiero explora cómo diseñar mejores herramientas para parejas, familias, compañeros de piso o grupos que comparten gastos, decisiones y responsabilidades.",
@@ -59,7 +61,7 @@ const personalProjects: PersonalProject[] = [
   {
     num: "02",
     title: "Aprende Historia del Arte",
-    category: "Producto digital · Aprendizaje",
+    category: "Digital product · Editorial · Education",
     copy: [
       "Una plataforma gratuita para aprender Historia del Arte de una forma más clara, cercana y fácil de explorar.",
       "El proyecto nace de una pregunta bastante sencilla: ¿cómo diseñar una experiencia digital que invite a aprender sin parecer un libro de texto trasladado a una pantalla?",
@@ -74,7 +76,7 @@ const personalProjects: PersonalProject[] = [
     ? {
         num: "03",
         title: blindWordsProject.title,
-        category: blindWordsProject.type,
+        category: "Research · Identity · Accessibility",
         copy: [blindWordsProject.description],
         state: "Contenido pendiente de completar",
         href: "/proyectos/blind-words",
@@ -102,8 +104,87 @@ export const Route = createFileRoute("/proyectos/")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://srtaserifa.es/proyectos" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
     ],
     links: [{ rel: "canonical", href: "https://srtaserifa.es/proyectos" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "@id": "https://srtaserifa.es/proyectos#collection",
+          name: TITLE,
+          description: DESCRIPTION,
+          url: "https://srtaserifa.es/proyectos",
+          creator: { "@id": "https://srtaserifa.es/sobre-mi#nuria-lopez" },
+          abstract:
+            "Núria López crea proyectos propios relacionados con brand systems, digital products, identidad, investigación y tecnología.",
+          keywords: [
+            "Brand Systems",
+            "Digital Products",
+            "Identidad",
+            "Investigación",
+            "Tecnología",
+          ],
+          about: {
+            "@type": "Person",
+            "@id": "https://srtaserifa.es/sobre-mi#nuria-lopez",
+            name: "Núria López",
+            alternateName: "Srtaserifa",
+          },
+          mainEntity: {
+            "@type": "ItemList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                item: {
+                  "@type": "SoftwareApplication",
+                  "@id": "https://srtaserifa.es/proyectos/karma-financiero#software",
+                  name: "Karma Financiero",
+                  description:
+                    "Producto digital personal para gestionar dinero compartido y mejorar las conversaciones sobre gastos.",
+                  applicationCategory: "FinanceApplication",
+                  operatingSystem: "Web",
+                  creator: { "@id": "https://srtaserifa.es/sobre-mi#nuria-lopez" },
+                  url: "https://srtaserifa.es/proyectos/karma-financiero",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                item: {
+                  "@type": "SoftwareApplication",
+                  "@id": "https://srtaserifa.es/proyectos/aprende-historia-del-arte#software",
+                  name: "Aprende Historia del Arte",
+                  description:
+                    "Plataforma digital para aprender Historia del Arte de una forma clara, cercana y fácil de explorar.",
+                  applicationCategory: "EducationalApplication",
+                  operatingSystem: "Web",
+                  creator: { "@id": "https://srtaserifa.es/sobre-mi#nuria-lopez" },
+                  url: "https://srtaserifa.es/proyectos/aprende-historia-del-arte",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                item: {
+                  "@type": "CreativeWork",
+                  "@id": "https://srtaserifa.es/proyectos/blind-words#creative-work",
+                  name: "Blind Words",
+                  description:
+                    "Investigación tipográfica sobre identidad, accesibilidad y tacto que dio lugar a un sistema que hace convivir el alfabeto latino y el braille.",
+                  creator: { "@id": "https://srtaserifa.es/sobre-mi#nuria-lopez" },
+                  url: "https://srtaserifa.es/proyectos/blind-words",
+                },
+              },
+            ],
+          },
+        }),
+      },
+    ],
   }),
   component: ProjectsPage,
 });
@@ -162,8 +243,9 @@ function ProjectsPage() {
               </nav>
               <h1 className="project-page-title">Algunas cosas empiezan por trabajo. Estas no.</h1>
               <p className="projects-hero-description">
-                Productos, plataformas y experimentos que construyo para explorar una idea, entender
-                un problema o comprobar si algo que tengo en la cabeza puede existir de verdad.
+                Productos, plataformas, <strong>sistemas de marca</strong> y experimentos que
+                construyo para explorar una idea, entender un problema o comprobar si algo que tengo
+                en la cabeza puede existir de verdad.
               </p>
             </div>
           </header>
@@ -214,6 +296,35 @@ function ProjectsPage() {
                   </div>
                 </article>
               ))}
+            </div>
+          </section>
+          <section className="projects-expertise" aria-labelledby="projects-expertise-title">
+            <div className="projects-expertise-copy">
+              <p className="editorial-kicker">Áreas de trabajo</p>
+              <h2 id="projects-expertise-title">Ey, también trabajo por aquí.</h2>
+              <p className="projects-expertise-intro">
+                El diseño rara vez ocurre dentro de una sola disciplina.
+              </p>
+              <p>
+                Estrategia, sistemas, IA, branding, marca, dirección, identidad y producto forman
+                parte de una misma práctica. Son distintos puntos de entrada para pensar, diseñar y
+                construir.
+              </p>
+            </div>
+            <div className="projects-expertise-tags" aria-label="Áreas de especialización">
+              {expertiseTags.map((tag) => {
+                const className = `construction-tag-inner expertise-pill ${tag.color}`;
+
+                return tag.href ? (
+                  <a className={className} href={tag.href} key={tag.label}>
+                    {tag.label}
+                  </a>
+                ) : (
+                  <button className={className} type="button" key={tag.label}>
+                    {tag.label}
+                  </button>
+                );
+              })}
             </div>
           </section>
         </main>

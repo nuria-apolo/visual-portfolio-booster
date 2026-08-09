@@ -17,6 +17,24 @@ export const Route = createFileRoute("/proyectos/aprende-historia-del-arte")({
     links: [
       { rel: "canonical", href: "https://srtaserifa.es/proyectos/aprende-historia-del-arte" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "@id": "https://srtaserifa.es/proyectos/aprende-historia-del-arte#software",
+          name: "Aprende Historia del Arte",
+          description:
+            "Una plataforma gratuita para aprender Historia del Arte de una forma más clara, cercana y fácil de explorar.",
+          applicationCategory: "EducationalApplication",
+          operatingSystem: "Web",
+          creator: { "@id": "https://srtaserifa.es/sobre-mi#nuria-lopez" },
+          url: "https://srtaserifa.es/proyectos/aprende-historia-del-arte",
+          keywords: ["Digital Product", "Editorial", "Education"],
+        }),
+      },
+    ],
   }),
   component: AprendeHistoriaDelArtePage,
 });

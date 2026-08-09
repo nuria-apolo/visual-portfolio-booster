@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import portraitNuria from "@/assets/portrait-nuria-new.png";
 import apoloIcon from "@/assets/apolo-badge.png";
 import salvartesIcon from "@/assets/salvartes-badge.png";
@@ -9,6 +10,7 @@ import wkDesignIcon from "@/assets/wk-design-graduate-badge.png";
 import framerIcon from "@/assets/framer-badge.png";
 import figmaIcon from "@/assets/figma-badge.png";
 import claudeIcon from "@/assets/claude-badge.png";
+import codexIcon from "@/assets/codex-icon.png";
 import perplexityIcon from "@/assets/perplexity-badge.png";
 import affinityIcon from "@/assets/affinity-badge.png";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -16,6 +18,39 @@ import { SiteFooter } from "@/components/SiteFooter";
 const TITLE = "Sobre mi — Brand Systems + Digital Products | Srtaserifa";
 const DESCRIPTION =
   "Conoce a Núria López, Head of Design en Apolo y creadora de Srtaserifa. Su trabajo conecta estrategia, sistemas de marca, identidad y diseño de productos digitales.";
+
+const FAQ_ITEMS = [
+  {
+    question: "¿Qué es Srtaserifa?",
+    answer:
+      "Srtaserifa es mi identidad profesional y el espacio donde reúno proyectos, procesos, ideas y reflexiones sobre diseño. No es un estudio ni una agencia: es una forma de documentar mi trabajo y mi manera de entender el diseño.",
+  },
+  {
+    question: "¿A qué te dedicas actualmente?",
+    answer:
+      "Soy Head of Design en Apolo, Propulsora de Marcas, donde trabajo liderando diseño y conectando estrategia, identidad, creatividad y producto digital.",
+  },
+  {
+    question: "¿Qué significa “Brand Systems + Digital Products”?",
+    answer:
+      "Es el territorio en el que se mueve buena parte de mi trabajo. Me interesa el punto donde marca y producto dejan de funcionar como disciplinas separadas: cómo una identidad se convierte en sistema y cómo ese sistema llega hasta una web, una interfaz o un producto digital.",
+  },
+  {
+    question: "¿Qué tipo de proyectos haces?",
+    answer:
+      "Mi trabajo abarca estrategia, identidad visual, sistemas de marca, dirección de diseño, UX/UI, productos digitales y design systems. Algunos proyectos empiezan con una marca; otros, con un problema de producto. Lo interesante suele ocurrir cuando ambas cosas se encuentran.",
+  },
+  {
+    question: "¿Trabajas con inteligencia artificial?",
+    answer:
+      "Sí. La IA forma parte de mi proceso como herramienta para investigar, explorar, prototipar y construir. Me interesa especialmente cómo está cambiando los procesos creativos, el diseño de producto y nuestra forma de relacionarnos con las interfaces.",
+  },
+  {
+    question: "¿Puedo contactar contigo?",
+    answer:
+      "Claro. Srtaserifa no funciona como un estudio de servicios, pero siempre estoy abierta a conocer proyectos, personas, colaboraciones y nuevas oportunidades.",
+  },
+] as const;
 
 export const Route = createFileRoute("/sobre-mi")({
   head: () => ({
@@ -73,6 +108,8 @@ export const Route = createFileRoute("/sobre-mi")({
 });
 
 function AboutPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
   return (
     <div className="editorial-page">
       <main>
@@ -84,7 +121,7 @@ function AboutPage() {
               <span aria-current="page">Sobre mí</span>
             </nav>
             <h1>
-              Hola, soy Núria López, <em>Synth Designer.</em>
+              Hola, soy Núria López. <em>Brand Systems + Digital Products</em>
             </h1>
             <div className="about-hero-actions">
               <a
@@ -109,9 +146,9 @@ function AboutPage() {
         <div className="editorial-columns">
           <section>
             <p className="editorial-lede">
-              Soy Núria López. Trabajo bajo el nombre de Srta Serifa porque el diseño, para mí,
-              siempre ha sido una forma de traducir: hacer que algo complejo encuentre su forma, su
-              ritmo y su manera de llegar a otras personas.
+              Soy Head of Design en Apolo y trabajo bajo el nombre de Srtaserifa. El diseño, para
+              mí, siempre ha sido una forma de traducir: hacer que algo complejo encuentre su forma,
+              su ritmo y su manera de llegar a otras personas.
             </p>
             <a className="editorial-link" href="/rol">
               Conoce mi rol profesional en Apolo ↗
@@ -189,9 +226,9 @@ function AboutPage() {
                 </span>
               </div>
               <div className="about-skill-card">
-                <span className="about-skill-icon about-skill-icon-chatgpt">✳</span>
+                <img className="about-skill-icon about-skill-image" src={codexIcon} alt="" />
                 <span>
-                  <strong>ChatGPT</strong>
+                  <strong>Codex</strong>
                   <small>AI, ideation</small>
                 </span>
               </div>
@@ -263,27 +300,13 @@ function AboutPage() {
           <div className="about-detail-row about-skills-row">
             <p className="editorial-kicker">Skills</p>
             <div className="about-skill-tags">
-              {[
-                "Product design",
-                "UX research",
-                "Interaction design",
-                "Design systems",
-                "Prototyping",
-                "User flows",
-                "Usability testing",
-                "Visual design",
-                "Information architecture",
-                "Branding",
-                "Creative direction",
-                "Accessibility web",
-                "Content design",
-                "UI design",
-                "Desarrollo con IA y agentes",
-              ].map((skill) => (
-                <span className="about-skill-tag" key={skill}>
-                  {skill}
-                </span>
-              ))}
+              {["Estrategia", "Identidad", "Sistemas", "Producto", "Dirección", "AI"].map(
+                (skill) => (
+                  <span className="about-skill-tag" key={skill}>
+                    {skill}
+                  </span>
+                ),
+              )}
             </div>
           </div>
         </section>
@@ -305,6 +328,61 @@ function AboutPage() {
             href="mailto:srtaserifa@icloud.com"
           >
             ¿Hablamos? ↗
+          </a>
+        </section>
+        <section className="about-faq" aria-labelledby="about-faq-title">
+          <div className="about-faq-header">
+            <p className="editorial-kicker">FAQ</p>
+            <h2 id="about-faq-title">Ey, una cosa más.</h2>
+            <p>Una pequeña selección de preguntas para quien haya llegado hasta aquí.</p>
+          </div>
+          <div className="about-faq-list">
+            {FAQ_ITEMS.map((item, index) => {
+              const isOpen = openFaq === index;
+              const answerId = `about-faq-answer-${index + 1}`;
+              const questionId = `about-faq-question-${index + 1}`;
+
+              return (
+                <article
+                  className={`about-faq-item ${isOpen ? "is-open" : ""}`}
+                  key={item.question}
+                >
+                  <h3>
+                    <button
+                      className="about-faq-trigger"
+                      type="button"
+                      aria-controls={answerId}
+                      aria-expanded={isOpen}
+                      id={questionId}
+                      onClick={() => setOpenFaq(isOpen ? null : index)}
+                    >
+                      <span className="about-faq-number" aria-hidden="true">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className="about-faq-question">{item.question}</span>
+                      <span className="about-faq-icon" aria-hidden="true" />
+                    </button>
+                  </h3>
+                  <div
+                    className="about-faq-answer"
+                    id={answerId}
+                    role="region"
+                    aria-hidden={!isOpen}
+                    aria-labelledby={questionId}
+                  >
+                    <div className="about-faq-answer-inner">
+                      <p>{item.answer}</p>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+          <a
+            className="about-hero-button about-hero-button-primary about-faq-cta"
+            href="mailto:srtaserifa@icloud.com"
+          >
+            Hablemos ↗
           </a>
         </section>
       </main>

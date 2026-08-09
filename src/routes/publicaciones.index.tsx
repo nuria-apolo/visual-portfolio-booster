@@ -1,10 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import noteMark from "@/assets/note-mark.png";
+import { expertiseTags } from "@/data/expertise";
 import { SiteFooter } from "@/components/SiteFooter";
+import { articles } from "@/data/articles";
 
-const TITLE = "Publicaciones — Srta Serifa · Núria López";
+const TITLE = "Publicaciones — Brand Systems + Digital Products | Srtaserifa";
 const DESCRIPTION =
-  "Archivo editorial de Núria López: libros, artículos, notas, ensayos, investigaciones y recursos.";
+  "Libros, notas y ensayos de Núria López sobre diseño, estrategia, sistemas de marca, producto digital, dirección creativa, tecnología e inteligencia artificial.";
 
 const notePosts = [
   {
@@ -24,6 +27,30 @@ const notePosts = [
   },
 ] as const;
 
+const articleTopics: Record<string, string[]> = {
+  "una-interfaz-tambien-es-branding": ["Branding", "Identidad", "Producto"],
+  "del-brand-system-al-design-system": ["Sistemas", "Branding", "Producto"],
+  "una-marca-digital-necesita-reglas-no-aplicaciones": ["Estrategia", "Sistemas", "Marca"],
+  "branding-y-producto-deberian-hablar-mas": ["Branding", "Marca", "Producto"],
+  "disenar-sistemas-no-pantallas": ["Sistemas", "Producto", "Dirección"],
+  "que-cambia-la-ia-en-el-trabajo-de-diseno": ["IA", "Estrategia", "Dirección"],
+};
+
+const topicArticles = [
+  {
+    type: "Proyecto · 3 min.",
+    title: "Blind Words en una campaña internacional con Citizen",
+    href: "/proyectos/blind-words-citizen",
+    topics: ["Dirección"],
+  },
+  ...articles.map((article) => ({
+    type: `Artículo · ${article.readingTime}`,
+    title: article.title,
+    href: `/publicaciones/${article.slug}`,
+    topics: articleTopics[article.slug] ?? [],
+  })),
+] as const;
+
 export const Route = createFileRoute("/publicaciones/")({
   head: () => ({
     meta: [
@@ -33,6 +60,8 @@ export const Route = createFileRoute("/publicaciones/")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://srtaserifa.es/publicaciones" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
     ],
     links: [{ rel: "canonical", href: "https://srtaserifa.es/publicaciones" }],
   }),
@@ -40,6 +69,11 @@ export const Route = createFileRoute("/publicaciones/")({
 });
 
 function PublicationsPage() {
+  const [activeTopic, setActiveTopic] = useState<string | null>(null);
+  const visibleArticles = activeTopic
+    ? topicArticles.filter((article) => article.topics.some((topic) => topic === activeTopic))
+    : topicArticles;
+
   return (
     <div className="editorial-page">
       <main>
@@ -51,12 +85,13 @@ function PublicationsPage() {
           </nav>
           <h1>Lo que escribo y comparto.</h1>
           <p className="publication-hero-body">
-            Libros, notas, ensayos y otros proyectos editoriales. Un espacio para reunir lo que
-            escribo por mi cuenta y compartirlo cuando está listo.
+            Escribo sobre diseño, marca, producto digital, tecnología y los sistemas que aparecen
+            cuando todo empieza a mezclarse.
           </p>
         </section>
         <section className="publication-layout" aria-label="Publicaciones y Note©">
           <div className="publication-books">
+            <p className="editorial-kicker publication-section-kicker">Libros</p>
             <div className="publication-grid">
               <article className="publication-card publication-card-active">
                 <a href="/publicaciones/treinta-mililitros" className="publication-card-cover-link">
@@ -126,6 +161,7 @@ function PublicationsPage() {
             >
               Suscribirme a Note© <span aria-hidden="true">↗</span>
             </a>
+            <p className="note-panel-kicker publication-notes-kicker">Últimas notas</p>
             <div className="note-panel-list">
               {notePosts.map((post) => (
                 <a
@@ -144,6 +180,57 @@ function PublicationsPage() {
               ))}
             </div>
           </aside>
+        </section>
+        <section className="publication-topics" aria-labelledby="publication-topics-title">
+          <h2 id="publication-topics-title" className="editorial-kicker">
+            Escribo sobre
+          </h2>
+          <div className="publication-topics-tags" aria-label="Temas de las publicaciones">
+            {expertiseTags.map((tag) => {
+              const className = `construction-tag-inner expertise-pill ${tag.color}`;
+              const isActive = activeTopic === tag.label;
+
+              return tag.href ? (
+                <a className={className} href={tag.href} key={tag.label}>
+                  {tag.label}
+                </a>
+              ) : (
+                <button
+                  className={`${className} ${isActive ? "is-active" : ""}`}
+                  type="button"
+                  aria-pressed={isActive}
+                  key={tag.label}
+                  onClick={() => setActiveTopic(isActive ? null : tag.label)}
+                >
+                  {tag.label}
+                </button>
+              );
+            })}
+          </div>
+          <div className="publication-topic-articles" aria-live="polite">
+            {visibleArticles.length > 0 ? (
+              <div className="publication-topic-article-list">
+                {visibleArticles.map((article, index) => (
+                  <a className="publication-topic-article" href={article.href} key={article.title}>
+                    <span className="publication-topic-article-number" aria-hidden="true">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span>
+                      <small>{article.type}</small>
+                      <strong>{article.title}</strong>
+                    </span>
+                    <span className="publication-topic-article-arrow" aria-hidden="true">
+                      ↗
+                    </span>
+                  </a>
+                ))}
+              </div>
+            ) : (
+              <p className="publication-topic-empty">
+                Todavía no hay publicaciones asociadas a esta categoría.
+              </p>
+            )}
+          </div>
         </section>
       </main>
       <SiteFooter variant="floating" />

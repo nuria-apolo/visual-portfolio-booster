@@ -12,6 +12,24 @@ export const Route = createFileRoute("/proyectos/karma-financiero")({
       },
     ],
     links: [{ rel: "canonical", href: "https://srtaserifa.es/proyectos/karma-financiero" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "@id": "https://srtaserifa.es/proyectos/karma-financiero#software",
+          name: "Karma Financiero",
+          description:
+            "Un proyecto personal sobre dinero compartido, producto digital y mejores conversaciones sobre gastos.",
+          applicationCategory: "FinanceApplication",
+          operatingSystem: "Web",
+          creator: { "@id": "https://srtaserifa.es/sobre-mi#nuria-lopez" },
+          url: "https://srtaserifa.es/proyectos/karma-financiero",
+          keywords: ["Brand Systems", "Digital Product", "Fintech"],
+        }),
+      },
+    ],
   }),
   component: KarmaFinancieroPage,
 });

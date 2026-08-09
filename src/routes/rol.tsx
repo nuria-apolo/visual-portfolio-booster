@@ -13,9 +13,9 @@ import pelikanorAward from "@/assets/pelikanor-award.png";
 import anuariaAward from "@/assets/anuaria-award.png";
 import { SiteFooter } from "@/components/SiteFooter";
 
-const TITLE = "Rol — Synth Designer · Núria López";
+const TITLE = "Rol — Brand Systems + Digital Products | Srtaserifa";
 const DESCRIPTION =
-  "El trabajo de Núria López como Synth Designer: diseño, pensamiento, tecnología y making aplicados a producto, marcas y experiencias digitales.";
+  "Conoce el trabajo de Núria López como Head of Design en Apolo: dirección de diseño, estrategia, identidad, producto digital, tecnología y sistemas.";
 
 export const Route = createFileRoute("/rol")({
   head: () => ({
@@ -26,6 +26,8 @@ export const Route = createFileRoute("/rol")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: "https://srtaserifa.es/rol" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
     ],
     links: [{ rel: "canonical", href: "https://srtaserifa.es/rol" }],
   }),
@@ -175,7 +177,9 @@ function RolePage() {
               <article className="role-award-row" key={name}>
                 <span className="role-award-year">{year}</span>
                 <span className="role-award-name">{name}</span>
-                {icon ? <img className="role-award-icon" src={icon} alt="" aria-hidden="true" /> : null}
+                {icon ? (
+                  <img className="role-award-icon" src={icon} alt="" aria-hidden="true" />
+                ) : null}
               </article>
             ))}
           </div>

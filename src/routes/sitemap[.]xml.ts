@@ -28,6 +28,36 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/proyectos/blind-words", changefreq: "monthly", priority: "0.7" },
           { path: "/publicaciones", changefreq: "monthly", priority: "0.8" },
           { path: "/publicaciones/treinta-mililitros", changefreq: "monthly", priority: "0.8" },
+          {
+            path: "/publicaciones/una-interfaz-tambien-es-branding",
+            changefreq: "monthly",
+            priority: "0.7",
+          },
+          {
+            path: "/publicaciones/del-brand-system-al-design-system",
+            changefreq: "monthly",
+            priority: "0.7",
+          },
+          {
+            path: "/publicaciones/una-marca-digital-necesita-reglas-no-aplicaciones",
+            changefreq: "monthly",
+            priority: "0.7",
+          },
+          {
+            path: "/publicaciones/branding-y-producto-deberian-hablar-mas",
+            changefreq: "monthly",
+            priority: "0.7",
+          },
+          {
+            path: "/publicaciones/disenar-sistemas-no-pantallas",
+            changefreq: "monthly",
+            priority: "0.7",
+          },
+          {
+            path: "/publicaciones/que-cambia-la-ia-en-el-trabajo-de-diseno",
+            changefreq: "monthly",
+            priority: "0.7",
+          },
         ];
 
         const urls = entries.map((e) =>

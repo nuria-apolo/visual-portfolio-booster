@@ -20,6 +20,23 @@ export const Route = createFileRoute("/proyectos/blind-words")({
       },
     ],
     links: [{ rel: "canonical", href: "https://srtaserifa.es/proyectos/blind-words" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          "@id": "https://srtaserifa.es/proyectos/blind-words#creative-work",
+          name: "Blind Words",
+          description:
+            blindWordsProject?.description ??
+            "Investigación tipográfica sobre identidad, accesibilidad y tacto.",
+          creator: { "@id": "https://srtaserifa.es/sobre-mi#nuria-lopez" },
+          url: "https://srtaserifa.es/proyectos/blind-words",
+          keywords: ["Research", "Identity", "Accessibility"],
+        }),
+      },
+    ],
   }),
   component: BlindWordsPage,
 });
