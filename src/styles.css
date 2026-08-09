@@ -2928,10 +2928,10 @@ body:has(.case-study-page) .site-float-menu {
 
 .case-study-related h2 {
   font-family: var(--font-sans);
-  font-size: clamp(1.8rem, 3vw, 3rem);
-  font-weight: 400;
-  letter-spacing: -0.05em;
-  line-height: 1;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
 }
 
 .case-study-related-grid {
@@ -2974,6 +2974,10 @@ body:has(.case-study-page) .site-float-menu {
   font-weight: 500;
   letter-spacing: -0.04em;
   line-height: 1.1;
+}
+
+.case-study-footer-link > .project-button {
+  align-self: flex-start;
 }
 
 @media (max-width: 720px) {
@@ -4075,4 +4079,126 @@ body:has(.case-study-page) .site-float-menu {
     background: var(--color-primary);
     color: var(--color-background);
   }
+}
+
+/* Karma Financiero: editorial case study */
+.karma-case-study {
+  min-height: 100svh;
+  background: #f7f7f7;
+  color: #171717;
+}
+
+.karma-case-study-main {
+  width: min(1180px, calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding: 3.5rem 0 10rem;
+}
+
+.karma-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(3rem, 8vw, 9rem);
+  align-items: end;
+  padding: 8rem 0 clamp(8rem, 15vw, 15rem);
+}
+
+.karma-intro-copy { max-width: 520px; }
+.karma-eyebrow, .karma-section-number, .karma-product-label, .karma-closing-meta > div > span {
+  color: rgb(23 23 23 / 0.48);
+  font-size: 0.68rem;
+  letter-spacing: 0.11em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.karma-intro h1 {
+  max-width: 620px;
+  margin: 1.35rem 0 2.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 6.6vw, 6.3rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.9;
+}
+
+.karma-prose { display: grid; gap: 1.25rem; }
+.karma-prose p { margin: 0; color: rgb(23 23 23 / 0.66); font-size: 1rem; line-height: 1.62; }
+.karma-services { margin-top: 3rem; color: rgb(23 23 23 / 0.54); font-size: 0.76rem; letter-spacing: 0.04em; }
+
+.karma-asset-placeholder {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  overflow: hidden;
+  place-items: center;
+  border: 1px dashed rgb(23 23 23 / 0.2);
+  border-radius: 1.25rem;
+  background: #ececee;
+  color: rgb(23 23 23 / 0.46);
+}
+.karma-asset-placeholder::before { position: absolute; inset: 12px; border: 1px solid rgb(23 23 23 / 0.05); border-radius: 0.85rem; content: ""; }
+.karma-asset-placeholder span { position: relative; padding: 1rem; font-size: 0.68rem; letter-spacing: 0.07em; text-align: center; }
+.karma-hero-placeholder { width: min(100%, 650px); justify-self: end; border-radius: 1.75rem; background: #e7e7e5; box-shadow: 0 24px 70px rgb(23 23 23 / 0.07); }
+
+.karma-section { display: grid; grid-template-columns: minmax(80px, 0.2fr) minmax(0, 1fr); gap: clamp(2rem, 8vw, 9rem); padding: clamp(6rem, 12vw, 12rem) 0; border-top: 1px solid rgb(23 23 23 / 0.14); }
+.karma-section-body { max-width: 850px; min-width: 0; }
+.karma-section h2 { max-width: 760px; margin: -0.2rem 0 3rem; font-family: var(--font-display); font-size: clamp(3rem, 5.4vw, 5.6rem); font-weight: 400; letter-spacing: -0.055em; line-height: 0.91; }
+.karma-section h3 { margin: 0 0 1.5rem; font-size: clamp(1.5rem, 2.7vw, 2.35rem); font-weight: 400; letter-spacing: -0.045em; line-height: 1.02; }
+.karma-statement { margin: clamp(5rem, 10vw, 10rem) 0 3.5rem; font-family: var(--font-display); font-size: clamp(2.5rem, 4.9vw, 5rem); letter-spacing: -0.05em; line-height: 0.94; }
+.karma-statement em, .karma-closing-statement em { font-style: italic; }
+.karma-statement-small { max-width: 700px; font-size: clamp(2.3rem, 4vw, 4.1rem); }
+.karma-wide-placeholder { width: 100%; margin-top: 3rem; }
+.karma-word-list { margin: 1.5rem 0 0; color: rgb(23 23 23 / 0.46); font-size: 0.75rem; letter-spacing: 0.08em; word-spacing: 0.3rem; }
+.karma-research-grid { display: grid; grid-template-columns: 0.9fr 1.15fr 0.82fr; gap: 1.25rem; align-items: start; margin-top: 5rem; }
+.karma-research-grid > :nth-child(2) { margin-top: 4rem; }
+.karma-research-grid > :nth-child(3) { margin-top: 1.5rem; }
+.karma-flow { display: flex; flex-wrap: wrap; gap: 0.6rem 1.1rem; align-items: center; margin: 2rem 0 0; color: rgb(23 23 23 / 0.55); font-size: 0.72rem; letter-spacing: 0.12em; }
+.karma-flow span { color: rgb(23 23 23 / 0.28); font-size: 1rem; }
+.karma-subsection { margin-top: clamp(8rem, 14vw, 14rem); }
+.karma-actions { margin: 3rem 0; font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 4rem); letter-spacing: -0.05em; line-height: 0.95; }
+.karma-iteration-grid { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 1rem; align-items: center; margin-top: 4rem; }
+.karma-iteration-arrow { color: rgb(23 23 23 / 0.35); font-size: 1.5rem; }
+.karma-visual-system { display: grid; grid-template-columns: 1fr 1fr 1.35fr; gap: 1rem; margin-top: 4rem; }
+.karma-visual-system > :nth-child(4) { grid-column: 2; }
+.karma-visual-system > :nth-child(5) { grid-column: 3; grid-row: 2; }
+.karma-product-section > .karma-section-body > .karma-prose { max-width: 600px; }
+.karma-product-block { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(260px, 1.2fr); gap: clamp(2rem, 7vw, 8rem); align-items: center; margin-top: clamp(7rem, 13vw, 13rem); }
+.karma-product-block-reverse { grid-template-columns: minmax(260px, 1.2fr) minmax(0, 0.8fr); }
+.karma-product-block-reverse > :first-child { grid-column: 2; grid-row: 1; }
+.karma-product-block-reverse > :last-child { grid-column: 1; grid-row: 1; }
+.karma-product-number { color: rgb(23 23 23 / 0.42); font-size: 0.72rem; letter-spacing: 0.1em; }
+.karma-product-label { margin: 0.8rem 0 2rem; }
+.karma-product-block h3 { margin-bottom: 2rem; font-family: var(--font-display); font-size: clamp(2rem, 3.3vw, 3.4rem); line-height: 0.95; }
+.karma-ecosystem-labels { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 1.5rem; color: rgb(23 23 23 / 0.5); font-size: 0.66rem; letter-spacing: 0.08em; line-height: 1.4; text-transform: uppercase; }
+.karma-ecosystem-labels b { color: #171717; font-weight: 400; }
+.karma-small-assets { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 6rem; }
+.karma-contribution { padding-bottom: 6rem; }
+.karma-closing { padding: clamp(8rem, 17vw, 17rem) 0 clamp(6rem, 12vw, 12rem); border-top: 1px solid rgb(23 23 23 / 0.14); }
+.karma-closing-statement { max-width: 930px; margin: 0; font-family: var(--font-display); font-size: clamp(3.3rem, 7vw, 7rem); letter-spacing: -0.06em; line-height: 0.87; }
+.karma-closing > a { display: inline-block; margin-top: 3rem; color: #171717; font-size: 0.9rem; text-underline-offset: 0.3em; }
+.karma-closing-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 500px; margin-top: 9rem; padding-top: 1.25rem; border-top: 1px solid rgb(23 23 23 / 0.14); }
+.karma-closing-meta p { margin-top: 1rem; color: rgb(23 23 23 / 0.62); font-size: 0.88rem; line-height: 1.55; }
+.karma-note { max-width: 440px; margin-top: 7rem; color: rgb(23 23 23 / 0.48); font-size: 0.78rem; line-height: 1.5; }
+
+@media (max-width: 720px) {
+  .karma-case-study-main { width: min(100% - 2rem, 1180px); padding-top: 2rem; }
+  .karma-intro { grid-template-columns: 1fr; gap: 3rem; padding: 7rem 0 8rem; }
+  .karma-intro h1 { font-size: clamp(3.35rem, 15vw, 5.2rem); }
+  .karma-hero-placeholder { width: 100%; justify-self: stretch; }
+  .karma-section { grid-template-columns: 1fr; gap: 1.5rem; padding: 6rem 0; }
+  .karma-section h2 { margin-bottom: 2.5rem; font-size: clamp(3rem, 14vw, 5rem); }
+  .karma-research-grid, .karma-visual-system, .karma-small-assets { grid-template-columns: 1fr 1fr; }
+  .karma-research-grid > :nth-child(2), .karma-research-grid > :nth-child(3) { margin-top: 0; }
+  .karma-research-grid > :nth-child(3) { grid-column: 2; }
+  .karma-iteration-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .karma-iteration-arrow { justify-self: center; transform: rotate(90deg); }
+  .karma-visual-system > :nth-child(4), .karma-visual-system > :nth-child(5) { grid-column: auto; grid-row: auto; }
+  .karma-product-block, .karma-product-block-reverse { grid-template-columns: 1fr; gap: 2.5rem; margin-top: 7rem; }
+  .karma-product-block-reverse > :first-child, .karma-product-block-reverse > :last-child { grid-column: auto; grid-row: auto; }
+  .karma-product-block-reverse > :first-child { order: 1; }
+  .karma-product-block-reverse > :last-child { order: 2; }
+  .karma-ecosystem-labels { grid-template-columns: repeat(2, 1fr); row-gap: 1rem; }
+  .karma-small-assets { margin-top: 4rem; }
+  .karma-small-assets > :last-child { grid-column: 2; }
+  .karma-closing-meta { grid-template-columns: 1fr 1fr; margin-top: 6rem; }
 }
