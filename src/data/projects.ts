@@ -36,7 +36,7 @@ export const projects: Project[] = [
     num: "02",
     title: "Blind Words",
     type: "Tipografía inclusiva",
-    year: "2025",
+    year: "2016",
     description:
       "Un proyecto que explora la tipografía inclusiva y pregunta si el diseño gráfico actual sigue siendo restrictivo para las personas invidentes.",
     image: projectBlindwords,

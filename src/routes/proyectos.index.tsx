@@ -4,6 +4,7 @@ import karmaIcon from "@/assets/karma.svg";
 import srtaIcon from "@/assets/srta.svg";
 import aprendeHistoriaArteIcon from "@/assets/aprende-historia-arte.png";
 import aprendeHistoriaArteProject from "@/assets/aprende-historia-arte-project.png";
+import karmaApp from "@/assets/karma-app.png";
 import { projects } from "@/data/projects";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -51,9 +52,8 @@ const personalProjects: PersonalProject[] = [
     ],
     state: "En construcción",
     href: "/proyectos/karma-financiero",
-    image: karmaIcon,
-    alt: "Icono de Karma Financiero",
-    isIcon: true,
+    image: karmaApp,
+    alt: "Pantalla de acceso de Karma Financiero",
   },
   {
     num: "02",
@@ -173,7 +173,7 @@ function ProjectsPage() {
                 >
                   <a
                     href={project.href}
-                    className={`projects-project-media group ${project.isIcon ? "project-icon-media" : ""}`}
+                    className={`projects-project-media group ${project.isIcon ? "project-icon-media" : ""} ${project.title === "Karma Financiero" ? "project-karma-media" : ""}`}
                     aria-label={`Ver proyecto: ${project.title}`}
                   >
                     <img
@@ -181,11 +181,11 @@ function ProjectsPage() {
                       alt={project.alt}
                       loading={index === 0 ? "eager" : "lazy"}
                     />
-                    <span className="project-media-label">{project.category}</span>
+                    {index !== 0 && <span className="project-media-label">{project.category}</span>}
                   </a>
                   <div className="projects-project-copy">
                     <span className="project-eyebrow">
-                      {project.num} · {project.state}
+                      {index === 0 ? project.category : `${project.num} · ${project.state}`}
                     </span>
                     <h2>{project.title}</h2>
                     <div className="project-featured-description">

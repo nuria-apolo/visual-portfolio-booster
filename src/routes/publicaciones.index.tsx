@@ -42,15 +42,13 @@ export const Route = createFileRoute("/publicaciones/")({
 function PublicationsPage() {
   return (
     <div className="editorial-page">
-      <header className="editorial-header">
-        <a href="/" className="editorial-brand">
-          srtaserifa
-        </a>
-        <span className="editorial-section-label">Publicaciones</span>
-      </header>
       <main>
         <section className="editorial-hero">
-          <p className="editorial-kicker">Archivo editorial</p>
+          <nav className="book-breadcrumbs publications-breadcrumbs" aria-label="Migas de pan">
+            <a href="/">Inicio</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">Publicaciones</span>
+          </nav>
           <h1>Lo que escribo y comparto.</h1>
           <p className="publication-hero-body">
             Libros, notas, ensayos y otros proyectos editoriales. Un espacio para reunir lo que

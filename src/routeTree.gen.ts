@@ -21,6 +21,7 @@ import { Route as PublicacionesIndexRouteImport } from './routes/publicaciones.i
 import { Route as ProyectosIndexRouteImport } from './routes/proyectos.index'
 import { Route as PublicacionesTreintaMililitrosRouteImport } from './routes/publicaciones.treinta-mililitros'
 import { Route as ProyectosKarmaFinancieroRouteImport } from './routes/proyectos.karma-financiero'
+import { Route as ProyectosBlindWordsCitizenRouteImport } from './routes/proyectos.blind-words-citizen'
 import { Route as ProyectosBlindWordsRouteImport } from './routes/proyectos.blind-words'
 import { Route as ProyectosAprendeHistoriaDelArteRouteImport } from './routes/proyectos.aprende-historia-del-arte'
 
@@ -86,6 +87,12 @@ const ProyectosKarmaFinancieroRoute =
     path: '/karma-financiero',
     getParentRoute: () => ProyectosRoute,
   } as any)
+const ProyectosBlindWordsCitizenRoute =
+  ProyectosBlindWordsCitizenRouteImport.update({
+    id: '/blind-words-citizen',
+    path: '/blind-words-citizen',
+    getParentRoute: () => ProyectosRoute,
+  } as any)
 const ProyectosBlindWordsRoute = ProyectosBlindWordsRouteImport.update({
   id: '/blind-words',
   path: '/blind-words',
@@ -109,6 +116,7 @@ export interface FileRoutesByFullPath {
   '/sobre-mi': typeof SobreMiRoute
   '/proyectos/aprende-historia-del-arte': typeof ProyectosAprendeHistoriaDelArteRoute
   '/proyectos/blind-words': typeof ProyectosBlindWordsRoute
+  '/proyectos/blind-words-citizen': typeof ProyectosBlindWordsCitizenRoute
   '/proyectos/karma-financiero': typeof ProyectosKarmaFinancieroRoute
   '/publicaciones/treinta-mililitros': typeof PublicacionesTreintaMililitrosRoute
   '/proyectos/': typeof ProyectosIndexRoute
@@ -123,6 +131,7 @@ export interface FileRoutesByTo {
   '/sobre-mi': typeof SobreMiRoute
   '/proyectos/aprende-historia-del-arte': typeof ProyectosAprendeHistoriaDelArteRoute
   '/proyectos/blind-words': typeof ProyectosBlindWordsRoute
+  '/proyectos/blind-words-citizen': typeof ProyectosBlindWordsCitizenRoute
   '/proyectos/karma-financiero': typeof ProyectosKarmaFinancieroRoute
   '/publicaciones/treinta-mililitros': typeof PublicacionesTreintaMililitrosRoute
   '/proyectos': typeof ProyectosIndexRoute
@@ -140,6 +149,7 @@ export interface FileRoutesById {
   '/sobre-mi': typeof SobreMiRoute
   '/proyectos/aprende-historia-del-arte': typeof ProyectosAprendeHistoriaDelArteRoute
   '/proyectos/blind-words': typeof ProyectosBlindWordsRoute
+  '/proyectos/blind-words-citizen': typeof ProyectosBlindWordsCitizenRoute
   '/proyectos/karma-financiero': typeof ProyectosKarmaFinancieroRoute
   '/publicaciones/treinta-mililitros': typeof PublicacionesTreintaMililitrosRoute
   '/proyectos/': typeof ProyectosIndexRoute
@@ -158,6 +168,7 @@ export interface FileRouteTypes {
     | '/sobre-mi'
     | '/proyectos/aprende-historia-del-arte'
     | '/proyectos/blind-words'
+    | '/proyectos/blind-words-citizen'
     | '/proyectos/karma-financiero'
     | '/publicaciones/treinta-mililitros'
     | '/proyectos/'
@@ -172,6 +183,7 @@ export interface FileRouteTypes {
     | '/sobre-mi'
     | '/proyectos/aprende-historia-del-arte'
     | '/proyectos/blind-words'
+    | '/proyectos/blind-words-citizen'
     | '/proyectos/karma-financiero'
     | '/publicaciones/treinta-mililitros'
     | '/proyectos'
@@ -188,6 +200,7 @@ export interface FileRouteTypes {
     | '/sobre-mi'
     | '/proyectos/aprende-historia-del-arte'
     | '/proyectos/blind-words'
+    | '/proyectos/blind-words-citizen'
     | '/proyectos/karma-financiero'
     | '/publicaciones/treinta-mililitros'
     | '/proyectos/'
@@ -291,6 +304,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProyectosKarmaFinancieroRouteImport
       parentRoute: typeof ProyectosRoute
     }
+    '/proyectos/blind-words-citizen': {
+      id: '/proyectos/blind-words-citizen'
+      path: '/blind-words-citizen'
+      fullPath: '/proyectos/blind-words-citizen'
+      preLoaderRoute: typeof ProyectosBlindWordsCitizenRouteImport
+      parentRoute: typeof ProyectosRoute
+    }
     '/proyectos/blind-words': {
       id: '/proyectos/blind-words'
       path: '/blind-words'
@@ -311,6 +331,7 @@ declare module '@tanstack/react-router' {
 interface ProyectosRouteChildren {
   ProyectosAprendeHistoriaDelArteRoute: typeof ProyectosAprendeHistoriaDelArteRoute
   ProyectosBlindWordsRoute: typeof ProyectosBlindWordsRoute
+  ProyectosBlindWordsCitizenRoute: typeof ProyectosBlindWordsCitizenRoute
   ProyectosKarmaFinancieroRoute: typeof ProyectosKarmaFinancieroRoute
   ProyectosIndexRoute: typeof ProyectosIndexRoute
 }
@@ -318,6 +339,7 @@ interface ProyectosRouteChildren {
 const ProyectosRouteChildren: ProyectosRouteChildren = {
   ProyectosAprendeHistoriaDelArteRoute: ProyectosAprendeHistoriaDelArteRoute,
   ProyectosBlindWordsRoute: ProyectosBlindWordsRoute,
+  ProyectosBlindWordsCitizenRoute: ProyectosBlindWordsCitizenRoute,
   ProyectosKarmaFinancieroRoute: ProyectosKarmaFinancieroRoute,
   ProyectosIndexRoute: ProyectosIndexRoute,
 }
