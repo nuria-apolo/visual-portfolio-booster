@@ -4,7 +4,7 @@ import apoloIcon from "@/assets/apolo.svg";
 import karmaIcon from "@/assets/karma.svg";
 import srtaIcon from "@/assets/srta.svg";
 import aprendeHistoriaArteIcon from "@/assets/aprende-historia-arte.png";
-import aprendeHistoriaArteInterface from "@/assets/aprende-historia-arte-interface.png";
+import aprendeHistoriaArtePhoto from "@/assets/aprende-historia-arte-photo.png";
 import karmaApp from "@/assets/karma-app.png";
 import { projects } from "@/data/projects";
 import { expertiseTags } from "@/data/expertise";
@@ -69,8 +69,8 @@ const personalProjects: PersonalProject[] = [
     ],
     state: "Activo",
     href: "/proyectos/aprende-historia-del-arte",
-    image: aprendeHistoriaArteInterface,
-    alt: "Interfaz de Aprende Historia del Arte con una pregunta sobre arte y una respuesta clara",
+    image: aprendeHistoriaArtePhoto,
+    alt: "Aprende Historia del Arte mostrado en una tablet sobre un sillón naranja",
   },
   blindWordsProject
     ? {

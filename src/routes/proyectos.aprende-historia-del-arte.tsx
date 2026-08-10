@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import aprendeHistoriaArteProject from "@/assets/aprende-historia-arte-project.png";
+import aprendeHistoriaArtePhoto from "@/assets/aprende-historia-arte-photo.png";
 import karmaApp from "@/assets/karma-app.png";
 import blindWordsImage from "@/assets/blindwords-framer.png";
 import { ProjectCaseStudy } from "@/components/ProjectCaseStudy";
@@ -46,8 +46,8 @@ function AprendeHistoriaDelArtePage() {
       category="Educación · Cultura · Producto digital"
       state="Activo"
       intro="Una plataforma gratuita para aprender Historia del Arte de una forma más clara, cercana y fácil de explorar."
-      heroImage={aprendeHistoriaArteProject}
-      heroAlt="Collage de esculturas clásicas con gafas de sol y una escena pictórica central"
+      heroImage={aprendeHistoriaArtePhoto}
+      heroAlt="Aprende Historia del Arte mostrado en una tablet sobre un sillón naranja"
       relatedProjects={[
         {
           title: "Karma Financiero",
@@ -78,8 +78,8 @@ function AprendeHistoriaDelArtePage() {
           paragraphs: [
             "Diseño, contenido, tecnología, divulgación y experimentación editorial conviven dentro de una plataforma que sigue creciendo.",
           ],
-          image: aprendeHistoriaArteProject,
-          imageAlt: "Collage editorial de arte clásico",
+          image: aprendeHistoriaArtePhoto,
+          imageAlt: "Aprende Historia del Arte mostrado en una tablet sobre un sillón naranja",
         },
         {
           id: "busqueda",

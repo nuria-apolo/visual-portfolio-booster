@@ -4184,6 +4184,7 @@ body:has(.construction-page) {
     position: relative;
     top: auto;
     flex-basis: 86%;
+    border-radius: 18px;
   }
 
   .projects-project-media {
