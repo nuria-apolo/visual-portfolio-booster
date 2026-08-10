@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:description", content: SITE_DESCRIPTION },
       { name: "twitter:image", content: heroObsidian },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://srtaserifa.es/" }],
   }),
   component: ConstructionPage,
 });
