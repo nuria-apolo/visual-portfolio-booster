@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type CSSProperties } from "react";
 import heroObsidian from "@/assets/hero-obsidian.jpg";
-import portraitNuria from "@/assets/portrait-nuria-new.png";
+import portraitNuria from "@/assets/portrait-nuria-new-small.webp";
 import apoloIcon from "@/assets/apolo.svg";
 import karmaIcon from "@/assets/karma.svg";
 import srtaIcon from "@/assets/srta.svg";
@@ -125,8 +125,8 @@ function ConstructionPage() {
               <img
                 src={portraitNuria}
                 alt="Retrato de Núria López"
-                width={951}
-                height={832}
+                width={192}
+                height={168}
                 fetchPriority="high"
                 decoding="async"
                 className="construction-portrait size-10 rounded-full object-cover shadow-[0_3px_12px_rgba(0,0,0,.16)] sm:size-12"
