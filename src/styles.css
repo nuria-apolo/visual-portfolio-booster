@@ -5149,31 +5149,64 @@ body:has(.construction-page) {
   .site-float-menu {
     top: max(0.75rem, env(safe-area-inset-top));
     left: 50%;
-    width: max-content;
-    max-width: calc(100vw - 3rem);
+    width: calc(100vw - 1.5rem);
+    max-width: calc(100vw - 1.5rem);
     transform: translateX(-50%);
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-
-  .site-float-menu::-webkit-scrollbar {
-    display: none;
+    overflow: hidden;
   }
 
   .site-float-menu-list {
-    gap: 0.05rem;
-    padding: 0.25rem;
+    width: 100%;
+    justify-content: space-between;
+    gap: 0;
+    padding: 5px 1rem 3px;
+  }
+
+  .site-float-menu-list > li {
+    flex: 0 0 auto;
   }
 
   .site-float-menu-link {
+    position: relative;
+    flex: 0 0 auto;
+    isolation: isolate;
     min-height: 2.5rem;
-    padding: 0.5rem 0.8rem;
-    font-size: 0.8rem;
+    width: auto;
+    padding: 0.5rem 0.25rem;
+    font-size: 0.78rem;
+    letter-spacing: -0.045em;
+  }
+
+  .site-float-menu-link.is-active {
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+    background: transparent;
+  }
+
+  .site-float-menu-link.is-active::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0 -0.75rem;
+    border-radius: 999px;
+    background: rgb(255 255 255 / 0.9);
+    content: "";
   }
 
   @media (max-width: 360px) {
     .site-float-menu-list {
-      justify-content: flex-start;
+      padding-right: 0.25rem;
+      padding-left: 0.25rem;
+    }
+
+    .site-float-menu-link {
+      padding-right: 0.25rem;
+      padding-left: 0.25rem;
+      font-size: 13px;
+    }
+
+    .site-float-menu-link.is-active {
+      padding-right: 0.55rem;
+      padding-left: 0.55rem;
     }
   }
 
@@ -6266,5 +6299,34 @@ h2.editorial-kicker {
   .karma-project-link,
   .note-panel-subscribe {
     font-size: 16px;
+  }
+
+  .site-float-menu-link {
+    min-height: 40px;
+    padding: 0.5rem 0.25rem;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .site-float-menu-list {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .site-float-menu-link {
+    padding-right: 0.15rem;
+    padding-left: 0.15rem;
+    font-size: 13px;
+  }
+
+  .site-float-menu-link.is-active {
+    padding-right: 0.15rem;
+    padding-left: 0.15rem;
+  }
+
+  .site-float-menu-link.is-active::before {
+    right: -0.55rem;
+    left: -0.55rem;
   }
 }
