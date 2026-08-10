@@ -135,13 +135,13 @@ function ConstructionPage() {
             <span className="construction-intro-right">soy srtaserifa</span>
           </div>
 
-          <h1 className="construction-title animate-fade-up mt-5 max-w-[18rem] font-display text-[3.45rem] leading-[0.92] tracking-[-0.04em] text-balance sm:mt-4 sm:max-w-[1040px] sm:text-[4.375rem] sm:leading-[0.98] sm:tracking-[-0.045em]">
+          <h1 className="construction-title animate-fade-up mt-5 max-w-[21rem] font-display text-[3.45rem] leading-[0.92] tracking-[-0.04em] text-balance sm:mt-4 sm:max-w-[1040px] sm:text-[4.375rem] sm:leading-[0.98] sm:tracking-[-0.045em]">
           El <em className="font-normal">diseño</em> es un <em className="font-normal">dialecto</em>
             <br className="hidden sm:block" /> entre el mundo que es y el
             <br className="hidden sm:block" /> mundo que podría ser
           </h1>
 
-          <p className="construction-body animate-fade-up mt-6 max-w-[19rem] text-base leading-[1.45] tracking-[-0.015em] text-black/65 sm:mt-7 sm:max-w-[710px] sm:text-base">
+          <p className="construction-body animate-fade-up mt-6 max-w-[21rem] text-base leading-[1.45] tracking-[-0.015em] text-black/65 sm:mt-7 sm:max-w-[710px] sm:text-base">
             Desde una identidad visual hasta un producto digital, el diseño convierte la complejidad
             en algo que las personas pueden entender, usar y hacer suyo. Y yo me encargo de hacerlo
             realidad ;) Ahora soy <strong>Head of Design</strong> en{" "}

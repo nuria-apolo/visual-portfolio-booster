@@ -38,9 +38,22 @@ const projectCategories = [
 ];
 
 function SectionAnchorNav({ activeId }: { activeId: string }) {
-  return <nav className="section-anchor-nav" aria-label="Índice del proyecto">
-    {navigation.slice(1).map(([id, label]) => <a key={id} href={`#${id}`} className={id === activeId ? "is-active" : ""}>{label}</a>)}
-  </nav>;
+  const activeLabel = navigation.find(([id]) => id === activeId)?.[1] ?? "Índice";
+
+  return <>
+    <nav className="section-anchor-nav section-anchor-nav-desktop" aria-label="Índice del proyecto">
+      {navigation.slice(1).map(([id, label]) => <a key={id} href={`#${id}`} className={id === activeId ? "is-active" : ""}>{label}</a>)}
+    </nav>
+    <details className="section-anchor-nav-mobile">
+      <summary>
+        <span>{activeLabel}</span>
+        <span aria-hidden="true">⌄</span>
+      </summary>
+      <nav aria-label="Índice del proyecto">
+        {navigation.slice(1).map(([id, label]) => <a key={id} href={`#${id}`} className={id === activeId ? "is-active" : ""}>{label}</a>)}
+      </nav>
+    </details>
+  </>;
 }
 
 function SectionLabel({ children }: { children: string }) {
