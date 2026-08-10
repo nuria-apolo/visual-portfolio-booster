@@ -786,10 +786,14 @@ body:has(.construction-page) {
 .site-footer-brand {
   display: inline-block;
   color: inherit;
-  font-size: clamp(1.7rem, 3vw, 2.4rem);
-  font-weight: 500;
-  letter-spacing: -0.07em;
   text-decoration: none;
+}
+
+.site-footer-brand img {
+  display: block;
+  transform: translate(-26%, -26%);
+  width: 96px;
+  height: 96px;
 }
 
 .site-footer-about p {
@@ -4951,14 +4955,26 @@ body:has(.construction-page) {
   }
 
   .site-footer-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem 1.25rem;
+  }
+
+  .site-footer-about {
+    grid-column: 1 / -1;
+  }
+
+  .site-footer-floating .site-footer-about p {
+    margin-top: 0.5rem;
+  }
+
+  .site-footer-brand img {
+    transform: translate(-14%, -26%);
   }
 
   .site-footer-bottom {
     align-items: flex-start;
     flex-direction: column;
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
 
   .site-footer-floating {
@@ -4972,6 +4988,11 @@ body:has(.construction-page) {
   .site-footer-grid,
   .site-footer-bottom {
     width: min(100% - 2rem, 1180px);
+  }
+
+  .site-footer-floating .site-footer-grid,
+  .site-footer-floating .site-footer-bottom {
+    width: 100%;
   }
 
   .legal-content {

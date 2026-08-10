@@ -3,7 +3,6 @@ import { useRouterState } from "@tanstack/react-router";
 const siteMenuItems = [
   { label: "Inicio", href: "/" },
   { label: "Sobre mí", href: "/sobre-mi" },
-  { label: "Rol", href: "/rol" },
   { label: "Proyectos", href: "/proyectos" },
   { label: "Publicaciones", href: "/publicaciones" },
 ] as const;

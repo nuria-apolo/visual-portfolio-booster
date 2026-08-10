@@ -1,3 +1,5 @@
+import srtaFooterLogo from "@/assets/srta-footer.svg";
+
 type SiteFooterProps = {
   variant?: "light" | "dark" | "floating";
 };
@@ -27,7 +29,7 @@ export function SiteFooter({ variant = "light" }: SiteFooterProps) {
       <div className="site-footer-grid">
         <div className="site-footer-about">
           <a href="/" className="site-footer-brand" aria-label="Ir a la Home de Srta Serifa">
-            srtaserifa
+            <img src={srtaFooterLogo} alt="Srta Serifa" width={96} height={96} />
           </a>
           <p>Brand systems + digital products para marcas con algo que decir.</p>
           <small>© 2026 Núria López · Srta Serifa</small>
