@@ -122,7 +122,7 @@ export function ProjectCaseStudy({
               <section className="case-study-section" id={section.id} key={section.id}>
                 <SectionAnchorNav activeId={section.id} items={sectionNavigation} />
                 <div className="case-study-section-content">
-                  <h3>{section.title}</h3>
+                  <h2>{section.title}</h2>
                   {section.paragraphs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}

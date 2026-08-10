@@ -144,7 +144,7 @@ function ArticlePage() {
               <p className="editorial-kicker">En esta nota</p>
               <p>{article.description}</p>
               <a className="project-button article-aside-button" href="/rol">
-                Ver servicios de diseño <span aria-hidden="true">↗</span>
+                Ver servicios <span aria-hidden="true">↗</span>
               </a>
             </aside>
           </div>

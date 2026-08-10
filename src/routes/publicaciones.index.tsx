@@ -104,7 +104,7 @@ function PublicationsPage() {
                 <div className="publication-card-meta">
                   <div>
                     <p className="editorial-kicker">BOOK · Activo</p>
-                    <h2>Treinta mililitros</h2>
+                    <h3>Treinta mililitros</h3>
                   </div>
                   <a className="publication-card-link" href="/publicaciones/treinta-mililitros">
                     Ver publicación ↗
@@ -112,7 +112,7 @@ function PublicationsPage() {
                 </div>
               </article>
 
-              <article className="publication-card publication-card-active">
+              <article className="publication-card publication-card-upcoming">
                 <div className="publication-card-cover-link">
                   <img
                     src="/covers/la-vida-son-canciones.png"
@@ -123,7 +123,7 @@ function PublicationsPage() {
                 <div className="publication-card-meta">
                   <div>
                     <p className="editorial-kicker">BOOK · Activo</p>
-                    <h2>La vida son canciones que recordar</h2>
+                    <h3>La vida son canciones que recordar</h3>
                   </div>
                   <span className="publication-card-link publication-card-link-muted">
                     Próximamente

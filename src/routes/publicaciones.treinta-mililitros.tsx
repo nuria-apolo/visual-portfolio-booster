@@ -53,7 +53,7 @@ function BookPage() {
               alrededor de una taza y las distintas formas de compartir el tiempo.
             </p>
             <section className="editorial-prose">
-              <h2>Sinopsis</h2>
+              <h2 className="editorial-kicker">Sinopsis</h2>
               <p>
                 30 mililitros reúne pequeñas escenas, recuerdos y conversaciones relacionadas con el
                 café. Cada preparación abre una historia distinta: una forma de mirar lo cotidiano y

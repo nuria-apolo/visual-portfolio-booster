@@ -2078,14 +2078,14 @@ body:has(.construction-page) {
 }
 
 .note-panel-header h2,
-.publication-card-meta h2 {
+.publication-card-meta h3 {
   font-size: clamp(1.35rem, 2.2vw, 2rem);
   font-weight: 500;
   letter-spacing: -0.04em;
   line-height: 1;
 }
 
-.publication-card-meta h2 {
+.publication-card-meta h3 {
   font-size: clamp(1.15rem, 1.8vw, 1.65rem);
 }
 
@@ -2569,7 +2569,7 @@ body:has(.construction-page) {
   padding-top: 1rem;
 }
 
-.publication-card-meta h2 {
+.publication-card-meta h3 {
   max-width: 15rem;
   margin-top: 0.45rem;
 }
@@ -2587,6 +2587,14 @@ body:has(.construction-page) {
 .publication-card-link-muted {
   color: rgba(23, 23, 23, 0.42);
   border-bottom-color: rgba(23, 23, 23, 0.18);
+}
+
+.publication-card-upcoming .publication-card-meta h3 {
+  color: rgba(23, 23, 23, 0.46);
+}
+
+.publication-card-upcoming .publication-card-cover {
+  opacity: 0.58;
 }
 
 .book-page {
@@ -2932,6 +2940,7 @@ body:has(.construction-page) {
   display: flex;
   gap: 16px;
   overflow-x: auto;
+  margin-right: calc((100% - 100vw) / 2);
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
@@ -2943,7 +2952,7 @@ body:has(.construction-page) {
 
 .projects-project-card {
   position: relative;
-  flex: 0 0 calc((100% - 16px) / 2);
+  flex: 0 0 calc((100% - 16px - (100vw - 100%)) / 2);
   min-width: 0;
   padding: 0;
   border: 0;
@@ -3639,6 +3648,7 @@ body:has(.construction-page) {
   max-width: 700px;
 }
 
+.case-study-section h2,
 .case-study-section h3 {
   max-width: 700px;
   font-family: var(--font-sans);
@@ -4212,17 +4222,23 @@ body:has(.construction-page) {
   }
 
   .case-study-cover {
-    height: 72svh;
-    min-height: 72svh;
+    height: auto;
+    min-height: 0;
     padding: 0;
     border-radius: 0;
+    display: block;
   }
   .case-study-cover .case-study-hero-media {
     width: 100%;
-    height: 100%;
+    height: auto;
+  }
+  .case-study-cover .case-study-hero-media img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
   .case-study-sheet {
-    margin-top: -26svh;
+    margin-top: -2rem;
     padding: 4rem 0 5rem;
     border-radius: 1.25rem 1.25rem 0 0;
   }
@@ -4244,9 +4260,12 @@ body:has(.construction-page) {
 
   .karma-case-study-cover > img {
     width: 100%;
-    height: 100%;
+    height: auto;
     max-height: none;
     border-radius: 0;
+    object-fit: contain;
+    object-position: center;
+    background: #eeece7;
   }
   .karma-case-study-sheet .karma-intro {
     padding-bottom: 5rem;
@@ -5851,13 +5870,18 @@ body:has(.construction-page) {
   }
   .karma-case-study-sheet .karma-intro {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 3rem;
   }
   .karma-intro-aside {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem 2rem;
     margin: 0;
+    transform: translate(0.5rem, -1.75rem);
+  }
+  .karma-intro-aside p:nth-child(n + 2),
+  .case-study-intro-aside p:nth-child(n + 2) {
+    display: none;
   }
   .karma-breadcrumb {
     margin-bottom: 2.5rem;
@@ -5880,13 +5904,14 @@ body:has(.construction-page) {
   }
   .case-study-sheet .case-study-editorial-intro {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 3rem;
   }
   .case-study-intro-aside {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem 2rem;
     margin: 0;
+    transform: translate(0.5rem, -1.75rem);
   }
   .case-study-breadcrumb {
     margin-bottom: 2.5rem;
@@ -5979,5 +6004,182 @@ body:has(.construction-page) {
   .karma-closing-meta {
     grid-template-columns: 1fr 1fr;
     margin-top: 6rem;
+  }
+}
+
+/* Use the portfolio cursor consistently across the site. */
+body,
+a,
+button,
+summary,
+[role="button"] {
+  cursor: url("/cursor-pointer.png") 26 14, auto;
+}
+
+input,
+textarea,
+[contenteditable="true"] {
+  cursor: text;
+}
+
+/* Editorial type scale: desktop baseline. Design values are treated as CSS px. */
+body {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+h1,
+h1[class] {
+  font-family: var(--font-display);
+  font-size: 58px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+}
+
+h2,
+h2[class] {
+  font-family: var(--font-sans);
+  font-size: 38px !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+}
+
+h3,
+h3[class] {
+  font-family: var(--font-sans);
+  font-size: 30px !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+}
+
+h4,
+h4[class] {
+  font-family: var(--font-sans);
+  font-size: 26px !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+}
+
+.book-breadcrumbs,
+.case-study-breadcrumb,
+.karma-breadcrumb {
+  font-family: var(--font-sans);
+  color: #828282;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  text-transform: uppercase;
+}
+
+h2.editorial-kicker,
+.editorial-kicker,
+.editorial-section-label {
+  font-family: var(--font-sans);
+  font-size: 16px !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h2.editorial-kicker {
+  color: #828282 !important;
+}
+
+.article-meta .editorial-kicker {
+  color: #828282 !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+}
+
+.site-float-menu-link,
+.about-hero-button,
+.project-button,
+.role-projects-more,
+.article-aside-button,
+.karma-project-link,
+.note-panel-subscribe {
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.site-float-menu-link {
+  min-height: 2.75rem;
+  padding: 0.55rem 1.15rem;
+}
+
+/* Footer headings are navigation labels, not document headings. */
+.site-footer h2 {
+  font-family: var(--font-sans) !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+}
+
+/* Compact labels and card metadata keep their existing supporting scale. */
+.editorial-kicker,
+.case-study-kicker,
+.case-study-section-label,
+.case-study-meta dt,
+.project-card-meta,
+.project-secondary-caption,
+.site-footer-column h2 {
+  line-height: 1.2;
+}
+
+@media (max-width: 720px) {
+  h1,
+  h1[class] {
+    font-size: 46px !important;
+    line-height: 1.05 !important;
+  }
+
+  h2,
+  h2[class] {
+    font-size: 30px !important;
+    line-height: 1.2 !important;
+  }
+
+  h3,
+  h3[class] {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+  }
+
+  h4,
+  h4[class] {
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+  }
+
+  .site-footer h2 {
+    font-size: 16px !important;
+  }
+
+  .book-breadcrumbs,
+  .case-study-breadcrumb,
+  .karma-breadcrumb {
+    font-size: 14px !important;
+  }
+
+  h2.editorial-kicker,
+  .editorial-kicker,
+  .editorial-section-label {
+    font-size: 14px !important;
+  }
+
+  .site-float-menu-link,
+  .about-hero-button,
+  .project-button,
+  .role-projects-more,
+  .article-aside-button,
+  .karma-project-link,
+  .note-panel-subscribe {
+    font-size: 16px;
   }
 }

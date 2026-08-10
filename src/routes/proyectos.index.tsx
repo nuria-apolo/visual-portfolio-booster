@@ -291,7 +291,7 @@ function ProjectsPage() {
                       ))}
                     </div>
                     <a href={project.href} className="project-button">
-                      VER PROYECTO <span aria-hidden="true">↗</span>
+                      Ver proyecto <span aria-hidden="true">↗</span>
                     </a>
                   </div>
                 </article>
