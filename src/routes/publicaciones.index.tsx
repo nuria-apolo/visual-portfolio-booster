@@ -104,7 +104,7 @@ function PublicationsPage() {
                 <div className="publication-card-meta">
                   <div>
                     <p className="editorial-kicker">BOOK · Activo</p>
-                    <h3>Treinta mililitros</h3>
+                    <h2>Treinta mililitros</h2>
                   </div>
                   <a className="publication-card-link" href="/publicaciones/treinta-mililitros">
                     Ver publicación ↗
@@ -123,7 +123,7 @@ function PublicationsPage() {
                 <div className="publication-card-meta">
                   <div>
                     <p className="editorial-kicker">BOOK · Activo</p>
-                    <h3>La vida son canciones que recordar</h3>
+                    <h2>La vida son canciones que recordar</h2>
                   </div>
                   <span className="publication-card-link publication-card-link-muted">
                     Próximamente
