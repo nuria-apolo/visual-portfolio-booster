@@ -31,7 +31,10 @@ export function SiteFooter({ variant = "light" }: SiteFooterProps) {
           <a href="/" className="site-footer-brand" aria-label="Ir a la Home de Srta Serifa">
             <img src={srtaFooterLogo} alt="Srta Serifa" width={96} height={96} />
           </a>
-          <p>Brand systems + digital products para marcas con algo que decir.</p>
+          <p>
+            Brand systems + digital products para marcas con algo que decir.{' '}
+            <a href="/rol">Head of Design en Apolo. Propulsora de Marcas.</a>
+          </p>
           <small>© 2026 Núria López · Srta Serifa</small>
         </div>
 
