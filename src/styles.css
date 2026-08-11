@@ -3632,7 +3632,7 @@ body:has(.construction-page) {
   display: grid;
   grid-template-columns: minmax(120px, 0.28fr) minmax(0, 1fr);
   gap: clamp(2rem, 8vw, 9rem);
-  padding: clamp(3rem, 7vw, 7rem) 0;
+  padding: clamp(4.5rem, 7vw, 7rem) 0;
 }
 
 .section-anchor-nav {
@@ -4323,6 +4323,7 @@ body:has(.construction-page) {
   .case-study-section {
     grid-template-columns: 1fr;
     gap: 1.25rem;
+    padding: 4.5rem 0;
   }
 
   .section-anchor-nav {
@@ -5579,7 +5580,7 @@ body:has(.construction-page) {
   display: grid;
   grid-template-columns: minmax(80px, 0.2fr) minmax(0, 1fr);
   gap: clamp(2rem, 8vw, 9rem);
-  padding: clamp(6rem, 12vw, 12rem) 0;
+  padding: clamp(4.5rem, 7vw, 7rem) 0;
 }
 .karma-section-body {
   max-width: 850px;
@@ -6272,7 +6273,7 @@ body:has(.construction-page) {
   .karma-section {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding: 6rem 0;
+    padding: 4.5rem 0;
   }
   .karma-section h2 {
     margin-bottom: 2rem;
