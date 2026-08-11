@@ -869,16 +869,17 @@ body:has(.construction-page) {
     transform 180ms ease;
 }
 
-.site-footer a:hover {
-  opacity: 0.58;
-}
-
 .site-footer-column li a,
 .site-footer-email {
   color: currentColor;
   opacity: 0.62;
   font-size: 0.95rem;
   letter-spacing: -0.025em;
+}
+
+.site-footer-column li a {
+  display: inline-block;
+  padding: 0.1rem 0;
 }
 
 .site-footer-email {
@@ -6331,6 +6332,70 @@ body:has(.construction-page) {
   .karma-small-assets > :last-child {
     grid-column: 2;
   }
+}
+
+/* Shared interaction for every text link. Visual links keep their own treatment. */
+a:hover,
+a:focus-visible {
+  opacity: 1;
+  text-decoration-line: underline;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.22em;
+}
+
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+:is(
+  .skip-link,
+  .site-float-menu-link,
+  .site-footer-brand,
+  .about-inline-link,
+  .about-hero-button,
+  .project-button,
+  .publication-card-cover-link,
+  .publication-topic-article,
+  .note-panel-header > a,
+  .note-panel-subscribe,
+  .note-panel-row,
+  .book-close-button,
+  .projects-project-media,
+  .project-featured-media,
+  .case-study-close,
+  .case-study-related-card,
+  .citizen-article-close,
+  .bio-site-link,
+  .karma-project-link
+):hover,
+:is(
+  .skip-link,
+  .site-float-menu-link,
+  .site-footer-brand,
+  .about-inline-link,
+  .about-hero-button,
+  .project-button,
+  .publication-card-cover-link,
+  .publication-topic-article,
+  .note-panel-header > a,
+  .note-panel-subscribe,
+  .note-panel-row,
+  .book-close-button,
+  .projects-project-media,
+  .project-featured-media,
+  .case-study-close,
+  .case-study-related-card,
+  .citizen-article-close,
+  .bio-site-link,
+  .karma-project-link
+):focus-visible,
+a:has(img):hover,
+a:has(img):focus-visible,
+a:has(svg):hover,
+a:has(svg):focus-visible {
+  text-decoration-line: none;
 }
 
 /* Use the portfolio cursor consistently across the site. */
