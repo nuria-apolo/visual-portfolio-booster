@@ -5590,9 +5590,51 @@ body:has(.construction-page) {
   max-width: 700px;
   font-size: clamp(2.3rem, 4vw, 4.1rem);
 }
+.karma-section h3.karma-problem-statement {
+  margin-top: clamp(4rem, 7vw, 6rem);
+  margin-bottom: 3.5rem;
+  font-family: var(--font-sans);
+  font-size: clamp(1.6rem, 2.6vw, 2.35rem);
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+}
+.karma-problem-blueprint {
+  display: block;
+  width: 100%;
+  margin-top: 3.5rem;
+  border-radius: 1.75rem;
+}
+.karma-search-journey {
+  display: block;
+  width: 100%;
+  margin-top: 5rem;
+  border-radius: 1.75rem;
+}
+.karma-section h3.karma-search-statement {
+  margin: 4rem 0 3.5rem;
+  font-family: var(--font-sans);
+  font-size: clamp(1.6rem, 2.6vw, 2.35rem);
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+}
 .karma-wide-placeholder {
   width: 100%;
   margin-top: 3rem;
+}
+.karma-space-architecture {
+  display: block;
+  height: auto;
+  border-radius: 1.75rem;
+}
+.karma-brand-system {
+  display: block;
+  height: auto;
+  border-radius: 1.75rem;
+}
+.karma-personal-shared-accounts {
+  display: block;
+  height: auto;
+  border-radius: 1.75rem;
 }
 .karma-word-list {
   margin: 1.5rem 0 0;
@@ -5632,11 +5674,43 @@ body:has(.construction-page) {
   margin-top: clamp(8rem, 14vw, 14rem);
 }
 .karma-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   margin: 3rem 0;
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4vw, 4rem);
-  letter-spacing: -0.05em;
-  line-height: 0.95;
+  overflow-x: auto;
+  padding: 0.25rem 0 0.75rem;
+  scrollbar-width: none;
+}
+.karma-actions::-webkit-scrollbar {
+  display: none;
+}
+.karma-action-step {
+  display: flex;
+  flex: 1 0 9rem;
+  align-items: center;
+  gap: 0.75rem;
+}
+.karma-action-step > span:first-child {
+  display: grid;
+  min-height: 4.5rem;
+  flex: 1;
+  place-items: center;
+  padding: 1rem;
+  border: 1px solid rgb(23 23 23 / 0.14);
+  color: #171717;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+.karma-action-arrow {
+  flex: 0 0 auto;
+  color: rgb(23 23 23 / 0.58);
+  font-family: var(--font-sans);
+  font-size: 1.35rem;
+  line-height: 1;
 }
 .karma-iteration-grid {
   display: grid;
@@ -5867,6 +5941,53 @@ body:has(.construction-page) {
   color: rgb(23 23 23 / 0.78);
   font-size: 0.82rem;
 }
+.karma-detail-gallery {
+  width: calc(100% + max(0px, (100vw - 1180px) / 2));
+  margin-top: 3rem;
+}
+.karma-detail-gallery-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.karma-detail-gallery-controls button {
+  display: grid;
+  width: 3.5rem;
+  height: 3.5rem;
+  place-items: center;
+  border: 1px solid rgb(23 23 23 / 0.14);
+  border-radius: 50%;
+  background: transparent;
+  color: #171717;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+.karma-detail-gallery-controls button:hover {
+  background: #f4f4f5;
+}
+.karma-detail-gallery-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.karma-detail-gallery-track::-webkit-scrollbar {
+  display: none;
+}
+.karma-detail-gallery-track img {
+  flex: 0 0 82%;
+  display: block;
+  width: 82%;
+  aspect-ratio: 1.5;
+  border-radius: 1.75rem;
+  object-fit: cover;
+  scroll-snap-align: start;
+}
 
 /* Shared editorial case-study shell */
 .case-study-sheet .case-study-editorial-intro {
@@ -6020,6 +6141,46 @@ body:has(.construction-page) {
   .karma-category-list li {
     padding: 0.6rem 0.8rem;
     font-size: 0.75rem;
+  }
+  .karma-detail-gallery {
+    width: 100%;
+    margin-top: 2.5rem;
+  }
+  .karma-detail-gallery-controls {
+    justify-content: flex-start;
+    margin-bottom: 0.75rem;
+  }
+  .karma-detail-gallery-controls button {
+    width: 3rem;
+    height: 3rem;
+  }
+  .karma-detail-gallery-track {
+    gap: 0.75rem;
+  }
+  .karma-detail-gallery-track img {
+    flex-basis: 88%;
+    width: 88%;
+    border-radius: 1.25rem;
+  }
+  .karma-problem-blueprint {
+    margin-top: 2.5rem;
+    border-radius: 1.25rem;
+  }
+  .karma-space-architecture {
+    border-radius: 1.25rem;
+  }
+  .karma-brand-system {
+    border-radius: 1.25rem;
+  }
+  .karma-personal-shared-accounts {
+    border-radius: 1.25rem;
+  }
+  .karma-search-journey {
+    margin-top: 3.5rem;
+    border-radius: 1.25rem;
+  }
+  .karma-section h3.karma-search-statement {
+    margin-top: 3rem;
   }
   .case-study-sheet .case-study-editorial-intro {
     grid-template-columns: 1fr;

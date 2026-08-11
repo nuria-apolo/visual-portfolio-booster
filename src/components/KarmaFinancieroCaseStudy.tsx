@@ -1,5 +1,14 @@
+import { useRef } from "react";
 import { SiteFooter } from "@/components/SiteFooter";
 import karmaApp from "@/assets/karma-app.png";
+import karmaDetailSubscriptions from "@/assets/karma-detail-subscriptions.jpg";
+import karmaDetailBalance from "@/assets/karma-detail-balance.jpg";
+import karmaDetailSymbol from "@/assets/karma-detail-symbol.jpg";
+import karmaBusinessBlueprint from "@/assets/karma-business-blueprint.jpg";
+import karmaUserJourney from "@/assets/karma-user-journey.jpg";
+import karmaSpaceArchitecture from "@/assets/karma-space-architecture.jpg";
+import karmaPersonalSharedAccounts from "@/assets/karma-personal-shared-accounts.jpg";
+import karmaBrandSystem from "@/assets/karma-brand-system.jpg";
 
 type PlaceholderProps = {
   label: string;
@@ -37,6 +46,8 @@ const projectCategories = [
   "Creative direction", "Accessibility web", "Content design", "UI design", "Desarrollo con IA y agentes",
 ];
 
+const karmaActionSteps = ["VER", "AÑADIR", "REPARTIR", "ENTENDER", "DECIDIR"];
+
 function SectionAnchorNav({ activeId }: { activeId: string }) {
   const activeLabel = navigation.find(([id]) => id === activeId)?.[1] ?? "Índice";
 
@@ -62,6 +73,15 @@ function SectionLabel({ children }: { children: string }) {
 }
 
 export function KarmaFinancieroCaseStudy() {
+  const detailGalleryRef = useRef<HTMLDivElement>(null);
+
+  const moveDetailGallery = (direction: number) => {
+    detailGalleryRef.current?.scrollBy({
+      left: direction * detailGalleryRef.current.clientWidth * 0.82,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="karma-case-study">
       <main className="karma-case-study-main">
@@ -96,6 +116,17 @@ export function KarmaFinancieroCaseStudy() {
               <ul className="karma-category-list" aria-label="Categorías del proyecto">
                 {projectCategories.map((category) => <li key={category}>{category}</li>)}
               </ul>
+              <div className="karma-detail-gallery">
+                <div className="karma-detail-gallery-controls" aria-label="Controles de la galería">
+                  <button type="button" onClick={() => moveDetailGallery(-1)} aria-label="Ver imagen anterior">←</button>
+                  <button type="button" onClick={() => moveDetailGallery(1)} aria-label="Ver imagen siguiente">→</button>
+                </div>
+                <div className="karma-detail-gallery-track" ref={detailGalleryRef} aria-label="Detalles de la aplicación Karma Financiero">
+                  <img src={karmaDetailSubscriptions} alt="Vista de suscripciones y servicios detectados en Karma Financiero" />
+                  <img src={karmaDetailBalance} alt="Vista de ingresos y gastos en Karma Financiero" />
+                  <img src={karmaDetailSymbol} alt="Símbolo visual de Karma Financiero" />
+                </div>
+              </div>
             </div>
           </section>
 
@@ -104,8 +135,8 @@ export function KarmaFinancieroCaseStudy() {
           <div className="karma-section-body">
             <h2>Las cuentas cuadran. Las personas no siempre.</h2>
             <div className="karma-prose"><p>Gestionar las finanzas de una sola persona ya implica tomar decisiones. Cuando entran dos, tres o cinco personas en la ecuación, aparecen muchas más.</p><p>¿Quién ha pagado esto?<br />¿Cuánto aporta cada uno?<br />¿Dividimos todo por igual?<br />¿Qué gastos son realmente comunes?<br />¿Cuánto llevamos ahorrado?<br />¿Quién adelantó dinero?</p><p>El problema no era únicamente calcular cantidades.</p><p>Gran parte de los acuerdos financieros que tenemos con otras personas existen en nuestra cabeza, en conversaciones o en pequeñas rutinas que ninguna herramienta recoge realmente.</p><p>Eso cambió el punto de partida del proyecto.</p></div>
-            <p className="karma-statement">Karma no debía ser una aplicación para dividir gastos.<br /><em>Debía ser un espacio para entender una economía compartida.</em></p>
-            <AssetPlaceholder label="YO + TÚ = NOSOTROS" aspectRatio="1.6 / 1" className="karma-wide-placeholder" />
+            <img className="karma-problem-blueprint" src={karmaBusinessBlueprint} alt="Karma Business Blueprint con la estrategia, el posicionamiento y la diferenciación del producto" />
+            <h3 className="karma-statement karma-problem-statement">Karma no debía ser una aplicación para dividir gastos.<br /><em>Debía ser un espacio para entender una economía compartida.</em></h3>
             <p className="karma-word-list">Ingresos · Gastos · Aportaciones · Objetivos · Acuerdos · Decisiones</p>
           </div>
         </section>
@@ -115,8 +146,8 @@ export function KarmaFinancieroCaseStudy() {
           <div className="karma-section-body">
             <h2>Antes de diseñar pantallas, había que entender qué estábamos compartiendo.</h2>
             <div className="karma-prose"><p>Las primeras decisiones no tuvieron que ver con botones, colores o componentes.</p><p>Tuvieron que ver con preguntas.</p><p>¿Qué ocurre cuando dos personas ganan cantidades diferentes? ¿Tiene sentido dividir siempre un gasto al 50 %? ¿Qué debería poder ver todo el grupo? ¿Qué información debería seguir siendo individual?</p><p>Y, sobre todo:</p><p>¿Podría funcionar la misma lógica para una pareja, una familia, un piso compartido o un viaje?</p><p>Explorar estas situaciones permitió separar dos conceptos que inicialmente parecían lo mismo: gastar juntos y gestionar dinero juntos.</p><p>Karma tenía que permitir ambas cosas.</p></div>
-            <p className="karma-statement karma-statement-small">No organizar únicamente transacciones, sino relaciones económicas entre personas.</p>
-            <div className="karma-research-grid"><AssetPlaceholder label="NOTAS DE RESEARCH" aspectRatio="1 / 1.15" /><AssetPlaceholder label="PRIMEROS ESQUEMAS" aspectRatio="1.15 / 1" /><AssetPlaceholder label="EXPLORACIÓN INICIAL" aspectRatio="0.9 / 1.1" /></div>
+            <img className="karma-search-journey" src={karmaUserJourney} alt="Recorrido de usuario de Karma desde el desorden hasta convertirlo en un hábito" />
+            <h3 className="karma-statement karma-search-statement">No organizar únicamente transacciones, sino relaciones económicas entre personas.</h3>
           </div>
         </section>
 
@@ -125,15 +156,15 @@ export function KarmaFinancieroCaseStudy() {
           <div className="karma-section-body">
             <h2>Diseñar alrededor de espacios, no de cuentas.</h2>
             <div className="karma-prose"><p>Una persona no comparte su economía de una única manera.</p><p>Puede tener una economía doméstica con su pareja, organizar un viaje con cuatro amigos y compartir determinados gastos familiares.</p><p>Por eso, la unidad principal de Karma terminó siendo el espacio.</p><p>Cada espacio representa una economía compartida independiente, con sus propios miembros, movimientos, aportaciones y objetivos.</p></div>
-            <AssetPlaceholder label="ARQUITECTURA DE ESPACIOS" aspectRatio="2 / 1" className="karma-wide-placeholder" />
+            <img className="karma-wide-placeholder karma-space-architecture" src={karmaSpaceArchitecture} alt="Vista de cuentas compartidas de Karma Financiero" />
             <div className="karma-flow">PERSONA <span>↓</span> ESPACIOS <span>↓</span> MIEMBROS <span>↓</span> DINERO <span>↓</span> DECISIONES</div>
-            <div className="karma-subsection"><h3>Reducir la complejidad.</h3><div className="karma-prose"><p>A partir de ahí, el reto fue decidir qué necesitaba entender una persona cada vez que entraba en Karma.</p><p>La arquitectura se fue reduciendo alrededor de unas pocas acciones:</p></div><p className="karma-actions">VER → AÑADIR → REPARTIR → ENTENDER → DECIDIR</p><div className="karma-prose"><p>En lugar de intentar mostrar toda la información financiera disponible, la interfaz debía priorizar aquello que ayudara a responder preguntas cotidianas.</p><p>¿Cuánto tenemos?<br />¿En qué estamos gastando?<br />¿Cómo estamos aportando?<br />¿Tenemos algo pendiente?<br />¿Nos estamos acercando a nuestro objetivo?</p></div><div className="karma-iteration-grid"><AssetPlaceholder label="WIREFRAME" aspectRatio="1 / 1.1" /><span className="karma-iteration-arrow">→</span><AssetPlaceholder label="ITERACIÓN UI" aspectRatio="1 / 1.1" /><span className="karma-iteration-arrow">→</span><AssetPlaceholder label="INTERFAZ ACTUAL" aspectRatio="1 / 1.1" /></div></div>
+            <div className="karma-subsection"><h3>Reducir la complejidad.</h3><div className="karma-prose"><p>A partir de ahí, el reto fue decidir qué necesitaba entender una persona cada vez que entraba en Karma.</p><p>La arquitectura se fue reduciendo alrededor de unas pocas acciones:</p></div><div className="karma-actions" aria-label="Secuencia de acciones de Karma">{karmaActionSteps.map((step, index) => <div className="karma-action-step" key={step}><span>{step}</span>{index < karmaActionSteps.length - 1 && <span className="karma-action-arrow" aria-hidden="true">→</span>}</div>)}</div><div className="karma-prose"><p>En lugar de intentar mostrar toda la información financiera disponible, la interfaz debía priorizar aquello que ayudara a responder preguntas cotidianas.</p><p>¿Cuánto tenemos?<br />¿En qué estamos gastando?<br />¿Cómo estamos aportando?<br />¿Tenemos algo pendiente?<br />¿Nos estamos acercando a nuestro objetivo?</p></div><img className="karma-wide-placeholder karma-personal-shared-accounts" src={karmaPersonalSharedAccounts} alt="Vistas Personal y Lo nuestro de las cuentas de Karma Financiero" /></div>
           </div>
         </section>
 
         <section className="karma-section" id="diseno">
           <SectionAnchorNav activeId="diseno" />
-          <div className="karma-section-body"><h2>Una fintech que no pareciera un banco.</h2><div className="karma-prose"><p>El lenguaje visual de Karma se desarrolló al mismo tiempo que el producto.</p><p>Desde el principio quería alejarlo de algunos códigos habituales del sector financiero: interfaces oscuras, gráficos complejos, azules corporativos y una comunicación excesivamente técnica.</p><p>Porque Karma habla de dinero, pero también habla de convivencia.</p><p>La identidad debía transmitir claridad, cercanía y cierta calma sin perder la sensación de estar utilizando una herramienta financiera.</p><p>El resultado combina una interfaz funcional con un lenguaje mucho más editorial.</p></div><AssetPlaceholder label="BRAND SYSTEM" aspectRatio="2 / 1" className="karma-wide-placeholder" /><div className="karma-subsection"><h3>Un sistema entre lo digital y lo humano.</h3><div className="karma-prose"><p>La interfaz utiliza una base neutra y cálida sobre la que aparecen pequeños códigos de color para organizar la información.</p><p>La tipografía editorial aporta personalidad fuera de las zonas más funcionales, mientras que una sans serif mantiene la legibilidad dentro del producto.</p><p>Las ilustraciones siguen la misma lógica: líneas manuales, personajes simplificados y pequeñas metáforas visuales.</p><p>La intención era que hubiera siempre algo ligeramente humano alrededor de los números.</p></div><div className="karma-visual-system"><AssetPlaceholder label="TYPOGRAPHY" aspectRatio="1 / 1" /><AssetPlaceholder label="COLOR" aspectRatio="1 / 1" /><AssetPlaceholder label="UI COMPONENTS" aspectRatio="1.35 / 1" /><AssetPlaceholder label="ILLUSTRATION" aspectRatio="1 / 1" /><AssetPlaceholder label="ICONOGRAPHY" aspectRatio="1 / 1" /></div></div></div>
+          <div className="karma-section-body"><h2>Una fintech que no pareciera un banco.</h2><div className="karma-prose"><p>El lenguaje visual de Karma se desarrolló al mismo tiempo que el producto.</p><p>Desde el principio quería alejarlo de algunos códigos habituales del sector financiero: interfaces oscuras, gráficos complejos, azules corporativos y una comunicación excesivamente técnica.</p><p>Porque Karma habla de dinero, pero también habla de convivencia.</p><p>La identidad debía transmitir claridad, cercanía y cierta calma sin perder la sensación de estar utilizando una herramienta financiera.</p><p>El resultado combina una interfaz funcional con un lenguaje mucho más editorial.</p></div><img className="karma-wide-placeholder karma-brand-system" src={karmaBrandSystem} alt="Brand system de Karma Financiero con identidad visual, pantallas y recursos gráficos" /><div className="karma-subsection"><h3>Un sistema entre lo digital y lo humano.</h3><div className="karma-prose"><p>La interfaz utiliza una base neutra y cálida sobre la que aparecen pequeños códigos de color para organizar la información.</p><p>La tipografía editorial aporta personalidad fuera de las zonas más funcionales, mientras que una sans serif mantiene la legibilidad dentro del producto.</p><p>Las ilustraciones siguen la misma lógica: líneas manuales, personajes simplificados y pequeñas metáforas visuales.</p><p>La intención era que hubiera siempre algo ligeramente humano alrededor de los números.</p></div><div className="karma-visual-system"><AssetPlaceholder label="TYPOGRAPHY" aspectRatio="1 / 1" /><AssetPlaceholder label="COLOR" aspectRatio="1 / 1" /><AssetPlaceholder label="UI COMPONENTS" aspectRatio="1.35 / 1" /><AssetPlaceholder label="ILLUSTRATION" aspectRatio="1 / 1" /><AssetPlaceholder label="ICONOGRAPHY" aspectRatio="1 / 1" /></div></div></div>
         </section>
 
         <section className="karma-section karma-product-section" id="producto">
