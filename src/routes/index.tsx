@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type CSSProperties } from "react";
-import heroObsidian from "@/assets/hero-obsidian.jpg";
 import portraitNuria from "@/assets/portrait-nuria-new-small.webp";
 import apoloIcon from "@/assets/apolo.svg";
 import karmaIcon from "@/assets/karma.svg";
@@ -12,6 +11,7 @@ import postHabitat from "@/assets/post-habitat.jpg";
 import postPortfolio from "@/assets/post-portfolio.jpg";
 import { projects } from "@/data/projects";
 import { SiteFooter } from "@/components/SiteFooter";
+import { absoluteAssetUrl, HOME_OG_IMAGE } from "@/lib/seo";
 
 const SITE_TITLE = "Núria López — Brand Systems + Digital Products | Srtaserifa";
 const SITE_DESCRIPTION =
@@ -31,10 +31,10 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: SITE_DESCRIPTION },
       { property: "og:url", content: "https://srtaserifa.es/" },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: heroObsidian },
+      { property: "og:image", content: absoluteAssetUrl(HOME_OG_IMAGE) },
       { name: "twitter:title", content: SITE_TITLE },
       { name: "twitter:description", content: SITE_DESCRIPTION },
-      { name: "twitter:image", content: heroObsidian },
+      { name: "twitter:image", content: absoluteAssetUrl(HOME_OG_IMAGE) },
     ],
     links: [{ rel: "canonical", href: "https://srtaserifa.es/" }],
   }),

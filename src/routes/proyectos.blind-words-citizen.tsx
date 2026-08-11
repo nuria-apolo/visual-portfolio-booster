@@ -3,6 +3,7 @@ import { useState } from "react";
 import campaignImage from "@/assets/blind-citizen-campaign.png";
 import { OtherProjects } from "@/components/OtherProjects";
 import { SiteFooter } from "@/components/SiteFooter";
+import { absoluteAssetUrl } from "@/lib/seo";
 
 export const Route = createFileRoute("/proyectos/blind-words-citizen")({
   head: () => ({
@@ -15,6 +16,18 @@ export const Route = createFileRoute("/proyectos/blind-words-citizen")({
         content:
           "Blind Words, en uso real: la tipografía aparece en la cartela de una campaña audiovisual de Citizen, una agencia de Canadá.",
       },
+      {
+        property: "og:title",
+        content: "Blind Words en una campaña internacional con Citizen — Srta Serifa",
+      },
+      {
+        property: "og:description",
+        content:
+          "Blind Words, en uso real: la tipografía aparece en la cartela de una campaña audiovisual de Citizen, una agencia de Canadá.",
+      },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "https://srtaserifa.es/proyectos/blind-words-citizen" },
+      { property: "og:image", content: absoluteAssetUrl(campaignImage) },
     ],
     links: [
       {
@@ -116,7 +129,11 @@ function BlindWordsCitizenPage() {
                 />
               ) : (
                 <div className="citizen-article-video-placeholder">
-                  <img src="/video-posters/citizen-braille-nails.png" alt="" loading="lazy" />
+                  <img
+                    src="/video-posters/citizen-braille-nails.png"
+                    alt="Póster de la campaña Braille Nails de Citizen con Blind Words"
+                    loading="lazy"
+                  />
                   <button
                     type="button"
                     onClick={() => setVideoRequested(true)}

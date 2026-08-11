@@ -4,6 +4,7 @@ import noteMark from "@/assets/note-mark.png";
 import { expertiseTags } from "@/data/expertise";
 import { SiteFooter } from "@/components/SiteFooter";
 import { articles } from "@/data/articles";
+import { absoluteAssetUrl, HOME_OG_IMAGE } from "@/lib/seo";
 
 const TITLE = "Publicaciones — Brand Systems + Digital Products | Srtaserifa";
 const DESCRIPTION =
@@ -60,6 +61,7 @@ export const Route = createFileRoute("/publicaciones/")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://srtaserifa.es/publicaciones" },
+      { property: "og:image", content: absoluteAssetUrl(HOME_OG_IMAGE) },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
     ],

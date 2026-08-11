@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteFooter } from "@/components/SiteFooter";
+import { absoluteAssetUrl, HOME_OG_IMAGE } from "@/lib/seo";
 
 export const Route = createFileRoute("/legal")({
   head: () => ({
@@ -9,7 +10,14 @@ export const Route = createFileRoute("/legal")({
         name: "description",
         content: "Información legal, privacidad, cookies y accesibilidad de srtaserifa.",
       },
+      { property: "og:title", content: "Textos legales — Srta Serifa" },
+      {
+        property: "og:description",
+        content: "Información legal, privacidad, cookies y accesibilidad de srtaserifa.",
+      },
+      { property: "og:type", content: "website" },
       { property: "og:url", content: "https://srtaserifa.es/legal" },
+      { property: "og:image", content: absoluteAssetUrl(HOME_OG_IMAGE) },
     ],
     links: [{ rel: "canonical", href: "https://srtaserifa.es/legal" }],
   }),

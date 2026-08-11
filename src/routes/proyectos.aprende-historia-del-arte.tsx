@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import aprendeHistoriaArtePhoto from "@/assets/aprende-historia-arte-photo.png";
 import { ProjectCaseStudy } from "@/components/ProjectCaseStudy";
+import { absoluteAssetUrl } from "@/lib/seo";
 
 export const Route = createFileRoute("/proyectos/aprende-historia-del-arte")({
   head: () => ({
@@ -11,6 +12,18 @@ export const Route = createFileRoute("/proyectos/aprende-historia-del-arte")({
         content:
           "Una plataforma gratuita para aprender Historia del Arte de una forma más clara, cercana y fácil de explorar.",
       },
+      { property: "og:title", content: "Aprende Historia del Arte — Srta Serifa" },
+      {
+        property: "og:description",
+        content:
+          "Una plataforma gratuita para aprender Historia del Arte de una forma más clara, cercana y fácil de explorar.",
+      },
+      { property: "og:type", content: "website" },
+      {
+        property: "og:url",
+        content: "https://srtaserifa.es/proyectos/aprende-historia-del-arte",
+      },
+      { property: "og:image", content: absoluteAssetUrl(aprendeHistoriaArtePhoto) },
     ],
     links: [
       { rel: "canonical", href: "https://srtaserifa.es/proyectos/aprende-historia-del-arte" },

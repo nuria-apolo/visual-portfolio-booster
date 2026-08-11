@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteFooter } from "@/components/SiteFooter";
+import { absoluteAssetUrl, HOME_OG_IMAGE } from "@/lib/seo";
 
 const TITLE = "30 mililitros — Núria López · Srta Serifa";
 const DESCRIPTION = "30 mililitros, una publicación de Núria López bajo el sello Srta Serifa.";
@@ -13,6 +14,7 @@ export const Route = createFileRoute("/publicaciones/treinta-mililitros")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "book" },
       { property: "og:url", content: "https://srtaserifa.es/publicaciones/treinta-mililitros" },
+      { property: "og:image", content: absoluteAssetUrl(HOME_OG_IMAGE) },
     ],
     links: [{ rel: "canonical", href: "https://srtaserifa.es/publicaciones/treinta-mililitros" }],
   }),

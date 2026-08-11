@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { KarmaFinancieroCaseStudy } from "@/components/KarmaFinancieroCaseStudy";
+import karmaApp from "@/assets/karma-app.png";
+import { absoluteAssetUrl } from "@/lib/seo";
 
 export const Route = createFileRoute("/proyectos/karma-financiero")({
   head: () => ({
@@ -10,6 +12,15 @@ export const Route = createFileRoute("/proyectos/karma-financiero")({
         content:
           "Un proyecto personal sobre dinero compartido, producto digital y mejores conversaciones sobre gastos.",
       },
+      { property: "og:title", content: "Karma Financiero — Srta Serifa" },
+      {
+        property: "og:description",
+        content:
+          "Un proyecto personal sobre dinero compartido, producto digital y mejores conversaciones sobre gastos.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://srtaserifa.es/proyectos/karma-financiero" },
+      { property: "og:image", content: absoluteAssetUrl(karmaApp) },
     ],
     links: [{ rel: "canonical", href: "https://srtaserifa.es/proyectos/karma-financiero" }],
     scripts: [

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteFooter } from "@/components/SiteFooter";
 import { articleBySlug, articles } from "@/data/articles";
+import { absoluteAssetUrl, HOME_OG_IMAGE } from "@/lib/seo";
 
 const BASE_URL = "https://srtaserifa.es";
 
@@ -19,6 +20,10 @@ export const Route = createFileRoute("/publicaciones/$slug")({
         { property: "og:type", content: "article" },
         { property: "og:url", content: `${BASE_URL}/publicaciones/${article.slug}` },
         { property: "og:locale", content: "es_ES" },
+        {
+          property: "og:image",
+          content: absoluteAssetUrl(HOME_OG_IMAGE),
+        },
         { property: "article:published_time", content: `${article.publishedAt}T09:00:00+02:00` },
         { property: "article:author", content: "Núria López" },
         { property: "article:section", content: article.category },

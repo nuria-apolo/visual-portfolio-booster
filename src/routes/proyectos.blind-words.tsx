@@ -4,6 +4,7 @@ import projectBlindwordsDetail1 from "@/assets/blindwords-detail-1.png";
 import projectBlindwordsDetail2 from "@/assets/blindwords-detail-2.png";
 import { ProjectCaseStudy } from "@/components/ProjectCaseStudy";
 import { projects } from "@/data/projects";
+import { absoluteAssetUrl } from "@/lib/seo";
 
 const blindWordsProject = projects.find((project) => project.title === "Blind Words");
 
@@ -16,6 +17,15 @@ export const Route = createFileRoute("/proyectos/blind-words")({
         content:
           blindWordsProject?.description ?? "Blind Words, un proyecto de tipografía inclusiva.",
       },
+      { property: "og:title", content: "Blind Words — Srta Serifa" },
+      {
+        property: "og:description",
+        content:
+          blindWordsProject?.description ?? "Blind Words, un proyecto de tipografía inclusiva.",
+      },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "https://srtaserifa.es/proyectos/blind-words" },
+      { property: "og:image", content: absoluteAssetUrl(projectBlindwords) },
     ],
     links: [{ rel: "canonical", href: "https://srtaserifa.es/proyectos/blind-words" }],
     scripts: [

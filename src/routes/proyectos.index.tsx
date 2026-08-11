@@ -9,6 +9,7 @@ import karmaApp from "@/assets/karma-app.png";
 import { projects } from "@/data/projects";
 import { expertiseTags } from "@/data/expertise";
 import { SiteFooter } from "@/components/SiteFooter";
+import { absoluteAssetUrl } from "@/lib/seo";
 
 const TITLE = "Proyectos — Brand Systems + Digital Products | Srtaserifa";
 const DESCRIPTION =
@@ -104,6 +105,7 @@ export const Route = createFileRoute("/proyectos/")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://srtaserifa.es/proyectos" },
+      { property: "og:image", content: absoluteAssetUrl(karmaApp) },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
     ],

@@ -14,6 +14,7 @@ import codexIcon from "@/assets/codex-icon.png";
 import perplexityIcon from "@/assets/perplexity-badge.png";
 import affinityIcon from "@/assets/affinity-badge.png";
 import { SiteFooter } from "@/components/SiteFooter";
+import { absoluteAssetUrl, HOME_OG_IMAGE } from "@/lib/seo";
 
 const TITLE = "Sobre mi — Brand Systems + Digital Products | Srtaserifa";
 const DESCRIPTION =
@@ -61,6 +62,7 @@ export const Route = createFileRoute("/sobre-mi")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: "https://srtaserifa.es/sobre-mi" },
+      { property: "og:image", content: absoluteAssetUrl(HOME_OG_IMAGE) },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
     ],

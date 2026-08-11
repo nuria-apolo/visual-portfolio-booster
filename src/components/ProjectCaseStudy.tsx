@@ -110,7 +110,7 @@ export function ProjectCaseStudy({
                     <img
                       className="case-study-section-image"
                       src={section.image}
-                      alt={section.imageAlt ?? ""}
+                      alt={section.imageAlt ?? section.title}
                       loading="lazy"
                     />
                   )}
