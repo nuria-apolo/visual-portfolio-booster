@@ -3566,7 +3566,6 @@ body:has(.construction-page) {
   gap: 1.5rem;
   margin-top: 3.5rem;
   padding-top: 1.25rem;
-  border-top: 1px solid rgba(23, 23, 23, 0.16);
 }
 
 .case-study-meta dd {
@@ -3634,7 +3633,6 @@ body:has(.construction-page) {
   grid-template-columns: minmax(120px, 0.28fr) minmax(0, 1fr);
   gap: clamp(2rem, 8vw, 9rem);
   padding: clamp(3rem, 7vw, 7rem) 0;
-  border-top: 1px solid rgba(23, 23, 23, 0.16);
 }
 
 .section-anchor-nav {
@@ -3665,7 +3663,7 @@ body:has(.construction-page) {
 .section-anchor-nav a.is-active {
   color: #171717;
 }
-.karma-section-index-fixed {
+.project-section-index-fixed {
   position: fixed;
   top: 50%;
   left: max(1.25rem, calc((100vw - 1180px) / 2));
@@ -3674,7 +3672,7 @@ body:has(.construction-page) {
   gap: 0.65rem;
   transform: translateY(-50%);
 }
-.karma-section-index-fixed a {
+.project-section-index-fixed a {
   color: rgb(23 23 23 / 0.42);
   font-size: 0.78rem;
   line-height: 1.15;
@@ -3682,9 +3680,9 @@ body:has(.construction-page) {
   text-transform: uppercase;
   transition: color 180ms ease;
 }
-.karma-section-index-fixed a:hover,
-.karma-section-index-fixed a:focus-visible,
-.karma-section-index-fixed a.is-active {
+.project-section-index-fixed a:hover,
+.project-section-index-fixed a:focus-visible,
+.project-section-index-fixed a.is-active {
   color: #171717;
 }
 
@@ -3744,7 +3742,6 @@ body:has(.construction-page) {
 .case-study-related {
   width: 100%;
   padding-top: clamp(4rem, 8vw, 8rem);
-  border-top: 1px solid rgba(23, 23, 23, 0.16);
 }
 
 .case-study-related h2 {
@@ -4331,7 +4328,7 @@ body:has(.construction-page) {
   .section-anchor-nav {
     display: none;
   }
-  .karma-section-index-fixed {
+  .project-section-index-fixed {
     display: none;
   }
   .section-anchor-nav-slot {
@@ -5467,8 +5464,7 @@ body:has(.construction-page) {
 }
 .karma-eyebrow,
 .karma-section-number,
-.karma-product-label,
-.karma-closing-meta > div > span {
+.karma-product-label {
   color: rgb(23 23 23 / 0.48);
   font-size: 0.68rem;
   letter-spacing: 0.11em;
@@ -5832,7 +5828,6 @@ body:has(.construction-page) {
 }
 .karma-closing {
   padding: clamp(8rem, 17vw, 17rem) 0 clamp(6rem, 12vw, 12rem);
-  border-top: 1px solid rgb(23 23 23 / 0.14);
 }
 .karma-closing-statement {
   max-width: 930px;
@@ -5849,33 +5844,10 @@ body:has(.construction-page) {
   font-size: 0.9rem;
   text-underline-offset: 0.3em;
 }
-.karma-closing-meta {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  max-width: 500px;
-  margin-top: 9rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid rgb(23 23 23 / 0.14);
-}
-.karma-closing-meta p {
-  margin-top: 1rem;
-  color: rgb(23 23 23 / 0.62);
-  font-size: 0.88rem;
-  line-height: 1.55;
-}
-.karma-note {
-  max-width: 440px;
-  margin-top: 7rem;
-  color: rgb(23 23 23 / 0.48);
-  font-size: 0.78rem;
-  line-height: 1.5;
-}
-
 .karma-case-study-sheet .karma-intro {
   display: grid;
-  grid-template-columns: minmax(280px, 0.42fr) minmax(0, 1fr);
-  column-gap: clamp(3rem, 6vw, 6rem);
+  grid-template-columns: minmax(80px, 0.2fr) minmax(0, 1fr);
+  column-gap: clamp(2rem, 8vw, 9rem);
   row-gap: 0;
   padding: 0 0 clamp(6rem, 10vw, 9rem);
 }
@@ -5894,8 +5866,8 @@ body:has(.construction-page) {
 }
 .karma-intro-facts {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(110px, 0.75fr);
-  gap: clamp(1.5rem, 3vw, 3rem);
+  grid-template-columns: 1fr;
+  gap: 2.75rem;
 }
 .karma-intro-label {
   margin-bottom: 1.25rem !important;
@@ -6057,7 +6029,7 @@ body:has(.construction-page) {
 /* Shared editorial case-study shell */
 .case-study-sheet .case-study-editorial-intro {
   display: grid;
-  grid-template-columns: minmax(150px, 0.24fr) minmax(0, 1fr);
+  grid-template-columns: minmax(120px, 0.28fr) minmax(0, 1fr);
   gap: clamp(3rem, 8vw, 9rem);
   padding: 0 0 clamp(6rem, 10vw, 9rem);
 }
@@ -6357,10 +6329,6 @@ body:has(.construction-page) {
   }
   .karma-small-assets > :last-child {
     grid-column: 2;
-  }
-  .karma-closing-meta {
-    grid-template-columns: 1fr 1fr;
-    margin-top: 6rem;
   }
 }
 

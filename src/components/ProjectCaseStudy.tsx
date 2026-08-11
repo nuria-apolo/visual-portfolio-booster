@@ -1,4 +1,6 @@
 import { SiteFooter } from "@/components/SiteFooter";
+import { OtherProjects } from "@/components/OtherProjects";
+import { ProjectSectionAnchor, ProjectSectionNavigation } from "@/components/ProjectSectionNavigation";
 
 export type CaseStudySection = {
   id: string;
@@ -13,50 +15,27 @@ export type CaseStudySection = {
   };
 };
 
-function SectionAnchorNav({
-  activeId,
-  items,
-}: {
-  activeId: string;
-  items: Array<{ id: string; label: string }>;
-}) {
-  return (
-    <nav className="section-anchor-nav" aria-label="Índice del proyecto">
-      {items.map((item) => (
-        <a key={item.id} href={`#${item.id}`} className={item.id === activeId ? "is-active" : ""}>
-          {item.label}
-        </a>
-      ))}
-    </nav>
-  );
-}
-
 export type ProjectCaseStudyProps = {
   title: string;
+  currentHref: string;
   category: string;
   state: string;
   intro: string;
   heroImage: string;
   heroAlt: string;
   sections: CaseStudySection[];
-  relatedProjects: Array<{
-    title: string;
-    href: string;
-    image: string;
-    alt: string;
-  }>;
   pending?: boolean;
 };
 
 export function ProjectCaseStudy({
   title,
+  currentHref,
   category,
   state,
   intro,
   heroImage,
   heroAlt,
   sections,
-  relatedProjects,
   pending = false,
 }: ProjectCaseStudyProps) {
   const introSection = sections.find((section) => section.id === "intro");
@@ -69,6 +48,7 @@ export function ProjectCaseStudy({
 
   return (
     <div className="case-study-page">
+      <ProjectSectionNavigation items={sectionNavigation} />
       <main className="case-study-main">
         <section className="case-study-cover" aria-label={`Portada de ${title}`}>
           <figure className="case-study-hero-media">
@@ -120,7 +100,7 @@ export function ProjectCaseStudy({
           <div className="case-study-sections">
             {contentSections.map((section) => (
               <section className="case-study-section" id={section.id} key={section.id}>
-                <SectionAnchorNav activeId={section.id} items={sectionNavigation} />
+                <ProjectSectionAnchor activeId={section.id} items={sectionNavigation} />
                 <div className="case-study-section-content">
                   <h2>{section.title}</h2>
                   {section.paragraphs.map((paragraph) => (
@@ -144,24 +124,7 @@ export function ProjectCaseStudy({
             ))}
           </div>
 
-          <div className="case-study-footer-link">
-            <section className="case-study-related" aria-labelledby="case-study-related-title">
-              <h2 id="case-study-related-title">Otros proyectos</h2>
-              <div className="case-study-related-grid">
-                {relatedProjects.map((project) => (
-                  <a className="case-study-related-card" href={project.href} key={project.href}>
-                    <span className="case-study-related-media">
-                      <img src={project.image} alt={project.alt} loading="lazy" />
-                    </span>
-                    <h3>{project.title}</h3>
-                  </a>
-                ))}
-              </div>
-            </section>
-            <a href="/proyectos" className="project-button">
-              Volver a proyectos <span aria-hidden="true">↗</span>
-            </a>
-          </div>
+          <OtherProjects currentHref={currentHref} />
         </div>
       </main>
 

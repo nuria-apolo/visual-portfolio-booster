@@ -1,5 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { SiteFooter } from "@/components/SiteFooter";
+import { OtherProjects } from "@/components/OtherProjects";
+import { ProjectSectionAnchor, ProjectSectionNavigation } from "@/components/ProjectSectionNavigation";
 import karmaApp from "@/assets/karma-app.png";
 import karmaDetailSubscriptions from "@/assets/karma-detail-subscriptions.jpg";
 import karmaDetailBalance from "@/assets/karma-detail-balance.jpg";
@@ -52,28 +54,10 @@ const projectRoles = [
 ];
 
 const karmaActionSteps = ["VER", "AÑADIR", "REPARTIR", "ENTENDER", "DECIDIR"];
+const sectionNavigation = navigation.slice(1).map(([id, label]) => ({ id, label }));
 
 function SectionAnchorNav({ activeId }: { activeId: string }) {
-  const activeLabel = navigation.find(([id]) => id === activeId)?.[1] ?? "Índice";
-
-  return <>
-    <span className="section-anchor-nav-slot" aria-hidden="true" />
-    <details className="section-anchor-nav-mobile">
-      <summary>
-        <span>{activeLabel}</span>
-        <span aria-hidden="true">⌄</span>
-      </summary>
-      <nav aria-label="Índice del proyecto">
-        {navigation.slice(1).map(([id, label]) => <a key={id} href={`#${id}`} className={id === activeId ? "is-active" : ""}>{label}</a>)}
-      </nav>
-    </details>
-  </>;
-}
-
-function FixedSectionAnchorNav({ activeId }: { activeId: string }) {
-  return <nav className="karma-section-index-fixed" aria-label="Índice del proyecto">
-    {navigation.slice(1).map(([id, label]) => <a key={id} href={`#${id}`} className={id === activeId ? "is-active" : ""}>{label}</a>)}
-  </nav>;
+  return <ProjectSectionAnchor activeId={activeId} items={sectionNavigation} />;
 }
 
 function SectionLabel({ children }: { children: string }) {
@@ -82,39 +66,7 @@ function SectionLabel({ children }: { children: string }) {
 }
 
 export function KarmaFinancieroCaseStudy() {
-  const [activeSectionId, setActiveSectionId] = useState("problema");
-  const [isSectionIndexVisible, setIsSectionIndexVisible] = useState(false);
   const detailGalleryRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const updateSectionIndex = () => {
-      const firstSection = document.getElementById("problema");
-      const lastSection = document.getElementById("aportacion");
-      if (!firstSection || !lastSection) return;
-      const firstRect = firstSection.getBoundingClientRect();
-      const lastRect = lastSection.getBoundingClientRect();
-      const activationLine = window.innerHeight * 0.42;
-      const sections = navigation.slice(1)
-        .map(([id]) => document.getElementById(id))
-        .filter((section): section is HTMLElement => Boolean(section));
-      const activeSection = [...sections]
-        .reverse()
-        .find((section) => section.getBoundingClientRect().top <= activationLine);
-
-      if (activeSection) setActiveSectionId(activeSection.id);
-      setIsSectionIndexVisible(
-        firstRect.top <= activationLine
-        && lastRect.bottom > window.innerHeight * 0.25,
-      );
-    };
-    updateSectionIndex();
-    window.addEventListener("scroll", updateSectionIndex, { passive: true });
-    window.addEventListener("resize", updateSectionIndex);
-    return () => {
-      window.removeEventListener("scroll", updateSectionIndex);
-      window.removeEventListener("resize", updateSectionIndex);
-    };
-  }, []);
 
   const moveDetailGallery = (direction: number) => {
     detailGalleryRef.current?.scrollBy({
@@ -125,7 +77,7 @@ export function KarmaFinancieroCaseStudy() {
 
   return (
     <div className="karma-case-study">
-      {isSectionIndexVisible && <FixedSectionAnchorNav activeId={activeSectionId} />}
+      <ProjectSectionNavigation items={sectionNavigation} />
       <main className="karma-case-study-main">
         <section className="case-study-cover karma-case-study-cover" aria-label="Portada de Karma Financiero">
           <img src={karmaApp} alt="Pantalla de acceso de Karma Financiero" />
@@ -225,7 +177,8 @@ export function KarmaFinancieroCaseStudy() {
 
         <section className="karma-section karma-contribution" id="aportacion"><SectionLabel>Aportación</SectionLabel><div className="karma-section-body"><h2>Diseñar el producto completo.</h2><div className="karma-prose"><p>Karma es un proyecto personal y, al mismo tiempo, un laboratorio donde puedo trabajar prácticamente todas las capas que forman un producto digital.</p><p>Desde detectar una oportunidad y convertirla en una propuesta hasta definir la experiencia, construir su identidad, diseñar la interfaz y participar directamente en cómo se lleva a producción.</p><p>Muchas de las decisiones han cambiado por el camino y probablemente seguirán cambiando.</p><p>Precisamente por eso quería incluirlo en este portfolio.</p><p>No como un proyecto perfectamente cerrado, sino como una muestra de cómo pienso, diseño y construyo un producto desde cero.</p></div></div></section>
 
-          <section className="karma-closing"><p className="karma-closing-statement">No diseñar solo cómo se ve Karma.<br /><em>Diseñar cómo funciona Karma.</em></p><a href="https://karmafinanciero.com" target="_blank" rel="noreferrer">karmafinanciero.com ↗</a><div className="karma-closing-meta"><div><span>MI PAPEL</span><p>Product Strategy<br />Product Design<br />UX/UI<br />Visual Identity<br />Art Direction<br />Content & SEO<br />Prototyping<br />Development Direction</p></div><div><span>ESTADO</span><p>En desarrollo · 2026</p></div></div><p className="karma-note">“Diseñado entre Figma, código, conversaciones, demasiadas pestañas abiertas y unas cuantas ideas que acabaron descartadas.”</p></section>
+          <section className="karma-closing"><p className="karma-closing-statement">No diseñar solo cómo se ve Karma.<br /><em>Diseñar cómo funciona Karma.</em></p><a href="https://karmafinanciero.com" target="_blank" rel="noreferrer">karmafinanciero.com ↗</a></section>
+          <OtherProjects currentHref="/proyectos/karma-financiero" />
         </div>
       </main>
       <SiteFooter variant="floating" />

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import campaignImage from "@/assets/blind-citizen-campaign.png";
+import { OtherProjects } from "@/components/OtherProjects";
 import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/proyectos/blind-words-citizen")({
@@ -140,6 +141,7 @@ function BlindWordsCitizenPage() {
             </aside>
           </div>
         </article>
+        <OtherProjects currentHref="/proyectos/blind-words" />
       </main>
       <SiteFooter variant="floating" />
     </div>

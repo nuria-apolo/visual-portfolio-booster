@@ -1,7 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import aprendeHistoriaArtePhoto from "@/assets/aprende-historia-arte-photo.png";
-import karmaApp from "@/assets/karma-app.png";
-import blindWordsImage from "@/assets/blindwords-framer.png";
 import { ProjectCaseStudy } from "@/components/ProjectCaseStudy";
 
 export const Route = createFileRoute("/proyectos/aprende-historia-del-arte")({
@@ -43,25 +41,12 @@ function AprendeHistoriaDelArtePage() {
   return (
     <ProjectCaseStudy
       title="Aprende Historia del Arte"
+      currentHref="/proyectos/aprende-historia-del-arte"
       category="Educación · Cultura · Producto digital"
       state="Activo"
       intro="Una plataforma gratuita para aprender Historia del Arte de una forma más clara, cercana y fácil de explorar."
       heroImage={aprendeHistoriaArtePhoto}
       heroAlt="Aprende Historia del Arte mostrado en una tablet sobre un sillón naranja"
-      relatedProjects={[
-        {
-          title: "Karma Financiero",
-          href: "/proyectos/karma-financiero",
-          image: karmaApp,
-          alt: "Pantalla de acceso de Karma Financiero",
-        },
-        {
-          title: "Blind Words",
-          href: "/proyectos/blind-words",
-          image: blindWordsImage,
-          alt: "Espécimen tipográfico de Blind Words con letras blancas y puntos Braille",
-        },
-      ]}
       sections={[
         {
           id: "intro",
