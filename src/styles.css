@@ -3648,6 +3648,9 @@ body:has(.construction-page) {
 .section-anchor-nav-mobile {
   display: none;
 }
+.section-anchor-nav-slot {
+  display: block;
+}
 
 .section-anchor-nav a {
   color: rgb(23 23 23 / 0.42);
@@ -3660,6 +3663,28 @@ body:has(.construction-page) {
 .section-anchor-nav a:hover,
 .section-anchor-nav a:focus-visible,
 .section-anchor-nav a.is-active {
+  color: #171717;
+}
+.karma-section-index-fixed {
+  position: fixed;
+  top: 50%;
+  left: max(1.25rem, calc((100vw - 1180px) / 2));
+  z-index: 9;
+  display: grid;
+  gap: 0.65rem;
+  transform: translateY(-50%);
+}
+.karma-section-index-fixed a {
+  color: rgb(23 23 23 / 0.42);
+  font-size: 0.78rem;
+  line-height: 1.15;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+}
+.karma-section-index-fixed a:hover,
+.karma-section-index-fixed a:focus-visible,
+.karma-section-index-fixed a.is-active {
   color: #171717;
 }
 
@@ -4304,6 +4329,12 @@ body:has(.construction-page) {
   }
 
   .section-anchor-nav {
+    display: none;
+  }
+  .karma-section-index-fixed {
+    display: none;
+  }
+  .section-anchor-nav-slot {
     display: none;
   }
 
@@ -5553,7 +5584,6 @@ body:has(.construction-page) {
   grid-template-columns: minmax(80px, 0.2fr) minmax(0, 1fr);
   gap: clamp(2rem, 8vw, 9rem);
   padding: clamp(6rem, 12vw, 12rem) 0;
-  border-top: 1px solid rgb(23 23 23 / 0.14);
 }
 .karma-section-body {
   max-width: 850px;
@@ -5632,6 +5662,11 @@ body:has(.construction-page) {
   border-radius: 1.75rem;
 }
 .karma-personal-shared-accounts {
+  display: block;
+  height: auto;
+  border-radius: 1.75rem;
+}
+.karma-information-architecture {
   display: block;
   height: auto;
   border-radius: 1.75rem;
@@ -5839,15 +5874,16 @@ body:has(.construction-page) {
 
 .karma-case-study-sheet .karma-intro {
   display: grid;
-  grid-template-columns: minmax(150px, 0.24fr) minmax(0, 1fr);
-  gap: clamp(3rem, 8vw, 9rem);
+  grid-template-columns: minmax(280px, 0.42fr) minmax(0, 1fr);
+  column-gap: clamp(3rem, 6vw, 6rem);
+  row-gap: 0;
   padding: 0 0 clamp(6rem, 10vw, 9rem);
 }
 
 .karma-intro-aside {
-  display: grid;
-  align-content: start;
-  gap: clamp(6rem, 10vw, 10rem);
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
   margin: 5.9rem 0 0;
   color: rgb(23 23 23 / 0.48);
   font-size: 0.78rem;
@@ -5855,6 +5891,33 @@ body:has(.construction-page) {
 
 .karma-intro-aside p {
   margin: 0;
+}
+.karma-intro-facts {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(110px, 0.75fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+.karma-intro-label {
+  margin-bottom: 1.25rem !important;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.karma-intro-facts ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.karma-intro-facts li,
+.karma-intro-facts > div > p:last-child {
+  line-height: 1.45;
+}
+.karma-project-link.karma-project-link-aside {
+  width: fit-content;
+  margin-top: auto;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.72rem;
+  line-height: 1.4;
 }
 .karma-intro-content {
   min-width: 0;
@@ -5881,7 +5944,8 @@ body:has(.construction-page) {
   align-items: flex-start;
   justify-content: space-between;
 }
-.karma-intro .karma-intro-title-row h1 {
+.karma-intro .karma-intro-title-row h1,
+.karma-intro .karma-intro-content > h1 {
   max-width: none;
   margin: 0;
   font-size: clamp(3rem, 4.2vw, 5rem);
@@ -5942,6 +6006,7 @@ body:has(.construction-page) {
   font-size: 0.82rem;
 }
 .karma-detail-gallery {
+  grid-column: 2;
   width: calc(100% + max(0px, (100vw - 1180px) / 2));
   margin-top: 3rem;
 }
@@ -6110,16 +6175,23 @@ body:has(.construction-page) {
   }
   .karma-case-study-sheet .karma-intro {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    row-gap: 0;
   }
   .karma-intro-aside {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem 2rem;
-    margin: 0;
-    transform: translate(0.5rem, -1.75rem);
+    display: block;
+    order: 2;
+    margin: 2rem 0 0;
+    transform: none;
   }
-  .karma-intro-aside p:nth-child(n + 2),
+  .karma-intro-facts {
+    display: none;
+  }
+  .karma-project-link.karma-project-link-aside {
+    margin-top: 0;
+  }
+  .karma-intro-content {
+    order: 1;
+  }
   .case-study-intro-aside p:nth-child(n + 2) {
     display: none;
   }
@@ -6143,6 +6215,8 @@ body:has(.construction-page) {
     font-size: 0.75rem;
   }
   .karma-detail-gallery {
+    grid-column: 1;
+    order: 3;
     width: 100%;
     margin-top: 2.5rem;
   }
@@ -6173,6 +6247,9 @@ body:has(.construction-page) {
     border-radius: 1.25rem;
   }
   .karma-personal-shared-accounts {
+    border-radius: 1.25rem;
+  }
+  .karma-information-architecture {
     border-radius: 1.25rem;
   }
   .karma-search-journey {

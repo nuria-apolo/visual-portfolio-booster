@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SiteFooter } from "@/components/SiteFooter";
 import karmaApp from "@/assets/karma-app.png";
 import karmaDetailSubscriptions from "@/assets/karma-detail-subscriptions.jpg";
@@ -6,9 +6,9 @@ import karmaDetailBalance from "@/assets/karma-detail-balance.jpg";
 import karmaDetailSymbol from "@/assets/karma-detail-symbol.jpg";
 import karmaBusinessBlueprint from "@/assets/karma-business-blueprint.jpg";
 import karmaUserJourney from "@/assets/karma-user-journey.jpg";
-import karmaSpaceArchitecture from "@/assets/karma-space-architecture.jpg";
-import karmaPersonalSharedAccounts from "@/assets/karma-personal-shared-accounts.jpg";
 import karmaBrandSystem from "@/assets/karma-brand-system.jpg";
+import karmaIdeationDashboard from "@/assets/karma-ideation-dashboard.png";
+import karmaInformationArchitecture from "@/assets/karma-information-architecture.png";
 
 type PlaceholderProps = {
   label: string;
@@ -46,15 +46,18 @@ const projectCategories = [
   "Creative direction", "Accessibility web", "Content design", "UI design", "Desarrollo con IA y agentes",
 ];
 
+const projectRoles = [
+  "Product Strategy", "Product Design", "UX/UI", "Visual Identity",
+  "Art Direction", "Content & SEO", "Prototyping", "Development Direction",
+];
+
 const karmaActionSteps = ["VER", "AÑADIR", "REPARTIR", "ENTENDER", "DECIDIR"];
 
 function SectionAnchorNav({ activeId }: { activeId: string }) {
   const activeLabel = navigation.find(([id]) => id === activeId)?.[1] ?? "Índice";
 
   return <>
-    <nav className="section-anchor-nav section-anchor-nav-desktop" aria-label="Índice del proyecto">
-      {navigation.slice(1).map(([id, label]) => <a key={id} href={`#${id}`} className={id === activeId ? "is-active" : ""}>{label}</a>)}
-    </nav>
+    <span className="section-anchor-nav-slot" aria-hidden="true" />
     <details className="section-anchor-nav-mobile">
       <summary>
         <span>{activeLabel}</span>
@@ -67,13 +70,51 @@ function SectionAnchorNav({ activeId }: { activeId: string }) {
   </>;
 }
 
+function FixedSectionAnchorNav({ activeId }: { activeId: string }) {
+  return <nav className="karma-section-index-fixed" aria-label="Índice del proyecto">
+    {navigation.slice(1).map(([id, label]) => <a key={id} href={`#${id}`} className={id === activeId ? "is-active" : ""}>{label}</a>)}
+  </nav>;
+}
+
 function SectionLabel({ children }: { children: string }) {
   const activeId = navigation.find(([, label]) => label === children)?.[0] ?? "";
   return <SectionAnchorNav activeId={activeId} />;
 }
 
 export function KarmaFinancieroCaseStudy() {
+  const [activeSectionId, setActiveSectionId] = useState("problema");
+  const [isSectionIndexVisible, setIsSectionIndexVisible] = useState(false);
   const detailGalleryRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const updateSectionIndex = () => {
+      const firstSection = document.getElementById("problema");
+      const lastSection = document.getElementById("aportacion");
+      if (!firstSection || !lastSection) return;
+      const firstRect = firstSection.getBoundingClientRect();
+      const lastRect = lastSection.getBoundingClientRect();
+      const activationLine = window.innerHeight * 0.42;
+      const sections = navigation.slice(1)
+        .map(([id]) => document.getElementById(id))
+        .filter((section): section is HTMLElement => Boolean(section));
+      const activeSection = [...sections]
+        .reverse()
+        .find((section) => section.getBoundingClientRect().top <= activationLine);
+
+      if (activeSection) setActiveSectionId(activeSection.id);
+      setIsSectionIndexVisible(
+        firstRect.top <= activationLine
+        && lastRect.bottom > window.innerHeight * 0.25,
+      );
+    };
+    updateSectionIndex();
+    window.addEventListener("scroll", updateSectionIndex, { passive: true });
+    window.addEventListener("resize", updateSectionIndex);
+    return () => {
+      window.removeEventListener("scroll", updateSectionIndex);
+      window.removeEventListener("resize", updateSectionIndex);
+    };
+  }, []);
 
   const moveDetailGallery = (direction: number) => {
     detailGalleryRef.current?.scrollBy({
@@ -84,6 +125,7 @@ export function KarmaFinancieroCaseStudy() {
 
   return (
     <div className="karma-case-study">
+      {isSectionIndexVisible && <FixedSectionAnchorNav activeId={activeSectionId} />}
       <main className="karma-case-study-main">
         <section className="case-study-cover karma-case-study-cover" aria-label="Portada de Karma Financiero">
           <img src={karmaApp} alt="Pantalla de acceso de Karma Financiero" />
@@ -98,16 +140,23 @@ export function KarmaFinancieroCaseStudy() {
           </header>
           <section className="karma-intro" id="intro">
             <aside className="karma-intro-aside" aria-label="Ficha del proyecto">
-              <p>9 de agosto 2026</p>
-              <p>Overview</p>
-              <p>Categorías</p>
+              <div className="karma-intro-facts">
+                <div>
+                  <p className="karma-intro-label">Mi papel</p>
+                  <ul>
+                    {projectRoles.map((role) => <li key={role}>{role}</li>)}
+                  </ul>
+                </div>
+                <div>
+                  <p className="karma-intro-label">Estado</p>
+                  <p>En desarrollo · 2026</p>
+                </div>
+              </div>
+              <a className="karma-project-link karma-project-link-aside" href="https://karmafinanciero.com" target="_blank" rel="noreferrer">Visitar proyecto <span aria-hidden="true">↗</span></a>
             </aside>
             <div className="karma-intro-content">
               <p className="karma-breadcrumb"><a href="/proyectos">PROYECTOS</a>&nbsp; / &nbsp;KARMA FINANCIERO</p>
-              <div className="karma-intro-title-row">
-                <h1>Karma Financiero</h1>
-                <a className="karma-project-link" href="https://karmafinanciero.com" target="_blank" rel="noreferrer">Visitar proyecto <span aria-hidden="true">↗</span></a>
-              </div>
+              <h1>Karma Financiero</h1>
               <h2>¿Cómo compartir dinero sin que todo se convierta en una cuenta pendiente?</h2>
               <div className="karma-intro-context karma-prose">
                 <p>Parejas, familias, pisos compartidos o viajes tienen algo en común: hay gastos, aportaciones, objetivos y decisiones que dejan de pertenecer únicamente a una persona. La mayoría de herramientas financieras están pensadas para controlar el dinero. Karma parte de otra pregunta: ¿cómo podemos entenderlo mejor cuando el dinero es compartido?</p>
@@ -116,16 +165,16 @@ export function KarmaFinancieroCaseStudy() {
               <ul className="karma-category-list" aria-label="Categorías del proyecto">
                 {projectCategories.map((category) => <li key={category}>{category}</li>)}
               </ul>
-              <div className="karma-detail-gallery">
-                <div className="karma-detail-gallery-controls" aria-label="Controles de la galería">
-                  <button type="button" onClick={() => moveDetailGallery(-1)} aria-label="Ver imagen anterior">←</button>
-                  <button type="button" onClick={() => moveDetailGallery(1)} aria-label="Ver imagen siguiente">→</button>
-                </div>
-                <div className="karma-detail-gallery-track" ref={detailGalleryRef} aria-label="Detalles de la aplicación Karma Financiero">
-                  <img src={karmaDetailSubscriptions} alt="Vista de suscripciones y servicios detectados en Karma Financiero" />
-                  <img src={karmaDetailBalance} alt="Vista de ingresos y gastos en Karma Financiero" />
-                  <img src={karmaDetailSymbol} alt="Símbolo visual de Karma Financiero" />
-                </div>
+            </div>
+            <div className="karma-detail-gallery">
+              <div className="karma-detail-gallery-controls" aria-label="Controles de la galería">
+                <button type="button" onClick={() => moveDetailGallery(-1)} aria-label="Ver imagen anterior">←</button>
+                <button type="button" onClick={() => moveDetailGallery(1)} aria-label="Ver imagen siguiente">→</button>
+              </div>
+              <div className="karma-detail-gallery-track" ref={detailGalleryRef} aria-label="Detalles de la aplicación Karma Financiero">
+                <img src={karmaDetailSubscriptions} alt="Vista de suscripciones y servicios detectados en Karma Financiero" />
+                <img src={karmaDetailBalance} alt="Vista de ingresos y gastos en Karma Financiero" />
+                <img src={karmaDetailSymbol} alt="Símbolo visual de Karma Financiero" />
               </div>
             </div>
           </section>
@@ -156,9 +205,9 @@ export function KarmaFinancieroCaseStudy() {
           <div className="karma-section-body">
             <h2>Diseñar alrededor de espacios, no de cuentas.</h2>
             <div className="karma-prose"><p>Una persona no comparte su economía de una única manera.</p><p>Puede tener una economía doméstica con su pareja, organizar un viaje con cuatro amigos y compartir determinados gastos familiares.</p><p>Por eso, la unidad principal de Karma terminó siendo el espacio.</p><p>Cada espacio representa una economía compartida independiente, con sus propios miembros, movimientos, aportaciones y objetivos.</p></div>
-            <img className="karma-wide-placeholder karma-space-architecture" src={karmaSpaceArchitecture} alt="Vista de cuentas compartidas de Karma Financiero" />
+            <img className="karma-wide-placeholder karma-space-architecture" src={karmaIdeationDashboard} alt="Dashboard principal de Karma Financiero" />
             <div className="karma-flow">PERSONA <span>↓</span> ESPACIOS <span>↓</span> MIEMBROS <span>↓</span> DINERO <span>↓</span> DECISIONES</div>
-            <div className="karma-subsection"><h3>Reducir la complejidad.</h3><div className="karma-prose"><p>A partir de ahí, el reto fue decidir qué necesitaba entender una persona cada vez que entraba en Karma.</p><p>La arquitectura se fue reduciendo alrededor de unas pocas acciones:</p></div><div className="karma-actions" aria-label="Secuencia de acciones de Karma">{karmaActionSteps.map((step, index) => <div className="karma-action-step" key={step}><span>{step}</span>{index < karmaActionSteps.length - 1 && <span className="karma-action-arrow" aria-hidden="true">→</span>}</div>)}</div><div className="karma-prose"><p>En lugar de intentar mostrar toda la información financiera disponible, la interfaz debía priorizar aquello que ayudara a responder preguntas cotidianas.</p><p>¿Cuánto tenemos?<br />¿En qué estamos gastando?<br />¿Cómo estamos aportando?<br />¿Tenemos algo pendiente?<br />¿Nos estamos acercando a nuestro objetivo?</p></div><img className="karma-wide-placeholder karma-personal-shared-accounts" src={karmaPersonalSharedAccounts} alt="Vistas Personal y Lo nuestro de las cuentas de Karma Financiero" /></div>
+            <div className="karma-subsection"><h3>Reducir la complejidad.</h3><div className="karma-prose"><p>A partir de ahí, el reto fue decidir qué necesitaba entender una persona cada vez que entraba en Karma.</p><p>La arquitectura se fue reduciendo alrededor de unas pocas acciones:</p></div><div className="karma-actions" aria-label="Secuencia de acciones de Karma">{karmaActionSteps.map((step, index) => <div className="karma-action-step" key={step}><span>{step}</span>{index < karmaActionSteps.length - 1 && <span className="karma-action-arrow" aria-hidden="true">→</span>}</div>)}</div><div className="karma-prose"><p>En lugar de intentar mostrar toda la información financiera disponible, la interfaz debía priorizar aquello que ayudara a responder preguntas cotidianas.</p><p>¿Cuánto tenemos?<br />¿En qué estamos gastando?<br />¿Cómo estamos aportando?<br />¿Tenemos algo pendiente?<br />¿Nos estamos acercando a nuestro objetivo?</p></div><img className="karma-wide-placeholder karma-information-architecture" src={karmaInformationArchitecture} alt="Arquitectura de información y recorrido de usuario de Karma Financiero" /></div>
           </div>
         </section>
 
