@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteFooter } from "@/components/SiteFooter";
 import { articleBySlug, articles } from "@/data/articles";
-import { absoluteAssetUrl, HOME_OG_IMAGE } from "@/lib/seo";
+import { absoluteAssetUrl } from "@/lib/seo";
 
 const BASE_URL = "https://srtaserifa.es";
 
@@ -22,8 +22,12 @@ export const Route = createFileRoute("/publicaciones/$slug")({
         { property: "og:locale", content: "es_ES" },
         {
           property: "og:image",
-          content: absoluteAssetUrl(HOME_OG_IMAGE),
+          content: absoluteAssetUrl(article.coverImage),
         },
+        { property: "og:image:alt", content: article.coverAlt },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:image", content: absoluteAssetUrl(article.coverImage) },
+        { name: "twitter:image:alt", content: article.coverAlt },
         { property: "article:published_time", content: `${article.publishedAt}T09:00:00+02:00` },
         { property: "article:author", content: "Núria López" },
         { property: "article:section", content: article.category },
@@ -50,6 +54,13 @@ export const Route = createFileRoute("/publicaciones/$slug")({
                 mainEntityOfPage: `${BASE_URL}/publicaciones/${article.slug}`,
                 about: article.keywords,
                 keywords: article.keywords.join(", "),
+                image: {
+                  "@type": "ImageObject",
+                  url: absoluteAssetUrl(article.coverImage),
+                  caption: article.coverAlt,
+                  width: 1672,
+                  height: 941,
+                },
                 isPartOf: {
                   "@type": "CollectionPage",
                   name: "Publicaciones de Srta Serifa",
@@ -122,6 +133,15 @@ function ArticlePage() {
             <h1>{article.title}</h1>
             <p className="article-excerpt">{article.excerpt}</p>
             <p className="article-byline">Por Núria López · 9 de agosto de 2026</p>
+            <figure className="article-hero-image">
+              <img
+                src={article.coverImage}
+                alt={article.coverAlt}
+                width={1672}
+                height={941}
+                fetchPriority="high"
+              />
+            </figure>
           </header>
 
           <div className="article-layout">
@@ -138,10 +158,13 @@ function ArticlePage() {
                 <p className="editorial-kicker">Preguntas frecuentes</p>
                 <h2 id="article-faq-title">Lo esencial, en breve</h2>
                 {article.faq.map((item) => (
-                  <div className="article-faq-item" key={item.question}>
-                    <h3>{item.question}</h3>
+                  <details className="article-faq-item" key={item.question}>
+                    <summary>
+                      <span>{item.question}</span>
+                      <span className="article-faq-icon" aria-hidden="true" />
+                    </summary>
                     <p>{item.answer}</p>
-                  </div>
+                  </details>
                 ))}
               </section>
             </div>
