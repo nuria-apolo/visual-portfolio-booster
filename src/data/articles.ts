@@ -4,6 +4,7 @@ import coverMarcaDigitalReglas from "@/assets/article-cover-marca-digital-reglas
 import coverBrandingProducto from "@/assets/article-cover-branding-producto.webp";
 import coverDisenarSistemas from "@/assets/article-cover-disenar-sistemas.webp";
 import coverIaDiseno from "@/assets/article-cover-ia-diseno.webp";
+import coverQueEsInteligenciaArtificial from "@/assets/article-cover-que-es-inteligencia-artificial.webp";
 
 export interface ArticleSection {
   heading: string;
@@ -33,6 +34,90 @@ export interface Article {
 }
 
 export const articles: Article[] = [
+  {
+    slug: "que-es-inteligencia-artificial",
+    title: "Qué es la inteligencia artificial y para qué puede servir",
+    seoTitle: "Qué es la inteligencia artificial y para qué sirve | Srta Serifa",
+    description:
+      "Qué es la inteligencia artificial, cómo funciona a grandes rasgos y en qué casos puede ayudar a una empresa a investigar, decidir, diseñar y construir mejor.",
+    excerpt:
+      "La inteligencia artificial no es una respuesta automática a cualquier problema. Es una tecnología que puede ampliar la capacidad de un equipo cuando se usa con contexto, criterio y objetivos claros.",
+    category: "Inteligencia artificial",
+    publishedAt: "2026-08-12",
+    readingTime: "8 min",
+    keywords: [
+      "qué es la inteligencia artificial",
+      "inteligencia artificial generativa",
+      "aplicaciones de la inteligencia artificial",
+      "IA para empresas",
+    ],
+    coverImage: coverQueEsInteligenciaArtificial,
+    coverAlt:
+      "Composición editorial de una cuadrícula de decisiones y una red de puntos que representa la inteligencia artificial",
+    sections: [
+      {
+        heading: "Una forma de reconocer patrones y generar posibilidades",
+        paragraphs: [
+          "La inteligencia artificial agrupa tecnologías capaces de encontrar patrones en grandes cantidades de información y de producir resultados a partir de ellos. Puede clasificar, predecir, resumir, recomendar o generar texto, imágenes, código y estructuras. No piensa como una persona ni entiende el mundo del mismo modo: calcula relaciones probables según los datos y las instrucciones que recibe.",
+          "Por eso la pregunta útil no es si la IA es inteligente en términos humanos. Es qué tipo de tarea puede mejorar y qué supervisión necesita. En algunos contextos aporta velocidad; en otros, ayuda a explorar alternativas o a detectar señales que un equipo no tendría tiempo de revisar por separado.",
+        ],
+      },
+      {
+        heading: "Qué cambia con la IA generativa",
+        paragraphs: [
+          "La IA generativa es la parte que ha hecho visible esta tecnología para muchas personas. A partir de una petición puede redactar un borrador, proponer una imagen, estructurar una presentación, escribir código o crear variaciones de una idea. Su valor no está en sustituir el criterio, sino en reducir el coste de empezar y comparar opciones.",
+          "Esa rapidez también exige más claridad. Una instrucción vaga suele producir una respuesta vaga. Un equipo que sabe para quién trabaja, qué necesita resolver y qué límites no puede cruzar obtiene resultados más útiles y más fáciles de revisar.",
+        ],
+      },
+      {
+        heading: "Aplicaciones reales en una empresa",
+        paragraphs: [
+          "La IA puede apoyar tareas como sintetizar entrevistas, ordenar documentación, buscar patrones en feedback, preparar primeras versiones de contenido, traducir información, crear prototipos o automatizar operaciones repetitivas. En producto y diseño puede acelerar la investigación, la exploración y la construcción de pruebas para aprender antes.",
+          "No hace falta empezar por una transformación completa. Muchas veces el mejor punto de partida es un proceso pequeño, repetitivo y medible: una tarea que consume tiempo, tiene fuentes claras y permite revisar el resultado antes de tomar una decisión importante.",
+        ],
+      },
+      {
+        heading: "Qué conviene evaluar antes de usarla",
+        paragraphs: [
+          "Antes de incorporar una herramienta conviene definir el problema, las fuentes de información y el nivel de riesgo. Hay tareas donde un error es fácil de detectar y corregir; otras afectan a personas, datos sensibles o decisiones de alto impacto y requieren controles mucho más estrictos. La calidad de una respuesta no sustituye su verificación.",
+          "También importa decidir quién revisa, dónde se guardan los datos y cómo se documenta el proceso. Usar IA con responsabilidad significa mantener a una persona a cargo de la decisión, no solo de pulsar el botón de generar.",
+        ],
+      },
+      {
+        heading: "La ventaja sigue siendo saber decidir",
+        paragraphs: [
+          "La IA hace más barato producir opciones. Eso aumenta el valor de formular buenas preguntas, elegir una dirección y reconocer qué solución encaja con un contexto real. El trabajo no desaparece: cambia de producir cada pieza a diseñar un sistema de trabajo que combine herramientas, fuentes, revisión y criterio.",
+          "Una adopción útil no empieza por la herramienta de moda. Empieza por entender qué necesita el equipo para trabajar mejor y qué parte de ese proceso puede hacerse más clara, más rápida o más accesible sin perder responsabilidad.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "¿Qué es la inteligencia artificial en palabras sencillas?",
+        answer:
+          "Es un conjunto de tecnologías que identifica patrones en datos para clasificar, predecir, recomendar o generar resultados. Puede ayudar con tareas concretas, pero necesita contexto y revisión humana.",
+      },
+      {
+        question: "¿Para qué puede servir la inteligencia artificial en una empresa?",
+        answer:
+          "Puede apoyar la investigación, el análisis de información, la atención al cliente, la creación de borradores, la automatización de tareas repetitivas y la exploración de productos o servicios. El uso adecuado depende del problema, los datos y el nivel de riesgo.",
+      },
+      {
+        question: "¿La IA generativa sustituye a las personas?",
+        answer:
+          "No. Puede acelerar tareas y proponer alternativas, pero no asume la responsabilidad de entender el contexto, definir prioridades ni valorar las consecuencias de una decisión.",
+      },
+      {
+        question: "¿Cómo empezar a utilizar IA de forma responsable?",
+        answer:
+          "Empieza por un caso de uso pequeño y medible, define qué datos pueden utilizarse, revisa los resultados y deja clara la responsabilidad humana sobre la decisión final.",
+      },
+    ],
+    relatedSlugs: [
+      "que-cambia-la-ia-en-el-trabajo-de-diseno",
+      "disenar-sistemas-no-pantallas",
+    ],
+  },
   {
     slug: "una-interfaz-tambien-es-branding",
     title: "Una interfaz también es branding",
@@ -412,7 +497,7 @@ export const articles: Article[] = [
           "No. Puede proponer alternativas y automatizar tareas, pero no comprende por sí sola el contexto completo, las prioridades del negocio ni las consecuencias humanas de una decisión.",
       },
     ],
-    relatedSlugs: ["disenar-sistemas-no-pantallas", "branding-y-producto-deberian-hablar-mas"],
+    relatedSlugs: ["que-es-inteligencia-artificial", "disenar-sistemas-no-pantallas"],
   },
 ];
 

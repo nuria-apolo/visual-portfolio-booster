@@ -29,6 +29,7 @@ const notePosts = [
 ] as const;
 
 const articleTopics: Record<string, string[]> = {
+  "que-es-inteligencia-artificial": ["IA", "Estrategia", "Producto"],
   "una-interfaz-tambien-es-branding": ["Branding", "Identidad", "Producto"],
   "del-brand-system-al-design-system": ["Sistemas", "Branding", "Producto"],
   "una-marca-digital-necesita-reglas-no-aplicaciones": ["Estrategia", "Sistemas", "Marca"],
