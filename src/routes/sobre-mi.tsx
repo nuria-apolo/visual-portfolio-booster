@@ -358,9 +358,6 @@ function AboutPage() {
                       id={questionId}
                       onClick={() => setOpenFaq(isOpen ? null : index)}
                     >
-                      <span className="about-faq-number" aria-hidden="true">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
                       <span className="about-faq-question">{item.question}</span>
                       <span className="about-faq-icon" aria-hidden="true" />
                     </button>

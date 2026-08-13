@@ -157,15 +157,17 @@ function ArticlePage() {
               <section className="article-faq" aria-labelledby="article-faq-title">
                 <p className="editorial-kicker">Preguntas frecuentes</p>
                 <h2 id="article-faq-title">Lo esencial, en breve</h2>
-                {article.faq.map((item) => (
-                  <details className="article-faq-item" key={item.question}>
-                    <summary>
-                      <span>{item.question}</span>
-                      <span className="article-faq-icon" aria-hidden="true" />
-                    </summary>
-                    <p>{item.answer}</p>
-                  </details>
-                ))}
+                <div className="article-faq-list">
+                  {article.faq.map((item) => (
+                    <details className="article-faq-item" key={item.question}>
+                      <summary>
+                        <span>{item.question}</span>
+                        <span className="unified-faq-icon" aria-hidden="true" />
+                      </summary>
+                      <p>{item.answer}</p>
+                    </details>
+                  ))}
+                </div>
               </section>
             </div>
             <aside className="article-aside" aria-label="Sobre este artículo">

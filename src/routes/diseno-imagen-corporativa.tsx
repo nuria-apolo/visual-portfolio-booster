@@ -320,7 +320,10 @@ function CorporateIdentityPage() {
           <div className="service-faq-list">
             {faqs.map(([question, answer]) => (
               <details key={question}>
-                <summary>{question}</summary>
+                <summary>
+                  <span>{question}</span>
+                  <span className="unified-faq-icon" aria-hidden="true" />
+                </summary>
                 <p>{answer}</p>
               </details>
             ))}

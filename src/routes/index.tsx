@@ -686,7 +686,7 @@ export function Portfolio() {
         </section>
       </main>
 
-      <SiteFooter variant="dark" />
+      <SiteFooter variant="floating" />
     </div>
   );
 }

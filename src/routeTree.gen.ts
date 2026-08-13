@@ -18,6 +18,7 @@ import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as LegalRouteImport } from './routes/legal'
 import { Route as DisenoImagenCorporativaRouteImport } from './routes/diseno-imagen-corporativa'
 import { Route as DesarrolloWebEmpresasRouteImport } from './routes/desarrollo-web-empresas'
+import { Route as BrandingEstrategicoRouteImport } from './routes/branding-estrategico'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PublicacionesIndexRouteImport } from './routes/publicaciones.index'
 import { Route as ProyectosIndexRouteImport } from './routes/proyectos.index'
@@ -73,6 +74,11 @@ const DesarrolloWebEmpresasRoute = DesarrolloWebEmpresasRouteImport.update({
   path: '/desarrollo-web-empresas',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BrandingEstrategicoRoute = BrandingEstrategicoRouteImport.update({
+  id: '/branding-estrategico',
+  path: '/branding-estrategico',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -125,6 +131,7 @@ const ProyectosAprendeHistoriaDelArteRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/branding-estrategico': typeof BrandingEstrategicoRoute
   '/desarrollo-web-empresas': typeof DesarrolloWebEmpresasRoute
   '/diseno-imagen-corporativa': typeof DisenoImagenCorporativaRoute
   '/legal': typeof LegalRoute
@@ -145,6 +152,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/branding-estrategico': typeof BrandingEstrategicoRoute
   '/desarrollo-web-empresas': typeof DesarrolloWebEmpresasRoute
   '/diseno-imagen-corporativa': typeof DisenoImagenCorporativaRoute
   '/legal': typeof LegalRoute
@@ -164,6 +172,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/branding-estrategico': typeof BrandingEstrategicoRoute
   '/desarrollo-web-empresas': typeof DesarrolloWebEmpresasRoute
   '/diseno-imagen-corporativa': typeof DisenoImagenCorporativaRoute
   '/legal': typeof LegalRoute
@@ -186,6 +195,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/branding-estrategico'
     | '/desarrollo-web-empresas'
     | '/diseno-imagen-corporativa'
     | '/legal'
@@ -206,6 +216,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/branding-estrategico'
     | '/desarrollo-web-empresas'
     | '/diseno-imagen-corporativa'
     | '/legal'
@@ -224,6 +235,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/branding-estrategico'
     | '/desarrollo-web-empresas'
     | '/diseno-imagen-corporativa'
     | '/legal'
@@ -245,6 +257,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BrandingEstrategicoRoute: typeof BrandingEstrategicoRoute
   DesarrolloWebEmpresasRoute: typeof DesarrolloWebEmpresasRoute
   DisenoImagenCorporativaRoute: typeof DisenoImagenCorporativaRoute
   LegalRoute: typeof LegalRoute
@@ -319,6 +332,13 @@ declare module '@tanstack/react-router' {
       path: '/desarrollo-web-empresas'
       fullPath: '/desarrollo-web-empresas'
       preLoaderRoute: typeof DesarrolloWebEmpresasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/branding-estrategico': {
+      id: '/branding-estrategico'
+      path: '/branding-estrategico'
+      fullPath: '/branding-estrategico'
+      preLoaderRoute: typeof BrandingEstrategicoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -425,6 +445,7 @@ const PublicacionesRouteWithChildren = PublicacionesRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BrandingEstrategicoRoute: BrandingEstrategicoRoute,
   DesarrolloWebEmpresasRoute: DesarrolloWebEmpresasRoute,
   DisenoImagenCorporativaRoute: DisenoImagenCorporativaRoute,
   LegalRoute: LegalRoute,

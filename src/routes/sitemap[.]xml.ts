@@ -28,6 +28,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/proyectos/blind-words", changefreq: "monthly", priority: "0.7" },
           { path: "/desarrollo-web-empresas", changefreq: "monthly", priority: "0.8" },
           { path: "/diseno-imagen-corporativa", changefreq: "monthly", priority: "0.8" },
+          { path: "/branding-estrategico", changefreq: "monthly", priority: "0.8" },
           { path: "/publicaciones", changefreq: "monthly", priority: "0.8" },
           { path: "/publicaciones/treinta-mililitros", changefreq: "monthly", priority: "0.8" },
           {
