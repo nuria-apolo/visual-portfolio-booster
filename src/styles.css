@@ -1418,8 +1418,8 @@ body:has(.construction-page) {
 
 .service-tools {
   display: grid;
-  grid-template-columns: minmax(150px, 0.32fr) minmax(0, 1fr);
-  gap: 2rem;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 10%;
   padding: 0 0 5rem;
 }
 
@@ -1428,6 +1428,7 @@ body:has(.construction-page) {
 }
 
 .service-tools .about-skills-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin: 0;
   padding: 0;
   list-style: none;

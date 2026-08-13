@@ -16,6 +16,7 @@ import { Route as PublicacionesRouteImport } from './routes/publicaciones'
 import { Route as ProyectosRouteImport } from './routes/proyectos'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as LegalRouteImport } from './routes/legal'
+import { Route as DisenoImagenCorporativaRouteImport } from './routes/diseno-imagen-corporativa'
 import { Route as DesarrolloWebEmpresasRouteImport } from './routes/desarrollo-web-empresas'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PublicacionesIndexRouteImport } from './routes/publicaciones.index'
@@ -60,6 +61,11 @@ const PortfolioRoute = PortfolioRouteImport.update({
 const LegalRoute = LegalRouteImport.update({
   id: '/legal',
   path: '/legal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisenoImagenCorporativaRoute = DisenoImagenCorporativaRouteImport.update({
+  id: '/diseno-imagen-corporativa',
+  path: '/diseno-imagen-corporativa',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DesarrolloWebEmpresasRoute = DesarrolloWebEmpresasRouteImport.update({
@@ -120,6 +126,7 @@ const ProyectosAprendeHistoriaDelArteRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/desarrollo-web-empresas': typeof DesarrolloWebEmpresasRoute
+  '/diseno-imagen-corporativa': typeof DisenoImagenCorporativaRoute
   '/legal': typeof LegalRoute
   '/portfolio': typeof PortfolioRoute
   '/proyectos': typeof ProyectosRouteWithChildren
@@ -139,6 +146,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/desarrollo-web-empresas': typeof DesarrolloWebEmpresasRoute
+  '/diseno-imagen-corporativa': typeof DisenoImagenCorporativaRoute
   '/legal': typeof LegalRoute
   '/portfolio': typeof PortfolioRoute
   '/rol': typeof RolRoute
@@ -157,6 +165,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/desarrollo-web-empresas': typeof DesarrolloWebEmpresasRoute
+  '/diseno-imagen-corporativa': typeof DisenoImagenCorporativaRoute
   '/legal': typeof LegalRoute
   '/portfolio': typeof PortfolioRoute
   '/proyectos': typeof ProyectosRouteWithChildren
@@ -178,6 +187,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/desarrollo-web-empresas'
+    | '/diseno-imagen-corporativa'
     | '/legal'
     | '/portfolio'
     | '/proyectos'
@@ -197,6 +207,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/desarrollo-web-empresas'
+    | '/diseno-imagen-corporativa'
     | '/legal'
     | '/portfolio'
     | '/rol'
@@ -214,6 +225,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/desarrollo-web-empresas'
+    | '/diseno-imagen-corporativa'
     | '/legal'
     | '/portfolio'
     | '/proyectos'
@@ -234,6 +246,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DesarrolloWebEmpresasRoute: typeof DesarrolloWebEmpresasRoute
+  DisenoImagenCorporativaRoute: typeof DisenoImagenCorporativaRoute
   LegalRoute: typeof LegalRoute
   PortfolioRoute: typeof PortfolioRoute
   ProyectosRoute: typeof ProyectosRouteWithChildren
@@ -292,6 +305,13 @@ declare module '@tanstack/react-router' {
       path: '/legal'
       fullPath: '/legal'
       preLoaderRoute: typeof LegalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diseno-imagen-corporativa': {
+      id: '/diseno-imagen-corporativa'
+      path: '/diseno-imagen-corporativa'
+      fullPath: '/diseno-imagen-corporativa'
+      preLoaderRoute: typeof DisenoImagenCorporativaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/desarrollo-web-empresas': {
@@ -406,6 +426,7 @@ const PublicacionesRouteWithChildren = PublicacionesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DesarrolloWebEmpresasRoute: DesarrolloWebEmpresasRoute,
+  DisenoImagenCorporativaRoute: DisenoImagenCorporativaRoute,
   LegalRoute: LegalRoute,
   PortfolioRoute: PortfolioRoute,
   ProyectosRoute: ProyectosRouteWithChildren,
