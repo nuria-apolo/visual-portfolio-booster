@@ -1,10 +1,10 @@
-import coverUnaInterfazBranding from "@/assets/article-cover-una-interfaz-branding.jpg";
-import coverBrandSystemDesignSystem from "@/assets/article-cover-brand-system-design-system.jpg";
-import coverMarcaDigitalReglas from "@/assets/article-cover-marca-digital-reglas.jpg";
-import coverBrandingProducto from "@/assets/article-cover-branding-producto.jpg";
-import coverDisenarSistemas from "@/assets/article-cover-disenar-sistemas.jpg";
-import coverIaDiseno from "@/assets/article-cover-ia-diseno.jpg";
-import coverQueEsInteligenciaArtificial from "@/assets/article-cover-que-es-inteligencia-artificial.jpg";
+import coverUnaInterfazBranding from "@/assets/article-cover-una-interfaz-branding-flat.webp";
+import coverBrandSystemDesignSystem from "@/assets/article-cover-brand-system-design-system-flat.webp";
+import coverMarcaDigitalReglas from "@/assets/article-cover-marca-digital-reglas-flat.webp";
+import coverBrandingProducto from "@/assets/article-cover-branding-producto-flat.webp";
+import coverDisenarSistemas from "@/assets/article-cover-disenar-sistemas-flat.webp";
+import coverIaDiseno from "@/assets/article-cover-ia-diseno-flat.webp";
+import coverQueEsInteligenciaArtificial from "@/assets/article-cover-que-es-inteligencia-artificial-flat.webp";
 
 export interface ArticleSection {
   heading: string;
