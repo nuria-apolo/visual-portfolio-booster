@@ -37,7 +37,7 @@ export const articles: Article[] = [
   {
     slug: "que-es-inteligencia-artificial",
     title: "Qué es la inteligencia artificial y para qué puede servir",
-    seoTitle: "Qué es la inteligencia artificial y para qué sirve | Srta Serifa",
+    seoTitle: "Qué es la inteligencia artificial y para qué sirve",
     description:
       "Qué es la inteligencia artificial, cómo funciona a grandes rasgos y en qué casos puede ayudar a una empresa a investigar, decidir, diseñar y construir mejor.",
     excerpt:

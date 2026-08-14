@@ -52,7 +52,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/publicaciones/treinta-mililitros", changefreq: "monthly", priority: "0.8" },
           {
             path: "/publicaciones/que-es-inteligencia-artificial",
-            lastmod: "2026-08-12",
+            lastmod: "2026-08-14",
             changefreq: "monthly",
             priority: "0.7",
           },
