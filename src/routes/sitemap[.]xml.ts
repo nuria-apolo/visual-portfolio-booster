@@ -30,6 +30,12 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/diseno-imagen-corporativa", changefreq: "monthly", priority: "0.8" },
           { path: "/branding-estrategico", changefreq: "monthly", priority: "0.8" },
           {
+            path: "/consultoria-inteligencia-artificial",
+            lastmod: "2026-08-14",
+            changefreq: "monthly",
+            priority: "0.8",
+          },
+          {
             path: "/diseno-web-branding-illescas",
             lastmod: "2026-08-14",
             changefreq: "monthly",
