@@ -37,6 +37,42 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image", content: absoluteAssetUrl(HOME_OG_IMAGE) },
     ],
     links: [{ rel: "canonical", href: "https://srtaserifa.es/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://srtaserifa.es/#organization",
+              name: "Srta Serifa",
+              url: "https://srtaserifa.es/",
+              description:
+                "Estudio de Núria López especializado en sistemas de marca, identidad y productos digitales.",
+              founder: {
+                "@id": "https://srtaserifa.es/sobre-mi#nuria-lopez",
+              },
+              sameAs: [
+                "https://www.instagram.com/srtaserifa/",
+                "https://www.linkedin.com/in/srtaserifa/",
+                "https://x.com/srtaserifa",
+              ],
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://srtaserifa.es/#website",
+              name: "Srta Serifa",
+              url: "https://srtaserifa.es/",
+              inLanguage: "es-ES",
+              publisher: {
+                "@id": "https://srtaserifa.es/#organization",
+              },
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: ConstructionPage,
 });
