@@ -16,6 +16,7 @@ import { Route as PublicacionesRouteImport } from './routes/publicaciones'
 import { Route as ProyectosRouteImport } from './routes/proyectos'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as LegalRouteImport } from './routes/legal'
+import { Route as DisenoWebBrandingIllescasRouteImport } from './routes/diseno-web-branding-illescas'
 import { Route as DisenoImagenCorporativaRouteImport } from './routes/diseno-imagen-corporativa'
 import { Route as DesarrolloWebEmpresasRouteImport } from './routes/desarrollo-web-empresas'
 import { Route as BrandingEstrategicoRouteImport } from './routes/branding-estrategico'
@@ -65,6 +66,12 @@ const LegalRoute = LegalRouteImport.update({
   path: '/legal',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DisenoWebBrandingIllescasRoute =
+  DisenoWebBrandingIllescasRouteImport.update({
+    id: '/diseno-web-branding-illescas',
+    path: '/diseno-web-branding-illescas',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DisenoImagenCorporativaRoute = DisenoImagenCorporativaRouteImport.update({
   id: '/diseno-imagen-corporativa',
   path: '/diseno-imagen-corporativa',
@@ -141,6 +148,7 @@ export interface FileRoutesByFullPath {
   '/branding-estrategico': typeof BrandingEstrategicoRoute
   '/desarrollo-web-empresas': typeof DesarrolloWebEmpresasRoute
   '/diseno-imagen-corporativa': typeof DisenoImagenCorporativaRoute
+  '/diseno-web-branding-illescas': typeof DisenoWebBrandingIllescasRoute
   '/legal': typeof LegalRoute
   '/portfolio': typeof PortfolioRoute
   '/proyectos': typeof ProyectosRouteWithChildren
@@ -163,6 +171,7 @@ export interface FileRoutesByTo {
   '/branding-estrategico': typeof BrandingEstrategicoRoute
   '/desarrollo-web-empresas': typeof DesarrolloWebEmpresasRoute
   '/diseno-imagen-corporativa': typeof DisenoImagenCorporativaRoute
+  '/diseno-web-branding-illescas': typeof DisenoWebBrandingIllescasRoute
   '/legal': typeof LegalRoute
   '/portfolio': typeof PortfolioRoute
   '/rol': typeof RolRoute
@@ -184,6 +193,7 @@ export interface FileRoutesById {
   '/branding-estrategico': typeof BrandingEstrategicoRoute
   '/desarrollo-web-empresas': typeof DesarrolloWebEmpresasRoute
   '/diseno-imagen-corporativa': typeof DisenoImagenCorporativaRoute
+  '/diseno-web-branding-illescas': typeof DisenoWebBrandingIllescasRoute
   '/legal': typeof LegalRoute
   '/portfolio': typeof PortfolioRoute
   '/proyectos': typeof ProyectosRouteWithChildren
@@ -208,6 +218,7 @@ export interface FileRouteTypes {
     | '/branding-estrategico'
     | '/desarrollo-web-empresas'
     | '/diseno-imagen-corporativa'
+    | '/diseno-web-branding-illescas'
     | '/legal'
     | '/portfolio'
     | '/proyectos'
@@ -230,6 +241,7 @@ export interface FileRouteTypes {
     | '/branding-estrategico'
     | '/desarrollo-web-empresas'
     | '/diseno-imagen-corporativa'
+    | '/diseno-web-branding-illescas'
     | '/legal'
     | '/portfolio'
     | '/rol'
@@ -250,6 +262,7 @@ export interface FileRouteTypes {
     | '/branding-estrategico'
     | '/desarrollo-web-empresas'
     | '/diseno-imagen-corporativa'
+    | '/diseno-web-branding-illescas'
     | '/legal'
     | '/portfolio'
     | '/proyectos'
@@ -273,6 +286,7 @@ export interface RootRouteChildren {
   BrandingEstrategicoRoute: typeof BrandingEstrategicoRoute
   DesarrolloWebEmpresasRoute: typeof DesarrolloWebEmpresasRoute
   DisenoImagenCorporativaRoute: typeof DisenoImagenCorporativaRoute
+  DisenoWebBrandingIllescasRoute: typeof DisenoWebBrandingIllescasRoute
   LegalRoute: typeof LegalRoute
   PortfolioRoute: typeof PortfolioRoute
   ProyectosRoute: typeof ProyectosRouteWithChildren
@@ -331,6 +345,13 @@ declare module '@tanstack/react-router' {
       path: '/legal'
       fullPath: '/legal'
       preLoaderRoute: typeof LegalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diseno-web-branding-illescas': {
+      id: '/diseno-web-branding-illescas'
+      path: '/diseno-web-branding-illescas'
+      fullPath: '/diseno-web-branding-illescas'
+      preLoaderRoute: typeof DisenoWebBrandingIllescasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/diseno-imagen-corporativa': {
@@ -469,6 +490,7 @@ const rootRouteChildren: RootRouteChildren = {
   BrandingEstrategicoRoute: BrandingEstrategicoRoute,
   DesarrolloWebEmpresasRoute: DesarrolloWebEmpresasRoute,
   DisenoImagenCorporativaRoute: DisenoImagenCorporativaRoute,
+  DisenoWebBrandingIllescasRoute: DisenoWebBrandingIllescasRoute,
   LegalRoute: LegalRoute,
   PortfolioRoute: PortfolioRoute,
   ProyectosRoute: ProyectosRouteWithChildren,

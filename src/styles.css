@@ -1265,6 +1265,17 @@ body:has(.construction-page) {
   transform: scale(1.008);
 }
 
+.illescas-hero-workspace {
+  border: 0;
+  background: #f7f0e3;
+}
+
+.illescas-hero-workspace img {
+  min-height: clamp(20rem, 42vw, 34rem);
+  object-fit: cover;
+  object-position: center;
+}
+
 .service-intro,
 .service-section,
 .service-faq,

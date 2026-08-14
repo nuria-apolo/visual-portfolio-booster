@@ -1,0 +1,128 @@
+import { createFileRoute } from "@tanstack/react-router";
+import illescasBusinessHero from "@/assets/illescas-business-hero.png";
+import { SiteFooter } from "@/components/SiteFooter";
+import { absoluteAssetUrl } from "@/lib/seo";
+
+const BASE_URL = "https://srtaserifa.es";
+const PATH = "/diseno-web-branding-illescas";
+const TITLE = "Diseño web y branding en Illescas — Srta Serifa";
+const DESCRIPTION =
+  "Diseño web, branding e identidad para empresas de Illescas y La Sagra que necesitan explicar mejor lo que hacen y crecer con coherencia.";
+const IMAGE_ALT =
+  "Ilustración editorial de Illescas con la iglesia, el casco histórico y conexiones que evocan crecimiento empresarial y digital";
+
+export const Route = createFileRoute("/diseno-web-branding-illescas")({
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { name: "keywords", content: "diseño web Illescas, branding Illescas, identidad corporativa Illescas, diseño web La Sagra" },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: BASE_URL + PATH },
+      { property: "og:image", content: absoluteAssetUrl(illescasBusinessHero) },
+      { property: "og:image:width", content: "1736" },
+      { property: "og:image:height", content: "900" },
+      { property: "og:image:alt", content: IMAGE_ALT },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: absoluteAssetUrl(illescasBusinessHero) },
+      { name: "twitter:image:alt", content: IMAGE_ALT },
+    ],
+    links: [{ rel: "canonical", href: BASE_URL + PATH }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": BASE_URL + PATH + "#service",
+          name: "Diseño web y branding para empresas en Illescas",
+          description: DESCRIPTION,
+          serviceType: "Diseño web, branding e identidad visual",
+          provider: { "@id": BASE_URL + "/sobre-mi#nuria-lopez" },
+          areaServed: ["Illescas", "La Sagra"],
+          url: BASE_URL + PATH,
+          image: absoluteAssetUrl(illescasBusinessHero),
+        }),
+      },
+    ],
+  }),
+  component: IllescasLanding,
+});
+
+function IllescasLanding() {
+  return (
+    <div className="editorial-page service-page illescas-landing">
+      <main>
+        <header className="service-hero">
+          <div className="service-topline">
+            <nav className="book-breadcrumbs" aria-label="Migas de pan">
+              <a href="/">Inicio</a>
+              <span aria-hidden="true">/</span>
+              <span aria-current="page">Illescas</span>
+            </nav>
+            <p className="editorial-section-label">Diseño web · branding · producto digital</p>
+          </div>
+
+          <h1>Diseño web y branding para empresas que crecen en Illescas.</h1>
+          <p className="editorial-lede">
+            Sistemas de marca y productos digitales para compañías de Illescas y La Sagra que necesitan explicar mejor lo que hacen, diferenciarse y convertir oportunidades en relaciones duraderas.
+          </p>
+
+          <div className="about-hero-actions">
+            <a className="about-hero-button about-hero-button-primary" href="mailto:srtaserifa@icloud.com">
+              Hablemos de tu proyecto ↗
+            </a>
+            <a className="about-hero-button" href="#enfoque">
+              Ver el enfoque ↓
+            </a>
+          </div>
+
+          <div className="service-hero-workspace illescas-hero-workspace">
+            <img
+              src={illescasBusinessHero}
+              alt={IMAGE_ALT}
+              width={1736}
+              height={900}
+              fetchPriority="high"
+              decoding="async"
+            />
+          </div>
+        </header>
+
+        <section className="service-intro" id="enfoque" aria-labelledby="illescas-intro-title">
+          <div>
+            <p className="editorial-kicker">Una oportunidad local</p>
+            <h2 id="illescas-intro-title">Crecer no debería hacer que una empresa se vuelva más difícil de entender.</h2>
+          </div>
+          <p>
+            Cuando una compañía incorpora servicios, equipos o nuevos mercados, su web y su marca tienen que seguir siendo claras. El trabajo no consiste en añadir más pantallas: consiste en ordenar la propuesta, la experiencia y los códigos con los que la empresa se presenta.
+          </p>
+        </section>
+
+        <section className="service-section" aria-labelledby="illescas-offer-title">
+          <div className="service-section-heading">
+            <p className="editorial-kicker">Cómo puedo ayudar</p>
+            <h2 id="illescas-offer-title">Una presencia digital a la altura de lo que ya estáis construyendo.</h2>
+          </div>
+          <div className="service-card-grid">
+            <article className="service-card"><span>01</span><h3>Claridad de marca</h3><p>Una propuesta de valor, mensajes y una identidad que permitan explicar la empresa con precisión.</p></article>
+            <article className="service-card"><span>02</span><h3>Web corporativa</h3><p>Una web útil para ventas, talento y negocio: rápida, accesible y preparada para crecer.</p></article>
+            <article className="service-card"><span>03</span><h3>Sistemas digitales</h3><p>Reglas visuales y componentes que ayudan al equipo a comunicar sin empezar de cero cada vez.</p></article>
+            <article className="service-card"><span>04</span><h3>Dirección de producto</h3><p>Recorridos, interfaces y prioridades para convertir una idea compleja en una experiencia clara.</p></article>
+          </div>
+        </section>
+
+        <section className="service-cta" aria-labelledby="illescas-cta-title">
+          <p className="editorial-kicker">El siguiente paso</p>
+          <h2 id="illescas-cta-title">Si la empresa está cambiando, su forma de presentarse también puede hacerlo.</h2>
+          <a className="about-hero-button about-hero-button-primary" href="mailto:srtaserifa@icloud.com">Cuéntame qué está pasando ↗</a>
+        </section>
+      </main>
+      <SiteFooter variant="floating" />
+    </div>
+  );
+}
