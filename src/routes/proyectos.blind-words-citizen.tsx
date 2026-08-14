@@ -9,21 +9,21 @@ export const Route = createFileRoute("/proyectos/blind-words-citizen")({
   head: () => ({
     meta: [
       {
-        title: "Blind Words en una campaña internacional con Citizen — Srta Serifa",
+        title: "Blind Words × Citizen: una tipografía que entra en conversación — Srta Serifa",
       },
       {
         name: "description",
         content:
-          "Blind Words, en uso real: la tipografía aparece en la cartela de una campaña audiovisual de Citizen, una agencia de Canadá.",
+          "Blind Words aparece en la campaña audiovisual Braille Nails de Citizen, una iniciativa canadiense para acercar el braille a la vida cotidiana.",
       },
       {
         property: "og:title",
-        content: "Blind Words en una campaña internacional con Citizen — Srta Serifa",
+        content: "Blind Words × Citizen: una tipografía que entra en conversación — Srta Serifa",
       },
       {
         property: "og:description",
         content:
-          "Blind Words, en uso real: la tipografía aparece en la cartela de una campaña audiovisual de Citizen, una agencia de Canadá.",
+          "Blind Words aparece en la campaña audiovisual Braille Nails de Citizen, una iniciativa canadiense para acercar el braille a la vida cotidiana.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://srtaserifa.es/proyectos/blind-words-citizen" },
@@ -63,9 +63,10 @@ function BlindWordsCitizenPage() {
               <span aria-hidden="true">/</span>
               <span aria-current="page">Citizen</span>
             </nav>
-            <h1>Blind Words en una campaña internacional con Citizen (Canadá)</h1>
+            <h1>Blind Words × Citizen: una tipografía que entra en conversación</h1>
             <p className="citizen-article-deck">
-              Blind Words, en uso real: aparece en la cartela del nuevo anuncio de Citizen.
+              La tipografía aparece en la campaña audiovisual Braille Nails, creada para acercar el
+              braille a la vida cotidiana.
             </p>
             <p className="citizen-article-type">Proyecto · 3 min.</p>
           </div>
@@ -78,31 +79,33 @@ function BlindWordsCitizenPage() {
           </figure>
 
           <div className="citizen-article-body">
-            <p className="citizen-article-lead">
-              Hay proyectos que te recuerdan por qué haces tipografía. Citizen, una agencia de
-              Canadá, ha usado mi tipografía Blind Words en la cartela de un anuncio, y todavía me
-              cuesta no sonreír al verlo: una idea que nació en mi escritorio, hoy forma parte de
-              una pieza real, publicada y viva.
+            <h2 className="citizen-article-lead">
+              Hay proyectos que te recuerdan que una tipografía puede seguir creciendo mucho
+              después de haberla terminado. Blind Words aparece en la campaña audiovisual Braille
+              Nails, una iniciativa canadiense que lleva el braille a un lugar inesperado: las
+              uñas.
+            </h2>
+
+            <p>
+              Braille Nails fue impulsada por CNIB junto a THE TEN SPOT durante el Mes de la
+              Alfabetización Braille en Canadá. Entre el 15 de enero y el 15 de febrero de 2026,
+              las manicuras se convirtieron en una forma de apoyar los programas de alfabetización
+              braille y, sobre todo, de abrir conversaciones sobre accesibilidad, autonomía y
+              participación.
             </p>
 
             <p>
-              Blind Words empezó como un proyecto muy personal: una tipografía creada desde la
-              intuición, el cuidado por el detalle y esas ganas de darle voz a un estilo que tenía
-              en la cabeza pero aún no existía. Diseñarla fue un proceso de insistir, ajustar,
-              probar, descartar y volver a empezar… hasta que apareció ese equilibrio entre carácter
-              y legibilidad que yo buscaba.
+              Citizen, la agencia canadiense detrás de la pieza audiovisual, utilizó Blind Words en
+              la cartela de la campaña. Verla acompañar las imágenes de las uñas —dentro de un
+              ritmo, una intención y un discurso— es una de esas ocasiones en las que la tipografía
+              deja de ser una muestra y empieza a formar parte de una historia compartida.
             </p>
 
             <p>
-              Por eso me hace tanta ilusión compartir esta colaboración: Citizen (Canadá) ha
-              integrado Blind Words en la cartela del anuncio, y verla ahí —en un entorno
-              audiovisual, dentro de un ritmo, una intención y un discurso— se siente como ver la
-              tipografía “hacer su trabajo” de verdad.
-            </p>
-
-            <p>
-              No solo como una muestra bonita en un PDF, sino como una decisión creativa que suma
-              identidad, tono y presencia.
+              Blind Words nació como una investigación personal sobre tipografía, tacto y la
+              estructura de seis puntos del braille. Por eso esta aplicación tiene un significado
+              especial: no se limita a hablar de inclusión, sino que ayuda a que una idea visual
+              concebida desde el tacto encuentre un contexto real, público y cotidiano.
             </p>
 
             <div className="citizen-article-facts">
@@ -113,20 +116,27 @@ function BlindWordsCitizenPage() {
                 </a>
               </p>
               <p>
+                <strong>Campaña</strong>
+                <a
+                  href="https://www.newswire.ca/news-releases/cnib-partners-with-the-ten-spot-r-to-launch-braille-nails-in-support-of-braille-literacy-893221456.html"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Braille Nails · CNIB × THE TEN SPOT ↗
+                </a>
+              </p>
+              <p>
                 <strong>Tipografía</strong>
-                Blind Words · Núria López
+                <a href="/proyectos/blind-words">Blind Words · Núria López ↗</a>
               </p>
             </div>
 
             <div className="citizen-article-video">
               {videoRequested ? (
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/cI9YfVWejVM?rel=0&modestbranding=1"
-                  title="Campaña audiovisual de Citizen con Blind Words"
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
+                <video controls playsInline preload="metadata" poster="/video-posters/citizen-braille-nails.png">
+                  <source src="/videos/braille-nails-citizen.mp4" type="video/mp4" />
+                  Tu navegador no puede reproducir este vídeo.
+                </video>
               ) : (
                 <div className="citizen-article-video-placeholder">
                   <img
@@ -139,7 +149,7 @@ function BlindWordsCitizenPage() {
                     onClick={() => setVideoRequested(true)}
                     aria-label="Ver vídeo de la campaña de Citizen con Blind Words"
                   />
-                  <p>Al cargarlo, YouTube puede utilizar cookies de terceros.</p>
+                  <p>Vídeo de la campaña · Braille Nails</p>
                 </div>
               )}
             </div>
