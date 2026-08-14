@@ -6,7 +6,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { articles } from "@/data/articles";
 import { absoluteAssetUrl, HOME_OG_IMAGE } from "@/lib/seo";
 
-const TITLE = "Publicaciones — Brand Systems + Digital Products | Srtaserifa";
+const TITLE = "Publicaciones de diseño, marca y producto digital";
 const DESCRIPTION =
   "Libros, notas y ensayos de Núria López sobre diseño, estrategia, sistemas de marca, producto digital, dirección creativa, tecnología e inteligencia artificial.";
 
