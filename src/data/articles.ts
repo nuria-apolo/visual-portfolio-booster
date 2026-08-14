@@ -253,10 +253,10 @@ export const articles: Article[] = [
     category: "Estrategia de marca",
     publishedAt: "2026-08-09",
     readingTime: "6 min",
-    keywords: ["marca digital", "estrategia de marca", "identidad visual", "sistema de marca"],
+    keywords: ["marca digital", "estrategia de marca", "identidad visual", "sistema de diseño", "design system"],
     coverImage: coverMarcaDigitalReglasTechCollage,
     coverAlt:
-      "Collage editorial de manos, módulos conectados y una retícula digital que representa un sistema de marca",
+      "Collage editorial de manos, módulos conectados y una retícula digital que representa un sistema de diseño",
     sections: [
       {
         heading: "Una colección de piezas no es un sistema",
@@ -266,9 +266,9 @@ export const articles: Article[] = [
         ],
       },
       {
-        heading: "Qué hace una regla de marca",
+        heading: "Qué hace una regla de diseño",
         paragraphs: [
-          "Una regla no tiene por qué ser rígida ni hablar como un manual legal. Puede ser una frase que oriente una decisión: priorizar la claridad sobre el efecto, dejar espacio para que el contenido respire o mostrar el estado del sistema antes de pedir una acción.",
+          "Una regla de diseño no tiene por qué ser rígida ni hablar como un manual legal. Puede ser una frase que oriente una decisión: priorizar la claridad sobre el efecto, dejar espacio para que el contenido respire o mostrar el estado del sistema antes de pedir una acción.",
           "Las mejores reglas son memorables porque explican una intención. Después pueden convertirse en criterios para diseño, contenido, producto y desarrollo. Así, diferentes personas pueden tomar decisiones compatibles sin necesitar aprobación para cada detalle.",
         ],
       },
@@ -282,16 +282,16 @@ export const articles: Article[] = [
       {
         heading: "Reglas para moverse, no para quedarse quietos",
         paragraphs: [
-          "El valor de un sistema no está en impedir que algo cambie. Está en permitir que cambie sin perder el sentido. Las reglas deben tener un núcleo estable y una zona de interpretación: lo que siempre debe mantenerse y lo que puede adaptarse al contexto.",
+          "El valor de un sistema de diseño no está en impedir que algo cambie. Está en permitir que cambie sin perder el sentido. Las reglas deben tener un núcleo estable y una zona de interpretación: lo que siempre debe mantenerse y lo que puede adaptarse al contexto.",
           "Cuando una marca consigue ese equilibrio, deja de depender de aplicaciones cerradas y gana una forma más flexible de crecer.",
         ],
       },
     ],
     faq: [
       {
-        question: "¿Qué es un sistema de marca digital?",
+        question: "¿Qué es un sistema de diseño?",
         answer:
-          "Es un conjunto de principios y reglas que orienta cómo una marca se expresa y se comporta en webs, productos, contenidos y otros contextos digitales.",
+          "Es un conjunto de principios, componentes y reglas que ayuda a diseñar y construir experiencias digitales coherentes. Puede traducir la identidad de una marca a webs, productos, contenidos y otros contextos digitales.",
       },
       {
         question: "¿Por qué las plantillas no son suficientes para una marca?",
