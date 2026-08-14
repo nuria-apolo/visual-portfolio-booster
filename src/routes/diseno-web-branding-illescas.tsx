@@ -10,6 +10,24 @@ const DESCRIPTION =
   "Diseño web, branding e identidad para empresas de Illescas y La Sagra que necesitan explicar mejor lo que hacen y crecer con coherencia.";
 const IMAGE_ALT =
   "Ilustración editorial de Illescas con la iglesia, el casco histórico y conexiones que evocan crecimiento empresarial y digital";
+const FAQS = [
+  [
+    "¿Trabajas solo con empresas de Illescas?",
+    "No. Illescas y La Sagra son el punto de partida, pero el trabajo puede desarrollarse con equipos de cualquier lugar. La cercanía ayuda a entender el contexto; el proceso está preparado para combinar sesiones presenciales y trabajo remoto.",
+  ],
+  [
+    "¿Qué puede incluir un proyecto de diseño web y branding?",
+    "Depende de lo que la empresa necesite ordenar. Puede abarcar estrategia y mensajes, identidad visual, arquitectura de contenidos, diseño de interfaz, desarrollo web y un sistema de componentes para que el equipo pueda mantenerlo con coherencia.",
+  ],
+  [
+    "¿Cuánto tarda una web corporativa?",
+    "Una web corporativa suele necesitar entre seis y doce semanas, según el punto de partida, los contenidos y el alcance. Antes de empezar definimos fases, responsables y entregables para que el calendario sea realista.",
+  ],
+  [
+    "¿Podemos empezar si ya tenemos logo o una web existente?",
+    "Sí. El primer paso es revisar qué funciona, qué ya no representa bien a la empresa y qué conviene conservar. No hace falta rehacerlo todo: a veces el cambio más útil está en ordenar la propuesta, los contenidos y la experiencia.",
+  ],
+] as const;
 
 export const Route = createFileRoute("/diseno-web-branding-illescas")({
   head: () => ({
@@ -21,6 +39,8 @@ export const Route = createFileRoute("/diseno-web-branding-illescas")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:url", content: BASE_URL + PATH },
+      { property: "og:site_name", content: "Srta Serifa" },
+      { property: "og:locale", content: "es_ES" },
       { property: "og:image", content: absoluteAssetUrl(illescasBusinessHero) },
       { property: "og:image:width", content: "1736" },
       { property: "og:image:height", content: "900" },
@@ -30,6 +50,7 @@ export const Route = createFileRoute("/diseno-web-branding-illescas")({
       { name: "twitter:description", content: DESCRIPTION },
       { name: "twitter:image", content: absoluteAssetUrl(illescasBusinessHero) },
       { name: "twitter:image:alt", content: IMAGE_ALT },
+      { name: "twitter:url", content: BASE_URL + PATH },
     ],
     links: [{ rel: "canonical", href: BASE_URL + PATH }],
     scripts: [
@@ -46,6 +67,29 @@ export const Route = createFileRoute("/diseno-web-branding-illescas")({
           areaServed: ["Illescas", "La Sagra"],
           url: BASE_URL + PATH,
           image: absoluteAssetUrl(illescasBusinessHero),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Inicio", item: BASE_URL },
+            { "@type": "ListItem", position: 2, name: "Diseño web y branding en Illescas", item: BASE_URL + PATH },
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQS.map(([question, answer]) => ({
+            "@type": "Question",
+            name: question,
+            acceptedAnswer: { "@type": "Answer", text: answer },
+          })),
         }),
       },
     ],
@@ -113,6 +157,24 @@ function IllescasLanding() {
             <article className="service-card"><span>02</span><h3>Web corporativa</h3><p>Una web útil para ventas, talento y negocio: rápida, accesible y preparada para crecer.</p></article>
             <article className="service-card"><span>03</span><h3>Sistemas digitales</h3><p>Reglas visuales y componentes que ayudan al equipo a comunicar sin empezar de cero cada vez.</p></article>
             <article className="service-card"><span>04</span><h3>Dirección de producto</h3><p>Recorridos, interfaces y prioridades para convertir una idea compleja en una experiencia clara.</p></article>
+          </div>
+        </section>
+
+        <section className="service-faq" aria-labelledby="illescas-faq-title">
+          <div className="service-section-heading">
+            <p className="editorial-kicker">Preguntas frecuentes</p>
+            <h2 id="illescas-faq-title">Lo esencial antes de empezar.</h2>
+          </div>
+          <div className="service-faq-list">
+            {FAQS.map(([question, answer]) => (
+              <details key={question}>
+                <summary>
+                  <span>{question}</span>
+                  <span className="unified-faq-icon" aria-hidden="true" />
+                </summary>
+                <p>{answer}</p>
+              </details>
+            ))}
           </div>
         </section>
 

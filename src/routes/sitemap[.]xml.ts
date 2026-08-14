@@ -29,7 +29,12 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/desarrollo-web-empresas", changefreq: "monthly", priority: "0.8" },
           { path: "/diseno-imagen-corporativa", changefreq: "monthly", priority: "0.8" },
           { path: "/branding-estrategico", changefreq: "monthly", priority: "0.8" },
-          { path: "/diseno-web-branding-illescas", changefreq: "monthly", priority: "0.8" },
+          {
+            path: "/diseno-web-branding-illescas",
+            lastmod: "2026-08-14",
+            changefreq: "monthly",
+            priority: "0.8",
+          },
           { path: "/publicaciones", changefreq: "monthly", priority: "0.8" },
           { path: "/blog", changefreq: "weekly", priority: "0.8" },
           { path: "/publicaciones/treinta-mililitros", changefreq: "monthly", priority: "0.8" },
