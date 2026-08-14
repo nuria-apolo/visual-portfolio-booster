@@ -58,8 +58,8 @@ export const Route = createFileRoute("/publicaciones/$slug")({
                   "@type": "ImageObject",
                   url: absoluteAssetUrl(article.coverImage),
                   caption: article.coverAlt,
-                  width: 1672,
-                  height: 941,
+                  width: 1730,
+                  height: 909,
                 },
                 isPartOf: {
                   "@type": "CollectionPage",
