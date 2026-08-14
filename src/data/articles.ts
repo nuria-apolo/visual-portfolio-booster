@@ -371,7 +371,7 @@ export const articles: Article[] = [
   {
     slug: "disenar-sistemas-no-pantallas",
     title: "Diseñar sistemas, no pantallas",
-    seoTitle: "Diseñar sistemas, no pantallas: una forma más sostenible de trabajar | Srta Serifa",
+    seoTitle: "Diseñar sistemas, no pantallas: diseño escalable",
     description:
       "Diseñar sistemas permite crear productos digitales coherentes, escalables y más fáciles de mantener. La pantalla es una salida; el sistema es la lógica que la hace posible.",
     excerpt:

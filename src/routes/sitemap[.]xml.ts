@@ -78,6 +78,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           },
           {
             path: "/publicaciones/disenar-sistemas-no-pantallas",
+            lastmod: "2026-08-14",
             changefreq: "monthly",
             priority: "0.7",
           },
