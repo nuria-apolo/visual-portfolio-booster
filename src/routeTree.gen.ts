@@ -19,6 +19,7 @@ import { Route as LegalRouteImport } from './routes/legal'
 import { Route as DisenoImagenCorporativaRouteImport } from './routes/diseno-imagen-corporativa'
 import { Route as DesarrolloWebEmpresasRouteImport } from './routes/desarrollo-web-empresas'
 import { Route as BrandingEstrategicoRouteImport } from './routes/branding-estrategico'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PublicacionesIndexRouteImport } from './routes/publicaciones.index'
 import { Route as ProyectosIndexRouteImport } from './routes/proyectos.index'
@@ -79,6 +80,11 @@ const BrandingEstrategicoRoute = BrandingEstrategicoRouteImport.update({
   path: '/branding-estrategico',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -131,6 +137,7 @@ const ProyectosAprendeHistoriaDelArteRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/blog': typeof BlogRoute
   '/branding-estrategico': typeof BrandingEstrategicoRoute
   '/desarrollo-web-empresas': typeof DesarrolloWebEmpresasRoute
   '/diseno-imagen-corporativa': typeof DisenoImagenCorporativaRoute
@@ -152,6 +159,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/blog': typeof BlogRoute
   '/branding-estrategico': typeof BrandingEstrategicoRoute
   '/desarrollo-web-empresas': typeof DesarrolloWebEmpresasRoute
   '/diseno-imagen-corporativa': typeof DisenoImagenCorporativaRoute
@@ -172,6 +180,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/blog': typeof BlogRoute
   '/branding-estrategico': typeof BrandingEstrategicoRoute
   '/desarrollo-web-empresas': typeof DesarrolloWebEmpresasRoute
   '/diseno-imagen-corporativa': typeof DisenoImagenCorporativaRoute
@@ -195,6 +204,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/blog'
     | '/branding-estrategico'
     | '/desarrollo-web-empresas'
     | '/diseno-imagen-corporativa'
@@ -216,6 +226,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/blog'
     | '/branding-estrategico'
     | '/desarrollo-web-empresas'
     | '/diseno-imagen-corporativa'
@@ -235,6 +246,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/blog'
     | '/branding-estrategico'
     | '/desarrollo-web-empresas'
     | '/diseno-imagen-corporativa'
@@ -257,6 +269,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BlogRoute: typeof BlogRoute
   BrandingEstrategicoRoute: typeof BrandingEstrategicoRoute
   DesarrolloWebEmpresasRoute: typeof DesarrolloWebEmpresasRoute
   DisenoImagenCorporativaRoute: typeof DisenoImagenCorporativaRoute
@@ -339,6 +352,13 @@ declare module '@tanstack/react-router' {
       path: '/branding-estrategico'
       fullPath: '/branding-estrategico'
       preLoaderRoute: typeof BrandingEstrategicoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -445,6 +465,7 @@ const PublicacionesRouteWithChildren = PublicacionesRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BlogRoute: BlogRoute,
   BrandingEstrategicoRoute: BrandingEstrategicoRoute,
   DesarrolloWebEmpresasRoute: DesarrolloWebEmpresasRoute,
   DisenoImagenCorporativaRoute: DisenoImagenCorporativaRoute,

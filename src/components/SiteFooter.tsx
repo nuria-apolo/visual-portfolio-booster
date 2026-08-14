@@ -9,6 +9,7 @@ const footerLinks = [
   { label: "Rol", href: "/rol" },
   { label: "Proyectos", href: "/proyectos" },
   { label: "Publicaciones", href: "/publicaciones" },
+  { label: "Blog", href: "/blog" },
 ] as const;
 
 const legalLinks = [

@@ -63,8 +63,8 @@ export const Route = createFileRoute("/publicaciones/$slug")({
                 },
                 isPartOf: {
                   "@type": "CollectionPage",
-                  name: "Publicaciones de Srta Serifa",
-                  url: `${BASE_URL}/publicaciones`,
+                  name: "Blog de Srta Serifa",
+                  url: `${BASE_URL}/blog`,
                 },
               },
               {
@@ -74,8 +74,8 @@ export const Route = createFileRoute("/publicaciones/$slug")({
                   {
                     "@type": "ListItem",
                     position: 2,
-                    name: "Publicaciones",
-                    item: `${BASE_URL}/publicaciones`,
+                    name: "Blog",
+                    item: `${BASE_URL}/blog`,
                   },
                   {
                     "@type": "ListItem",
@@ -125,7 +125,7 @@ function ArticlePage() {
               <nav className="book-breadcrumbs article-breadcrumbs" aria-label="Migas de pan">
                 <a href="/">Inicio</a>
                 <span aria-hidden="true">/</span>
-                <a href="/publicaciones">Publicaciones</a>
+                <a href="/blog">Blog</a>
                 <span aria-hidden="true">/</span>
                 <span aria-current="page">{article.title}</span>
               </nav>

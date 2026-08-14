@@ -30,6 +30,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/diseno-imagen-corporativa", changefreq: "monthly", priority: "0.8" },
           { path: "/branding-estrategico", changefreq: "monthly", priority: "0.8" },
           { path: "/publicaciones", changefreq: "monthly", priority: "0.8" },
+          { path: "/blog", changefreq: "weekly", priority: "0.8" },
           { path: "/publicaciones/treinta-mililitros", changefreq: "monthly", priority: "0.8" },
           {
             path: "/publicaciones/que-es-inteligencia-artificial",

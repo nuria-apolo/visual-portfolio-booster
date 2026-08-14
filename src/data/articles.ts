@@ -1,10 +1,10 @@
-import coverUnaInterfazBranding from "@/assets/article-cover-una-interfaz-branding-flat.webp";
-import coverBrandSystemDesignSystem from "@/assets/article-cover-brand-system-design-system-flat.webp";
-import coverMarcaDigitalReglas from "@/assets/article-cover-marca-digital-reglas-flat.webp";
-import coverBrandingProducto from "@/assets/article-cover-branding-producto-flat.webp";
-import coverDisenarSistemas from "@/assets/article-cover-disenar-sistemas-flat.webp";
-import coverIaDiseno from "@/assets/article-cover-ia-diseno-flat.webp";
-import coverQueEsInteligenciaArtificial from "@/assets/article-cover-que-es-inteligencia-artificial-flat.webp";
+import coverQueEsInteligenciaArtificialCollage from "@/assets/article-cover-que-es-inteligencia-artificial-collage.png";
+import coverBrandSystemDesignSystemRichCollage from "@/assets/article-cover-brand-system-design-system-rich-collage.png";
+import coverUnaInterfazBrandingCollage from "@/assets/article-cover-una-interfaz-branding-collage.png";
+import coverMarcaDigitalReglasTechCollage from "@/assets/article-cover-marca-digital-reglas-tech-collage.png";
+import coverBrandingProductoCollage from "@/assets/article-cover-branding-producto-collage.png";
+import coverDisenarSistemasCollage from "@/assets/article-cover-disenar-sistemas-collage.png";
+import coverIaDisenoCollage from "@/assets/article-cover-ia-diseno-collage.png";
 
 export interface ArticleSection {
   heading: string;
@@ -51,9 +51,9 @@ export const articles: Article[] = [
       "aplicaciones de la inteligencia artificial",
       "IA para empresas",
     ],
-    coverImage: coverQueEsInteligenciaArtificial,
+    coverImage: coverQueEsInteligenciaArtificialCollage,
     coverAlt:
-      "Composición editorial de una cuadrícula de decisiones y una red de puntos que representa la inteligencia artificial",
+      "Collage editorial de manos, un ordenador retro y una red de nodos que representa la inteligencia artificial",
     sections: [
       {
         heading: "Una forma de reconocer patrones y generar posibilidades",
@@ -135,9 +135,9 @@ export const articles: Article[] = [
       "identidad de marca",
       "producto digital",
     ],
-    coverImage: coverUnaInterfazBranding,
+    coverImage: coverUnaInterfazBrandingCollage,
     coverAlt:
-      "Composición editorial de pantallas y módulos que relaciona diseño de interfaz y marca",
+      "Collage editorial de manos, tarjetas de interfaz y muestras de color que representa el branding digital",
     sections: [
       {
         heading: "La marca aparece cuando alguien usa el producto",
@@ -195,9 +195,9 @@ export const articles: Article[] = [
     publishedAt: "2026-08-09",
     readingTime: "7 min",
     keywords: ["brand system", "design system", "sistema de diseño", "identidad digital"],
-    coverImage: coverBrandSystemDesignSystem,
+    coverImage: coverBrandSystemDesignSystemRichCollage,
     coverAlt:
-      "Composición editorial de módulos ordenados que representan la conexión entre brand system y design system",
+      "Collage editorial de elementos de identidad y componentes conectados que representan el paso de un brand system a un design system",
     sections: [
       {
         heading: "Dos sistemas, una misma intención",
@@ -254,9 +254,9 @@ export const articles: Article[] = [
     publishedAt: "2026-08-09",
     readingTime: "6 min",
     keywords: ["marca digital", "estrategia de marca", "identidad visual", "sistema de marca"],
-    coverImage: coverMarcaDigitalReglas,
+    coverImage: coverMarcaDigitalReglasTechCollage,
     coverAlt:
-      "Composición editorial de reglas, capas y módulos que representa un sistema de marca digital flexible",
+      "Collage editorial de manos, módulos conectados y una retícula digital que representa un sistema de marca",
     sections: [
       {
         heading: "Una colección de piezas no es un sistema",
@@ -318,9 +318,9 @@ export const articles: Article[] = [
       "estrategia de marca",
       "experiencia digital",
     ],
-    coverImage: coverBrandingProducto,
+    coverImage: coverBrandingProductoCollage,
     coverAlt:
-      "Dos sistemas editoriales que se conectan para representar la colaboración entre branding y producto",
+      "Collage editorial de dos manos que conectan una forma de marca con una interfaz de producto",
     sections: [
       {
         heading: "La promesa y la experiencia",
@@ -385,9 +385,9 @@ export const articles: Article[] = [
       "design system",
       "diseño escalable",
     ],
-    coverImage: coverDisenarSistemas,
+    coverImage: coverDisenarSistemasCollage,
     coverAlt:
-      "Composición editorial de componentes repetibles que representa el diseño de sistemas",
+      "Collage editorial de una mano y módulos repetibles que representa el diseño de sistemas",
     sections: [
       {
         heading: "La pantalla es la evidencia, no el proyecto completo",
@@ -452,9 +452,9 @@ export const articles: Article[] = [
       "futuro del diseño",
       "diseño generativo",
     ],
-    coverImage: coverIaDiseno,
+    coverImage: coverIaDisenoCollage,
     coverAlt:
-      "Composición editorial de herramientas, cuadrículas y patrones que representa la inteligencia artificial en diseño",
+      "Collage editorial de una mano, tijeras y ordenador retro que representa la inteligencia artificial en diseño",
     sections: [
       {
         heading: "La IA cambia el coste de explorar",
