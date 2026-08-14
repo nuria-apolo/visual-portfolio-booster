@@ -9,7 +9,7 @@ export const Route = createFileRoute("/proyectos/blind-words-citizen")({
   head: () => ({
     meta: [
       {
-        title: "Blind Words × Citizen: una tipografía que entra en conversación — Srta Serifa",
+        title: "Blind Words × Citizen: tipografía braille para Braille Nails",
       },
       {
         name: "description",
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/proyectos/blind-words-citizen")({
       },
       {
         property: "og:title",
-        content: "Blind Words × Citizen: una tipografía que entra en conversación — Srta Serifa",
+        content: "Blind Words × Citizen: tipografía braille para Braille Nails",
       },
       {
         property: "og:description",
@@ -28,6 +28,24 @@ export const Route = createFileRoute("/proyectos/blind-words-citizen")({
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://srtaserifa.es/proyectos/blind-words-citizen" },
       { property: "og:image", content: absoluteAssetUrl(campaignImage) },
+      {
+        property: "og:image:alt",
+        content: "Campaña Braille Nails de Citizen con la tipografía Blind Words",
+      },
+      {
+        name: "twitter:title",
+        content: "Blind Words × Citizen: tipografía braille para Braille Nails",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Blind Words aparece en la campaña audiovisual Braille Nails de Citizen, una iniciativa canadiense para acercar el braille a la vida cotidiana.",
+      },
+      { name: "twitter:image", content: absoluteAssetUrl(campaignImage) },
+      {
+        name: "twitter:image:alt",
+        content: "Campaña Braille Nails de Citizen con la tipografía Blind Words",
+      },
     ],
     links: [
       {
