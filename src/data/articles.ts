@@ -245,7 +245,7 @@ export const articles: Article[] = [
   {
     slug: "una-marca-digital-necesita-reglas-no-aplicaciones",
     title: "Por qué una marca digital necesita reglas, no aplicaciones",
-    seoTitle: "Por qué una marca digital necesita reglas, no aplicaciones | Srta Serifa",
+    seoTitle: "Marca digital: reglas, no aplicaciones | Srta Serifa",
     description:
       "Una identidad digital no se resuelve con plantillas, filtros o aplicaciones aisladas. Necesita reglas que permitan tomar buenas decisiones en contextos nuevos.",
     excerpt:

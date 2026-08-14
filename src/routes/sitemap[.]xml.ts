@@ -68,6 +68,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           },
           {
             path: "/publicaciones/una-marca-digital-necesita-reglas-no-aplicaciones",
+            lastmod: "2026-08-14",
             changefreq: "monthly",
             priority: "0.7",
           },
