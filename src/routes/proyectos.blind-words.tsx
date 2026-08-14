@@ -7,17 +7,18 @@ import { projects } from "@/data/projects";
 import { absoluteAssetUrl } from "@/lib/seo";
 
 const blindWordsProject = projects.find((project) => project.title === "Blind Words");
+const SEO_TITLE = "Blind Words: tipografía inclusiva y diseño táctil | Srta Serifa";
 
 export const Route = createFileRoute("/proyectos/blind-words")({
   head: () => ({
     meta: [
-      { title: "Blind Words — Srta Serifa" },
+      { title: SEO_TITLE },
       {
         name: "description",
         content:
           blindWordsProject?.description ?? "Blind Words, un proyecto de tipografía inclusiva.",
       },
-      { property: "og:title", content: "Blind Words — Srta Serifa" },
+      { property: "og:title", content: SEO_TITLE },
       {
         property: "og:description",
         content:
@@ -26,6 +27,13 @@ export const Route = createFileRoute("/proyectos/blind-words")({
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://srtaserifa.es/proyectos/blind-words" },
       { property: "og:image", content: absoluteAssetUrl(projectBlindwords) },
+      { name: "twitter:title", content: SEO_TITLE },
+      {
+        name: "twitter:description",
+        content:
+          blindWordsProject?.description ?? "Blind Words, un proyecto de tipografía inclusiva.",
+      },
+      { name: "twitter:image", content: absoluteAssetUrl(projectBlindwords) },
     ],
     links: [{ rel: "canonical", href: "https://srtaserifa.es/proyectos/blind-words" }],
     scripts: [

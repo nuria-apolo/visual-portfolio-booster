@@ -32,7 +32,7 @@ Srtaserifa es el portafolio profesional de Núria López, especialista en sistem
 ## Proyectos
 - [Proyectos — Brand Systems + Digital Products | Srtaserifa](https://srtaserifa.es/proyectos): Catálogo de proyectos personales de Núria López en sistemas de marca, productos digitales, UX/UI y experimentación.
 - [Karma Financiero — Srta Serifa](https://srtaserifa.es/proyectos/karma-financiero): Proyecto personal "Karma Financiero" enfocado en el diseño de producto digital para gestionar el dinero compartido y conversaciones sobre gastos.
-- [Blind Words — Srta Serifa](https://srtaserifa.es/proyectos/blind-words): Proyecto de diseño "Blind Words" que investiga la tipografía inclusiva para personas invidentes.
+- [Blind Words: tipografía inclusiva y diseño táctil](https://srtaserifa.es/proyectos/blind-words): Proyecto de diseño que investiga la tipografía inclusiva para personas invidentes.
 - [Aprende Historia del Arte — Srta Serifa](https://srtaserifa.es/proyectos/aprende-historia-del-arte): Proyecto de plataforma gratuita "Aprende Historia del Arte" enfocada en una experiencia de aprendizaje digital accesible y exploratoria.
 - [Blind Words en una campaña internacional con Citizen — Srta Serifa](https://srtaserifa.es/proyectos/blind-words-citizen): Noticia sobre la aplicación real de la tipografía "Blind Words" en una campaña internacional de la agencia Citizen.
 
