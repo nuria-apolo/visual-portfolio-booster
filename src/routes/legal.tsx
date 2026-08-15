@@ -46,15 +46,15 @@ function LegalPage() {
           <div>
             <h2>Aviso legal</h2>
             <p>
-              Titular: Núria López. Nombre profesional: Srta Serifa. Domicilio: C/ Sierra Nevada,
-              7, 11406 Jerez de la Frontera. NIF: 32086159D. Para cualquier consulta relacionada
-              con el sitio puedes escribir a srtaserifa@icloud.com.
+              Titular: Núria López. Nombre profesional: Srta Serifa. Domicilio: C/ Sierra Nevada, 7,
+              11406 Jerez de la Frontera. NIF: 32086159D. Para cualquier consulta relacionada con el
+              sitio puedes escribir a srtaserifa@icloud.com.
             </p>
             <p>
-              Esta web es el portfolio y espacio profesional personal de Núria López. Los contenidos,
-              textos, imágenes y elementos gráficos están protegidos por la normativa aplicable de
-              propiedad intelectual. No se permite su reproducción o reutilización sin autorización
-              previa.
+              Esta web es el portfolio y espacio profesional personal de Núria López. Los
+              contenidos, textos, imágenes y elementos gráficos están protegidos por la normativa
+              aplicable de propiedad intelectual. No se permite su reproducción o reutilización sin
+              autorización previa.
             </p>
           </div>
         </section>
@@ -65,23 +65,30 @@ function LegalPage() {
             <h2>Privacidad</h2>
             <p>
               La responsable del tratamiento es Núria López. Si escribes a través del correo
-              electrónico, se tratarán los datos que incluyas en el mensaje para responder a tu
-              consulta, gestionar una posible colaboración o mantener la comunicación solicitada.
+              electrónico o utilizas el formulario de contacto, se tratarán los datos que incluyas
+              para responder a tu consulta, gestionar una posible colaboración o mantener la
+              comunicación solicitada. El formulario puede solicitar nombre, email, tipo de proyecto
+              y el contenido del mensaje.
             </p>
             <p>
               La base jurídica será la adopción de medidas precontractuales cuando la consulta esté
               relacionada con una posible colaboración o servicio, el interés legítimo en gestionar
-              las comunicaciones y, cuando corresponda, el cumplimiento de obligaciones legales.
-              Los datos se conservarán durante el tiempo necesario para atender la consulta y,
-              después, durante los plazos legales aplicables para atender posibles responsabilidades.
+              las comunicaciones y, cuando corresponda, el cumplimiento de obligaciones legales. Los
+              datos se conservarán durante el tiempo necesario para atender la consulta y, después,
+              durante los plazos legales aplicables para atender posibles responsabilidades.
             </p>
             <p>
               No se venden ni se ceden datos personales con fines comerciales. Podrán intervenir
-              proveedores técnicos de correo y alojamiento necesarios para prestar el servicio. No
-              se elaboran perfiles ni se toman decisiones automatizadas. Puedes ejercer los derechos
-              de acceso, rectificación, supresión, limitación, oposición y portabilidad escribiendo
-              a srtaserifa@icloud.com. También puedes reclamar ante la Agencia Española de Protección
-              de Datos.
+              proveedores técnicos de correo, formulario y alojamiento necesarios para prestar el
+              servicio; actualmente el envío del formulario está preparado para utilizar Resend como
+              proveedor de correo. No se elaboran perfiles ni se toman decisiones automatizadas.
+              Puedes ejercer los derechos de acceso, rectificación, supresión, limitación, oposición
+              y portabilidad escribiendo a srtaserifa@icloud.com. También puedes reclamar ante la
+              Agencia Española de Protección de Datos.
+            </p>
+            <p>
+              No se utilizarán los datos del formulario para enviar comunicaciones comerciales sin
+              una base jurídica adicional y, cuando sea necesario, tu consentimiento específico.
             </p>
           </div>
         </section>
@@ -91,16 +98,16 @@ function LegalPage() {
           <div>
             <h2>Cookies</h2>
             <p>
-              Esta web no utiliza cookies propias de analítica, publicidad comportamental ni perfiles
-              de usuario. Puede utilizar recursos técnicos necesarios para servir la web y cargar
-              fuentes externas. Estos proveedores pueden recibir datos técnicos de la conexión según
-              sus propias políticas.
+              Esta web no utiliza cookies propias de analítica, publicidad comportamental ni
+              perfiles de usuario. Puede utilizar recursos técnicos necesarios para servir la web y
+              cargar fuentes externas. Estos proveedores pueden recibir datos técnicos de la
+              conexión según sus propias políticas.
             </p>
             <p>
               El vídeo de YouTube incluido en un proyecto no se carga automáticamente. Solo se
               solicita a YouTube cuando pulsas el botón para verlo; en ese momento pueden aplicarse
-              cookies y tratamientos del propio proveedor. Puedes consultar la política de privacidad
-              de YouTube antes de cargarlo.
+              cookies y tratamientos del propio proveedor. Puedes consultar la política de
+              privacidad de YouTube antes de cargarlo.
             </p>
           </div>
         </section>
