@@ -39,6 +39,7 @@ function ContactPage() {
 
   function updateField(field: keyof typeof initialForm, value: string) {
     setForm((current) => ({ ...current, [field]: value }));
+    setStatus("idle");
   }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
