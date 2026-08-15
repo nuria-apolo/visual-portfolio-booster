@@ -49,6 +49,12 @@ export const Route = createFileRoute("/sitemap.xml")({
             priority: "0.8",
           },
           {
+            path: "/publicaciones/posicionamiento-de-marca",
+            lastmod: "2026-08-15",
+            changefreq: "monthly",
+            priority: "0.7",
+          },
+          {
             path: "/diseno-web-branding-illescas",
             lastmod: "2026-08-14",
             changefreq: "monthly",
