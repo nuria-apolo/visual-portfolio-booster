@@ -42,6 +42,12 @@ export const Route = createFileRoute("/sitemap.xml")({
             priority: "0.8",
           },
           {
+            path: "/consultoria-de-diseno",
+            lastmod: "2026-08-15",
+            changefreq: "monthly",
+            priority: "0.8",
+          },
+          {
             path: "/diseno-web-branding-illescas",
             lastmod: "2026-08-14",
             changefreq: "monthly",
