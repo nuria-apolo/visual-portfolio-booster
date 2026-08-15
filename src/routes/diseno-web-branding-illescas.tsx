@@ -1,5 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import illescasBusinessHero from "@/assets/illescas-business-hero.png";
+import boutiqueDelMar from "@/assets/boutique-del-mar.png";
+import autoescuelaAlmagro from "@/assets/autoescuela-almagro.png";
+import memoriaTravesiaInnovacion from "@/assets/memoria-travesia-innovacion-2023.png";
+import campoDeGibraltar from "@/assets/campo-de-gibraltar.png";
+import webAutopromocion from "@/assets/web-autopromocion.png";
 import { SiteFooter } from "@/components/SiteFooter";
 import { absoluteAssetUrl } from "@/lib/seo";
 
@@ -10,6 +15,43 @@ const DESCRIPTION =
   "Diseño web, branding e identidad para empresas de Illescas y La Sagra que necesitan explicar mejor lo que hacen y crecer con coherencia.";
 const IMAGE_ALT =
   "Ilustración editorial de Illescas con la iglesia, el casco histórico y conexiones que evocan crecimiento empresarial y digital";
+const APOLO_PROJECTS = [
+  {
+    image: boutiqueDelMar,
+    title: "La boutique del mar",
+    href: "https://www.universoapolo.com/branding/antonio-martin",
+  },
+  {
+    image: autoescuelaAlmagro,
+    title: "Autoescuela Almagro",
+    href: "https://www.universoapolo.com/branding/autoescuela-almagro",
+  },
+  {
+    video: "https://framerusercontent.com/assets/KhhvunTu68tjLG0qZDTWsdVWy0.mp4",
+    title: "Apadis",
+    href: "https://www.universoapolo.com/branding/apadis",
+  },
+  {
+    image: memoriaTravesiaInnovacion,
+    title: "Memoria Travesía de la Innovación 2023",
+    href: "https://www.universoapolo.com/memoria-travesia-de-la-innovacion-2023/",
+  },
+  {
+    video: "https://framerusercontent.com/assets/l4szABzPptxDDVqdQYsRWSHAbA.mp4",
+    title: "Weuta, el e-commerce de Ceuta",
+    href: "https://www.universoapolo.com/branding/weuta",
+  },
+  {
+    image: campoDeGibraltar,
+    title: "Marca Campo de Gibraltar",
+    href: "https://www.universoapolo.com/branding/campo-de-gibraltar",
+  },
+  {
+    image: webAutopromocion,
+    title: "Web Autopromoción",
+    href: "https://universoapolo.com",
+  },
+] as const;
 const FAQS = [
   [
     "¿Trabajas solo con empresas de Illescas?",
@@ -158,6 +200,51 @@ function IllescasLanding() {
             <article className="service-card"><span>03</span><h3>Sistemas digitales</h3><p>Reglas visuales y componentes que ayudan al equipo a comunicar sin empezar de cero cada vez.</p></article>
             <article className="service-card"><span>04</span><h3>Dirección de producto</h3><p>Recorridos, interfaces y prioridades para convertir una idea compleja en una experiencia clara.</p></article>
           </div>
+        </section>
+
+        <section className="role-projects illescas-apolo-projects" aria-labelledby="illescas-apolo-title">
+          <div className="role-projects-heading">
+            <p className="editorial-kicker">También en Apolo</p>
+            <h2 id="illescas-apolo-title">Una forma de trabajar que combina marca, producto y tecnología.</h2>
+            <p>
+              Además de mis proyectos personales, soy Head of Design en Apolo, Propulsora de Marcas.
+              Allí dirijo proyectos de identidad, estrategia y producto digital para organizaciones que
+              necesitan crecer con una visión más amplia. Si necesitas mejorar la forma en que tu empresa
+              se presenta al mundo, podemos trabajar juntos.
+            </p>
+          </div>
+          <div className="role-projects-grid">
+            {APOLO_PROJECTS.map(({ image, video, title, href }) => (
+              <a
+                key={title}
+                className="role-project-card"
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Ver ${title} en universoapolo.com`}
+              >
+                {video ? (
+                  <video
+                    src={video}
+                    aria-label={title}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                  />
+                ) : (
+                  <img src={image} alt={title} loading="lazy" />
+                )}
+                <span className="role-project-overlay-title" aria-hidden="true">
+                  {title}
+                </span>
+              </a>
+            ))}
+          </div>
+          <a className="role-projects-more" href="/rol">
+            Conocer mi rol en Apolo ↗
+          </a>
         </section>
 
         <section className="service-faq" aria-labelledby="illescas-faq-title">

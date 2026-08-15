@@ -2085,6 +2085,15 @@ body:has(.construction-page) {
   line-height: 1.08;
 }
 
+.illescas-apolo-projects .role-projects-heading > p:not(.editorial-kicker) {
+  max-width: 760px;
+  margin: 1.4rem 0 0;
+  color: rgba(23, 23, 23, 0.68);
+  font-size: clamp(1rem, 1.35vw, 1.25rem);
+  letter-spacing: -0.025em;
+  line-height: 1.5;
+}
+
 .role-projects-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
