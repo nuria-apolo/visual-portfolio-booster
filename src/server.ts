@@ -100,24 +100,38 @@ async function handleContactRequest(request: Request, env: unknown): Promise<Res
     return jsonResponse({ error: "Contact service is not configured" }, 503);
   }
 
-  const providerResponse = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${contactEnv.RESEND_API_KEY}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from: CONTACT_FROM_EMAIL,
-      to: [CONTACT_TO_EMAIL],
-      reply_to: email,
-      subject: `Nueva consulta · ${projectType}`,
-      html: `<p><strong>Nombre:</strong> ${escapeHtml(name)}</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><p><strong>Tipo:</strong> ${escapeHtml(projectType)}</p><p><strong>Mensaje:</strong></p><p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>`,
-    }),
-  });
+  let providerResponse: Response;
+  try {
+    providerResponse = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${contactEnv.RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: CONTACT_FROM_EMAIL,
+        to: [CONTACT_TO_EMAIL],
+        reply_to: email,
+        subject: `Nueva consulta · ${projectType}`,
+        html: `<p><strong>Nombre:</strong> ${escapeHtml(name)}</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><p><strong>Tipo:</strong> ${escapeHtml(projectType)}</p><p><strong>Mensaje:</strong></p><p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>`,
+      }),
+    });
+  } catch (error) {
+    console.error("Contact email provider request failed", error);
+    return jsonResponse({ error: "Unable to reach email provider" }, 503);
+  }
 
   if (!providerResponse.ok) {
-    console.error("Contact email provider returned an error", providerResponse.status);
-    return jsonResponse({ error: "Unable to send message" }, 502);
+    const providerError = await providerResponse.text();
+    console.error(
+      "Contact email provider returned an error",
+      providerResponse.status,
+      providerError.slice(0, 500),
+    );
+    return jsonResponse(
+      { error: "Unable to send message" },
+      502,
+    );
   }
 
   return jsonResponse({ message: "Message sent" }, 202);

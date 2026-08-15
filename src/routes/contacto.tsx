@@ -45,14 +45,25 @@ function ContactPage() {
     event.preventDefault();
     setStatus("sending");
 
+    const submittedForm = new FormData(event.currentTarget);
+    const submittedValues = {
+      name: String(submittedForm.get("name") ?? ""),
+      email: String(submittedForm.get("email") ?? ""),
+      projectType: String(submittedForm.get("projectType") ?? ""),
+      message: String(submittedForm.get("message") ?? ""),
+      website: String(submittedForm.get("website") ?? ""),
+    };
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify(submittedValues),
       });
 
-      if (!response.ok) throw new Error("Contact form request failed");
+      if (!response.ok) {
+        throw new Error("Contact form request failed");
+      }
       setForm(initialForm);
       setStatus("success");
     } catch {
