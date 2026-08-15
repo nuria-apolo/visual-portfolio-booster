@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import illescasBusinessHero from "@/assets/illescas-business-hero.png";
-import boutiqueDelMar from "@/assets/boutique-del-mar.png";
+import vivaGym from "@/assets/viva-gym.png";
 import autoescuelaAlmagro from "@/assets/autoescuela-almagro.png";
 import memoriaTravesiaInnovacion from "@/assets/memoria-travesia-innovacion-2023.png";
 import campoDeGibraltar from "@/assets/campo-de-gibraltar.png";
-import webAutopromocion from "@/assets/web-autopromocion.png";
+import nomadasGrill from "@/assets/nomadas-grill.png";
 import { SiteFooter } from "@/components/SiteFooter";
 import { absoluteAssetUrl } from "@/lib/seo";
 
@@ -15,11 +15,18 @@ const DESCRIPTION =
   "Diseño web, branding e identidad para empresas de Illescas y La Sagra que necesitan explicar mejor lo que hacen y crecer con coherencia.";
 const IMAGE_ALT =
   "Ilustración editorial de Illescas con la iglesia, el casco histórico y conexiones que evocan crecimiento empresarial y digital";
-const APOLO_PROJECTS = [
+type ApoloProject = {
+  image?: string;
+  video?: string;
+  title: string;
+  href?: string;
+};
+
+const APOLO_PROJECTS: ApoloProject[] = [
   {
-    image: boutiqueDelMar,
-    title: "La boutique del mar",
-    href: "https://www.universoapolo.com/branding/antonio-martin",
+    image: vivaGym,
+    title: "VivaGym",
+    href: undefined,
   },
   {
     image: autoescuelaAlmagro,
@@ -47,11 +54,11 @@ const APOLO_PROJECTS = [
     href: "https://www.universoapolo.com/branding/campo-de-gibraltar",
   },
   {
-    image: webAutopromocion,
-    title: "Web Autopromoción",
-    href: "https://universoapolo.com",
+    image: nomadasGrill,
+    title: "Nómadas Grill",
+    href: undefined,
   },
-] as const;
+];
 const FAQS = [
   [
     "¿Trabajas solo con empresas de Illescas?",
@@ -214,33 +221,7 @@ function IllescasLanding() {
             </p>
           </div>
           <div className="role-projects-grid">
-            {APOLO_PROJECTS.map(({ image, video, title, href }) => (
-              <a
-                key={title}
-                className="role-project-card"
-                href={href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`Ver ${title} en universoapolo.com`}
-              >
-                {video ? (
-                  <video
-                    src={video}
-                    aria-label={title}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                  />
-                ) : (
-                  <img src={image} alt={title} loading="lazy" />
-                )}
-                <span className="role-project-overlay-title" aria-hidden="true">
-                  {title}
-                </span>
-              </a>
-            ))}
+            {APOLO_PROJECTS.map((project) => <ApoloProjectCard key={project.title} {...project} />)}
           </div>
           <a className="role-projects-more" href="/rol">
             Conocer mi rol en Apolo ↗
@@ -272,6 +253,46 @@ function IllescasLanding() {
         </section>
       </main>
       <SiteFooter variant="floating" />
+    </div>
+  );
+}
+
+function ApoloProjectCard({ image, video, title, href }: ApoloProject) {
+  const media = video ? (
+    <video
+      src={video}
+      aria-label={title}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="metadata"
+    />
+  ) : (
+    <img src={image} alt={title} loading="lazy" />
+  );
+  const content = (
+    <>
+      {media}
+      <span className="role-project-overlay-title" aria-hidden="true">
+        {title}
+      </span>
+    </>
+  );
+
+  return href ? (
+    <a
+      className="role-project-card"
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={`Ver ${title} en universoapolo.com`}
+    >
+      {content}
+    </a>
+  ) : (
+    <div className="role-project-card" aria-label={title}>
+      {content}
     </div>
   );
 }
