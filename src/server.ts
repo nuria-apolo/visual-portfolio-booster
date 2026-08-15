@@ -7,13 +7,6 @@ type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
 };
 
-type ContactEnv = {
-  RESEND_API_KEY?: string;
-};
-
-const CONTACT_TO_EMAIL = "srtaserifa@icloud.com";
-const CONTACT_FROM_EMAIL = "Srta Serifa <formularios@srtaserifa.es>";
-
 let serverEntryPromise: Promise<ServerEntry> | undefined;
 
 const securityHeaders = {
@@ -41,100 +34,6 @@ function withSecurityHeaders(request: Request, response: Response): Response {
     statusText: response.statusText,
     headers,
   });
-}
-
-function jsonResponse(body: Record<string, string>, status: number): Response {
-  return new Response(JSON.stringify(body), {
-    status,
-    headers: { "content-type": "application/json; charset=utf-8" },
-  });
-}
-
-function escapeHtml(value: string): string {
-  return value.replace(
-    /[&<>\"']/g,
-    (character) =>
-      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '\"': "&quot;", "'": "&#39;" })[character] ??
-      character,
-  );
-}
-
-async function handleContactRequest(request: Request, env: unknown): Promise<Response> {
-  if (request.method !== "POST") return jsonResponse({ error: "Method not allowed" }, 405);
-
-  const origin = request.headers.get("origin");
-  if (origin && origin !== new URL(request.url).origin) {
-    return jsonResponse({ error: "Invalid origin" }, 403);
-  }
-
-  let payload: Record<string, unknown>;
-  try {
-    payload = (await request.json()) as Record<string, unknown>;
-  } catch {
-    return jsonResponse({ error: "Invalid request" }, 400);
-  }
-
-  const name = typeof payload.name === "string" ? payload.name.trim() : "";
-  const email = typeof payload.email === "string" ? payload.email.trim() : "";
-  const projectType = typeof payload.projectType === "string" ? payload.projectType.trim() : "";
-  const message = typeof payload.message === "string" ? payload.message.trim() : "";
-  const website = typeof payload.website === "string" ? payload.website.trim() : "";
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  if (website) return jsonResponse({ message: "Thanks" }, 202);
-  if (
-    name.length < 2 ||
-    name.length > 120 ||
-    !emailPattern.test(email) ||
-    email.length > 254 ||
-    !projectType ||
-    projectType.length > 80 ||
-    message.length < 10 ||
-    message.length > 5000
-  ) {
-    return jsonResponse({ error: "Please check the form fields" }, 400);
-  }
-
-  const contactEnv = env as ContactEnv;
-  if (!contactEnv.RESEND_API_KEY) {
-    return jsonResponse({ error: "Contact service is not configured" }, 503);
-  }
-
-  let providerResponse: Response;
-  try {
-    providerResponse = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${contactEnv.RESEND_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: CONTACT_FROM_EMAIL,
-        to: [CONTACT_TO_EMAIL],
-        reply_to: email,
-        subject: `Nueva consulta · ${projectType}`,
-        html: `<p><strong>Nombre:</strong> ${escapeHtml(name)}</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><p><strong>Tipo:</strong> ${escapeHtml(projectType)}</p><p><strong>Mensaje:</strong></p><p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>`,
-      }),
-    });
-  } catch (error) {
-    console.error("Contact email provider request failed", error);
-    return jsonResponse({ error: "Unable to reach email provider" }, 503);
-  }
-
-  if (!providerResponse.ok) {
-    const providerError = await providerResponse.text();
-    console.error(
-      "Contact email provider returned an error",
-      providerResponse.status,
-      providerError.slice(0, 500),
-    );
-    return jsonResponse(
-      { error: "Unable to send message" },
-      502,
-    );
-  }
-
-  return jsonResponse({ message: "Message sent" }, 202);
 }
 
 async function getServerEntry(): Promise<ServerEntry> {
@@ -168,10 +67,6 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
-      const requestUrl = new URL(request.url);
-      if (requestUrl.pathname === "/api/contact") {
-        return withSecurityHeaders(request, await handleContactRequest(request, env));
-      }
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
       return withSecurityHeaders(request, await normalizeCatastrophicSsrResponse(response));

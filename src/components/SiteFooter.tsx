@@ -54,8 +54,8 @@ export function SiteFooter({ variant = "light" }: SiteFooterProps) {
 
         <div className="site-footer-column">
           <h2>Contacto</h2>
-          <a className="site-footer-email" href="/contacto">
-            Contacto ↗
+          <a className="site-footer-email" href="mailto:srtaserifa@icloud.com">
+            srtaserifa@icloud.com ↗
           </a>
           <div className="site-footer-socials" aria-label="Redes sociales">
             <a href="https://www.linkedin.com/in/srtaserifa/" target="_blank" rel="noreferrer">
@@ -81,7 +81,7 @@ export function SiteFooter({ variant = "light" }: SiteFooterProps) {
             ))}
           </ul>
         </nav>
-        <a href="/contacto">Hablemos ↗</a>
+        <a href="mailto:srtaserifa@icloud.com">Hablemos ↗</a>
       </div>
     </footer>
   );

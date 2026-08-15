@@ -65,10 +65,8 @@ function LegalPage() {
             <h2>Privacidad</h2>
             <p>
               La responsable del tratamiento es Núria López. Si escribes a través del correo
-              electrónico o utilizas el formulario de contacto, se tratarán los datos que incluyas
-              para responder a tu consulta, gestionar una posible colaboración o mantener la
-              comunicación solicitada. El formulario puede solicitar nombre, email, tipo de proyecto
-              y el contenido del mensaje.
+              electrónico, se tratarán los datos que incluyas para responder a tu consulta, gestionar
+              una posible colaboración o mantener la comunicación solicitada.
             </p>
             <p>
               La base jurídica será la adopción de medidas precontractuales cuando la consulta esté
@@ -79,16 +77,11 @@ function LegalPage() {
             </p>
             <p>
               No se venden ni se ceden datos personales con fines comerciales. Podrán intervenir
-              proveedores técnicos de correo, formulario y alojamiento necesarios para prestar el
-              servicio; actualmente el envío del formulario está preparado para utilizar Resend como
-              proveedor de correo. No se elaboran perfiles ni se toman decisiones automatizadas.
+              proveedores técnicos de correo y alojamiento necesarios para prestar el servicio. No se
+              elaboran perfiles ni se toman decisiones automatizadas.
               Puedes ejercer los derechos de acceso, rectificación, supresión, limitación, oposición
               y portabilidad escribiendo a srtaserifa@icloud.com. También puedes reclamar ante la
               Agencia Española de Protección de Datos.
-            </p>
-            <p>
-              No se utilizarán los datos del formulario para enviar comunicaciones comerciales sin
-              una base jurídica adicional y, cuando sea necesario, tu consentimiento específico.
             </p>
           </div>
         </section>

@@ -706,7 +706,7 @@ export function Portfolio() {
             ¿Tienes algo entre manos?
           </p>
           <a
-            href="/contacto"
+            href="mailto:srtaserifa@icloud.com"
             className="mt-12 block border-y border-black/30 py-10 text-[clamp(3.2rem,9vw,9rem)] font-medium leading-[0.9] tracking-[-0.075em] transition hover:pl-4"
           >
             Hablemos<span className="font-display font-normal">.</span> ↗
