@@ -20,6 +20,7 @@ const blogFilters = [
 ] as const;
 
 const articleFilters: Record<string, readonly string[]> = {
+  "posicionamiento-de-marca": ["Estrategia", "Branding", "Marca"],
   "que-es-inteligencia-artificial": ["IA", "Estrategia", "Producto"],
   "una-interfaz-tambien-es-branding": ["Branding", "Identidad", "Producto"],
   "del-brand-system-al-design-system": ["Sistemas", "Branding", "Identidad", "Producto"],

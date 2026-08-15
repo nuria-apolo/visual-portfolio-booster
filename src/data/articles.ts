@@ -35,6 +35,86 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: "posicionamiento-de-marca",
+    title: "Posicionamiento de marca: cómo definir una propuesta de valor única para destacar en el mercado",
+    seoTitle: "Posicionamiento de marca: cómo definir una propuesta de valor única",
+    description:
+      "Qué es el posicionamiento de marca, cómo encontrar una propuesta de valor relevante y cómo llevarla a la experiencia que ofreces.",
+    excerpt:
+      "Antes de decidir cómo debe verse una marca, conviene entender qué lugar quiere ocupar y por qué alguien debería elegirla. El posicionamiento convierte esa intención en una dirección compartida.",
+    category: "Estrategia de marca",
+    publishedAt: "2026-08-15",
+    readingTime: "8 min",
+    keywords: [
+      "posicionamiento de marca",
+      "propuesta de valor",
+      "estrategia de marca",
+      "diferenciación",
+      "branding estratégico",
+    ],
+    coverImage: coverMarcaDigitalReglas,
+    coverAlt:
+      "Ilustración editorial de una regla negra y un cubo blanco alineados sobre una cuadrícula amarilla, como metáfora del posicionamiento de marca",
+    sections: [
+      {
+        heading: "Qué es realmente el posicionamiento de marca",
+        paragraphs: [
+          "El posicionamiento es el lugar que una marca quiere ocupar en la mente de las personas y la razón por la que debería ser considerada frente a otras opciones. No es una frase bonita ni una promesa aislada: es una decisión sobre el problema que resuelves, para quién lo resuelves y qué perspectiva hace reconocible tu propuesta.",
+          "Una marca puede ofrecer muchas cosas y, aun así, resultar difícil de elegir. Cuando todo parece importante, nada termina siendo memorable. Posicionar significa ordenar prioridades para que el equipo pueda explicar con claridad qué hace, qué no hace y por qué su forma de hacerlo importa.",
+        ],
+      },
+      {
+        heading: "Una metodología para encontrar tu ventaja competitiva",
+        paragraphs: [
+          "El punto de partida no es mirar únicamente a los competidores. Conviene observar tres planos a la vez: qué necesita la audiencia, qué alternativas ya existen y qué puede hacer la organización con credibilidad. La oportunidad aparece en la intersección entre una necesidad relevante, una diferencia reconocible y una capacidad real de sostenerla.",
+          "A partir de ahí se pueden contrastar hipótesis: qué problema se está priorizando, qué beneficio se promete, qué pruebas lo respaldan y qué lenguaje entiende la persona a la que quieres atraer. La estrategia se vuelve útil cuando ayuda a tomar decisiones concretas, no cuando se queda en una descripción general del mercado.",
+        ],
+      },
+      {
+        heading: "Errores comunes al definir el posicionamiento de una startup",
+        paragraphs: [
+          "Un error habitual es intentar hablarle a todo el mundo desde el primer día. Otro es confundir una categoría con una diferencia: decir que eres una plataforma, una agencia o una aplicación explica qué haces, pero no por qué alguien debería preferirte.",
+          "También es frecuente prometer más de lo que la experiencia puede entregar. Un posicionamiento sólido no depende solo del mensaje; necesita pruebas en el producto, el servicio, la atención y la forma de trabajar. Si la promesa y la experiencia se contradicen, la marca pierde credibilidad aunque la campaña sea llamativa.",
+        ],
+      },
+      {
+        heading: "Cómo alinear la propuesta de valor con la experiencia de usuario",
+        paragraphs: [
+          "La propuesta de valor debe poder reconocerse en el recorrido completo. Si prometes claridad, la navegación, los textos y los precios tienen que ayudar a entender. Si prometes acompañamiento, el producto debe ofrecer orientación en los momentos de duda. Si prometes rapidez, el flujo no puede esconder pasos innecesarios.",
+          "Esta traducción conecta estrategia, contenido, diseño y desarrollo. Cada decisión de interfaz, cada respuesta del equipo y cada detalle del servicio puede confirmar o debilitar el lugar que quieres ocupar. Por eso el posicionamiento no debería quedarse en una presentación que solo consulta el departamento de marketing.",
+        ],
+      },
+      {
+        heading: "El papel del diseño estratégico en la percepción de marca",
+        paragraphs: [
+          "El diseño estratégico ayuda a convertir una dirección abstracta en un sistema que las personas pueden experimentar. Define jerarquías, códigos visuales, tono, comportamientos y criterios para que la marca sea reconocible sin repetirse de forma mecánica.",
+          "La identidad visual importa, pero no trabaja sola. El verdadero posicionamiento aparece cuando lo que dices, lo que haces y la forma en que alguien se relaciona contigo cuentan la misma historia. Diseñar esa coherencia permite que una marca gane claridad, confianza y capacidad de crecer sin perder su sentido.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "¿Qué diferencia hay entre posicionamiento e identidad de marca?",
+        answer:
+          "El posicionamiento define el lugar que una marca quiere ocupar y la razón para elegirla. La identidad reúne los recursos visuales, verbales y de comportamiento que ayudan a expresar y hacer reconocible esa dirección.",
+      },
+      {
+        question: "¿Cómo se construye una propuesta de valor?",
+        answer:
+          "Se construye conectando una necesidad relevante de la audiencia con un beneficio concreto y una diferencia que la organización pueda demostrar y mantener en el tiempo.",
+      },
+      {
+        question: "¿Puede cambiar el posicionamiento de una marca?",
+        answer:
+          "Sí. Puede evolucionar cuando cambia el mercado, la audiencia, la oferta o la capacidad de la organización. Lo importante es que el cambio sea una decisión consciente y se traduzca en la experiencia completa.",
+      },
+    ],
+    relatedSlugs: [
+      "una-marca-digital-necesita-reglas-no-aplicaciones",
+      "una-interfaz-tambien-es-branding",
+    ],
+  },
+  {
     slug: "que-es-inteligencia-artificial",
     title: "Qué es la inteligencia artificial y para qué puede servir",
     seoTitle: "Qué es la inteligencia artificial y para qué sirve",

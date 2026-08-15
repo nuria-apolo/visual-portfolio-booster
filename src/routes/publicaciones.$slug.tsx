@@ -132,7 +132,13 @@ function ArticlePage() {
             </div>
             <h1>{article.title}</h1>
             <p className="article-excerpt">{article.excerpt}</p>
-            <p className="article-byline">Por Núria López · 9 de agosto de 2026</p>
+            <p className="article-byline">
+              Por Núria López · {new Date(`${article.publishedAt}T12:00:00`).toLocaleDateString("es-ES", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })}
+            </p>
             <figure className="article-hero-image">
               <img
                 src={article.coverImage}

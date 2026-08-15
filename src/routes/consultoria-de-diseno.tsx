@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import affinityBadge from "@/assets/affinity-badge.png";
-import designConsultingHero from "@/assets/consultoria-diseno-equipo-apolo.jpg";
+import designConsultingHero from "@/assets/consultoria-diseno-equipo-apolo.webp";
 import figmaBadge from "@/assets/figma-badge.png";
 import framerBadge from "@/assets/framer-badge.png";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -141,8 +141,8 @@ function DesignConsultingLanding() {
             <img
               src={designConsultingHero}
               alt={IMAGE_ALT}
-              width={6608}
-              height={4405}
+              width={1800}
+              height={1200}
               fetchPriority="high"
               decoding="async"
             />
