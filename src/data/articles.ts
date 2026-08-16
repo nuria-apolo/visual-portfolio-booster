@@ -1,5 +1,5 @@
 import coverQueEsInteligenciaArtificial from "@/assets/article-cover-que-es-inteligencia-artificial-v2.png";
-import coverBrandSystemDesignSystem from "@/assets/article-cover-brand-system-design-system-v2.png";
+import coverBrandSystemDesignSystem from "@/assets/article-cover-brand-system-design-system-v5.png";
 import coverUnaInterfazBranding from "@/assets/article-cover-una-interfaz-branding-v2.png";
 import coverMarcaDigitalReglas from "@/assets/article-cover-marca-digital-reglas-v2.png";
 import coverPosicionamientoMarca from "@/assets/article-cover-posicionamiento-marca-v2.png";
@@ -265,26 +265,38 @@ export const articles: Article[] = [
   },
   {
     slug: "del-brand-system-al-design-system",
-    title: "Del brand system al design system",
-    seoTitle:
-      "Del brand system al design system: cómo llevar una identidad al producto | Srta Serifa",
+    title: "Brand system y design system: diferencias y cómo conectarlos",
+    seoTitle: "Brand system vs. design system: diferencias y cómo conectarlos",
     description:
-      "Un brand system define cómo se expresa una marca; un design system define cómo se construye un producto. La conexión entre ambos evita experiencias digitales fragmentadas.",
+      "Descubre qué diferencia un brand system de un design system y cómo convertir una identidad de marca en una experiencia digital coherente y escalable.",
     excerpt:
-      "El paso de una identidad visual a un producto digital necesita traducción: principios, decisiones y componentes que puedan repetirse sin perder intención.",
+      "Una identidad no llega a un producto digital por simple aplicación. Necesita una traducción: principios, decisiones y componentes que puedan repetirse sin perder intención.",
     category: "Sistemas de diseño",
     publishedAt: "2026-08-09",
     readingTime: "7 min",
-    keywords: ["brand system", "design system", "sistema de diseño", "identidad digital"],
+    keywords: [
+      "brand system",
+      "design system",
+      "brand system vs design system",
+      "sistema de diseño",
+      "identidad digital",
+    ],
     coverImage: coverBrandSystemDesignSystem,
     coverAlt:
-      "Ilustración editorial de un árbol negro cuyas ramas se convierten en tarjetas de interfaz violetas, como metáfora de un brand system y un design system",
+      "Collage editorial de una mano que lleva formas de identidad hacia una cuadrícula modular de interfaz, como metáfora de la relación entre brand system y design system",
     sections: [
       {
         heading: "Dos sistemas, una misma intención",
         paragraphs: [
           "Un brand system organiza la expresión de una marca: su voz, sus códigos visuales, sus principios y la forma en que quiere ser reconocida. Un design system organiza la construcción de una experiencia digital: componentes, patrones, tokens, estados y reglas de uso. Puedes llevar esta relación a un proyecto de [sistemas de marca](/diseno-imagen-corporativa).",
           "No son el mismo documento ni cumplen la misma función. Pero cuando trabajan separados, el producto puede terminar hablando otro idioma. El brand system aporta intención; el design system la convierte en decisiones que un equipo puede producir y mantener.",
+        ],
+      },
+      {
+        heading: "Brand system y design system no son lo mismo",
+        paragraphs: [
+          "Un brand system organiza cómo una marca piensa, habla y se reconoce: sus principios, su voz, sus códigos visuales y los criterios que ayudan a tomar decisiones. Un design system organiza cómo se construye una experiencia digital: componentes, patrones, tokens, estados y reglas de uso.",
+          "Uno responde a la pregunta «¿qué debe expresar la marca?»; el otro, a «¿cómo hacemos que esa intención funcione en una interfaz?». Confundirlos produce dos problemas: una identidad que no sabe llegar al producto o una biblioteca de componentes que funciona, pero podría pertenecer a cualquier marca.",
         ],
       },
       {
