@@ -67,6 +67,9 @@ export function SiteFooter({ variant = "light" }: SiteFooterProps) {
             <a href="https://x.com/srtaserifa" target="_blank" rel="noreferrer">
               X
             </a>
+            <a href="https://www.behance.net/srtaserifa" target="_blank" rel="noreferrer">
+              Behance
+            </a>
           </div>
         </div>
       </div>
