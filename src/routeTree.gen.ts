@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SobreMiRouteImport } from './routes/sobre-mi'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ServiciosRouteImport } from './routes/servicios'
 import { Route as RolRouteImport } from './routes/rol'
 import { Route as PublicacionesRouteImport } from './routes/publicaciones'
 import { Route as ProyectosRouteImport } from './routes/proyectos'
@@ -41,6 +42,11 @@ const SobreMiRoute = SobreMiRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiciosRoute = ServiciosRouteImport.update({
+  id: '/servicios',
+  path: '/servicios',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RolRoute = RolRouteImport.update({
@@ -169,6 +175,7 @@ export interface FileRoutesByFullPath {
   '/proyectos': typeof ProyectosRouteWithChildren
   '/publicaciones': typeof PublicacionesRouteWithChildren
   '/rol': typeof RolRoute
+  '/servicios': typeof ServiciosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre-mi': typeof SobreMiRoute
   '/proyectos/aprende-historia-del-arte': typeof ProyectosAprendeHistoriaDelArteRoute
@@ -192,6 +199,7 @@ export interface FileRoutesByTo {
   '/legal': typeof LegalRoute
   '/portfolio': typeof PortfolioRoute
   '/rol': typeof RolRoute
+  '/servicios': typeof ServiciosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre-mi': typeof SobreMiRoute
   '/proyectos/aprende-historia-del-arte': typeof ProyectosAprendeHistoriaDelArteRoute
@@ -218,6 +226,7 @@ export interface FileRoutesById {
   '/proyectos': typeof ProyectosRouteWithChildren
   '/publicaciones': typeof PublicacionesRouteWithChildren
   '/rol': typeof RolRoute
+  '/servicios': typeof ServiciosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre-mi': typeof SobreMiRoute
   '/proyectos/aprende-historia-del-arte': typeof ProyectosAprendeHistoriaDelArteRoute
@@ -245,6 +254,7 @@ export interface FileRouteTypes {
     | '/proyectos'
     | '/publicaciones'
     | '/rol'
+    | '/servicios'
     | '/sitemap.xml'
     | '/sobre-mi'
     | '/proyectos/aprende-historia-del-arte'
@@ -268,6 +278,7 @@ export interface FileRouteTypes {
     | '/legal'
     | '/portfolio'
     | '/rol'
+    | '/servicios'
     | '/sitemap.xml'
     | '/sobre-mi'
     | '/proyectos/aprende-historia-del-arte'
@@ -293,6 +304,7 @@ export interface FileRouteTypes {
     | '/proyectos'
     | '/publicaciones'
     | '/rol'
+    | '/servicios'
     | '/sitemap.xml'
     | '/sobre-mi'
     | '/proyectos/aprende-historia-del-arte'
@@ -319,6 +331,7 @@ export interface RootRouteChildren {
   ProyectosRoute: typeof ProyectosRouteWithChildren
   PublicacionesRoute: typeof PublicacionesRouteWithChildren
   RolRoute: typeof RolRoute
+  ServiciosRoute: typeof ServiciosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreMiRoute: typeof SobreMiRoute
 }
@@ -337,6 +350,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicios': {
+      id: '/servicios'
+      path: '/servicios'
+      fullPath: '/servicios'
+      preLoaderRoute: typeof ServiciosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/rol': {
@@ -540,6 +560,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProyectosRoute: ProyectosRouteWithChildren,
   PublicacionesRoute: PublicacionesRouteWithChildren,
   RolRoute: RolRoute,
+  ServiciosRoute: ServiciosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreMiRoute: SobreMiRoute,
 }

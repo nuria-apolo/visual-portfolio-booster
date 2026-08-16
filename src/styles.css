@@ -1188,6 +1188,146 @@ body:has(.construction-page) {
   padding-bottom: 5rem;
 }
 
+.services-index-page main {
+  padding-bottom: 5rem;
+}
+
+.services-index-hero {
+  max-width: 980px;
+  padding: 5.5rem 0 5rem;
+}
+
+.services-index-hero .editorial-section-label {
+  margin: 0;
+  color: rgba(23, 23, 23, 0.62);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.services-index-hero h1 {
+  max-width: 900px;
+  margin: 1.25rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 7vw, 6.6rem);
+  font-weight: 400;
+  letter-spacing: -0.065em;
+  line-height: 0.94;
+}
+
+.services-index-hero .editorial-lede {
+  max-width: 650px;
+  margin-top: 2.2rem;
+}
+
+.services-index-grid,
+.services-index-closing {
+  padding-top: 2.75rem;
+}
+
+.services-index-heading {
+  max-width: 720px;
+}
+
+.services-index-heading h2,
+.services-index-closing h2 {
+  max-width: 720px;
+  margin: 1.2rem 0 0;
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 1.05;
+}
+
+.services-area-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+.services-area-card {
+  display: flex;
+  min-height: 285px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.4rem;
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  border-radius: 1.5rem;
+  background: #eef0f2;
+  color: #171717;
+  text-decoration: none;
+  box-shadow: 0 2px 0 rgba(23, 23, 23, 0.02);
+  transition:
+    transform 240ms var(--ease-out-expo),
+    box-shadow 240ms ease,
+    background 240ms ease;
+}
+
+.services-area-card:hover,
+.services-area-card:focus-visible {
+  transform: translateY(-5px);
+  background: #f5f6f7;
+  box-shadow: 0 14px 26px rgba(23, 23, 23, 0.1);
+}
+
+.services-area-card:focus-visible {
+  outline: 2px solid #171717;
+  outline-offset: 4px;
+}
+
+.services-area-pill {
+  display: inline-flex;
+  min-height: 3.1rem;
+  align-items: center;
+  padding: 0.65rem 1.35rem;
+  border-radius: 999px;
+  color: #171717;
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: -0.045em;
+}
+
+.services-area-card h3 {
+  max-width: 440px;
+  margin: 3.1rem 0 0;
+  font-family: var(--font-sans);
+  font-size: clamp(1.45rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 1.05;
+}
+
+.services-area-card p {
+  max-width: 420px;
+  margin: 1rem 0 0;
+  color: rgba(23, 23, 23, 0.65);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.services-area-link {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-bottom: 1px solid rgba(23, 23, 23, 0.32);
+  font-size: 0.92rem;
+}
+
+.services-index-closing {
+  max-width: 900px;
+  padding-bottom: 2rem;
+}
+
+.services-index-closing > p:not(.editorial-kicker) {
+  max-width: 620px;
+  margin: 2rem 0;
+  color: rgba(23, 23, 23, 0.68);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
 .service-page h1,
 .service-page h2 {
   font-family: var(--font-display);
@@ -1582,7 +1722,9 @@ body:has(.construction-page) {
   border-radius: 1.25rem;
   background: #f3f3f4;
   box-shadow: 0 4px 14px rgba(23, 23, 23, 0.025);
-  transition: background 180ms ease, box-shadow 180ms ease;
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .service-faq-list details[open],
@@ -1623,7 +1765,9 @@ body:has(.construction-page) {
   border: 1.5px solid rgba(23, 23, 23, 0.42);
   border-radius: 50%;
   color: #171717;
-  transition: background 180ms ease, border-color 180ms ease;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease;
 }
 
 .unified-faq-icon::before,
@@ -1633,7 +1777,9 @@ body:has(.construction-page) {
   height: 1.5px;
   background: currentColor;
   content: "";
-  transition: transform 180ms var(--ease-out-expo), opacity 180ms ease;
+  transition:
+    transform 180ms var(--ease-out-expo),
+    opacity 180ms ease;
 }
 
 .unified-faq-icon::after {
@@ -2465,7 +2611,9 @@ body:has(.construction-page) {
   border-radius: 1.25rem;
   background: #f3f3f4;
   box-shadow: 0 4px 14px rgba(23, 23, 23, 0.025);
-  transition: background 180ms ease, box-shadow 180ms ease;
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .about-faq-item.is-open {
@@ -2654,14 +2802,30 @@ body:has(.construction-page) {
   outline-offset: 3px;
 }
 
-.blog-index-filter-strategy { background: #ffbf00; }
-.blog-index-filter-systems { background: #f1f1f1; }
-.blog-index-filter-ai { background: #bcf254; }
-.blog-index-filter-branding { background: #ff754a; }
-.blog-index-filter-brand { background: #48cf9d; }
-.blog-index-filter-direction { background: #eea9d9; }
-.blog-index-filter-identity { background: #bda0f7; }
-.blog-index-filter-product { background: #7fc4ed; }
+.blog-index-filter-strategy {
+  background: #ffbf00;
+}
+.blog-index-filter-systems {
+  background: #f1f1f1;
+}
+.blog-index-filter-ai {
+  background: #bcf254;
+}
+.blog-index-filter-branding {
+  background: #ff754a;
+}
+.blog-index-filter-brand {
+  background: #48cf9d;
+}
+.blog-index-filter-direction {
+  background: #eea9d9;
+}
+.blog-index-filter-identity {
+  background: #bda0f7;
+}
+.blog-index-filter-product {
+  background: #7fc4ed;
+}
 
 .blog-index-card {
   min-width: 0;
@@ -3180,6 +3344,18 @@ body:has(.construction-page) {
   margin-top: 1.25rem;
 }
 
+.article-section a {
+  color: #171717;
+  text-decoration: underline;
+  text-decoration-color: rgba(23, 23, 23, 0.32);
+  text-underline-offset: 0.2em;
+}
+
+.article-section a:hover,
+.article-section a:focus-visible {
+  text-decoration-color: #171717;
+}
+
 .article-aside {
   align-self: start;
   position: sticky;
@@ -3221,7 +3397,6 @@ body:has(.construction-page) {
   padding-top: 2rem;
   border-top: 1px solid rgba(23, 23, 23, 0.14);
 }
-
 
 .article-related {
   margin-top: 8rem;
@@ -4668,6 +4843,24 @@ body:has(.construction-page) {
     padding-bottom: 4rem;
   }
 
+  .services-index-hero {
+    padding: 4rem 0 5rem;
+  }
+
+  .services-index-hero h1 {
+    font-size: 3.25rem;
+  }
+
+  .services-area-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 3rem;
+  }
+
+  .services-area-card {
+    min-height: 250px;
+  }
+
   .service-hero {
     padding: 4rem 0 5rem;
   }
@@ -4677,7 +4870,6 @@ body:has(.construction-page) {
     margin-top: 2.75rem;
     border-radius: 1rem;
   }
-
 
   .service-topline {
     align-items: flex-start;

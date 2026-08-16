@@ -40,9 +40,21 @@ const services = [
 
 const process = [
   ["Entender", "Qué tiene que decir la marca, a quién y desde qué lugar quiere hacerlo.", "search"],
-  ["Definir", "La arquitectura, los principios y el territorio visual que hacen reconocible la propuesta.", "grid"],
-  ["Diseñar", "Los elementos, reglas y aplicaciones que convierten la identidad en un sistema vivo.", "cursor"],
-  ["Acompañar", "Los recursos y criterios para que la marca pueda crecer sin empezar de cero cada vez.", "layers"],
+  [
+    "Definir",
+    "La arquitectura, los principios y el territorio visual que hacen reconocible la propuesta.",
+    "grid",
+  ],
+  [
+    "Diseñar",
+    "Los elementos, reglas y aplicaciones que convierten la identidad en un sistema vivo.",
+    "cursor",
+  ],
+  [
+    "Acompañar",
+    "Los recursos y criterios para que la marca pueda crecer sin empezar de cero cada vez.",
+    "layers",
+  ],
 ] as const;
 
 type ProcessIconName = (typeof process)[number][2];
@@ -114,7 +126,11 @@ export const Route = createFileRoute("/diseno-imagen-corporativa")({
     meta: [
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
-      { name: "keywords", content: "diseño de imagen corporativa, imagen corporativa, identidad corporativa, identidad visual, diseño corporativo, logotipo corporativo, sistema de marca" },
+      {
+        name: "keywords",
+        content:
+          "diseño de imagen corporativa, imagen corporativa, identidad corporativa, identidad visual, diseño corporativo, logotipo corporativo, sistema de marca",
+      },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
@@ -190,7 +206,10 @@ function CorporateIdentityPage() {
             conversación.
           </p>
           <div className="about-hero-actions">
-            <a className="about-hero-button about-hero-button-primary" href="mailto:srtaserifa@icloud.com">
+            <a
+              className="about-hero-button about-hero-button-primary"
+              href="mailto:srtaserifa@icloud.com"
+            >
               Cuéntame tu marca ↗
             </a>
             <a className="about-hero-button" href="#proceso">
@@ -238,10 +257,16 @@ function CorporateIdentityPage() {
           </div>
         </section>
 
-        <section className="service-section service-process" id="proceso" aria-labelledby="service-process-title">
+        <section
+          className="service-section service-process"
+          id="proceso"
+          aria-labelledby="service-process-title"
+        >
           <div className="service-section-heading">
             <p className="editorial-kicker">El proceso</p>
-            <h2 id="service-process-title">De una intuición de marca a un sistema que puede crecer.</h2>
+            <h2 id="service-process-title">
+              De una intuición de marca a un sistema que puede crecer.
+            </h2>
           </div>
           <ol className="service-process-list">
             {process.map(([title, text, icon], index) => (
@@ -262,18 +287,29 @@ function CorporateIdentityPage() {
           <h2 id="service-proof-title">La identidad también tiene que saber comportarse.</h2>
           <p>
             En proyectos como <a href="/proyectos/karma-financiero">Karma Financiero</a> y en el
-            trabajo editorial de <a href="/publicaciones/del-brand-system-al-design-system">los
-            sistemas de marca</a>, la identidad no termina en sus elementos gráficos: organiza una
-            forma de comunicar, diseñar y construir experiencias reconocibles.
+            trabajo editorial de{" "}
+            <a href="/publicaciones/del-brand-system-al-design-system">los sistemas de marca</a>, la
+            identidad no termina en sus elementos gráficos: organiza una forma de comunicar, diseñar
+            y construir experiencias reconocibles. Si todavía falta definir el lugar que la marca
+            quiere ocupar, conviene empezar por el{" "}
+            <a href="/publicaciones/posicionamiento-de-marca">posicionamiento de marca</a> o el{" "}
+            <a href="/branding-estrategico">branding estratégico</a>.
           </p>
         </section>
 
         <section className="service-tools" aria-labelledby="service-tools-title">
-          <p className="editorial-kicker" id="service-tools-title">Tools</p>
+          <p className="editorial-kicker" id="service-tools-title">
+            Tools
+          </p>
           <ul className="about-skills-grid">
             {tools.map(([icon, name, description]) => (
               <li className="about-skill-card" key={name}>
-                <img className="about-skill-icon about-skill-image" src={icon} alt="" loading="lazy" />
+                <img
+                  className="about-skill-icon about-skill-image"
+                  src={icon}
+                  alt=""
+                  loading="lazy"
+                />
                 <span>
                   <strong>{name}</strong>
                   <small>{description}</small>
@@ -286,12 +322,18 @@ function CorporateIdentityPage() {
         <section className="service-projects" aria-labelledby="service-projects-title">
           <div className="service-section-heading">
             <p className="editorial-kicker">Proyectos relacionados</p>
-            <h2 id="service-projects-title">Identidades que también han tenido que encontrar su forma.</h2>
+            <h2 id="service-projects-title">
+              Identidades que también han tenido que encontrar su forma.
+            </h2>
           </div>
           <div className="service-projects-grid">
             <a className="service-project-card" href="/proyectos/karma-financiero">
               <div className="service-project-image">
-                <img src={karmaBrandSystem} alt="Sistema de identidad visual de Karma Financiero" loading="lazy" />
+                <img
+                  src={karmaBrandSystem}
+                  alt="Sistema de identidad visual de Karma Financiero"
+                  loading="lazy"
+                />
               </div>
               <div className="service-project-copy">
                 <p className="editorial-kicker">Brand system · Digital product</p>
@@ -301,7 +343,11 @@ function CorporateIdentityPage() {
             </a>
             <a className="service-project-card" href="/proyectos/aprende-historia-del-arte">
               <div className="service-project-image">
-                <img src={aprendeHistoriaArtePhoto} alt="Aprende Historia del Arte mostrado en una tablet" loading="lazy" />
+                <img
+                  src={aprendeHistoriaArtePhoto}
+                  alt="Aprende Historia del Arte mostrado en una tablet"
+                  loading="lazy"
+                />
               </div>
               <div className="service-project-copy">
                 <p className="editorial-kicker">Editorial · Education · Digital product</p>
@@ -333,7 +379,10 @@ function CorporateIdentityPage() {
         <section className="service-cta" aria-labelledby="service-cta-title">
           <p className="editorial-kicker">Siguiente paso</p>
           <h2 id="service-cta-title">¿Tu marca necesita un sistema para seguir creciendo?</h2>
-          <a className="about-hero-button about-hero-button-primary" href="mailto:srtaserifa@icloud.com">
+          <a
+            className="about-hero-button about-hero-button-primary"
+            href="mailto:srtaserifa@icloud.com"
+          >
             Hablemos de la marca ↗
           </a>
         </section>

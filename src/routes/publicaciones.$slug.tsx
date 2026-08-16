@@ -1,9 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { type ReactNode } from "react";
 import { SiteFooter } from "@/components/SiteFooter";
 import { articleBySlug, articles } from "@/data/articles";
 import { absoluteAssetUrl } from "@/lib/seo";
 
 const BASE_URL = "https://srtaserifa.es";
+
+function renderInlineLinks(text: string): ReactNode[] {
+  return text.split(/(\[[^\]]+\]\(\/[^)]+\))/g).map((part, index) => {
+    const match = part.match(/^\[([^\]]+)\]\((\/[^)]+)\)$/);
+    if (!match) return part;
+    return <a href={match[2]} key={`${match[2]}-${index}`}>{match[1]}</a>;
+  });
+}
 
 export const Route = createFileRoute("/publicaciones/$slug")({
   head: ({ params }) => {
@@ -133,7 +142,8 @@ function ArticlePage() {
             <h1>{article.title}</h1>
             <p className="article-excerpt">{article.excerpt}</p>
             <p className="article-byline">
-              Por Núria López · {new Date(`${article.publishedAt}T12:00:00`).toLocaleDateString("es-ES", {
+              Por Núria López ·{" "}
+              {new Date(`${article.publishedAt}T12:00:00`).toLocaleDateString("es-ES", {
                 day: "numeric",
                 month: "long",
                 year: "numeric",
@@ -156,7 +166,7 @@ function ArticlePage() {
                 <section key={section.heading} className="article-section">
                   <h2>{section.heading}</h2>
                   {section.paragraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
+                    <p key={paragraph}>{renderInlineLinks(paragraph)}</p>
                   ))}
                 </section>
               ))}
@@ -179,7 +189,7 @@ function ArticlePage() {
             <aside className="article-aside" aria-label="Sobre este artículo">
               <p className="editorial-kicker">En esta nota</p>
               <p>{article.description}</p>
-              <a className="project-button article-aside-button" href="/rol">
+              <a className="project-button article-aside-button" href="/servicios">
                 Ver servicios <span aria-hidden="true">↗</span>
               </a>
             </aside>

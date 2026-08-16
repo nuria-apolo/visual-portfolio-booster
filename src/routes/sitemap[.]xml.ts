@@ -26,6 +26,7 @@ export const Route = createFileRoute("/sitemap.xml")({
             priority: "0.8",
           },
           { path: "/proyectos/blind-words", changefreq: "monthly", priority: "0.7" },
+          { path: "/servicios", changefreq: "monthly", priority: "0.9" },
           {
             path: "/proyectos/blind-words-citizen",
             lastmod: "2026-08-14",

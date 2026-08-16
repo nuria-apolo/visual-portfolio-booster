@@ -8,6 +8,7 @@ const footerLinks = [
   { label: "Sobre mí", href: "/sobre-mi" },
   { label: "Rol", href: "/rol" },
   { label: "Proyectos", href: "/proyectos" },
+  { label: "Servicios", href: "/servicios" },
   { label: "Publicaciones", href: "/publicaciones" },
   { label: "Blog", href: "/blog" },
 ] as const;
@@ -33,7 +34,7 @@ export function SiteFooter({ variant = "light" }: SiteFooterProps) {
             <img src={srtaFooterLogo} alt="Srta Serifa" width={96} height={96} />
           </a>
           <p>
-            Brand systems + digital products para marcas con algo que decir.{' '}
+            Brand systems + digital products para marcas con algo que decir.{" "}
             <a href="/rol">Head of Design en Apolo. Propulsora de Marcas.</a>
           </p>
           <small>© 2026 Núria López · Srta Serifa</small>
@@ -77,11 +78,13 @@ export function SiteFooter({ variant = "light" }: SiteFooterProps) {
       <div className="site-footer-bottom">
         <nav aria-label="Textos legales">
           <ul>
-            {legalLinks.filter((link) => !isFloating || link.label !== "Accesibilidad").map((link) => (
-              <li key={link.label}>
-                <a href={link.href}>{link.label}</a>
-              </li>
-            ))}
+            {legalLinks
+              .filter((link) => !isFloating || link.label !== "Accesibilidad")
+              .map((link) => (
+                <li key={link.label}>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
           </ul>
         </nav>
         <a href="mailto:srtaserifa@icloud.com">Hablemos ↗</a>

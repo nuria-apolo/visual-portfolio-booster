@@ -290,7 +290,9 @@ function DesarrolloWebEmpresasPage() {
             En proyectos como <a href="/proyectos/karma-financiero">Karma Financiero</a> y{" "}
             <a href="/proyectos/aprende-historia-del-arte">Aprende Historia del Arte</a>, el diseño
             no termina en la interfaz: incluye la propuesta, la arquitectura, el contenido y la
-            forma en que el producto se presenta a las personas.
+            forma en que el producto se presenta a las personas. Por eso el trabajo puede empezar en{" "}
+            <a href="/consultoria-de-diseno">dirección de diseño</a> o apoyarse en una base de
+            <a href="/branding-estrategico"> branding estratégico</a>.
           </p>
         </section>
 

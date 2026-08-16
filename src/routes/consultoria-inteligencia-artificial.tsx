@@ -76,7 +76,8 @@ export const Route = createFileRoute("/consultoria-inteligencia-artificial")({
           "@id": BASE_URL + PATH + "#service",
           name: "Consultoría de inteligencia artificial",
           description: DESCRIPTION,
-          serviceType: "Consultoría de inteligencia artificial, diseño de producto y estrategia digital",
+          serviceType:
+            "Consultoría de inteligencia artificial, diseño de producto y estrategia digital",
           provider: { "@id": BASE_URL + "/sobre-mi#nuria-lopez" },
           areaServed: "España",
           url: BASE_URL + PATH,
@@ -102,7 +103,12 @@ export const Route = createFileRoute("/consultoria-inteligencia-artificial")({
           "@type": "BreadcrumbList",
           itemListElement: [
             { "@type": "ListItem", position: 1, name: "Inicio", item: BASE_URL },
-            { "@type": "ListItem", position: 2, name: "Consultoría de inteligencia artificial", item: BASE_URL + PATH },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Consultoría de inteligencia artificial",
+              item: BASE_URL + PATH,
+            },
           ],
         }),
       },
@@ -127,11 +133,16 @@ function AiConsultingLanding() {
 
           <h1>Consultoría de inteligencia artificial para productos que siguen siendo humanos.</h1>
           <p className="editorial-lede">
-            Convierto la IA en decisiones, recorridos y sistemas digitales que las personas pueden entender y usar. Sin añadir tecnología por añadirla: empezando por el problema, el contexto y el valor que merece ser construido.
+            Convierto la IA en decisiones, recorridos y sistemas digitales que las personas pueden
+            entender y usar. Sin añadir tecnología por añadirla: empezando por el problema, el
+            contexto y el valor que merece ser construido.
           </p>
 
           <div className="about-hero-actions">
-            <a className="about-hero-button about-hero-button-primary" href="mailto:srtaserifa@icloud.com">
+            <a
+              className="about-hero-button about-hero-button-primary"
+              href="mailto:srtaserifa@icloud.com"
+            >
               Hablemos de tu caso ↗
             </a>
             <a className="about-hero-button" href="#enfoque">
@@ -154,19 +165,33 @@ function AiConsultingLanding() {
         <section className="service-intro" id="enfoque" aria-labelledby="ai-consulting-intro-title">
           <div>
             <p className="editorial-kicker">Una IA que encaja</p>
-            <h2 id="ai-consulting-intro-title">La inteligencia no está en añadir un modelo: está en saber dónde puede ayudar.</h2>
+            <h2 id="ai-consulting-intro-title">
+              La inteligencia no está en añadir un modelo: está en saber dónde puede ayudar.
+            </h2>
           </div>
           <p>
-            La IA puede ahorrar tiempo, abrir nuevas formas de servicio o hacer más clara una decisión compleja. Pero necesita una dirección: qué problema resuelve, qué datos utiliza, qué control conserva el equipo y cómo se integra en la experiencia sin crear fricción.
+            La IA puede ahorrar tiempo, abrir nuevas formas de servicio o hacer más clara una
+            decisión compleja. Pero necesita una dirección: qué problema resuelve, qué datos
+            utiliza, qué control conserva el equipo y cómo se integra en la experiencia sin crear
+            fricción. Esa dirección se puede conectar con la{" "}
+            <a href="/consultoria-de-diseno">consultoría de diseño</a> y el{" "}
+            <a href="/desarrollo-web-empresas">producto digital</a>.
           </p>
         </section>
 
         <section className="service-tools" aria-labelledby="ai-consulting-tools-title">
-          <p className="editorial-kicker" id="ai-consulting-tools-title">Tools</p>
+          <p className="editorial-kicker" id="ai-consulting-tools-title">
+            Tools
+          </p>
           <ul className="about-skills-grid">
             {TOOLS.map(([icon, name, description]) => (
               <li className="about-skill-card" key={name}>
-                <img className="about-skill-icon about-skill-image" src={icon} alt="" loading="lazy" />
+                <img
+                  className="about-skill-icon about-skill-image"
+                  src={icon}
+                  alt=""
+                  loading="lazy"
+                />
                 <span>
                   <strong>{name}</strong>
                   <small>{description}</small>
@@ -179,14 +204,52 @@ function AiConsultingLanding() {
         <section className="service-section" aria-labelledby="ai-consulting-offer-title">
           <div className="service-section-heading">
             <p className="editorial-kicker">Cómo puedo ayudar</p>
-            <h2 id="ai-consulting-offer-title">Del potencial tecnológico a una experiencia que funciona.</h2>
+            <h2 id="ai-consulting-offer-title">
+              Del potencial tecnológico a una experiencia que funciona.
+            </h2>
           </div>
           <div className="service-card-grid">
-            <article className="service-card"><span>01</span><h3>Entender</h3><p>Detectar oportunidades reales, tensiones del negocio y necesidades de las personas antes de hablar de herramientas.</p></article>
-            <article className="service-card"><span>02</span><h3>Priorizar</h3><p>Elegir los casos de uso con más sentido según impacto, viabilidad, datos disponibles y esfuerzo del equipo.</p></article>
-            <article className="service-card"><span>03</span><h3>Diseñar</h3><p>Prototipar flujos, interfaces y reglas de interacción para que la IA se explique y se use con confianza.</p></article>
-            <article className="service-card"><span>04</span><h3>Aterrizar</h3><p>Definir una hoja de ruta clara para validar, implementar y mejorar la solución con criterio.</p></article>
+            <article className="service-card">
+              <span>01</span>
+              <h3>Entender</h3>
+              <p>
+                Detectar oportunidades reales, tensiones del negocio y necesidades de las personas
+                antes de hablar de herramientas.
+              </p>
+            </article>
+            <article className="service-card">
+              <span>02</span>
+              <h3>Priorizar</h3>
+              <p>
+                Elegir los casos de uso con más sentido según impacto, viabilidad, datos disponibles
+                y esfuerzo del equipo.
+              </p>
+            </article>
+            <article className="service-card">
+              <span>03</span>
+              <h3>Diseñar</h3>
+              <p>
+                Prototipar flujos, interfaces y reglas de interacción para que la IA se explique y
+                se use con confianza.
+              </p>
+            </article>
+            <article className="service-card">
+              <span>04</span>
+              <h3>Aterrizar</h3>
+              <p>
+                Definir una hoja de ruta clara para validar, implementar y mejorar la solución con
+                criterio.
+              </p>
+            </article>
           </div>
+        </section>
+
+        <section className="service-proof" aria-labelledby="ai-consulting-proof-title">
+          <p className="editorial-kicker">Para seguir explorando</p>
+          <h2 id="ai-consulting-proof-title">La IA necesita contexto antes de convertirse en producto.</h2>
+          <p>
+            Puedes ampliar el marco con los artículos <a href="/publicaciones/que-es-inteligencia-artificial">Qué es la inteligencia artificial</a> y <a href="/publicaciones/que-cambia-la-ia-en-el-trabajo-de-diseno">Qué cambia la IA en el trabajo de diseño</a>. Después, el trabajo puede aterrizar en un <a href="/proyectos/karma-financiero">producto digital real</a> o continuar con <a href="/consultoria-de-diseno">dirección de diseño</a>.
+          </p>
         </section>
 
         <section className="service-faq" aria-labelledby="ai-consulting-faq-title">
@@ -197,7 +260,10 @@ function AiConsultingLanding() {
           <div className="service-faq-list">
             {FAQS.map(([question, answer]) => (
               <details key={question}>
-                <summary><span>{question}</span><span className="unified-faq-icon" aria-hidden="true" /></summary>
+                <summary>
+                  <span>{question}</span>
+                  <span className="unified-faq-icon" aria-hidden="true" />
+                </summary>
                 <p>{answer}</p>
               </details>
             ))}
@@ -206,8 +272,15 @@ function AiConsultingLanding() {
 
         <section className="service-cta" aria-labelledby="ai-consulting-cta-title">
           <p className="editorial-kicker">El siguiente paso</p>
-          <h2 id="ai-consulting-cta-title">Si hay una oportunidad de IA, merece una pregunta mejor antes que una solución rápida.</h2>
-          <a className="about-hero-button about-hero-button-primary" href="mailto:srtaserifa@icloud.com">Cuéntame qué queréis resolver ↗</a>
+          <h2 id="ai-consulting-cta-title">
+            Si hay una oportunidad de IA, merece una pregunta mejor antes que una solución rápida.
+          </h2>
+          <a
+            className="about-hero-button about-hero-button-primary"
+            href="mailto:srtaserifa@icloud.com"
+          >
+            Cuéntame qué queréis resolver ↗
+          </a>
         </section>
       </main>
       <SiteFooter variant="floating" />

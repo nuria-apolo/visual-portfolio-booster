@@ -83,7 +83,11 @@ export const Route = createFileRoute("/diseno-web-branding-illescas")({
     meta: [
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
-      { name: "keywords", content: "diseño web Illescas, branding Illescas, identidad corporativa Illescas, diseño web La Sagra" },
+      {
+        name: "keywords",
+        content:
+          "diseño web Illescas, branding Illescas, identidad corporativa Illescas, diseño web La Sagra",
+      },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
@@ -125,7 +129,12 @@ export const Route = createFileRoute("/diseno-web-branding-illescas")({
           "@type": "BreadcrumbList",
           itemListElement: [
             { "@type": "ListItem", position: 1, name: "Inicio", item: BASE_URL },
-            { "@type": "ListItem", position: 2, name: "Diseño web y branding en Illescas", item: BASE_URL + PATH },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Diseño web y branding en Illescas",
+              item: BASE_URL + PATH,
+            },
           ],
         }),
       },
@@ -162,11 +171,16 @@ function IllescasLanding() {
 
           <h1>Diseño web y branding para empresas que crecen en Illescas.</h1>
           <p className="editorial-lede">
-            Sistemas de marca y productos digitales para compañías de Illescas y La Sagra que necesitan explicar mejor lo que hacen, diferenciarse y convertir oportunidades en relaciones duraderas.
+            Sistemas de marca y productos digitales para compañías de Illescas y La Sagra que
+            necesitan explicar mejor lo que hacen, diferenciarse y convertir oportunidades en
+            relaciones duraderas.
           </p>
 
           <div className="about-hero-actions">
-            <a className="about-hero-button about-hero-button-primary" href="mailto:srtaserifa@icloud.com">
+            <a
+              className="about-hero-button about-hero-button-primary"
+              href="mailto:srtaserifa@icloud.com"
+            >
               Hablemos de tu proyecto ↗
             </a>
             <a className="about-hero-button" href="#enfoque">
@@ -189,39 +203,84 @@ function IllescasLanding() {
         <section className="service-intro" id="enfoque" aria-labelledby="illescas-intro-title">
           <div>
             <p className="editorial-kicker">Una oportunidad local</p>
-            <h2 id="illescas-intro-title">Crecer no debería hacer que una empresa se vuelva más difícil de entender.</h2>
+            <h2 id="illescas-intro-title">
+              Crecer no debería hacer que una empresa se vuelva más difícil de entender.
+            </h2>
           </div>
           <p>
-            Cuando una compañía incorpora servicios, equipos o nuevos mercados, su web y su marca tienen que seguir siendo claras. El trabajo no consiste en añadir más pantallas: consiste en ordenar la propuesta, la experiencia y los códigos con los que la empresa se presenta.
+            Cuando una compañía incorpora servicios, equipos o nuevos mercados, su web y su marca
+            tienen que seguir siendo claras. El trabajo no consiste en añadir más pantallas:
+            consiste en ordenar la propuesta, la experiencia y los códigos con los que la empresa se
+            presenta. Ese trabajo puede empezar por{" "}
+            <a href="/branding-estrategico">branding estratégico</a>,{" "}
+            <a href="/consultoria-de-diseno">dirección de diseño</a> o{" "}
+            <a href="/desarrollo-web-empresas">desarrollo web</a>.
           </p>
         </section>
 
         <section className="service-section" aria-labelledby="illescas-offer-title">
           <div className="service-section-heading">
             <p className="editorial-kicker">Cómo puedo ayudar</p>
-            <h2 id="illescas-offer-title">Una presencia digital a la altura de lo que ya estáis construyendo.</h2>
+            <h2 id="illescas-offer-title">
+              Una presencia digital a la altura de lo que ya estáis construyendo.
+            </h2>
           </div>
           <div className="service-card-grid">
-            <article className="service-card"><span>01</span><h3>Claridad de marca</h3><p>Una propuesta de valor, mensajes y una identidad que permitan explicar la empresa con precisión.</p></article>
-            <article className="service-card"><span>02</span><h3>Web corporativa</h3><p>Una web útil para ventas, talento y negocio: rápida, accesible y preparada para crecer.</p></article>
-            <article className="service-card"><span>03</span><h3>Sistemas digitales</h3><p>Reglas visuales y componentes que ayudan al equipo a comunicar sin empezar de cero cada vez.</p></article>
-            <article className="service-card"><span>04</span><h3>Dirección de producto</h3><p>Recorridos, interfaces y prioridades para convertir una idea compleja en una experiencia clara.</p></article>
+            <article className="service-card">
+              <span>01</span>
+              <h3>Claridad de marca</h3>
+              <p>
+                Una propuesta de valor, mensajes y una identidad que permitan explicar la empresa
+                con precisión.
+              </p>
+            </article>
+            <article className="service-card">
+              <span>02</span>
+              <h3>Web corporativa</h3>
+              <p>
+                Una web útil para ventas, talento y negocio: rápida, accesible y preparada para
+                crecer.
+              </p>
+            </article>
+            <article className="service-card">
+              <span>03</span>
+              <h3>Sistemas digitales</h3>
+              <p>
+                Reglas visuales y componentes que ayudan al equipo a comunicar sin empezar de cero
+                cada vez.
+              </p>
+            </article>
+            <article className="service-card">
+              <span>04</span>
+              <h3>Dirección de producto</h3>
+              <p>
+                Recorridos, interfaces y prioridades para convertir una idea compleja en una
+                experiencia clara.
+              </p>
+            </article>
           </div>
         </section>
 
-        <section className="role-projects illescas-apolo-projects" aria-labelledby="illescas-apolo-title">
+        <section
+          className="role-projects illescas-apolo-projects"
+          aria-labelledby="illescas-apolo-title"
+        >
           <div className="role-projects-heading">
             <p className="editorial-kicker">También en Apolo</p>
-            <h2 id="illescas-apolo-title">Una forma de trabajar que combina marca, producto y tecnología.</h2>
+            <h2 id="illescas-apolo-title">
+              Una forma de trabajar que combina marca, producto y tecnología.
+            </h2>
             <p>
               Además de mis proyectos personales, soy Head of Design en Apolo, Propulsora de Marcas.
-              Allí dirijo proyectos de identidad, estrategia y producto digital para organizaciones que
-              necesitan crecer con una visión más amplia. Si necesitas mejorar la forma en que tu empresa
-              se presenta al mundo, podemos trabajar juntos.
+              Allí dirijo proyectos de identidad, estrategia y producto digital para organizaciones
+              que necesitan crecer con una visión más amplia. Si necesitas mejorar la forma en que
+              tu empresa se presenta al mundo, podemos trabajar juntos.
             </p>
           </div>
           <div className="role-projects-grid">
-            {APOLO_PROJECTS.map((project) => <ApoloProjectCard key={project.title} {...project} />)}
+            {APOLO_PROJECTS.map((project) => (
+              <ApoloProjectCard key={project.title} {...project} />
+            ))}
           </div>
           <a className="role-projects-more" href="/rol">
             Conocer mi rol en Apolo ↗
@@ -248,8 +307,15 @@ function IllescasLanding() {
 
         <section className="service-cta" aria-labelledby="illescas-cta-title">
           <p className="editorial-kicker">El siguiente paso</p>
-          <h2 id="illescas-cta-title">Si la empresa está cambiando, su forma de presentarse también puede hacerlo.</h2>
-          <a className="about-hero-button about-hero-button-primary" href="mailto:srtaserifa@icloud.com">Cuéntame qué está pasando ↗</a>
+          <h2 id="illescas-cta-title">
+            Si la empresa está cambiando, su forma de presentarse también puede hacerlo.
+          </h2>
+          <a
+            className="about-hero-button about-hero-button-primary"
+            href="mailto:srtaserifa@icloud.com"
+          >
+            Cuéntame qué está pasando ↗
+          </a>
         </section>
       </main>
       <SiteFooter variant="floating" />
@@ -259,15 +325,7 @@ function IllescasLanding() {
 
 function ApoloProjectCard({ image, video, title, href }: ApoloProject) {
   const media = video ? (
-    <video
-      src={video}
-      aria-label={title}
-      autoPlay
-      muted
-      loop
-      playsInline
-      preload="metadata"
-    />
+    <video src={video} aria-label={title} autoPlay muted loop playsInline preload="metadata" />
   ) : (
     <img src={image} alt={title} loading="lazy" />
   );

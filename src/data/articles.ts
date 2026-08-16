@@ -2,6 +2,7 @@ import coverQueEsInteligenciaArtificial from "@/assets/article-cover-que-es-inte
 import coverBrandSystemDesignSystem from "@/assets/article-cover-brand-system-design-system-v2.png";
 import coverUnaInterfazBranding from "@/assets/article-cover-una-interfaz-branding-v2.png";
 import coverMarcaDigitalReglas from "@/assets/article-cover-marca-digital-reglas-v2.png";
+import coverPosicionamientoMarca from "@/assets/article-cover-posicionamiento-marca-v2.png";
 import coverBrandingProducto from "@/assets/article-cover-branding-producto-v2.png";
 import coverDisenarSistemas from "@/assets/article-cover-disenar-sistemas-v2.png";
 import coverIaDiseno from "@/assets/article-cover-ia-diseno-v2.png";
@@ -52,15 +53,15 @@ export const articles: Article[] = [
       "diferenciación",
       "branding estratégico",
     ],
-    coverImage: coverMarcaDigitalReglas,
+    coverImage: coverPosicionamientoMarca,
     coverAlt:
-      "Ilustración editorial de una regla negra y un cubo blanco alineados sobre una cuadrícula amarilla, como metáfora del posicionamiento de marca",
+      "Ilustración editorial de una bandera azul sobre un pedestal blanco en una cuadrícula clara, como metáfora de elegir una posición de marca",
     sections: [
       {
         heading: "Qué es realmente el posicionamiento de marca",
         paragraphs: [
           "El posicionamiento es el lugar que una marca quiere ocupar en la mente de las personas y la razón por la que debería ser considerada frente a otras opciones. No es una frase bonita ni una promesa aislada: es una decisión sobre el problema que resuelves, para quién lo resuelves y qué perspectiva hace reconocible tu propuesta.",
-          "Una marca puede ofrecer muchas cosas y, aun así, resultar difícil de elegir. Cuando todo parece importante, nada termina siendo memorable. Posicionar significa ordenar prioridades para que el equipo pueda explicar con claridad qué hace, qué no hace y por qué su forma de hacerlo importa.",
+          "Una marca puede ofrecer muchas cosas y, aun así, resultar difícil de elegir. Cuando todo parece importante, nada termina siendo memorable. Posicionar significa ordenar prioridades para que el equipo pueda explicar con claridad qué hace, qué no hace y por qué su forma de hacerlo importa. Ese trabajo puede continuar en [branding estratégico](/branding-estrategico).",
         ],
       },
       {
@@ -139,7 +140,7 @@ export const articles: Article[] = [
         heading: "Una forma de reconocer patrones y generar posibilidades",
         paragraphs: [
           "La inteligencia artificial agrupa tecnologías capaces de encontrar patrones en grandes cantidades de información y de producir resultados a partir de ellos. Puede clasificar, predecir, resumir, recomendar o generar texto, imágenes, código y estructuras. No piensa como una persona ni entiende el mundo del mismo modo: calcula relaciones probables según los datos y las instrucciones que recibe.",
-          "Por eso la pregunta útil no es si la IA es inteligente en términos humanos. Es qué tipo de tarea puede mejorar y qué supervisión necesita. En algunos contextos aporta velocidad; en otros, ayuda a explorar alternativas o a detectar señales que un equipo no tendría tiempo de revisar por separado.",
+          "Por eso la pregunta útil no es si la IA es inteligente en términos humanos. Es qué tipo de tarea puede mejorar y qué supervisión necesita. En algunos contextos aporta velocidad; en otros, ayuda a explorar alternativas o a detectar señales que un equipo no tendría tiempo de revisar por separado. Si quieres llevar esa reflexión a un caso real, puedes ver la [consultoría de inteligencia artificial](/consultoria-inteligencia-artificial).",
         ],
       },
       {
@@ -237,7 +238,7 @@ export const articles: Article[] = [
         heading: "De la identidad visual a la experiencia",
         paragraphs: [
           "Llevar una marca a un producto digital no consiste en aplicar colores corporativos sobre componentes prefabricados. Consiste en traducir sus principios a reglas de interacción: qué se prioriza, cómo se guía, qué nivel de control se ofrece y qué tipo de lenguaje se utiliza.",
-          "Ese trabajo conecta branding, UX, contenido y tecnología. El resultado es una interfaz reconocible por su criterio, incluso en una pantalla que el equipo de marca todavía no había imaginado.",
+          "Ese trabajo conecta branding, UX, contenido y tecnología. El resultado es una interfaz reconocible por su criterio, incluso en una pantalla que el equipo de marca todavía no había imaginado. Cuando el sistema necesita una dirección más amplia, el trabajo puede continuar en [consultoría de diseño](/consultoria-de-diseno).",
         ],
       },
       {
@@ -282,7 +283,7 @@ export const articles: Article[] = [
       {
         heading: "Dos sistemas, una misma intención",
         paragraphs: [
-          "Un brand system organiza la expresión de una marca: su voz, sus códigos visuales, sus principios y la forma en que quiere ser reconocida. Un design system organiza la construcción de una experiencia digital: componentes, patrones, tokens, estados y reglas de uso.",
+          "Un brand system organiza la expresión de una marca: su voz, sus códigos visuales, sus principios y la forma en que quiere ser reconocida. Un design system organiza la construcción de una experiencia digital: componentes, patrones, tokens, estados y reglas de uso. Puedes llevar esta relación a un proyecto de [sistemas de marca](/diseno-imagen-corporativa).",
           "No son el mismo documento ni cumplen la misma función. Pero cuando trabajan separados, el producto puede terminar hablando otro idioma. El brand system aporta intención; el design system la convierte en decisiones que un equipo puede producir y mantener.",
         ],
       },
@@ -363,7 +364,7 @@ export const articles: Article[] = [
         heading: "Reglas para moverse, no para quedarse quietos",
         paragraphs: [
           "El valor de un sistema de diseño no está en impedir que algo cambie. Está en permitir que cambie sin perder el sentido. Las reglas deben tener un núcleo estable y una zona de interpretación: lo que siempre debe mantenerse y lo que puede adaptarse al contexto.",
-          "Cuando una marca consigue ese equilibrio, deja de depender de aplicaciones cerradas y gana una forma más flexible de crecer.",
+          "Cuando una marca consigue ese equilibrio, deja de depender de aplicaciones cerradas y gana una forma más flexible de crecer. Si necesitas ordenar ese sistema desde el principio, consulta el servicio de [branding estratégico](/branding-estrategico).",
         ],
       },
     ],
@@ -405,7 +406,7 @@ export const articles: Article[] = [
       {
         heading: "La promesa y la experiencia",
         paragraphs: [
-          "Branding y producto trabajan sobre momentos distintos de una misma relación. La marca formula una promesa y crea una expectativa. El producto aparece después para demostrar si esa promesa tenía fundamento.",
+          "Branding y producto trabajan sobre momentos distintos de una misma relación. La marca formula una promesa y crea una expectativa. El producto aparece después para demostrar si esa promesa tenía fundamento. Esa conexión es uno de los puntos de partida de la [dirección de producto digital](/desarrollo-web-empresas).",
           "Si una empresa se presenta como sencilla y su onboarding es confuso, el problema no pertenece únicamente a UX. Si habla de cuidado y sus mensajes de error culpan al usuario, la incoherencia es también un problema de marca.",
         ],
       },
@@ -494,7 +495,7 @@ export const articles: Article[] = [
         heading: "Diseñar para lo que todavía no existe",
         paragraphs: [
           "La prueba de un sistema no es cuánto se parece la primera pantalla al prototipo. Es qué ocurre cuando llega la siguiente funcionalidad. Si el equipo puede ampliarlo sin romperlo, el diseño está haciendo su trabajo.",
-          "Diseñar sistemas es aceptar que el producto seguirá cambiando. El objetivo no es anticiparlo todo, sino crear una base que pueda aprender, adaptarse y seguir siendo reconocible.",
+          "Diseñar sistemas es aceptar que el producto seguirá cambiando. El objetivo no es anticiparlo todo, sino crear una base que pueda aprender, adaptarse y seguir siendo reconocible. Cuando el reto afecta a varias áreas, la [consultoría de diseño](/consultoria-de-diseno) ayuda a convertir esas reglas en una forma de trabajo.",
         ],
       },
     ],
@@ -561,7 +562,7 @@ export const articles: Article[] = [
         heading: "El nuevo trabajo es diseñar el sistema de trabajo",
         paragraphs: [
           "La pregunta más productiva no es si la IA sustituirá a los diseñadores, sino qué partes del proceso queremos hacer más rápidas, más accesibles o más rigurosas. Eso exige diseñar un sistema de trabajo: herramientas, prompts, fuentes, revisiones, límites y criterios de calidad.",
-          "La IA puede ampliar la capacidad de un equipo. La dirección sigue dependiendo de su capacidad para comprender, elegir y hacerse cargo del resultado.",
+          "La IA puede ampliar la capacidad de un equipo. La dirección sigue dependiendo de su capacidad para comprender, elegir y hacerse cargo del resultado. Para aterrizar esa oportunidad en una experiencia concreta, puedes conocer la [consultoría de inteligencia artificial](/consultoria-inteligencia-artificial).",
         ],
       },
     ],
