@@ -5,6 +5,8 @@ import { articleBySlug, articles } from "@/data/articles";
 import { absoluteAssetUrl } from "@/lib/seo";
 
 const BASE_URL = "https://srtaserifa.es";
+const AUTHOR_ID = `${BASE_URL}/sobre-mi#nuria-lopez`;
+const PUBLISHER_ID = `${BASE_URL}/#organization`;
 
 function renderInlineLinks(text: string): ReactNode[] {
   return text.split(/(\[[^\]]+\]\(\/[^)]+\))/g).map((part, index) => {
@@ -19,6 +21,9 @@ export const Route = createFileRoute("/publicaciones/$slug")({
     const article = articleBySlug.get(params.slug);
     if (!article) return {};
 
+    const articleUrl = `${BASE_URL}/publicaciones/${article.slug}`;
+    const modifiedAt = article.updatedAt ?? article.publishedAt;
+
     return {
       meta: [
         { title: article.seoTitle },
@@ -27,7 +32,7 @@ export const Route = createFileRoute("/publicaciones/$slug")({
         { property: "og:title", content: article.seoTitle },
         { property: "og:description", content: article.description },
         { property: "og:type", content: "article" },
-        { property: "og:url", content: `${BASE_URL}/publicaciones/${article.slug}` },
+        { property: "og:url", content: articleUrl },
         { property: "og:locale", content: "es_ES" },
         {
           property: "og:image",
@@ -38,12 +43,13 @@ export const Route = createFileRoute("/publicaciones/$slug")({
         { name: "twitter:image", content: absoluteAssetUrl(article.coverImage) },
         { name: "twitter:image:alt", content: article.coverAlt },
         { property: "article:published_time", content: `${article.publishedAt}T09:00:00+02:00` },
+        { property: "article:modified_time", content: `${modifiedAt}T09:00:00+02:00` },
         { property: "article:author", content: "Núria López" },
         { property: "article:section", content: article.category },
         { name: "twitter:title", content: article.seoTitle },
         { name: "twitter:description", content: article.description },
       ],
-      links: [{ rel: "canonical", href: `${BASE_URL}/publicaciones/${article.slug}` }],
+      links: [{ rel: "canonical", href: articleUrl }],
       scripts: [
         {
           type: "application/ld+json",
@@ -51,16 +57,16 @@ export const Route = createFileRoute("/publicaciones/$slug")({
             "@context": "https://schema.org",
             "@graph": [
               {
-                "@type": "Article",
-                "@id": `${BASE_URL}/publicaciones/${article.slug}#article`,
+                "@type": "BlogPosting",
+                "@id": `${articleUrl}#article`,
                 headline: article.title,
                 description: article.description,
                 inLanguage: "es-ES",
                 datePublished: `${article.publishedAt}T09:00:00+02:00`,
-                dateModified: `${article.publishedAt}T09:00:00+02:00`,
-                author: { "@type": "Person", name: "Núria López", url: `${BASE_URL}/sobre-mi` },
-                publisher: { "@type": "Person", name: "Núria López", url: BASE_URL },
-                mainEntityOfPage: `${BASE_URL}/publicaciones/${article.slug}`,
+                dateModified: `${modifiedAt}T09:00:00+02:00`,
+                author: { "@id": AUTHOR_ID },
+                publisher: { "@id": PUBLISHER_ID },
+                mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
                 about: article.keywords,
                 keywords: article.keywords.join(", "),
                 image: {
@@ -71,10 +77,24 @@ export const Route = createFileRoute("/publicaciones/$slug")({
                   height: 909,
                 },
                 isPartOf: {
-                  "@type": "CollectionPage",
+                  "@type": "Blog",
+                  "@id": `${BASE_URL}/blog#blog`,
                   name: "Blog de Srta Serifa",
                   url: `${BASE_URL}/blog`,
                 },
+              },
+              {
+                "@type": "Person",
+                "@id": AUTHOR_ID,
+                name: "Núria López",
+                alternateName: "Srtaserifa",
+                url: `${BASE_URL}/sobre-mi`,
+              },
+              {
+                "@type": "Organization",
+                "@id": PUBLISHER_ID,
+                name: "Srta Serifa",
+                url: `${BASE_URL}/`,
               },
               {
                 "@type": "BreadcrumbList",
@@ -90,7 +110,7 @@ export const Route = createFileRoute("/publicaciones/$slug")({
                     "@type": "ListItem",
                     position: 3,
                     name: article.title,
-                    item: `${BASE_URL}/publicaciones/${article.slug}`,
+                    item: articleUrl,
                   },
                 ],
               },

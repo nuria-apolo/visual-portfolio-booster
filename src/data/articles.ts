@@ -25,6 +25,8 @@ export interface Article {
   excerpt: string;
   category: string;
   publishedAt: string;
+  /** Solo se informa tras una revisión editorial sustancial. */
+  updatedAt?: string;
   readingTime: string;
   keywords: string[];
   coverImage: string;
