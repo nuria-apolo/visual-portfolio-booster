@@ -162,6 +162,16 @@ function ServicesPage() {
               </a>
             ))}
           </div>
+          <p className="services-index-reading">
+            Si antes de definir entregables necesitas ordenar la dirección, puedes empezar por cómo
+            construir un{" "}
+            <a href="/publicaciones/posicionamiento-de-marca">posicionamiento de marca</a>. Para
+            traducir esa dirección a reglas compartidas, consulta las diferencias entre un{" "}
+            <a href="/publicaciones/del-brand-system-al-design-system">
+              brand system y un design system
+            </a>
+            .
+          </p>
         </section>
 
         <section className="services-index-closing" aria-labelledby="services-index-closing-title">

@@ -121,19 +121,19 @@ const faqs = [
 ];
 
 const constructionTags = [
-  { kind: "pill", label: "Estrategia", color: "bg-[#ffc400]" },
+  { kind: "pill", label: "Estrategia", color: "bg-[#ffc400]", href: "/publicaciones/posicionamiento-de-marca" },
   {
     kind: "icon",
     label: "Apolo",
     image: apoloIcon,
     href: "https://universoapolo.com",
   },
-  { kind: "pill", label: "Sistemas", color: "bg-[#f3f3f3]" },
+  { kind: "pill", label: "Sistemas", color: "bg-[#f3f3f3]", href: "/publicaciones/del-brand-system-al-design-system" },
   { kind: "pill", label: "IA", color: "bg-[#c8f36c]" },
-  { kind: "pill", label: "Branding", color: "bg-[#ff7848]" },
+  { kind: "pill", label: "Branding", color: "bg-[#ff7848]", href: "/branding-estrategico" },
   { kind: "pill", label: "Marca", color: "bg-[#49d8a1]" },
-  { kind: "pill", label: "Dirección", color: "bg-[#f4b5dc]" },
-  { kind: "pill", label: "Identidad", color: "bg-[#c6adff]" },
+  { kind: "pill", label: "Dirección", color: "bg-[#f4b5dc]", href: "/consultoria-de-diseno" },
+  { kind: "pill", label: "Identidad", color: "bg-[#c6adff]", href: "/diseno-imagen-corporativa" },
   { kind: "icon", label: "Srta Serifa", image: srtaIcon },
   {
     kind: "icon",
@@ -244,20 +244,41 @@ function ConstructionPage() {
             >
               <span className={`construction-tag-inner ${"color" in tag ? tag.color : ""}`}>
                 {tag.kind === "pill" ? (
-                  <>
-                    <svg
-                      viewBox="0 0 24 24"
-                      className="size-5"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.4"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                  "href" in tag ? (
+                    <a
+                      className="construction-pill-link"
+                      href={tag.href}
+                      aria-label={`Ir a ${tag.label}`}
                     >
-                      <path d="m16.5 6.5-7.9 7.9a3 3 0 0 0 4.2 4.2l8.6-8.6a5 5 0 0 0-7.1-7.1l-9.1 9.2a7 7 0 0 0 9.9 9.9l7.2-7.2" />
-                    </svg>
-                    {tag.label}
-                  </>
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="size-5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="m16.5 6.5-7.9 7.9a3 3 0 0 0 4.2 4.2l8.6-8.6a5 5 0 0 0-7.1-7.1l-9.1 9.2a7 7 0 0 0 9.9 9.9l7.2-7.2" />
+                      </svg>
+                      {tag.label}
+                    </a>
+                  ) : (
+                    <>
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="size-5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="m16.5 6.5-7.9 7.9a3 3 0 0 0 4.2 4.2l8.6-8.6a5 5 0 0 0-7.1-7.1l-9.1 9.2a7 7 0 0 0 9.9 9.9l7.2-7.2" />
+                      </svg>
+                      {tag.label}
+                    </>
+                  )
                 ) : (
                   <>
                     {"href" in tag ? (
@@ -268,10 +289,10 @@ function ConstructionPage() {
                         aria-label={`Ir a ${tag.label}`}
                         className="construction-icon-link"
                       >
-                      <img src={tag.image} alt="" loading="lazy" decoding="async" draggable={false} />
+                        <img src={tag.image} alt="" loading="lazy" decoding="async" draggable={false} />
                       </a>
                     ) : (
-                    <img src={tag.image} alt="" loading="lazy" decoding="async" draggable={false} />
+                      <img src={tag.image} alt="" loading="lazy" decoding="async" draggable={false} />
                     )}
                   </>
                 )}

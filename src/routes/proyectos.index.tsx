@@ -245,9 +245,13 @@ function ProjectsPage() {
               </nav>
               <h1 className="project-page-title">Algunas cosas empiezan por trabajo. Estas no.</h1>
               <p className="projects-hero-description">
-                Productos, plataformas, <strong>sistemas de marca</strong> y experimentos que
-                construyo para explorar una idea, entender un problema o comprobar si algo que tengo
-                en la cabeza puede existir de verdad.
+                Productos, plataformas, sistemas de marca y experimentos que construyo para explorar
+                una idea, entender un problema o comprobar si algo que tengo en la cabeza puede
+                existir de verdad. En proyectos como Karma, el trabajo conecta{" "}
+                <a href="/publicaciones/del-brand-system-al-design-system">
+                  brand system y design system
+                </a>
+                .
               </p>
             </div>
           </header>

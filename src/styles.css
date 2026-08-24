@@ -513,6 +513,23 @@ body a {
   will-change: transform;
 }
 
+.construction-pill-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: -0.95rem -1.45rem;
+  padding: 0.95rem 1.45rem;
+  border-radius: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.construction-pill-link:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 4px;
+}
+
 .construction-tag-icon .construction-tag-inner {
   justify-content: center;
   width: 8.2rem;
@@ -1313,6 +1330,26 @@ body:has(.construction-page) {
   padding-top: 1.5rem;
   border-bottom: 1px solid rgba(23, 23, 23, 0.32);
   font-size: 0.92rem;
+}
+
+.services-index-reading {
+  max-width: 720px;
+  margin: 2.5rem 0 0;
+  color: rgba(23, 23, 23, 0.68);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.services-index-reading a {
+  border-bottom: 1px solid rgba(23, 23, 23, 0.35);
+  color: #171717;
+  text-decoration: none;
+  transition: border-color 180ms ease;
+}
+
+.services-index-reading a:hover,
+.services-index-reading a:focus-visible {
+  border-color: #171717;
 }
 
 .services-index-closing {
@@ -3919,6 +3956,18 @@ body:has(.construction-page) {
 
 .projects-hero-description {
   margin-top: 22px;
+}
+
+.projects-hero-description a {
+  border-bottom: 1px solid rgba(23, 23, 23, 0.35);
+  color: #171717;
+  text-decoration: none;
+  transition: border-color 180ms ease;
+}
+
+.projects-hero-description a:hover,
+.projects-hero-description a:focus-visible {
+  border-color: #171717;
 }
 
 .projects-hero-note {
