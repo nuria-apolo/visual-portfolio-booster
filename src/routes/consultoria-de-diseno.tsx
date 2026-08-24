@@ -261,7 +261,11 @@ function DesignConsultingLanding() {
             <a href="/proyectos/aprende-historia-del-arte">Aprende Historia del Arte</a>. Si el reto
             parte de la marca o del producto, también puede continuar en{" "}
             <a href="/branding-estrategico">branding estratégico</a> o{" "}
-            <a href="/desarrollo-web-empresas">desarrollo web</a>.
+            <a href="/desarrollo-web-empresas">desarrollo web</a>. El artículo sobre{" "}
+            <a href="/publicaciones/del-brand-system-al-design-system">
+              brand system y design system
+            </a>{" "}
+            explica cómo conectar ambas capas sin perder la intención de marca.
           </p>
         </section>
 

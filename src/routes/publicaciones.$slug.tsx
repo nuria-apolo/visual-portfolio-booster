@@ -12,7 +12,11 @@ function renderInlineLinks(text: string): ReactNode[] {
   return text.split(/(\[[^\]]+\]\(\/[^)]+\))/g).map((part, index) => {
     const match = part.match(/^\[([^\]]+)\]\((\/[^)]+)\)$/);
     if (!match) return part;
-    return <a href={match[2]} key={`${match[2]}-${index}`}>{match[1]}</a>;
+    return (
+      <a href={match[2]} key={`${match[2]}-${index}`}>
+        {match[1]}
+      </a>
+    );
   });
 }
 
@@ -188,6 +192,25 @@ function ArticlePage() {
                   {section.paragraphs.map((paragraph) => (
                     <p key={paragraph}>{renderInlineLinks(paragraph)}</p>
                   ))}
+                  {section.comparison ? (
+                    <div
+                      className="article-comparison-grid"
+                      aria-label="Comparación entre sistemas"
+                    >
+                      {section.comparison.map((item) => (
+                        <div className="article-comparison-card" key={item.eyebrow}>
+                          <p className="editorial-kicker">{item.eyebrow}</p>
+                          <h3>{item.title}</h3>
+                          <p>{item.description}</p>
+                          <ul>
+                            {item.points.map((point) => (
+                              <li key={point}>{point}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
                 </section>
               ))}
               <section className="article-faq" aria-labelledby="article-faq-title">

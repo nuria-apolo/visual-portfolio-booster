@@ -10,6 +10,14 @@ import coverIaDiseno from "@/assets/article-cover-ia-diseno-v2.png";
 export interface ArticleSection {
   heading: string;
   paragraphs: string[];
+  comparison?: ArticleComparisonItem[];
+}
+
+export interface ArticleComparisonItem {
+  eyebrow: string;
+  title: string;
+  description: string;
+  points: string[];
 }
 
 export interface ArticleFaq {
@@ -39,7 +47,8 @@ export interface Article {
 export const articles: Article[] = [
   {
     slug: "posicionamiento-de-marca",
-    title: "Posicionamiento de marca: cómo definir una propuesta de valor única para destacar en el mercado",
+    title:
+      "Posicionamiento de marca: cómo definir una propuesta de valor única para destacar en el mercado",
     seoTitle: "Posicionamiento de marca: cómo definir una propuesta de valor única",
     description:
       "Qué es el posicionamiento de marca, cómo encontrar una propuesta de valor relevante y cómo llevarla a la experiencia que ofreces.",
@@ -196,10 +205,7 @@ export const articles: Article[] = [
           "Empieza por un caso de uso pequeño y medible, define qué datos pueden utilizarse, revisa los resultados y deja clara la responsabilidad humana sobre la decisión final.",
       },
     ],
-    relatedSlugs: [
-      "que-cambia-la-ia-en-el-trabajo-de-diseno",
-      "disenar-sistemas-no-pantallas",
-    ],
+    relatedSlugs: ["que-cambia-la-ia-en-el-trabajo-de-diseno", "disenar-sistemas-no-pantallas"],
   },
   {
     slug: "una-interfaz-tambien-es-branding",
@@ -275,7 +281,8 @@ export const articles: Article[] = [
       "Una identidad no llega a un producto digital por simple aplicación. Necesita una traducción: principios, decisiones y componentes que puedan repetirse sin perder intención.",
     category: "Sistemas de diseño",
     publishedAt: "2026-08-09",
-    readingTime: "7 min",
+    updatedAt: "2026-08-24",
+    readingTime: "8 min",
     keywords: [
       "brand system",
       "design system",
@@ -297,8 +304,34 @@ export const articles: Article[] = [
       {
         heading: "Brand system y design system no son lo mismo",
         paragraphs: [
-          "Un brand system organiza cómo una marca piensa, habla y se reconoce: sus principios, su voz, sus códigos visuales y los criterios que ayudan a tomar decisiones. Un design system organiza cómo se construye una experiencia digital: componentes, patrones, tokens, estados y reglas de uso.",
-          "Uno responde a la pregunta «¿qué debe expresar la marca?»; el otro, a «¿cómo hacemos que esa intención funcione en una interfaz?». Confundirlos produce dos problemas: una identidad que no sabe llegar al producto o una biblioteca de componentes que funciona, pero podría pertenecer a cualquier marca.",
+          "La diferencia se entiende mejor si cada sistema responde a una pregunta distinta. El brand system define qué debe expresar la marca; el design system establece cómo hacer que esa intención funcione de forma consistente en una interfaz.",
+          "Confundirlos produce dos problemas: una identidad que no sabe llegar al producto o una biblioteca de componentes que funciona, pero podría pertenecer a cualquier marca. Conectarlos permite conservar significado y, al mismo tiempo, construir con precisión.",
+        ],
+        comparison: [
+          {
+            eyebrow: "Brand system",
+            title: "Define la intención",
+            description:
+              "Organiza el significado y la expresión que deben hacer reconocible a la marca.",
+            points: [
+              "Principios y personalidad",
+              "Voz y tono",
+              "Códigos visuales",
+              "Criterios de reconocimiento",
+            ],
+          },
+          {
+            eyebrow: "Design system",
+            title: "La convierte en producto",
+            description:
+              "Documenta las decisiones necesarias para construir y mantener una experiencia digital.",
+            points: [
+              "Tokens y variables",
+              "Componentes y patrones",
+              "Estados y accesibilidad",
+              "Reglas de uso y evolución",
+            ],
+          },
         ],
       },
       {
@@ -306,6 +339,14 @@ export const articles: Article[] = [
         paragraphs: [
           "El puente entre ambos sistemas no es una biblioteca de botones. Son los principios. Si una marca quiere ser clara, el producto debe tener una jerarquía legible y mensajes que no oculten información. Si quiere ser cuidadosa, sus flujos deben anticipar dudas y tratar los errores con respeto.",
           "A partir de ahí aparecen decisiones concretas: escalas tipográficas, densidad de información, contraste, ritmo, movimiento, nomenclatura y comportamiento responsive. El componente es la consecuencia; el principio es el origen.",
+        ],
+      },
+      {
+        heading: "Un ejemplo aplicado: de la identidad a la interfaz",
+        paragraphs: [
+          "En [Karma Financiero](/proyectos/karma-financiero), la identidad se planteó para alejar el producto de algunos códigos habituales de las fintech: interfaces oscuras, azules corporativos y una comunicación excesivamente técnica. El brand system debía sostener claridad, cercanía y calma sin perder la sensación de estar utilizando una herramienta financiera.",
+          "La traducción al producto apareció en decisiones concretas: una base neutra y cálida, pequeños códigos de color para organizar la información, tipografía editorial en los momentos expresivos y una sans serif en las zonas funcionales. Esas decisiones pueden convertirse en tokens, componentes y reglas para que el producto crezca sin perder su carácter.",
+          "Ese es el puente entre ambos sistemas: la identidad explica por qué una experiencia debe sentirse de una determinada manera; el design system hace que esa intención pueda repetirse, comprobarse y evolucionar.",
         ],
       },
       {
@@ -334,6 +375,11 @@ export const articles: Article[] = [
         answer:
           "Cuando varias personas o equipos diseñan y desarrollan un producto, cuando la experiencia empieza a fragmentarse o cuando repetir decisiones ralentiza el crecimiento.",
       },
+      {
+        question: "¿Cómo se conectan un brand system y un design system?",
+        answer:
+          "Se conectan traduciendo los principios de marca a decisiones verificables de producto: jerarquía, tono, tipografía, color, movimiento, accesibilidad, componentes, estados y reglas de uso.",
+      },
     ],
     relatedSlugs: ["una-interfaz-tambien-es-branding", "disenar-sistemas-no-pantallas"],
   },
@@ -348,7 +394,13 @@ export const articles: Article[] = [
     category: "Estrategia de marca",
     publishedAt: "2026-08-09",
     readingTime: "6 min",
-    keywords: ["marca digital", "estrategia de marca", "identidad visual", "sistema de diseño", "design system"],
+    keywords: [
+      "marca digital",
+      "estrategia de marca",
+      "identidad visual",
+      "sistema de diseño",
+      "design system",
+    ],
     coverImage: coverMarcaDigitalReglas,
     coverAlt:
       "Ilustración editorial de una regla negra y un cubo blanco alineados sobre una cuadrícula amarilla, como metáfora de las reglas de una marca digital",
