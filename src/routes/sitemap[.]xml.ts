@@ -76,6 +76,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           },
           {
             path: "/publicaciones/del-brand-system-al-design-system",
+            lastmod: "2026-08-24",
             changefreq: "monthly",
             priority: "0.7",
           },
