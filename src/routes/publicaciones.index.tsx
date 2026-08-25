@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
 import noteMark from "@/assets/note-mark.png";
 import { expertiseTags } from "@/data/expertise";
 import { SiteFooter } from "@/components/SiteFooter";
-import { articles } from "@/data/articles";
+import { articleBySlug, articles } from "@/data/articles";
 import { absoluteAssetUrl, HOME_OG_IMAGE } from "@/lib/seo";
 
 const TITLE = "Publicaciones de diseño, marca y producto digital";
@@ -28,30 +27,50 @@ const notePosts = [
   },
 ] as const;
 
-const articleTopics: Record<string, string[]> = {
-  "que-es-inteligencia-artificial": ["IA", "Estrategia", "Producto"],
-  "una-interfaz-tambien-es-branding": ["Branding", "Identidad", "Producto"],
-  "del-brand-system-al-design-system": ["Sistemas", "Branding", "Producto"],
-  "una-marca-digital-necesita-reglas-no-aplicaciones": ["Estrategia", "Sistemas", "Marca"],
-  "branding-y-producto-deberian-hablar-mas": ["Branding", "Marca", "Producto"],
-  "disenar-sistemas-no-pantallas": ["Sistemas", "Producto", "Dirección"],
-  "que-cambia-la-ia-en-el-trabajo-de-diseno": ["IA", "Estrategia", "Dirección"],
-};
-
-const topicArticles = [
+const editorialPaths = [
   {
-    type: "Proyecto · 3 min.",
-    title: "Blind Words en una campaña internacional con Citizen",
-    href: "/proyectos/blind-words-citizen",
-    topics: ["Dirección"],
+    label: "Estrategia de marca",
+    title: "Elegir una dirección antes de diseñar",
+    criterion:
+      "Posicionamiento, relato y criterios para que la marca tome decisiones con una dirección reconocible.",
+    articleSlugs: [
+      "posicionamiento-de-marca",
+      "una-marca-digital-necesita-reglas-no-aplicaciones",
+      "branding-y-producto-deberian-hablar-mas",
+    ],
+    serviceHref: "/branding-estrategico",
+    serviceLabel: "Branding estratégico",
   },
-  ...articles.map((article) => ({
-    type: `Artículo · ${article.readingTime}`,
-    title: article.title,
-    href: `/publicaciones/${article.slug}`,
-    topics: articleTopics[article.slug] ?? [],
-  })),
+  {
+    label: "Sistemas de marca y producto",
+    title: "Convertir la intención en reglas compartidas",
+    criterion:
+      "Identidad digital, componentes y comportamientos que ayudan a sostener una experiencia coherente.",
+    articleSlugs: [
+      "del-brand-system-al-design-system",
+      "una-interfaz-tambien-es-branding",
+      "disenar-sistemas-no-pantallas",
+    ],
+    serviceHref: "/consultoria-de-diseno",
+    serviceLabel: "Consultoría de diseño",
+  },
+  {
+    label: "IA, tecnología y criterio",
+    title: "Usar la tecnología cuando mejora una decisión",
+    criterion:
+      "IA aplicada al trabajo de diseño para investigar, explorar y construir sin perder contexto ni responsabilidad.",
+    articleSlugs: ["que-es-inteligencia-artificial", "que-cambia-la-ia-en-el-trabajo-de-diseno"],
+    serviceHref: "/consultoria-inteligencia-artificial",
+    serviceLabel: "Consultoría de IA",
+  },
 ] as const;
+
+const editorialPathCards = editorialPaths.map((path) => ({
+  ...path,
+  featuredArticles: path.articleSlugs
+    .map((slug) => articleBySlug.get(slug))
+    .filter((article): article is (typeof articles)[number] => Boolean(article)),
+}));
 
 export const Route = createFileRoute("/publicaciones/")({
   head: () => ({
@@ -72,11 +91,6 @@ export const Route = createFileRoute("/publicaciones/")({
 });
 
 function PublicationsPage() {
-  const [activeTopic, setActiveTopic] = useState<string | null>(null);
-  const visibleArticles = activeTopic
-    ? topicArticles.filter((article) => article.topics.some((topic) => topic === activeTopic))
-    : topicArticles;
-
   return (
     <div className="editorial-page">
       <main>
@@ -96,41 +110,45 @@ function PublicationsPage() {
           <div className="publication-books">
             <p className="editorial-kicker publication-section-kicker">Libros</p>
             <div className="publication-grid">
-              <article className="publication-card publication-card-active">
+              <article className="publication-card">
                 <a href="/publicaciones/treinta-mililitros" className="publication-card-cover-link">
-                  <img
-                    src="/covers/treinta-mililitros.png?v=2"
-                    alt="Portada de Treinta mililitros, de Núria López"
-                    className="publication-card-cover"
-                  />
+                  <span className="publication-book-shell">
+                    <span className="publication-book-pages" aria-hidden="true" />
+                    <span className="publication-book-cover">
+                      <img
+                        src="/covers/treinta-mililitros-amazon.png"
+                        alt="Portada de Treinta mililitros, de Núria López"
+                        className="publication-card-cover"
+                      />
+                    </span>
+                  </span>
                 </a>
                 <div className="publication-card-meta">
                   <div>
-                    <p className="editorial-kicker">BOOK · Activo</p>
+                    <p className="editorial-kicker">Próximamente en Amazon</p>
                     <h2>Treinta mililitros</h2>
                   </div>
-                  <a className="publication-card-link" href="/publicaciones/treinta-mililitros">
-                    Ver publicación ↗
-                  </a>
                 </div>
               </article>
 
-              <article className="publication-card publication-card-upcoming">
+              <article className="publication-card">
                 <div className="publication-card-cover-link">
-                  <img
-                    src="/covers/la-vida-son-canciones.png"
-                    alt="Portada de La vida son canciones que recordar, de Elena Sorni"
-                    className="publication-card-cover"
-                  />
+                  <span className="publication-book-shell">
+                    <span className="publication-book-pages" aria-hidden="true" />
+                    <span className="publication-book-cover">
+                      <img
+                        src="/covers/disenar-con-inteligencia-artificial.png"
+                        alt="Portada de Diseñar con inteligencia artificial, de Núria López"
+                        className="publication-card-cover"
+                      />
+                    </span>
+                  </span>
                 </div>
                 <div className="publication-card-meta">
                   <div>
-                    <p className="editorial-kicker">BOOK · Activo</p>
-                    <h2>La vida son canciones que recordar</h2>
+                    <p className="editorial-kicker">Próximamente en Amazon</p>
+                    <h2>Diseñar con inteligencia artificial</h2>
                   </div>
-                  <span className="publication-card-link publication-card-link-muted">
-                    Próximamente
-                  </span>
                 </div>
               </article>
             </div>
@@ -189,50 +207,41 @@ function PublicationsPage() {
             Escribo sobre
           </h2>
           <div className="publication-topics-tags" aria-label="Temas de las publicaciones">
-            {expertiseTags.map((tag) => {
-              const className = `construction-tag-inner expertise-pill ${tag.color}`;
-              const isActive = activeTopic === tag.label;
-
-              return tag.href ? (
-                <a className={className} href={tag.href} key={tag.label}>
-                  {tag.label}
-                </a>
-              ) : (
-                <button
-                  className={`${className} ${isActive ? "is-active" : ""}`}
-                  type="button"
-                  aria-pressed={isActive}
-                  key={tag.label}
-                  onClick={() => setActiveTopic(isActive ? null : tag.label)}
-                >
-                  {tag.label}
-                </button>
-              );
-            })}
+            {expertiseTags.map((tag) => (
+              <span
+                className={`construction-tag-inner expertise-pill ${tag.color}`}
+                key={tag.label}
+              >
+                {tag.label}
+              </span>
+            ))}
           </div>
-          <div className="publication-topic-articles" aria-live="polite">
-            {visibleArticles.length > 0 ? (
-              <div className="publication-topic-article-list">
-                {visibleArticles.map((article, index) => (
-                  <a className="publication-topic-article" href={article.href} key={article.title}>
-                    <span className="publication-topic-article-number" aria-hidden="true">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span>
-                      <small>{article.type}</small>
-                      <strong>{article.title}</strong>
-                    </span>
-                    <span className="publication-topic-article-arrow" aria-hidden="true">
-                      ↗
-                    </span>
-                  </a>
-                ))}
-              </div>
-            ) : (
-              <p className="publication-topic-empty">
-                Todavía no hay publicaciones asociadas a esta categoría.
-              </p>
-            )}
+          <div className="publication-paths" aria-label="Recorridos de lectura por tema">
+            {editorialPathCards.map((path) => (
+              <article className="publication-path-card" key={path.label}>
+                <div className="publication-path-summary">
+                  <p className="editorial-kicker">{path.label}</p>
+                  <h3>{path.title}</h3>
+                  <p>{path.criterion}</p>
+                </div>
+                <ul>
+                  {path.featuredArticles.map((article) => (
+                    <li key={article.slug}>
+                      <a href={`/publicaciones/${article.slug}`}>
+                        <span>
+                          {article.title}
+                          <small>Artículo · {article.readingTime}</small>
+                        </span>
+                        <span aria-hidden="true">↗</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <a className="publication-path-service" href={path.serviceHref}>
+                  {path.serviceLabel} <span aria-hidden="true">↗</span>
+                </a>
+              </article>
+            ))}
           </div>
         </section>
       </main>

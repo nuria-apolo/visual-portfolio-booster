@@ -44,15 +44,15 @@ function BookPage() {
             <h1>30 mililitros</h1>
             <p className="editorial-lede">
               El amor en 23 preparaciones: un libro sobre el café, las historias que aparecen
-                alrededor de una taza y las distintas formas de compartir el tiempo.
+              alrededor de una taza y las distintas formas de compartir el tiempo.
             </p>
           </div>
-          <div className="book-cover" aria-label="Portada de 30 mililitros">
+          <div className="book-cover" aria-label="Portada de Treinta mililitros">
             <img
-              src="/covers/treinta-mililitros.png?v=2"
-              alt="Portada de 30 mililitros, de Núria López"
-              width="1294"
-              height="1994"
+              src="/covers/treinta-mililitros-amazon.png"
+              alt="Portada de Treinta mililitros, de Núria López"
+              width="1084"
+              height="1658"
             />
           </div>
           <div className="book-copy-secondary">

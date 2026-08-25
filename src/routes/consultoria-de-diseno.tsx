@@ -3,6 +3,7 @@ import affinityBadge from "@/assets/affinity-badge.png";
 import designConsultingHero from "@/assets/consultoria-diseno-equipo-apolo.webp";
 import figmaBadge from "@/assets/figma-badge.png";
 import framerBadge from "@/assets/framer-badge.png";
+import { ServiceRelatedArticles } from "@/components/ServiceRelatedArticles";
 import { SiteFooter } from "@/components/SiteFooter";
 import { absoluteAssetUrl } from "@/lib/seo";
 
@@ -261,11 +262,7 @@ function DesignConsultingLanding() {
             <a href="/proyectos/aprende-historia-del-arte">Aprende Historia del Arte</a>. Si el reto
             parte de la marca o del producto, también puede continuar en{" "}
             <a href="/branding-estrategico">branding estratégico</a> o{" "}
-            <a href="/desarrollo-web-empresas">desarrollo web</a>. El artículo sobre{" "}
-            <a href="/publicaciones/del-brand-system-al-design-system">
-              brand system y design system
-            </a>{" "}
-            explica cómo conectar ambas capas sin perder la intención de marca.
+            <a href="/desarrollo-web-empresas">desarrollo web</a>.
           </p>
         </section>
 
@@ -300,6 +297,16 @@ function DesignConsultingLanding() {
             Hablemos de vuestro contexto ↗
           </a>
         </section>
+
+        <ServiceRelatedArticles
+          id="design-consulting-related-articles"
+          heading="Lecturas para convertir decisiones en sistemas."
+          slugs={[
+            "del-brand-system-al-design-system",
+            "una-interfaz-tambien-es-branding",
+            "disenar-sistemas-no-pantallas",
+          ]}
+        />
       </main>
       <SiteFooter variant="floating" />
     </div>

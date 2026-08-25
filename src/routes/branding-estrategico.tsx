@@ -4,6 +4,7 @@ import karmaBrandingCover from "@/assets/karma-branding-cover.jpg";
 import figmaBadge from "@/assets/figma-badge.png";
 import karmaBrandSystem from "@/assets/karma-brand-system.jpg";
 import aprendeHistoriaArtePhoto from "@/assets/aprende-historia-arte-photo.png";
+import { ServiceRelatedArticles } from "@/components/ServiceRelatedArticles";
 import { SiteFooter } from "@/components/SiteFooter";
 import { absoluteAssetUrl } from "@/lib/seo";
 
@@ -297,13 +298,11 @@ function StrategicBrandingPage() {
             La estrategia no acaba en una presentación: tiene que ayudar a trabajar.
           </h2>
           <p>
-            En proyectos como <a href="/proyectos/karma-financiero">Karma Financiero</a> y en el
-            trabajo editorial sobre{" "}
-            <a href="/publicaciones/posicionamiento-de-marca">posicionamiento de marca</a> y{" "}
-            <a href="/publicaciones/del-brand-system-al-design-system">sistemas de marca</a>, la
+            En proyectos como <a href="/proyectos/karma-financiero">Karma Financiero</a>, la
             dirección estratégica sirve para alinear negocio, producto y comunicación en torno a una
             propuesta común. Cuando esa dirección necesita convertirse en experiencia, puede
-            continuar en <a href="/consultoria-de-diseno">consultoría de diseño</a> o{" "}
+            continuar en <a href="/consultoria-de-diseno">consultoría de diseño</a>,{" "}
+            <a href="/diseno-imagen-corporativa">imagen corporativa</a> o{" "}
             <a href="/desarrollo-web-empresas">producto digital</a>.
           </p>
         </section>
@@ -397,6 +396,16 @@ function StrategicBrandingPage() {
             Cuéntame qué está pasando ↗
           </a>
         </section>
+
+        <ServiceRelatedArticles
+          id="branding-related-articles"
+          heading="Lecturas para definir una dirección de marca."
+          slugs={[
+            "posicionamiento-de-marca",
+            "una-marca-digital-necesita-reglas-no-aplicaciones",
+            "branding-y-producto-deberian-hablar-mas",
+          ]}
+        />
       </main>
       <SiteFooter variant="floating" />
     </div>

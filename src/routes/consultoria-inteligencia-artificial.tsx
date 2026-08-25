@@ -3,6 +3,7 @@ import claudeBadge from "@/assets/claude-badge.png";
 import codexIcon from "@/assets/codex-icon.png";
 import aiConsultingHero from "@/assets/consultoria-inteligencia-artificial-editorial-collage.png";
 import perplexityBadge from "@/assets/perplexity-badge.png";
+import { ServiceRelatedArticles } from "@/components/ServiceRelatedArticles";
 import { SiteFooter } from "@/components/SiteFooter";
 import { absoluteAssetUrl } from "@/lib/seo";
 
@@ -245,10 +246,16 @@ function AiConsultingLanding() {
         </section>
 
         <section className="service-proof" aria-labelledby="ai-consulting-proof-title">
-          <p className="editorial-kicker">Para seguir explorando</p>
-          <h2 id="ai-consulting-proof-title">La IA necesita contexto antes de convertirse en producto.</h2>
+          <p className="editorial-kicker">Experiencia relacionada</p>
+          <h2 id="ai-consulting-proof-title">
+            La IA necesita contexto antes de convertirse en producto.
+          </h2>
           <p>
-            Puedes ampliar el marco con los artículos <a href="/publicaciones/que-es-inteligencia-artificial">Qué es la inteligencia artificial</a> y <a href="/publicaciones/que-cambia-la-ia-en-el-trabajo-de-diseno">Qué cambia la IA en el trabajo de diseño</a>. Después, el trabajo puede aterrizar en un <a href="/proyectos/karma-financiero">producto digital real</a> o continuar con <a href="/consultoria-de-diseno">dirección de diseño</a>.
+            El trabajo puede aterrizar en un{" "}
+            <a href="/proyectos/karma-financiero">producto digital real</a>, continuar con{" "}
+            <a href="/consultoria-de-diseno">dirección de diseño</a> o convertirse en una
+            experiencia mediante el{" "}
+            <a href="/desarrollo-web-empresas">desarrollo de producto digital</a>.
           </p>
         </section>
 
@@ -282,6 +289,12 @@ function AiConsultingLanding() {
             Cuéntame qué queréis resolver ↗
           </a>
         </section>
+
+        <ServiceRelatedArticles
+          id="ai-consulting-related-articles"
+          heading="Lecturas para aplicar IA con contexto y criterio."
+          slugs={["que-es-inteligencia-artificial", "que-cambia-la-ia-en-el-trabajo-de-diseno"]}
+        />
       </main>
       <SiteFooter variant="floating" />
     </div>
