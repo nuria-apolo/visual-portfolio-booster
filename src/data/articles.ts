@@ -28,6 +28,7 @@ export interface ArticleFaq {
 export interface Article {
   slug: string;
   title: string;
+  breadcrumbTitle?: string;
   seoTitle: string;
   description: string;
   excerpt: string;
@@ -49,6 +50,7 @@ export const articles: Article[] = [
     slug: "posicionamiento-de-marca",
     title:
       "Posicionamiento de marca: cómo definir una propuesta de valor única para destacar en el mercado",
+    breadcrumbTitle: "Posicionamiento de marca",
     seoTitle: "Posicionamiento de marca: cómo definir una propuesta de valor única",
     description:
       "Qué es el posicionamiento de marca, cómo encontrar una propuesta de valor relevante y cómo llevarla a la experiencia que ofreces.",
@@ -56,7 +58,8 @@ export const articles: Article[] = [
       "Antes de decidir cómo debe verse una marca, conviene entender qué lugar quiere ocupar y por qué alguien debería elegirla. El posicionamiento convierte esa intención en una dirección compartida.",
     category: "Estrategia de marca",
     publishedAt: "2026-08-15",
-    readingTime: "8 min",
+    updatedAt: "2026-08-24",
+    readingTime: "9 min",
     keywords: [
       "posicionamiento de marca",
       "propuesta de valor",
@@ -73,6 +76,51 @@ export const articles: Article[] = [
         paragraphs: [
           "El posicionamiento es el lugar que una marca quiere ocupar en la mente de las personas y la razón por la que debería ser considerada frente a otras opciones. No es una frase bonita ni una promesa aislada: es una decisión sobre el problema que resuelves, para quién lo resuelves y qué perspectiva hace reconocible tu propuesta.",
           "Una marca puede ofrecer muchas cosas y, aun así, resultar difícil de elegir. Cuando todo parece importante, nada termina siendo memorable. Posicionar significa ordenar prioridades para que el equipo pueda explicar con claridad qué hace, qué no hace y por qué su forma de hacerlo importa. Ese trabajo puede continuar en [branding estratégico](/branding-estrategico).",
+        ],
+      },
+      {
+        heading: "Posicionamiento, branding e identidad no son lo mismo",
+        paragraphs: [
+          "Los tres conceptos están conectados, pero responden a preguntas distintas. El posicionamiento elige el lugar que la marca quiere ocupar. El branding estratégico construye el marco de decisiones que permite sostenerlo. La identidad o imagen corporativa lo convierte en una expresión visual reconocible.",
+          "Si necesitas decidir la propuesta, la diferencia y los principios de la marca, el trabajo corresponde al [branding estratégico](/branding-estrategico). Si esa dirección ya está clara y falta convertirla en un sistema visual, el siguiente paso es el [diseño de imagen corporativa](/diseno-imagen-corporativa).",
+        ],
+        comparison: [
+          {
+            eyebrow: "Posicionamiento",
+            title: "Elige un lugar",
+            description:
+              "Define para quién existe la marca, qué promete y por qué debería ser considerada.",
+            points: [
+              "Audiencia prioritaria",
+              "Problema y beneficio",
+              "Diferencia relevante",
+              "Razones para creer",
+            ],
+          },
+          {
+            eyebrow: "Branding estratégico",
+            title: "Ordena las decisiones",
+            description:
+              "Conecta el posicionamiento con la arquitectura, el relato y los principios de marca.",
+            points: [
+              "Propuesta de valor",
+              "Arquitectura de marca",
+              "Mensajes y principios",
+              "Criterios de activación",
+            ],
+          },
+          {
+            eyebrow: "Imagen corporativa",
+            title: "Lo hace visible",
+            description:
+              "Traduce la dirección en un lenguaje visual coherente y preparado para aplicarse.",
+            points: [
+              "Logotipo y tipografía",
+              "Color y composición",
+              "Sistema gráfico",
+              "Guías y aplicaciones",
+            ],
+          },
         ],
       },
       {
@@ -109,6 +157,11 @@ export const articles: Article[] = [
         question: "¿Qué diferencia hay entre posicionamiento e identidad de marca?",
         answer:
           "El posicionamiento define el lugar que una marca quiere ocupar y la razón para elegirla. La identidad reúne los recursos visuales, verbales y de comportamiento que ayudan a expresar y hacer reconocible esa dirección.",
+      },
+      {
+        question: "¿Es lo mismo posicionamiento que branding estratégico?",
+        answer:
+          "No exactamente. El posicionamiento define el lugar que la marca quiere ocupar y la razón para elegirla. El branding estratégico amplía esa decisión con propuesta de valor, arquitectura, relato y principios para llevarla a la práctica.",
       },
       {
         question: "¿Cómo se construye una propuesta de valor?",

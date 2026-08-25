@@ -160,7 +160,7 @@ function ArticlePage() {
                 <span aria-hidden="true">/</span>
                 <a href="/blog">Blog</a>
                 <span aria-hidden="true">/</span>
-                <span aria-current="page">{article.title}</span>
+                <span aria-current="page">{article.breadcrumbTitle ?? article.title}</span>
               </nav>
             </div>
             <h1>{article.title}</h1>
@@ -195,7 +195,7 @@ function ArticlePage() {
                   {section.comparison ? (
                     <div
                       className="article-comparison-grid"
-                      aria-label="Comparación entre sistemas"
+                      aria-label="Comparación de conceptos"
                     >
                       {section.comparison.map((item) => (
                         <div className="article-comparison-card" key={item.eyebrow}>

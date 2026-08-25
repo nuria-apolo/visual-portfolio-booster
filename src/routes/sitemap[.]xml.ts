@@ -34,8 +34,18 @@ export const Route = createFileRoute("/sitemap.xml")({
             priority: "0.7",
           },
           { path: "/desarrollo-web-empresas", changefreq: "monthly", priority: "0.8" },
-          { path: "/diseno-imagen-corporativa", changefreq: "monthly", priority: "0.8" },
-          { path: "/branding-estrategico", changefreq: "monthly", priority: "0.8" },
+          {
+            path: "/diseno-imagen-corporativa",
+            lastmod: "2026-08-24",
+            changefreq: "monthly",
+            priority: "0.8",
+          },
+          {
+            path: "/branding-estrategico",
+            lastmod: "2026-08-24",
+            changefreq: "monthly",
+            priority: "0.8",
+          },
           {
             path: "/consultoria-inteligencia-artificial",
             lastmod: "2026-08-14",
@@ -50,7 +60,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           },
           {
             path: "/publicaciones/posicionamiento-de-marca",
-            lastmod: "2026-08-15",
+            lastmod: "2026-08-24",
             changefreq: "monthly",
             priority: "0.7",
           },

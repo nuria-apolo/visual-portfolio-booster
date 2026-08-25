@@ -3412,6 +3412,11 @@ body:has(.construction-page) {
   background: #eceff2;
 }
 
+.article-comparison-card:nth-child(3):last-child {
+  grid-column: 1 / -1;
+  background: #f4f1ec;
+}
+
 .article-comparison-card .editorial-kicker {
   margin: 0;
   color: rgba(23, 23, 23, 0.56);

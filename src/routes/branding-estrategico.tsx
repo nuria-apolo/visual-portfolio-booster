@@ -10,7 +10,7 @@ import { absoluteAssetUrl } from "@/lib/seo";
 const BASE_URL = "https://srtaserifa.es";
 const TITLE = "Branding estratégico para marcas digitales — Srta Serifa";
 const DESCRIPTION =
-  "Branding estratégico para definir el posicionamiento, la arquitectura y los principios que ayudan a una marca a crecer con coherencia.";
+  "Servicio de branding estratégico para definir posicionamiento, propuesta de valor, arquitectura y principios antes de desarrollar la identidad visual.";
 const OG_IMAGE = "/og-branding-estrategico.png";
 const OG_IMAGE_ALT =
   "Mesa visual de branding estratégico con sistema de formas, color y aplicaciones de una marca";
@@ -33,8 +33,8 @@ const services = [
   ],
   [
     "04",
-    "Activar la marca",
-    "Traducir la estrategia a una identidad, una web, un producto o contenidos que hagan visible la dirección tomada.",
+    "Definir la dirección a activar",
+    "Dejar criterios y prioridades para traducir después la estrategia a identidad, producto, comunicación y contenidos.",
   ],
 ] as const;
 
@@ -112,16 +112,16 @@ const faqs = [
     "El alcance se adapta a cada caso, pero suele reunir investigación, posicionamiento, arquitectura de marca, propuesta de valor, principios de comunicación y una dirección clara para desarrollar la identidad.",
   ],
   [
-    "¿En qué se diferencia el branding estratégico de diseñar un logo?",
-    "El logo es una pieza visual. El branding estratégico define el criterio que hace que todas las piezas, mensajes y experiencias de una marca estén conectados y avancen en la misma dirección.",
+    "¿En qué se diferencia el branding estratégico de la imagen corporativa?",
+    "El branding estratégico decide el lugar que quiere ocupar la marca, su propuesta de valor y los principios que deben guiarla. La imagen corporativa convierte esa dirección en logotipo, tipografía, color, sistema gráfico y aplicaciones.",
+  ],
+  [
+    "¿Qué diferencia hay entre posicionamiento y branding estratégico?",
+    "El posicionamiento es una decisión central: qué lugar quiere ocupar la marca y por qué debería ser elegida. El branding estratégico es el trabajo más amplio que investiga, define y conecta esa posición con la arquitectura, el relato y los criterios de activación.",
   ],
   [
     "¿Cuándo necesita una empresa trabajar su estrategia de marca?",
     "Cuando el negocio ha cambiado, la oferta se ha vuelto difícil de explicar, aparecen nuevas audiencias o el equipo necesita decidir y comunicar con más coherencia.",
-  ],
-  [
-    "¿Puede aplicarse a una marca digital o un producto SaaS?",
-    "Sí. La estrategia de marca es especialmente útil cuando producto, contenido, ventas y experiencia digital necesitan compartir una propuesta clara y reconocible.",
   ],
 ] as const;
 
@@ -133,7 +133,7 @@ export const Route = createFileRoute("/branding-estrategico")({
       {
         name: "keywords",
         content:
-          "branding estratégico, estrategia de marca, branding online, agencia de branding Madrid, posicionamiento de marca",
+          "branding estratégico, estrategia de marca, diseño estratégico de marca, propuesta de valor, arquitectura de marca",
       },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
@@ -167,8 +167,8 @@ export const Route = createFileRoute("/branding-estrategico")({
           keywords: [
             "branding estratégico",
             "estrategia de marca",
-            "posicionamiento de marca",
-            "branding online",
+            "diseño estratégico de marca",
+            "arquitectura de marca",
           ],
         }),
       },
@@ -207,9 +207,9 @@ function StrategicBrandingPage() {
             crecer.
           </h1>
           <p className="editorial-lede">
-            Antes de diseñar una identidad, conviene entender qué papel quiere ocupar la marca. La
-            estrategia ordena esa conversación para convertir una intuición de negocio en una
-            dirección clara y reconocible.
+            Es un servicio para decidir qué lugar quiere ocupar la marca antes de diseñar cómo se
+            verá. El diseño estratégico de marca convierte una intuición de negocio en
+            posicionamiento, propuesta de valor y una dirección compartida.
           </p>
           <div className="about-hero-actions">
             <a
@@ -236,13 +236,15 @@ function StrategicBrandingPage() {
 
         <section className="service-intro" aria-labelledby="service-intro-title">
           <div>
-            <p className="editorial-kicker">Por qué esta página</p>
+            <p className="editorial-kicker">Cuándo tiene sentido</p>
             <h2 id="service-intro-title">Una identidad no debería empezar por elegir colores.</h2>
           </div>
           <p>
             Cuando una marca no tiene un lugar claro desde el que hablar, cada pieza parece una
-            decisión nueva. El branding estratégico ayuda a ordenar prioridades, mensajes y
-            relaciones para que el diseño responda a algo más profundo que una tendencia.
+            decisión nueva. El branding estratégico ordena prioridades, mensajes y relaciones para
+            que el diseño responda a una propuesta de valor y no solo a una tendencia. Si esa
+            dirección ya existe y lo que falta es expresarla visualmente, el siguiente trabajo es la{" "}
+            <a href="/diseno-imagen-corporativa">imagen corporativa</a>.
           </p>
         </section>
 

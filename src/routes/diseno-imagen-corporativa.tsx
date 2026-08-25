@@ -8,9 +8,9 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { absoluteAssetUrl } from "@/lib/seo";
 
 const BASE_URL = "https://srtaserifa.es";
-const TITLE = "Diseño de imagen corporativa — Srta Serifa";
+const TITLE = "Diseño de imagen corporativa e identidad visual — Srta Serifa";
 const DESCRIPTION =
-  "Diseño de imagen corporativa para marcas que necesitan una identidad visual clara, coherente y preparada para crecer también en digital.";
+  "Servicio de diseño de imagen corporativa: identidad visual, logotipo, tipografía, color, sistema gráfico y aplicaciones digitales coherentes.";
 const OG_IMAGE = "/og-diseno-imagen-corporativa.png";
 const OG_IMAGE_ALT =
   "Sistema de identidad corporativa con piezas impresas, cuadrícula visual y aplicaciones digitales";
@@ -18,8 +18,8 @@ const OG_IMAGE_ALT =
 const services = [
   [
     "01",
-    "Estrategia de marca",
-    "Encontrar la idea, la posición y los principios que deben orientar cada decisión visual.",
+    "Diagnóstico de identidad",
+    "Revisar qué debe conservarse, qué confunde y qué necesita el lenguaje visual para representar la dirección de marca.",
   ],
   [
     "02",
@@ -28,21 +28,25 @@ const services = [
   ],
   [
     "03",
-    "Sistema de marca",
-    "Convertir la identidad en reglas y recursos que un equipo pueda utilizar sin perder intención.",
+    "Sistema gráfico y guía de uso",
+    "Convertir la identidad en reglas, plantillas y recursos que un equipo pueda utilizar sin perder coherencia.",
   ],
   [
     "04",
-    "Aplicación digital",
-    "Llevar esos códigos a webs, interfaces y contenidos para que la marca se comporte con coherencia.",
+    "Aplicaciones corporativas y digitales",
+    "Llevar esos códigos a presentaciones, contenidos, webs e interfaces para comprobar cómo funciona la identidad.",
   ],
 ] as const;
 
 const process = [
-  ["Entender", "Qué tiene que decir la marca, a quién y desde qué lugar quiere hacerlo.", "search"],
+  [
+    "Entender",
+    "La dirección de marca ya definida, el punto de partida visual y los contextos en los que debe funcionar.",
+    "search",
+  ],
   [
     "Definir",
-    "La arquitectura, los principios y el territorio visual que hacen reconocible la propuesta.",
+    "El territorio, los principios y los códigos visuales que harán reconocible la propuesta.",
     "grid",
   ],
   [
@@ -52,7 +56,7 @@ const process = [
   ],
   [
     "Acompañar",
-    "Los recursos y criterios para que la marca pueda crecer sin empezar de cero cada vez.",
+    "La guía, los recursos y los criterios para que el equipo pueda aplicar la identidad con autonomía.",
     "layers",
   ],
 ] as const;
@@ -105,7 +109,11 @@ const tools = [
 const faqs = [
   [
     "¿Qué incluye un proyecto de imagen corporativa?",
-    "El alcance depende de cada caso, pero puede incluir estrategia, arquitectura de marca, identidad visual, sistema gráfico, guías de uso y aplicaciones digitales o editoriales.",
+    "El alcance depende de cada caso, pero puede incluir diagnóstico visual, logotipo, tipografía, color, sistema gráfico, guía de uso y aplicaciones digitales, corporativas o editoriales.",
+  ],
+  [
+    "¿Imagen corporativa y branding estratégico son lo mismo?",
+    "No. El branding estratégico define el posicionamiento, la propuesta de valor y los principios de la marca. La imagen corporativa convierte una dirección ya definida en un lenguaje visual reconocible y aplicable.",
   ],
   [
     "¿Cuál es la diferencia entre logotipo e identidad visual?",
@@ -114,10 +122,6 @@ const faqs = [
   [
     "¿Una identidad corporativa también sirve para una web o un producto digital?",
     "Sí. Una identidad bien planteada incorpora principios que pueden traducirse a interfaces, contenido, movimiento, accesibilidad y sistemas de diseño digitales.",
-  ],
-  [
-    "¿Cómo empieza una colaboración?",
-    "Con una conversación para entender el momento de la marca, sus objetivos y el tipo de sistema que necesita antes de definir un alcance concreto.",
   ],
 ] as const;
 
@@ -197,13 +201,13 @@ function CorporateIdentityPage() {
               <span aria-hidden="true">/</span>
               <span aria-current="page">Diseño de imagen corporativa</span>
             </nav>
-            <p className="editorial-section-label">Estrategia · identidad · sistema</p>
+            <p className="editorial-section-label">Identidad visual · sistema · aplicaciones</p>
           </div>
           <h1>Diseño de imagen corporativa para marcas que necesitan algo más que un logo.</h1>
           <p className="editorial-lede">
-            Una identidad visual debería ayudar a una marca a reconocerse, explicarse y actuar con
-            coherencia en cada lugar donde aparece: una presentación, una web, un producto o una
-            conversación.
+            Parto de una dirección de marca definida para convertirla en un lenguaje visual claro,
+            reconocible y preparado para funcionar en cada lugar donde aparece: una presentación,
+            una web, un producto o un contenido.
           </p>
           <div className="about-hero-actions">
             <a
@@ -230,14 +234,14 @@ function CorporateIdentityPage() {
 
         <section className="service-intro" aria-labelledby="service-intro-title">
           <div>
-            <p className="editorial-kicker">Por qué esta página</p>
-            <h2 id="service-intro-title">Una marca no se resuelve en una aplicación aislada.</h2>
+            <p className="editorial-kicker">Qué resuelve</p>
+            <h2 id="service-intro-title">La imagen corporativa no se resuelve en un logo aislado.</h2>
           </div>
           <p>
-            El reto no es solo que una marca se vea bien. Es que tenga un criterio para tomar
-            decisiones cuando cambia el formato, crece el equipo o aparece un nuevo producto. Mi
-            trabajo transforma una idea de marca en un sistema visual capaz de moverse sin perder
-            sentido.
+            Esta página se centra en la expresión visual de la marca. El reto no es solo que se vea
+            bien, sino que mantenga un criterio cuando cambia el formato, crece el equipo o aparece
+            un nuevo producto. Mi trabajo convierte esa dirección en un sistema visual capaz de
+            moverse sin perder sentido.
           </p>
         </section>
 
@@ -378,7 +382,7 @@ function CorporateIdentityPage() {
 
         <section className="service-cta" aria-labelledby="service-cta-title">
           <p className="editorial-kicker">Siguiente paso</p>
-          <h2 id="service-cta-title">¿Tu marca necesita un sistema para seguir creciendo?</h2>
+          <h2 id="service-cta-title">¿Tu marca necesita una identidad visual para crecer?</h2>
           <a
             className="about-hero-button about-hero-button-primary"
             href="mailto:srtaserifa@icloud.com"
