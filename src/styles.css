@@ -7219,17 +7219,17 @@ body .book-breadcrumbs {
   .site-float-menu {
     top: max(0.75rem, env(safe-area-inset-top));
     left: 50%;
-    width: calc(100vw - 1.5rem);
+    width: max-content;
     max-width: calc(100vw - 1.5rem);
     transform: translateX(-50%);
-    overflow: hidden;
+    overflow: visible;
   }
 
   .site-float-menu-list {
-    width: 100%;
-    justify-content: space-between;
-    gap: 0;
-    padding: 5px 1rem 3px;
+    width: auto;
+    justify-content: center;
+    gap: 0.15rem;
+    padding: 0.35rem;
   }
 
   .site-float-menu-list > li {
@@ -7242,41 +7242,33 @@ body .book-breadcrumbs {
     isolation: isolate;
     min-height: 2.5rem;
     width: auto;
-    padding: 0.5rem 0.25rem;
+    padding: 0.5rem 0.85rem;
     font-size: 0.78rem;
     letter-spacing: -0.045em;
   }
 
   .site-float-menu-link.is-active {
-    padding-right: 0.25rem;
-    padding-left: 0.25rem;
-    background: transparent;
+    background: rgb(255 255 255 / 0.9);
   }
 
   .site-float-menu-link.is-active::before {
-    position: absolute;
-    z-index: -1;
-    inset: 0 -0.75rem;
-    border-radius: 999px;
-    background: rgb(255 255 255 / 0.9);
-    content: "";
+    content: none;
   }
 
   @media (max-width: 360px) {
     .site-float-menu-list {
-      padding-right: 0.25rem;
-      padding-left: 0.25rem;
+      padding: 0.3rem;
     }
 
     .site-float-menu-link {
-      padding-right: 0.25rem;
-      padding-left: 0.25rem;
+      padding-right: 0.6rem;
+      padding-left: 0.6rem;
       font-size: 13px;
     }
 
     .site-float-menu-link.is-active {
-      padding-right: 0.55rem;
-      padding-left: 0.55rem;
+      padding-right: 0.6rem;
+      padding-left: 0.6rem;
     }
   }
 
@@ -7468,6 +7460,20 @@ body .book-breadcrumbs {
   .publication-card:focus-within .publication-book-shell,
   .publication-card:hover .publication-book-cover,
   .publication-card:focus-within .publication-book-cover {
+    transform: none;
+  }
+
+  .karma-role-list li,
+  .karma-project-link.karma-project-link-intro,
+  .karma-project-link.karma-project-link-intro span {
+    transition: none;
+  }
+
+  .karma-role-list li:hover,
+  .karma-project-link.karma-project-link-intro:hover,
+  .karma-project-link.karma-project-link-intro:focus-visible,
+  .karma-project-link.karma-project-link-intro:hover span,
+  .karma-project-link.karma-project-link-intro:focus-visible span {
     transform: none;
   }
 }
@@ -7937,21 +7943,37 @@ body .book-breadcrumbs {
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-.karma-intro-facts ul {
+.karma-intro-facts .karma-role-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.karma-intro-facts li,
+
+.karma-role-list li {
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: #f4f4f5;
+  color: rgb(23 23 23 / 0.78);
+  font-size: 0.72rem;
+  line-height: 1.25;
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    transform 320ms var(--ease-out-expo);
+}
+
+.karma-role-list li:hover {
+  background: #171717;
+  color: #fff;
+  transform: translateX(0.3rem);
+}
+
 .karma-intro-facts > div > p:last-child {
   line-height: 1.45;
-}
-.karma-project-link.karma-project-link-aside {
-  width: fit-content;
-  margin-top: auto;
-  padding: 0.65rem 0.85rem;
-  font-size: 0.72rem;
-  line-height: 1.4;
 }
 .karma-intro-content {
   min-width: 0;
@@ -8023,21 +8045,32 @@ body .book-breadcrumbs {
   font-size: clamp(1rem, 1.25vw, 1.18rem);
   line-height: 1.32;
 }
-.karma-category-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  max-width: 1040px;
-  margin: 4rem 0 0;
-  padding: 0;
-  list-style: none;
+
+.karma-project-link.karma-project-link-intro {
+  margin-top: 2.5rem;
+  transition:
+    background-color 220ms ease,
+    transform 320ms var(--ease-out-expo);
 }
-.karma-category-list li {
-  padding: 0.7rem 1rem;
-  border-radius: 999px;
-  background: #f4f4f5;
-  color: rgb(23 23 23 / 0.78);
-  font-size: 0.82rem;
+
+.karma-project-link.karma-project-link-intro span {
+  transition: transform 320ms var(--ease-out-expo);
+}
+
+.karma-project-link.karma-project-link-intro:hover,
+.karma-project-link.karma-project-link-intro:focus-visible {
+  background: #111;
+  transform: translateY(-0.2rem) scale(1.015);
+}
+
+.karma-project-link.karma-project-link-intro:hover span,
+.karma-project-link.karma-project-link-intro:focus-visible span {
+  transform: translate(0.16rem, -0.16rem);
+}
+
+.karma-project-link.karma-project-link-intro:focus-visible {
+  outline: 2px solid #171717;
+  outline-offset: 3px;
 }
 .karma-detail-gallery {
   grid-column: 2;
@@ -8212,16 +8245,10 @@ body .book-breadcrumbs {
     row-gap: 0;
   }
   .karma-intro-aside {
-    display: block;
-    order: 2;
-    margin: 2rem 0 0;
-    transform: none;
+    display: none;
   }
   .karma-intro-facts {
     display: none;
-  }
-  .karma-project-link.karma-project-link-aside {
-    margin-top: 0;
   }
   .karma-intro-content {
     order: 1;
@@ -8239,14 +8266,6 @@ body .book-breadcrumbs {
   .karma-intro .karma-intro-content h2 {
     margin: 1.5rem 0 2rem;
     font-size: 1.4rem;
-  }
-  .karma-category-list {
-    gap: 0.55rem;
-    margin-top: 2.5rem;
-  }
-  .karma-category-list li {
-    padding: 0.6rem 0.8rem;
-    font-size: 0.75rem;
   }
   .karma-detail-gallery {
     grid-column: 1;
@@ -8642,30 +8661,28 @@ h2.editorial-kicker {
 
   .site-float-menu-link {
     min-height: 40px;
-    padding: 0.5rem 0.25rem;
+    padding: 0.5rem 0.85rem;
     font-size: 14px;
   }
 }
 
 @media (max-width: 360px) {
   .site-float-menu-list {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
+    padding: 0.3rem;
   }
 
   .site-float-menu-link {
-    padding-right: 0.15rem;
-    padding-left: 0.15rem;
+    padding-right: 0.6rem;
+    padding-left: 0.6rem;
     font-size: 13px;
   }
 
   .site-float-menu-link.is-active {
-    padding-right: 0.15rem;
-    padding-left: 0.15rem;
+    padding-right: 0.6rem;
+    padding-left: 0.6rem;
   }
 
   .site-float-menu-link.is-active::before {
-    right: -0.55rem;
-    left: -0.55rem;
+    content: none;
   }
 }

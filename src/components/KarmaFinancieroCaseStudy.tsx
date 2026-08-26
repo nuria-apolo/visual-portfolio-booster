@@ -42,16 +42,7 @@ const navigation = [
   ["aportacion", "Aportación"],
 ];
 
-const projectCategories = [
-  "Product design", "UX research", "Interaction design", "Design systems", "Prototyping",
-  "User flows", "Usability testing", "Visual design", "Information architecture", "Branding",
-  "Creative direction", "Accessibility web", "Content design", "UI design", "Desarrollo con IA y agentes",
-];
-
-const projectRoles = [
-  "Product Strategy", "Product Design", "UX/UI", "Visual Identity",
-  "Art Direction", "Content & SEO", "Prototyping", "Development Direction",
-];
+const projectRoles = ["Investigación de UX", "Diseño UX", "Diseño de interfaz", "Diseño de marca"];
 
 const karmaActionSteps = ["VER", "AÑADIR", "REPARTIR", "ENTENDER", "DECIDIR"];
 const sectionNavigation = navigation.slice(1).map(([id, label]) => ({ id, label }));
@@ -95,8 +86,10 @@ export function KarmaFinancieroCaseStudy() {
               <div className="karma-intro-facts">
                 <div>
                   <p className="karma-intro-label">Mi papel</p>
-                  <ul>
-                    {projectRoles.map((role) => <li key={role}>{role}</li>)}
+                  <ul className="karma-role-list">
+                    {projectRoles.map((role) => (
+                      <li key={role}>{role}</li>
+                    ))}
                   </ul>
                 </div>
                 <div>
@@ -104,7 +97,6 @@ export function KarmaFinancieroCaseStudy() {
                   <p>En desarrollo · 2026</p>
                 </div>
               </div>
-              <a className="karma-project-link karma-project-link-aside" href="https://karmafinanciero.com" target="_blank" rel="noreferrer">Visitar proyecto <span aria-hidden="true">↗</span></a>
             </aside>
             <div className="karma-intro-content">
               <p className="karma-breadcrumb"><a href="/proyectos">PROYECTOS</a>&nbsp; / &nbsp;KARMA FINANCIERO</p>
@@ -114,9 +106,14 @@ export function KarmaFinancieroCaseStudy() {
                 <p>Parejas, familias, pisos compartidos o viajes tienen algo en común: hay gastos, aportaciones, objetivos y decisiones que dejan de pertenecer únicamente a una persona. La mayoría de herramientas financieras están pensadas para controlar el dinero. Karma parte de otra pregunta: ¿cómo podemos entenderlo mejor cuando el dinero es compartido?</p>
                 <p>Así empezó el diseño de un producto que intenta convertir algo que normalmente resolvemos entre conversaciones, transferencias, notas y hojas de cálculo en un espacio común, claro y fácil de entender.</p>
               </div>
-              <ul className="karma-category-list" aria-label="Categorías del proyecto">
-                {projectCategories.map((category) => <li key={category}>{category}</li>)}
-              </ul>
+              <a
+                className="karma-project-link karma-project-link-intro"
+                href="https://karmafinanciero.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Visita Karma Financiero <span aria-hidden="true">↗</span>
+              </a>
             </div>
             <div className="karma-detail-gallery">
               <div className="karma-detail-gallery-controls" aria-label="Controles de la galería">
