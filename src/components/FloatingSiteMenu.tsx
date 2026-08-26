@@ -2,9 +2,9 @@ import { useRouterState } from "@tanstack/react-router";
 
 const siteMenuItems = [
   { label: "Inicio", href: "/" },
-  { label: "Sobre mí", href: "/sobre-mi" },
+  { label: "Bio", href: "/sobre-mi" },
   { label: "Proyectos", href: "/proyectos" },
-  { label: "Publicaciones", href: "/publicaciones" },
+  { label: "Post", href: "/publicaciones" },
 ] as const;
 
 export function FloatingSiteMenu() {
