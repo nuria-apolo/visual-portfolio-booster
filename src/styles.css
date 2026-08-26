@@ -195,6 +195,41 @@ body a {
   outline: none;
 }
 
+.site-bottom-blur {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 70;
+  height: clamp(5.5rem, 10vh, 7rem);
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgb(0 0 0 / 0.14) 22%,
+    rgb(0 0 0 / 0.62) 66%,
+    #000 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgb(0 0 0 / 0.14) 22%,
+    rgb(0 0 0 / 0.62) 66%,
+    #000 100%
+  );
+  transform: translateZ(0);
+}
+
+@media (max-width: 700px) {
+  .site-bottom-blur {
+    height: 4.75rem;
+    -webkit-backdrop-filter: blur(9px);
+    backdrop-filter: blur(9px);
+  }
+}
+
 .home-intro-page {
   min-height: 100svh;
   background: #f7f7f7;
@@ -4607,10 +4642,144 @@ body:has(.construction-page) {
   color: #fff;
 }
 
+.projects-archive {
+  padding: 0 12px 110px;
+}
+
+.projects-archive-heading {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.projects-archive-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.projects-archive-filter {
+  min-height: 2.8rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.65rem 1.05rem;
+  background: #efefef;
+  color: #171717;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    transform 220ms var(--ease-out-expo),
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.projects-archive-filter:hover,
+.projects-archive-filter.is-active {
+  border-color: rgb(23 23 23 / 0.3);
+  box-shadow:
+    inset 0 0 0 1px rgb(23 23 23 / 0.18),
+    0 10px 22px rgb(23 23 23 / 0.1);
+  transform: translateY(-2px);
+}
+
+.projects-archive-filter:focus-visible {
+  outline: 2px solid #171717;
+  outline-offset: 3px;
+}
+
+.projects-archive-filter-all {
+  background: #efefef;
+}
+
+.projects-archive-filter-all.is-active {
+  border-color: #171717;
+  background: #171717;
+  color: #fff;
+}
+
+.projects-archive-filter-identity {
+  background: #c6adff;
+}
+
+.projects-archive-filter-branding {
+  background: #ff7848;
+}
+
+.projects-archive-filter-packaging {
+  background: #ffc400;
+}
+
+.projects-archive-filter-typography {
+  background: #f4b5dc;
+}
+
+.projects-archive-filter-editorial {
+  background: #efefef;
+}
+
+.projects-archive-filter-digital {
+  background: #8dceff;
+}
+
+.projects-archive-filter-campaign {
+  background: #49d8a1;
+}
+
+.projects-archive-filter-illustration {
+  background: #ffe078;
+}
+
+.projects-archive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 16px;
+  row-gap: 44px;
+}
+
+.projects-archive-card {
+  min-width: 0;
+}
+
+.projects-archive-media {
+  position: relative;
+  display: block;
+  aspect-ratio: 1.18;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #f0efeb;
+}
+
+.projects-archive-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projects-archive-copy {
+  padding: 14px 2px 0;
+}
+
+.projects-archive-copy p {
+  margin: 0;
+}
+
+.projects-archive-copy h3 {
+  margin: 7px 0 0;
+  font-family: var(--font-display);
+  font-size: 1.15rem !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.025em;
+  line-height: 1.15 !important;
+}
+
 .projects-expertise {
   margin: 0 12px;
-  padding: 102px 0 0;
-  border-top: 1px solid rgba(23, 23, 23, 0.14);
+  padding: 64px 0 0;
 }
 
 .projects-expertise-copy {
@@ -5918,9 +6087,49 @@ body:has(.construction-page) {
     padding-left: 0;
   }
 
+  .projects-archive {
+    padding-right: 6px;
+    padding-left: 6px;
+    padding-bottom: 82px;
+  }
+
+  .projects-archive-heading {
+    margin-bottom: 22px;
+  }
+
+  .projects-archive-filters {
+    flex-wrap: nowrap;
+    gap: 8px;
+    overflow-x: auto;
+    margin-top: 18px;
+    margin-right: -1rem;
+    padding: 0 1rem 0.35rem 0;
+    scrollbar-width: none;
+  }
+
+  .projects-archive-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .projects-archive-filter {
+    flex: 0 0 auto;
+    min-height: 2.65rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.86rem;
+  }
+
+  .projects-archive-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .projects-archive-media {
+    border-radius: 18px;
+  }
+
   .projects-expertise {
     margin: 0 6px;
-    padding-top: 74px;
+    padding-top: 48px;
   }
 
   .projects-expertise h2 {

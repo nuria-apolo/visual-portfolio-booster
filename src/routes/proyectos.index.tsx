@@ -1,11 +1,26 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import apoloIcon from "@/assets/apolo.svg";
 import karmaIcon from "@/assets/karma.svg";
 import srtaIcon from "@/assets/srta.svg";
 import aprendeHistoriaArteIcon from "@/assets/aprende-historia-arte.png";
 import aprendeHistoriaArtePhoto from "@/assets/aprende-historia-arte-photo.png";
 import karmaApp from "@/assets/karma-app.png";
+import potestadPackaging from "@/assets/potestad-packaging-2018.png";
+import extravagantBranding from "@/assets/extravagant-branding-2020.png";
+import dioinaType from "@/assets/dioina-type-2015.png";
+import dulcesConventos from "@/assets/dulces-conventos-branding-packaging-2018.png";
+import rhmAsesores from "@/assets/rhm-asesores-branding-digital-2020.png";
+import woManCampaign from "@/assets/wo-man-campana-2022.png";
+import casitaMontessoriNubes from "@/assets/casita-montessori-nubes-identidad-web-2025.png";
+import porvera54 from "@/assets/porvera-54-editorial-2018.png";
+import pasenYPiquen from "@/assets/pasen-y-piquen-identidad-web-2025.png";
+import projecty from "@/assets/projecty-identidad-naming-2018.png";
+import daysOfType from "@/assets/36-days-of-type-ilustracion-2015.png";
+import albarizo from "@/assets/albarizo-packaging-2015.png";
+import bocapalo from "@/assets/bocapalo-identidad-2016.png";
+import yorokobuBlindWords from "@/assets/yorokobu-blind-words-portada-2019.jpg";
+import davidGrabe from "@/assets/david-grabe-portada-2020.png";
 import { projects } from "@/data/projects";
 import { expertiseTags } from "@/data/expertise";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -94,6 +109,153 @@ const personalProjects: PersonalProject[] = [
         alt: "",
         isIcon: !blindWordsProject,
       },
+];
+
+const archiveFilters = [
+  { label: "Todas", tone: "all" },
+  { label: "Identidad", tone: "identity" },
+  { label: "Branding", tone: "branding" },
+  { label: "Packaging", tone: "packaging" },
+  { label: "Tipografía", tone: "typography" },
+  { label: "Editorial", tone: "editorial" },
+  { label: "Digital", tone: "digital" },
+  { label: "Campaña", tone: "campaign" },
+  { label: "Ilustración", tone: "illustration" },
+] as const;
+
+type ArchiveFilter = (typeof archiveFilters)[number]["label"];
+type ArchiveArea = Exclude<ArchiveFilter, "Todas">;
+
+type ArchiveProject = {
+  title: string;
+  type: string;
+  year: string;
+  image: string;
+  alt: string;
+  areas: ArchiveArea[];
+};
+
+const archiveProjects: ArchiveProject[] = [
+  {
+    title: "Potestad",
+    type: "Packaging",
+    year: "2018",
+    image: potestadPackaging,
+    alt: "Botella de Potestad envuelta en tejido blanco con costuras rojas",
+    areas: ["Packaging"],
+  },
+  {
+    title: "Extravagant",
+    type: "Branding",
+    year: "2020",
+    image: extravagantBranding,
+    alt: "Identidad de Extravagant sobre una fotografía de cinco mujeres",
+    areas: ["Branding"],
+  },
+  {
+    title: "Dioína type",
+    type: "Tipografía",
+    year: "2015",
+    image: dioinaType,
+    alt: "Detalle de las curvas blancas de Dioína sobre fondo rojo",
+    areas: ["Tipografía"],
+  },
+  {
+    title: "Dulces Conventos",
+    type: "Branding + packaging",
+    year: "2018",
+    image: dulcesConventos,
+    alt: "Patrón de etiquetas de Dulces Conventos en varios colores",
+    areas: ["Branding", "Packaging"],
+  },
+  {
+    title: "RHM Asesores",
+    type: "Branding + digital",
+    year: "2020",
+    image: rhmAsesores,
+    alt: "Aplicación de la identidad de RHM Asesores en un soporte publicitario urbano",
+    areas: ["Branding", "Digital"],
+  },
+  {
+    title: "Wo=man",
+    type: "Campaña",
+    year: "2022",
+    image: woManCampaign,
+    alt: "Gráfica amarilla y negra de la campaña Wo=man para el 8 de marzo",
+    areas: ["Campaña"],
+  },
+  {
+    title: "Casita Montessori Nubes",
+    type: "Identidad + web",
+    year: "2025",
+    image: casitaMontessoriNubes,
+    alt: "Identidad de Casita Montessori Nubes en blanco sobre fondo azul claro",
+    areas: ["Identidad", "Digital"],
+  },
+  {
+    title: "Porvera 54",
+    type: "Editorial",
+    year: "2018",
+    image: porvera54,
+    alt: "Portada editorial de Porvera 54 en negro, gris y rojo",
+    areas: ["Editorial"],
+  },
+  {
+    title: "Pasen y piquen",
+    type: "Identidad + web",
+    year: "2025",
+    image: pasenYPiquen,
+    alt: "Símbolo naranja de Pasen y piquen sobre fondo crema",
+    areas: ["Identidad", "Digital"],
+  },
+  {
+    title: "Projecty",
+    type: "Identidad + naming",
+    year: "2018",
+    image: projecty,
+    alt: "Aplicaciones de la identidad de Projecty en blanco y violeta",
+    areas: ["Identidad"],
+  },
+  {
+    title: "36 days of type",
+    type: "Ilustración",
+    year: "2015",
+    image: daysOfType,
+    alt: "Ilustración de la letra J para 36 days of type",
+    areas: ["Tipografía", "Ilustración"],
+  },
+  {
+    title: "Albarizo",
+    type: "Packaging",
+    year: "2015",
+    image: albarizo,
+    alt: "Etiquetas ilustradas de las botellas de vino Albarizo",
+    areas: ["Packaging"],
+  },
+  {
+    title: "Bocapalo",
+    type: "Identidad",
+    year: "2016",
+    image: bocapalo,
+    alt: "Aplicación web de la identidad de Bocapalo en blanco y negro",
+    areas: ["Identidad"],
+  },
+  {
+    title: "Yorokobu blind words",
+    type: "Portada",
+    year: "2019",
+    image: yorokobuBlindWords,
+    alt: "Portada amarilla de Yorokobu con letras modulares blancas y negras",
+    areas: ["Editorial", "Tipografía"],
+  },
+  {
+    title: "David Grabe",
+    type: "Portada",
+    year: "2020",
+    image: davidGrabe,
+    alt: "Diseño de portada y disco de David Grabe sobre fondo negro",
+    areas: ["Editorial"],
+  },
 ];
 
 export const Route = createFileRoute("/proyectos/")({
@@ -193,9 +355,18 @@ export const Route = createFileRoute("/proyectos/")({
 
 function ProjectsPage() {
   const projectsRailRef = useRef<HTMLDivElement>(null);
+  const [archiveFilter, setArchiveFilter] = useState<ArchiveFilter>("Todas");
+
+  const visibleArchiveProjects =
+    archiveFilter === "Todas"
+      ? archiveProjects
+      : archiveProjects.filter((project) => project.areas.includes(archiveFilter));
 
   const moveProjects = (direction: number) => {
-    projectsRailRef.current?.scrollBy({ left: direction * projectsRailRef.current.clientWidth * 0.62, behavior: "smooth" });
+    projectsRailRef.current?.scrollBy({
+      left: direction * projectsRailRef.current.clientWidth * 0.62,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -260,10 +431,18 @@ function ProjectsPage() {
             <div className="projects-gallery-heading">
               <h2>PLAYGROUND</h2>
               <div className="projects-gallery-controls" aria-label="Navegar por proyectos">
-                <button type="button" onClick={() => moveProjects(-1)} aria-label="Proyectos anteriores">
+                <button
+                  type="button"
+                  onClick={() => moveProjects(-1)}
+                  aria-label="Proyectos anteriores"
+                >
                   <span aria-hidden="true">←</span>
                 </button>
-                <button type="button" onClick={() => moveProjects(1)} aria-label="Proyectos siguientes">
+                <button
+                  type="button"
+                  onClick={() => moveProjects(1)}
+                  aria-label="Proyectos siguientes"
+                >
                   <span aria-hidden="true">→</span>
                 </button>
               </div>
@@ -287,9 +466,7 @@ function ProjectsPage() {
                     />
                   </a>
                   <div className="projects-project-copy">
-                    <span className="project-eyebrow">
-                      {project.category}
-                    </span>
+                    <span className="project-eyebrow">{project.category}</span>
                     <h2>{project.title}</h2>
                     <div className="project-featured-description">
                       {project.copy.map((paragraph) => (
@@ -299,6 +476,44 @@ function ProjectsPage() {
                     <a href={project.href} className="project-button">
                       Ver proyecto <span aria-hidden="true">↗</span>
                     </a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+          <section className="projects-archive" aria-labelledby="projects-archive-title">
+            <div className="projects-gallery-heading projects-archive-heading">
+              <h2 id="projects-archive-title">ARCHIVO</h2>
+              <div
+                className="projects-archive-filters"
+                role="group"
+                aria-label="Filtrar proyectos de archivo por área"
+              >
+                {archiveFilters.map((filter) => (
+                  <button
+                    key={filter.label}
+                    type="button"
+                    className={`projects-archive-filter projects-archive-filter-${filter.tone}${archiveFilter === filter.label ? " is-active" : ""}`}
+                    aria-pressed={archiveFilter === filter.label}
+                    aria-controls="projects-archive-grid"
+                    onClick={() => setArchiveFilter(filter.label)}
+                  >
+                    {filter.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="projects-archive-grid" id="projects-archive-grid" aria-live="polite">
+              {visibleArchiveProjects.map((project) => (
+                <article className="projects-archive-card" key={`${project.title}-${project.year}`}>
+                  <div className="projects-archive-media">
+                    <img src={project.image} alt={project.alt} loading="lazy" />
+                  </div>
+                  <div className="projects-archive-copy">
+                    <p className="project-eyebrow">
+                      {project.type} · {project.year}
+                    </p>
+                    <h3>{project.title}</h3>
                   </div>
                 </article>
               ))}

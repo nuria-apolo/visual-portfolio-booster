@@ -176,6 +176,7 @@ function RootComponent() {
       <div id="main-content" tabIndex={-1}>
         <Outlet />
       </div>
+      <div className="site-bottom-blur" aria-hidden="true" />
       <FloatingSiteMenu />
     </QueryClientProvider>
   );
