@@ -4536,6 +4536,28 @@ body:has(.construction-page) {
   transform: translateY(-2px);
 }
 
+.projects-project-rail {
+  position: relative;
+}
+
+.projects-project-rail::after {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  width: clamp(4rem, 9vw, 9rem);
+  right: calc((100% - 100vw) / 2);
+  background: linear-gradient(90deg, rgb(247 247 247 / 0), #f7f7f7 88%);
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 240ms ease;
+}
+
+.projects-project-rail.has-next::after {
+  opacity: 1;
+}
+
 .projects-project-stack {
   display: flex;
   gap: 16px;
@@ -6162,6 +6184,11 @@ body:has(.construction-page) {
     width: 42px;
     height: 42px;
     font-size: 1.1rem;
+  }
+
+  .projects-project-rail::after {
+    right: 0;
+    width: clamp(2.5rem, 14vw, 4rem);
   }
 
   .projects-project-card {
@@ -8073,9 +8100,21 @@ body .book-breadcrumbs {
   outline-offset: 3px;
 }
 .karma-detail-gallery {
+  position: relative;
   grid-column: 2;
   width: calc(100% + max(0px, (100vw - 1180px) / 2));
   margin-top: 3rem;
+}
+.karma-detail-gallery::after {
+  position: absolute;
+  z-index: 2;
+  top: 4.5rem;
+  right: 0;
+  bottom: 0;
+  width: clamp(4rem, 9vw, 9rem);
+  background: linear-gradient(90deg, rgb(255 255 255 / 0), #fff 88%);
+  content: "";
+  pointer-events: none;
 }
 .karma-detail-gallery-controls {
   display: flex;
@@ -8272,6 +8311,10 @@ body .book-breadcrumbs {
     order: 3;
     width: 100%;
     margin-top: 2.5rem;
+  }
+  .karma-detail-gallery::after {
+    top: 3.75rem;
+    width: clamp(2.5rem, 14vw, 4rem);
   }
   .karma-detail-gallery-controls {
     justify-content: flex-start;
@@ -8684,5 +8727,11 @@ h2.editorial-kicker {
 
   .site-float-menu-link.is-active::before {
     content: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-project-rail::after {
+    transition: none;
   }
 }

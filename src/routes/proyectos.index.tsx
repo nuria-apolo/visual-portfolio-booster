@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import apoloIcon from "@/assets/apolo.svg";
 import karmaIcon from "@/assets/karma.svg";
 import srtaIcon from "@/assets/srta.svg";
@@ -355,6 +355,7 @@ export const Route = createFileRoute("/proyectos/")({
 
 function ProjectsPage() {
   const projectsRailRef = useRef<HTMLDivElement>(null);
+  const [projectsRailHasNext, setProjectsRailHasNext] = useState(true);
   const [archiveFilter, setArchiveFilter] = useState<ArchiveFilter>("Todas");
 
   const visibleArchiveProjects =
@@ -363,11 +364,30 @@ function ProjectsPage() {
       : archiveProjects.filter((project) => project.areas.includes(archiveFilter));
 
   const moveProjects = (direction: number) => {
-    projectsRailRef.current?.scrollBy({
-      left: direction * projectsRailRef.current.clientWidth * 0.62,
+    const rail = projectsRailRef.current;
+    if (!rail) return;
+
+    rail.scrollBy({
+      left: direction * rail.clientWidth * 0.62,
       behavior: "smooth",
     });
   };
+
+  const updateProjectsRailFade = useCallback((rail: HTMLDivElement) => {
+    const edgeThreshold = 8;
+    setProjectsRailHasNext(rail.scrollLeft < rail.scrollWidth - rail.clientWidth - edgeThreshold);
+  }, []);
+
+  useEffect(() => {
+    const rail = projectsRailRef.current;
+    if (!rail) return;
+
+    const resizeObserver = new ResizeObserver(() => updateProjectsRailFade(rail));
+    updateProjectsRailFade(rail);
+    resizeObserver.observe(rail);
+
+    return () => resizeObserver.disconnect();
+  }, [updateProjectsRailFade]);
 
   return (
     <div className="projects-page">
@@ -447,38 +467,44 @@ function ProjectsPage() {
                 </button>
               </div>
             </div>
-            <div className="projects-project-stack" ref={projectsRailRef}>
-              {personalProjects.map((project, index) => (
-                <article
-                  key={project.num}
-                  id={`proyecto-${project.num}`}
-                  className={`projects-project-card ${index === 0 ? "projects-project-card-featured" : ""}`}
-                >
-                  <a
-                    href={project.href}
-                    className={`projects-project-media group ${project.isIcon ? "project-icon-media" : ""} ${project.title === "Karma Financiero" ? "project-karma-media" : ""} ${project.title === "Aprende Historia del Arte" ? "project-aprende-media" : ""} ${project.title === "Blind Words" ? "project-blind-media" : ""}`}
-                    aria-label={`Ver proyecto: ${project.title}`}
+            <div className={`projects-project-rail${projectsRailHasNext ? " has-next" : ""}`}>
+              <div
+                className="projects-project-stack"
+                ref={projectsRailRef}
+                onScroll={(event) => updateProjectsRailFade(event.currentTarget)}
+              >
+                {personalProjects.map((project, index) => (
+                  <article
+                    key={project.num}
+                    id={`proyecto-${project.num}`}
+                    className={`projects-project-card ${index === 0 ? "projects-project-card-featured" : ""}`}
                   >
-                    <img
-                      src={project.image}
-                      alt={project.alt}
-                      loading={index === 0 ? "eager" : "lazy"}
-                    />
-                  </a>
-                  <div className="projects-project-copy">
-                    <span className="project-eyebrow">{project.category}</span>
-                    <h2>{project.title}</h2>
-                    <div className="project-featured-description">
-                      {project.copy.map((paragraph) => (
-                        <p key={paragraph}>{paragraph}</p>
-                      ))}
-                    </div>
-                    <a href={project.href} className="project-button">
-                      Ver proyecto <span aria-hidden="true">↗</span>
+                    <a
+                      href={project.href}
+                      className={`projects-project-media group ${project.isIcon ? "project-icon-media" : ""} ${project.title === "Karma Financiero" ? "project-karma-media" : ""} ${project.title === "Aprende Historia del Arte" ? "project-aprende-media" : ""} ${project.title === "Blind Words" ? "project-blind-media" : ""}`}
+                      aria-label={`Ver proyecto: ${project.title}`}
+                    >
+                      <img
+                        src={project.image}
+                        alt={project.alt}
+                        loading={index === 0 ? "eager" : "lazy"}
+                      />
                     </a>
-                  </div>
-                </article>
-              ))}
+                    <div className="projects-project-copy">
+                      <span className="project-eyebrow">{project.category}</span>
+                      <h2>{project.title}</h2>
+                      <div className="project-featured-description">
+                        {project.copy.map((paragraph) => (
+                          <p key={paragraph}>{paragraph}</p>
+                        ))}
+                      </div>
+                      <a href={project.href} className="project-button">
+                        Ver proyecto <span aria-hidden="true">↗</span>
+                      </a>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
           </section>
           <section className="projects-archive" aria-labelledby="projects-archive-title">
