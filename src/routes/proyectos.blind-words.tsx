@@ -7,7 +7,7 @@ import { projects } from "@/data/projects";
 import { absoluteAssetUrl } from "@/lib/seo";
 
 const blindWordsProject = projects.find((project) => project.title === "Blind Words");
-const SEO_TITLE = "Blind Words: tipografía inclusiva y diseño táctil | Srta Serifa";
+const SEO_TITLE = "Blind Words: tipografía inclusiva y táctil | Srta Serifa";
 
 export const Route = createFileRoute("/proyectos/blind-words")({
   head: () => ({
