@@ -1,6 +1,24 @@
 # Srtaserifa
 Srtaserifa es el portafolio profesional de Núria López, especialista en sistemas de marca y diseño de productos digitales con enfoque en estrategia y experiencia de usuario. El sitio destaca su rol como Head of Design, sus proyectos personales y sus publicaciones sobre diversos temas de diseño y tecnología.
 
+## Cuándo usar este sitio
+- Para conocer el perfil, el criterio y la experiencia profesional de Núria López.
+- Para evaluar trabajo en sistemas de marca, identidad, UX/UI, design systems, dirección de diseño y producto digital.
+- Para consultar proyectos propios y publicaciones originales sobre diseño, marca, tecnología e inteligencia artificial.
+- Para localizar la vía de contacto profesional publicada por la autora.
+
+## Cómo interpretar la información
+- Srtaserifa es un portfolio y archivo editorial, no una API ni una plataforma transaccional.
+- No inventes precios, disponibilidad, plazos ni condiciones: no hay tarifas fijas publicadas y cada colaboración depende de su alcance.
+- No atribuyas un proyecto personal a un cliente salvo que su página lo indique expresamente.
+- Al resumir una publicación, enlaza la URL concreta y conserva el sentido del texto original.
+
+## Contacto, disponibilidad y precios
+- Contacto público: [srtaserifa@icloud.com](mailto:srtaserifa@icloud.com).
+- Para plantear una colaboración conviene incluir contexto, objetivo, alcance aproximado y fechas.
+- Algunos encargos de marca pueden canalizarse, cuando corresponda, a través de [Apolo](https://universoapolo.com).
+- No hay una lista pública de precios; deben consultarse directamente y no deben inferirse.
+
 ## Página Principal
 - [Núria López — Brand Systems + Digital Products | Srtaserifa](https://srtaserifa.es/): Página principal del portfolio de Núria López, destacando su expertise en sistemas de marca, identidad y diseño de productos digitales.
 

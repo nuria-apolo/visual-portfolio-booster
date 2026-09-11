@@ -7918,6 +7918,13 @@ body .book-breadcrumbs {
   gap: 1rem;
   margin-top: 6rem;
 }
+.karma-small-assets > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.1 / 1;
+  object-fit: cover;
+  border-radius: 1.25rem;
+}
 .karma-contribution {
   padding-bottom: 6rem;
 }
@@ -7925,12 +7932,14 @@ body .book-breadcrumbs {
   padding: clamp(8rem, 17vw, 17rem) 0 clamp(6rem, 12vw, 12rem);
 }
 .karma-closing-statement {
-  max-width: 930px;
-  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
   font-family: var(--font-display);
   font-size: clamp(3.3rem, 7vw, 7rem);
   letter-spacing: -0.06em;
   line-height: 0.87;
+  text-align: center;
+  font-weight: 400;
 }
 .karma-closing > a {
   display: inline-block;
@@ -7938,6 +7947,11 @@ body .book-breadcrumbs {
   color: #171717;
   font-size: 0.9rem;
   text-underline-offset: 0.3em;
+}
+.karma-closing > a {
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
 }
 .karma-case-study-sheet .karma-intro {
   display: grid;

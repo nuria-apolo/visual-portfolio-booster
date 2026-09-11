@@ -2,6 +2,8 @@ import "./lib/error-capture";
 
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
+import { getAgentDocument } from "./lib/agent-content";
+import { appendVary, preferredRepresentation } from "./lib/content-negotiation";
 
 type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
@@ -27,6 +29,47 @@ function withSecurityHeaders(request: Request, response: Response): Response {
   // local HTTP previews remain easy to test while production browsers remember it.
   if (new URL(request.url).protocol === "https:") {
     headers.set("Strict-Transport-Security", "max-age=15552000");
+  }
+
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
+function markdownResponse(request: Request, markdown: string, canonicalPath: string): Response {
+  const canonicalUrl = new URL(canonicalPath, request.url).toString();
+  const headers = new Headers({
+    "Cache-Control": "public, max-age=300",
+    "Content-Language": "es",
+    "Content-Type": "text/markdown; charset=utf-8",
+    Link: `<${canonicalUrl}>; rel="canonical"; type="text/html"`,
+  });
+  appendVary(headers, "Accept");
+
+  return new Response(request.method === "HEAD" ? null : markdown, { headers });
+}
+
+function notAcceptableResponse(): Response {
+  const headers = new Headers({ "Content-Type": "text/plain; charset=utf-8" });
+  appendVary(headers, "Accept");
+  return new Response("Not Acceptable\n\nAvailable: text/html, text/markdown\n", {
+    status: 406,
+    headers,
+  });
+}
+
+function withAgentHeaders(response: Response, pathname: string): Response {
+  const headers = new Headers(response.headers);
+  const hasMarkdownAlternate =
+    getAgentDocument(pathname) && headers.get("content-type")?.includes("text/html");
+
+  if (hasMarkdownAlternate) {
+    appendVary(headers, "Accept");
+    const alternate = `<${pathname || "/"}>; rel="alternate"; type="text/markdown"`;
+    const existing = headers.get("Link");
+    headers.set("Link", existing ? `${existing}, ${alternate}` : alternate);
   }
 
   return new Response(response.body, {
@@ -67,9 +110,31 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
+      const url = new URL(request.url);
+      const agentDocument = getAgentDocument(url.pathname);
+
+      if (agentDocument && (request.method === "GET" || request.method === "HEAD")) {
+        const representation = preferredRepresentation(request.headers.get("Accept"), [
+          "text/html",
+          "text/markdown",
+        ]);
+
+        if (representation === "text/markdown") {
+          return withSecurityHeaders(
+            request,
+            markdownResponse(request, agentDocument.markdown, agentDocument.canonicalPath),
+          );
+        }
+
+        if (representation === null) {
+          return withSecurityHeaders(request, notAcceptableResponse());
+        }
+      }
+
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return withSecurityHeaders(request, await normalizeCatastrophicSsrResponse(response));
+      const normalized = await normalizeCatastrophicSsrResponse(response);
+      return withSecurityHeaders(request, withAgentHeaders(normalized, url.pathname));
     } catch (error) {
       console.error(error);
       return withSecurityHeaders(
