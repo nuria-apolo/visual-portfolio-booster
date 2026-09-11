@@ -31,7 +31,14 @@ export function SiteFooter({ variant = "light" }: SiteFooterProps) {
       <div className="site-footer-grid">
         <div className="site-footer-about">
           <a href="/" className="site-footer-brand" aria-label="Ir a la Home de Srta Serifa">
-            <img src={srtaFooterLogo} alt="Srta Serifa" width={96} height={96} />
+            <img
+              src={srtaFooterLogo}
+              alt="Srta Serifa"
+              width={96}
+              height={96}
+              loading="lazy"
+              decoding="async"
+            />
           </a>
           <p>
             Brand systems + digital products para marcas con algo que decir.{" "}
@@ -41,8 +48,8 @@ export function SiteFooter({ variant = "light" }: SiteFooterProps) {
         </div>
 
         <div className="site-footer-column">
-          <h2>Enlaces</h2>
-          <nav aria-label="Enlaces del sitio">
+          <h2>Explora Srta Serifa</h2>
+          <nav aria-label="Secciones de Srta Serifa">
             <ul>
               {footerLinks.map((link) => (
                 <li key={link.label}>
@@ -54,7 +61,7 @@ export function SiteFooter({ variant = "light" }: SiteFooterProps) {
         </div>
 
         <div className="site-footer-column">
-          <h2>Contacto</h2>
+          <h2>Contacto profesional</h2>
           <a className="site-footer-email" href="mailto:srtaserifa@icloud.com">
             Escríbeme
           </a>

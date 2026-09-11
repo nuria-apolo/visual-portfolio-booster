@@ -12,6 +12,19 @@ type ServerEntry = {
 let serverEntryPromise: Promise<ServerEntry> | undefined;
 
 const securityHeaders = {
+  "Content-Security-Policy": [
+    "default-src 'self'",
+    "base-uri 'self'",
+    "connect-src 'self' https://cloudflareinsights.com",
+    "font-src 'self'",
+    "form-action 'self' mailto:",
+    "frame-ancestors 'self'",
+    "img-src 'self' data: https:",
+    "media-src 'self' https://framerusercontent.com",
+    "object-src 'none'",
+    "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com",
+    "style-src 'self' 'unsafe-inline'",
+  ].join("; "),
   "X-Content-Type-Options": "nosniff",
   "X-Frame-Options": "SAMEORIGIN",
   "Referrer-Policy": "strict-origin-when-cross-origin",
@@ -23,6 +36,10 @@ function withSecurityHeaders(request: Request, response: Response): Response {
 
   for (const [name, value] of Object.entries(securityHeaders)) {
     headers.set(name, value);
+  }
+
+  if (headers.get("Content-Type")?.includes("text/html") && !headers.has("Cache-Control")) {
+    headers.set("Cache-Control", "public, max-age=0, must-revalidate");
   }
 
   // HTTPS is already enforced at Cloudflare. Limit HSTS to secure requests so

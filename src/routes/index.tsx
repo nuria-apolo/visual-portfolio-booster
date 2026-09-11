@@ -50,6 +50,15 @@ export const Route = createFileRoute("/")({
               url: "https://srtaserifa.es/",
               description:
                 "Estudio de Núria López especializado en sistemas de marca, identidad y productos digitales.",
+              logo: {
+                "@type": "ImageObject",
+                "@id": "https://srtaserifa.es/#logo",
+                url: "https://srtaserifa.es/logo-srta-serifa.svg",
+                contentUrl: "https://srtaserifa.es/logo-srta-serifa.svg",
+                width: 131,
+                height: 131,
+                caption: "Srta Serifa",
+              },
               founder: {
                 "@id": "https://srtaserifa.es/sobre-mi#nuria-lopez",
               },
@@ -68,6 +77,19 @@ export const Route = createFileRoute("/")({
               publisher: {
                 "@id": "https://srtaserifa.es/#organization",
               },
+              about: [
+                { "@type": "Thing", name: "Sistemas de marca" },
+                { "@type": "Thing", name: "Identidad visual" },
+                { "@type": "Thing", name: "Diseño de producto digital" },
+                { "@type": "Thing", name: "Inteligencia artificial aplicada al diseño" },
+              ],
+              mentions: [
+                { "@id": "https://srtaserifa.es/proyectos/karma-financiero#software" },
+                {
+                  "@id": "https://srtaserifa.es/proyectos/aprende-historia-del-arte#software",
+                },
+                { "@id": "https://srtaserifa.es/proyectos/blind-words#creative-work" },
+              ],
             },
           ],
         }),
@@ -289,10 +311,26 @@ function ConstructionPage() {
                         aria-label={`Ir a ${tag.label}`}
                         className="construction-icon-link"
                       >
-                        <img src={tag.image} alt="" loading="lazy" decoding="async" draggable={false} />
+                        <img
+                          src={tag.image}
+                          alt=""
+                          width={134}
+                          height={134}
+                          loading="lazy"
+                          decoding="async"
+                          draggable={false}
+                        />
                       </a>
                     ) : (
-                      <img src={tag.image} alt="" loading="lazy" decoding="async" draggable={false} />
+                      <img
+                        src={tag.image}
+                        alt=""
+                        width={134}
+                        height={134}
+                        loading="lazy"
+                        decoding="async"
+                        draggable={false}
+                      />
                     )}
                   </>
                 )}

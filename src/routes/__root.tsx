@@ -102,10 +102,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "google-site-verification", content: "6tOVrCdlYPO3j39nKHcN0NQTDFk8HxaTBgDzFH1NW1A" },
     ],
     links: [
+      {
+        rel: "icon",
+        href: "/favicon.ico",
+        type: "image/x-icon",
+        sizes: "256x256",
+      },
       { rel: "stylesheet", href: appCss },
       {
         rel: "preload",
         href: "/fonts/space-grotesk-latin-400.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "preload",
+        href: "/fonts/instrument-serif-latin-400.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "preload",
+        href: "/fonts/instrument-serif-latin-400-italic.woff2",
         as: "font",
         type: "font/woff2",
         crossOrigin: "anonymous",

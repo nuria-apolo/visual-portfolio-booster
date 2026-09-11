@@ -903,6 +903,7 @@ body:has(.construction-page) {
 
 .site-footer-floating .site-footer-bottom {
   justify-content: center;
+  opacity: 1;
 }
 
 .site-footer-floating .site-footer-bottom > a {
@@ -923,7 +924,7 @@ body:has(.construction-page) {
 
 .site-footer-floating .site-footer-bottom ul {
   gap: 0.4rem;
-  color: rgb(23 23 23 / 0.42);
+  color: #59595c;
 }
 
 .site-footer-floating .site-footer-bottom li:not(:last-child)::after {
@@ -979,6 +980,11 @@ body:has(.construction-page) {
   color: currentColor;
   opacity: 0.5;
   font-size: 0.78rem;
+}
+
+.site-footer-floating .site-footer-about small {
+  color: #66666a;
+  opacity: 1;
 }
 
 .site-footer-column h2 {
