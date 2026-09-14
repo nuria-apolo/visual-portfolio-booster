@@ -20,6 +20,7 @@ import { Route as LegalRouteImport } from './routes/legal'
 import { Route as DisenoWebBrandingIllescasRouteImport } from './routes/diseno-web-branding-illescas'
 import { Route as DisenoImagenCorporativaRouteImport } from './routes/diseno-imagen-corporativa'
 import { Route as DesarrolloWebEmpresasRouteImport } from './routes/desarrollo-web-empresas'
+import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as ConsultoriaInteligenciaArtificialRouteImport } from './routes/consultoria-inteligencia-artificial'
 import { Route as ConsultoriaDeDisenoRouteImport } from './routes/consultoria-de-diseno'
 import { Route as BrandingEstrategicoRouteImport } from './routes/branding-estrategico'
@@ -88,6 +89,11 @@ const DisenoImagenCorporativaRoute = DisenoImagenCorporativaRouteImport.update({
 const DesarrolloWebEmpresasRoute = DesarrolloWebEmpresasRouteImport.update({
   id: '/desarrollo-web-empresas',
   path: '/desarrollo-web-empresas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactoRoute = ContactoRouteImport.update({
+  id: '/contacto',
+  path: '/contacto',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConsultoriaInteligenciaArtificialRoute =
@@ -167,6 +173,7 @@ export interface FileRoutesByFullPath {
   '/branding-estrategico': typeof BrandingEstrategicoRoute
   '/consultoria-de-diseno': typeof ConsultoriaDeDisenoRoute
   '/consultoria-inteligencia-artificial': typeof ConsultoriaInteligenciaArtificialRoute
+  '/contacto': typeof ContactoRoute
   '/desarrollo-web-empresas': typeof DesarrolloWebEmpresasRoute
   '/diseno-imagen-corporativa': typeof DisenoImagenCorporativaRoute
   '/diseno-web-branding-illescas': typeof DisenoWebBrandingIllescasRoute
@@ -193,6 +200,7 @@ export interface FileRoutesByTo {
   '/branding-estrategico': typeof BrandingEstrategicoRoute
   '/consultoria-de-diseno': typeof ConsultoriaDeDisenoRoute
   '/consultoria-inteligencia-artificial': typeof ConsultoriaInteligenciaArtificialRoute
+  '/contacto': typeof ContactoRoute
   '/desarrollo-web-empresas': typeof DesarrolloWebEmpresasRoute
   '/diseno-imagen-corporativa': typeof DisenoImagenCorporativaRoute
   '/diseno-web-branding-illescas': typeof DisenoWebBrandingIllescasRoute
@@ -218,6 +226,7 @@ export interface FileRoutesById {
   '/branding-estrategico': typeof BrandingEstrategicoRoute
   '/consultoria-de-diseno': typeof ConsultoriaDeDisenoRoute
   '/consultoria-inteligencia-artificial': typeof ConsultoriaInteligenciaArtificialRoute
+  '/contacto': typeof ContactoRoute
   '/desarrollo-web-empresas': typeof DesarrolloWebEmpresasRoute
   '/diseno-imagen-corporativa': typeof DisenoImagenCorporativaRoute
   '/diseno-web-branding-illescas': typeof DisenoWebBrandingIllescasRoute
@@ -246,6 +255,7 @@ export interface FileRouteTypes {
     | '/branding-estrategico'
     | '/consultoria-de-diseno'
     | '/consultoria-inteligencia-artificial'
+    | '/contacto'
     | '/desarrollo-web-empresas'
     | '/diseno-imagen-corporativa'
     | '/diseno-web-branding-illescas'
@@ -272,6 +282,7 @@ export interface FileRouteTypes {
     | '/branding-estrategico'
     | '/consultoria-de-diseno'
     | '/consultoria-inteligencia-artificial'
+    | '/contacto'
     | '/desarrollo-web-empresas'
     | '/diseno-imagen-corporativa'
     | '/diseno-web-branding-illescas'
@@ -296,6 +307,7 @@ export interface FileRouteTypes {
     | '/branding-estrategico'
     | '/consultoria-de-diseno'
     | '/consultoria-inteligencia-artificial'
+    | '/contacto'
     | '/desarrollo-web-empresas'
     | '/diseno-imagen-corporativa'
     | '/diseno-web-branding-illescas'
@@ -323,6 +335,7 @@ export interface RootRouteChildren {
   BrandingEstrategicoRoute: typeof BrandingEstrategicoRoute
   ConsultoriaDeDisenoRoute: typeof ConsultoriaDeDisenoRoute
   ConsultoriaInteligenciaArtificialRoute: typeof ConsultoriaInteligenciaArtificialRoute
+  ContactoRoute: typeof ContactoRoute
   DesarrolloWebEmpresasRoute: typeof DesarrolloWebEmpresasRoute
   DisenoImagenCorporativaRoute: typeof DisenoImagenCorporativaRoute
   DisenoWebBrandingIllescasRoute: typeof DisenoWebBrandingIllescasRoute
@@ -413,6 +426,13 @@ declare module '@tanstack/react-router' {
       path: '/desarrollo-web-empresas'
       fullPath: '/desarrollo-web-empresas'
       preLoaderRoute: typeof DesarrolloWebEmpresasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacto': {
+      id: '/contacto'
+      path: '/contacto'
+      fullPath: '/contacto'
+      preLoaderRoute: typeof ContactoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/consultoria-inteligencia-artificial': {
@@ -552,6 +572,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConsultoriaDeDisenoRoute: ConsultoriaDeDisenoRoute,
   ConsultoriaInteligenciaArtificialRoute:
     ConsultoriaInteligenciaArtificialRoute,
+  ContactoRoute: ContactoRoute,
   DesarrolloWebEmpresasRoute: DesarrolloWebEmpresasRoute,
   DisenoImagenCorporativaRoute: DisenoImagenCorporativaRoute,
   DisenoWebBrandingIllescasRoute: DisenoWebBrandingIllescasRoute,

@@ -41,6 +41,7 @@ Este sitio es útil para equipos, empresas y colaboradores que quieran conocer e
 - [Sobre Núria López](${BASE_URL}/sobre-mi)
 - [Proyectos](${BASE_URL}/proyectos)
 - [Publicaciones](${BASE_URL}/publicaciones)
+- [Contacto profesional](${BASE_URL}/contacto)
 - [Información legal y privacidad](${BASE_URL}/legal)
 
 ## Contacto y contratación
@@ -85,6 +86,24 @@ Srta Serifa trabaja entre estrategia, identidad, tecnología y producto digital 
 ## Cómo plantear una colaboración
 
 Escribe a [srtaserifa@icloud.com](mailto:srtaserifa@icloud.com) con el contexto, el objetivo, el alcance aproximado y las fechas. No hay paquetes ni precios fijos publicados: no los infieras. La propuesta depende de las necesidades del proyecto y algunos encargos pueden canalizarse a través de [Apolo](https://universoapolo.com).
+`;
+
+const contactDocument = `# Contacto con Srta Serifa
+
+La vía pública de contacto profesional de Núria López es [srtaserifa@icloud.com](mailto:srtaserifa@icloud.com).
+
+## Qué incluir en la consulta
+
+- Contexto de la marca, organización o producto.
+- Objetivo o problema que se quiere resolver.
+- Alcance aproximado del trabajo.
+- Fechas o condicionantes relevantes.
+
+No hay paquetes, precios ni disponibilidad fijos publicados: no los inventes ni los infieras. Cada propuesta se define según las necesidades del proyecto. Algunos encargos de marca pueden canalizarse, cuando corresponda, a través de [Apolo](https://universoapolo.com).
+
+- [Consultar los servicios](${BASE_URL}/servicios)
+- [Ver proyectos](${BASE_URL}/proyectos)
+- [Conocer a Núria López](${BASE_URL}/sobre-mi)
 `;
 
 const projectsDocument = `# Proyectos de Srta Serifa
@@ -146,6 +165,7 @@ const agentDocuments: Record<string, AgentDocument> = {
   "/": { canonicalPath: "/", markdown: homeDocument },
   "/sobre-mi": { canonicalPath: "/sobre-mi", markdown: aboutDocument },
   "/servicios": { canonicalPath: "/servicios", markdown: servicesDocument },
+  "/contacto": { canonicalPath: "/contacto", markdown: contactDocument },
   "/proyectos": { canonicalPath: "/proyectos", markdown: projectsDocument },
   "/portfolio": { canonicalPath: "/proyectos", markdown: projectsDocument },
   "/publicaciones": { canonicalPath: "/publicaciones", markdown: publicationsDocument },

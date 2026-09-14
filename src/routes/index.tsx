@@ -62,6 +62,22 @@ export const Route = createFileRoute("/")({
               founder: {
                 "@id": "https://srtaserifa.es/sobre-mi#nuria-lopez",
               },
+              email: "mailto:srtaserifa@icloud.com",
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "solicitudes de colaboración",
+                email: "mailto:srtaserifa@icloud.com",
+                url: "https://srtaserifa.es/contacto",
+                availableLanguage: ["es"],
+              },
+              address: {
+                "@type": "PostalAddress",
+                addressCountry: "ES",
+              },
+              areaServed: {
+                "@type": "Country",
+                name: "España",
+              },
               sameAs: [
                 "https://www.instagram.com/srtaserifa/",
                 "https://www.linkedin.com/in/srtaserifa/",

@@ -68,6 +68,46 @@ function markdownResponse(request: Request, markdown: string, canonicalPath: str
   return new Response(request.method === "HEAD" ? null : markdown, { headers });
 }
 
+function markdownNotFoundResponse(request: Request): Response {
+  const markdown = `# 404 — Página no encontrada
+
+La ruta solicitada no existe en srtaserifa.es.
+
+- [Ir a la página principal](https://srtaserifa.es/)
+- [Consultar las instrucciones para agentes](https://srtaserifa.es/llms.txt)
+- [Consultar el mapa del sitio](https://srtaserifa.es/sitemap.xml)
+- [Contactar con Srta Serifa](https://srtaserifa.es/contacto)
+`;
+  const headers = new Headers({
+    "Cache-Control": "public, max-age=60",
+    "Content-Language": "es",
+    "Content-Type": "text/markdown; charset=utf-8",
+  });
+  appendVary(headers, "Accept");
+
+  return new Response(request.method === "HEAD" ? null : markdown, {
+    status: 404,
+    headers,
+  });
+}
+
+function requestHtmlFallback(request: Request): Request {
+  const headers = new Headers(request.headers);
+  headers.set("Accept", "text/html");
+  return new Request(request, { headers });
+}
+
+function withAcceptVary(response: Response): Response {
+  const headers = new Headers(response.headers);
+  appendVary(headers, "Accept");
+
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
 function notAcceptableResponse(): Response {
   const headers = new Headers({ "Content-Type": "text/plain; charset=utf-8" });
   appendVary(headers, "Accept");
@@ -129,13 +169,12 @@ export default {
     try {
       const url = new URL(request.url);
       const agentDocument = getAgentDocument(url.pathname);
+      const isPageRequest = request.method === "GET" || request.method === "HEAD";
+      const representation = isPageRequest
+        ? preferredRepresentation(request.headers.get("Accept"), ["text/html", "text/markdown"])
+        : "text/html";
 
-      if (agentDocument && (request.method === "GET" || request.method === "HEAD")) {
-        const representation = preferredRepresentation(request.headers.get("Accept"), [
-          "text/html",
-          "text/markdown",
-        ]);
-
+      if (agentDocument && isPageRequest) {
         if (representation === "text/markdown") {
           return withSecurityHeaders(
             request,
@@ -148,10 +187,22 @@ export default {
         }
       }
 
+      const usesHtmlFallback =
+        !agentDocument && isPageRequest && representation === "text/markdown";
       const handler = await getServerEntry();
-      const response = await handler.fetch(request, env, ctx);
+      const response = await handler.fetch(
+        usesHtmlFallback ? requestHtmlFallback(request) : request,
+        env,
+        ctx,
+      );
       const normalized = await normalizeCatastrophicSsrResponse(response);
-      return withSecurityHeaders(request, withAgentHeaders(normalized, url.pathname));
+
+      if (usesHtmlFallback && normalized.status === 404) {
+        return withSecurityHeaders(request, markdownNotFoundResponse(request));
+      }
+
+      const represented = usesHtmlFallback ? withAcceptVary(normalized) : normalized;
+      return withSecurityHeaders(request, withAgentHeaders(represented, url.pathname));
     } catch (error) {
       console.error(error);
       return withSecurityHeaders(

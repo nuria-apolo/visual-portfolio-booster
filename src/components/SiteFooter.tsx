@@ -62,7 +62,7 @@ export function SiteFooter({ variant = "light" }: SiteFooterProps) {
 
         <div className="site-footer-column">
           <h2>Contacto profesional</h2>
-          <a className="site-footer-email" href="mailto:srtaserifa@icloud.com">
+          <a className="site-footer-email" href="/contacto">
             Escríbeme
           </a>
           <div className="site-footer-socials" aria-label="Redes sociales">
@@ -78,6 +78,7 @@ export function SiteFooter({ variant = "light" }: SiteFooterProps) {
             <a href="https://www.behance.net/srtaserifa" target="_blank" rel="noreferrer">
               Behance
             </a>
+            <a href="/contacto">Contacto</a>
           </div>
         </div>
       </div>
@@ -94,7 +95,7 @@ export function SiteFooter({ variant = "light" }: SiteFooterProps) {
               ))}
           </ul>
         </nav>
-        <a href="mailto:srtaserifa@icloud.com">Hablemos ↗</a>
+        <a href="/contacto">Hablemos ↗</a>
       </div>
     </footer>
   );
