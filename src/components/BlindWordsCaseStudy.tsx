@@ -17,6 +17,8 @@ import blind16 from "@/assets/blind-words-case/blind-16.webp";
 import blind17 from "@/assets/blind-words-case/blind-17.webp";
 import blind19 from "@/assets/blind-words-case/blind-19.webp";
 import blind20 from "@/assets/blind-words-case/blind-20.webp";
+import citizenCampaign from "@/assets/blind-citizen-campaign.png";
+import cuerposHero from "@/assets/cuerpos-que-se-miran/cuerpos-hero.gif";
 import { OtherProjects } from "@/components/OtherProjects";
 import {
   ProjectSectionAnchor,
@@ -448,14 +450,15 @@ export function BlindWordsCaseStudy() {
                 </p>
                 <p>
                   Después de su presentación, el proyecto continuó circulando en publicaciones,
-                  exposiciones y selecciones de diseño. También encontró una aplicación inesperada
-                  en Canadá, cuando la agencia Citizen utilizó Blind Words en la campaña audiovisual
-                  Braille Nails.
+                  exposiciones y selecciones de diseño. En 2017, su sistema tipográfico se convirtió
+                  en la identidad de la exposición Cuerpos que [se] miran, de Arte Actual FLACSO.
+                  Años después encontró otra aplicación inesperada en Canadá, cuando la agencia
+                  Citizen utilizó Blind Words en la campaña audiovisual Braille Nails.
                 </p>
                 <p>
-                  Esa segunda vida confirmó algo importante: el sistema podía salir del contexto
-                  académico y aportar identidad a una pieza de comunicación real sin perder la
-                  conversación sobre accesibilidad que le dio origen.
+                  Estas nuevas vidas confirmaron algo importante: el sistema podía salir del
+                  contexto académico y aportar identidad a piezas de comunicación reales sin perder
+                  la conversación sobre accesibilidad que le dio origen.
                 </p>
               </div>
               <div className="blind-credits">
@@ -524,9 +527,45 @@ export function BlindWordsCaseStudy() {
                 <CaseImage src={blind14} alt="Tarjeta negra con números de Blind Type" />
                 <CaseImage src={blind03} alt="Panel numérico de Blind Type iluminado en verde" />
               </div>
-              <a className="blind-internal-link" href="/proyectos/blind-words-citizen">
-                Ver Blind Words × Citizen <span aria-hidden="true">↗</span>
-              </a>
+              <div className="blind-related-projects">
+                <p className="blind-related-projects-label">Proyectos relacionados</p>
+                <div className="blind-related-projects-grid">
+                  <a className="blind-related-project-card" href="/proyectos/blind-words-citizen">
+                    <span className="blind-related-project-media">
+                      <img
+                        src={citizenCampaign}
+                        alt="Campaña Braille Nails de Citizen con Blind Words"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </span>
+                    <span className="blind-related-project-title">
+                      Blind Words × Citizen <span aria-hidden="true">↗</span>
+                    </span>
+                    <span className="blind-related-project-description">
+                      Una campaña que lleva el braille a la vida cotidiana.
+                    </span>
+                  </a>
+                  <a
+                    className="blind-related-project-card"
+                    href="/proyectos/cuerpos-que-se-miran"
+                  >
+                    <span className="blind-related-project-media">
+                      <img
+                        src={cuerposHero}
+                        alt="Identidad visual de la exposición Cuerpos que se miran"
+                        loading="lazy"
+                      />
+                    </span>
+                    <span className="blind-related-project-title">
+                      Cuerpos que [se] miran <span aria-hidden="true">↗</span>
+                    </span>
+                    <span className="blind-related-project-description">
+                      Una identidad expositiva que convierte Blind Words en un código compartido.
+                    </span>
+                  </a>
+                </div>
+              </div>
             </div>
           </section>
 

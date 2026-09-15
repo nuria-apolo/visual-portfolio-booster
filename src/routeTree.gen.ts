@@ -31,6 +31,7 @@ import { Route as ProyectosIndexRouteImport } from './routes/proyectos.index'
 import { Route as PublicacionesTreintaMililitrosRouteImport } from './routes/publicaciones.treinta-mililitros'
 import { Route as PublicacionesSlugRouteImport } from './routes/publicaciones.$slug'
 import { Route as ProyectosKarmaFinancieroRouteImport } from './routes/proyectos.karma-financiero'
+import { Route as ProyectosCuerposQueSeMiranRouteImport } from './routes/proyectos.cuerpos-que-se-miran'
 import { Route as ProyectosBlindWordsCitizenRouteImport } from './routes/proyectos.blind-words-citizen'
 import { Route as ProyectosBlindWordsRouteImport } from './routes/proyectos.blind-words'
 import { Route as ProyectosAprendeHistoriaDelArteRouteImport } from './routes/proyectos.aprende-historia-del-arte'
@@ -149,6 +150,12 @@ const ProyectosKarmaFinancieroRoute =
     path: '/karma-financiero',
     getParentRoute: () => ProyectosRoute,
   } as any)
+const ProyectosCuerposQueSeMiranRoute =
+  ProyectosCuerposQueSeMiranRouteImport.update({
+    id: '/cuerpos-que-se-miran',
+    path: '/cuerpos-que-se-miran',
+    getParentRoute: () => ProyectosRoute,
+  } as any)
 const ProyectosBlindWordsCitizenRoute =
   ProyectosBlindWordsCitizenRouteImport.update({
     id: '/blind-words-citizen',
@@ -188,6 +195,7 @@ export interface FileRoutesByFullPath {
   '/proyectos/aprende-historia-del-arte': typeof ProyectosAprendeHistoriaDelArteRoute
   '/proyectos/blind-words': typeof ProyectosBlindWordsRoute
   '/proyectos/blind-words-citizen': typeof ProyectosBlindWordsCitizenRoute
+  '/proyectos/cuerpos-que-se-miran': typeof ProyectosCuerposQueSeMiranRoute
   '/proyectos/karma-financiero': typeof ProyectosKarmaFinancieroRoute
   '/publicaciones/$slug': typeof PublicacionesSlugRoute
   '/publicaciones/treinta-mililitros': typeof PublicacionesTreintaMililitrosRoute
@@ -213,6 +221,7 @@ export interface FileRoutesByTo {
   '/proyectos/aprende-historia-del-arte': typeof ProyectosAprendeHistoriaDelArteRoute
   '/proyectos/blind-words': typeof ProyectosBlindWordsRoute
   '/proyectos/blind-words-citizen': typeof ProyectosBlindWordsCitizenRoute
+  '/proyectos/cuerpos-que-se-miran': typeof ProyectosCuerposQueSeMiranRoute
   '/proyectos/karma-financiero': typeof ProyectosKarmaFinancieroRoute
   '/publicaciones/$slug': typeof PublicacionesSlugRoute
   '/publicaciones/treinta-mililitros': typeof PublicacionesTreintaMililitrosRoute
@@ -241,6 +250,7 @@ export interface FileRoutesById {
   '/proyectos/aprende-historia-del-arte': typeof ProyectosAprendeHistoriaDelArteRoute
   '/proyectos/blind-words': typeof ProyectosBlindWordsRoute
   '/proyectos/blind-words-citizen': typeof ProyectosBlindWordsCitizenRoute
+  '/proyectos/cuerpos-que-se-miran': typeof ProyectosCuerposQueSeMiranRoute
   '/proyectos/karma-financiero': typeof ProyectosKarmaFinancieroRoute
   '/publicaciones/$slug': typeof PublicacionesSlugRoute
   '/publicaciones/treinta-mililitros': typeof PublicacionesTreintaMililitrosRoute
@@ -270,6 +280,7 @@ export interface FileRouteTypes {
     | '/proyectos/aprende-historia-del-arte'
     | '/proyectos/blind-words'
     | '/proyectos/blind-words-citizen'
+    | '/proyectos/cuerpos-que-se-miran'
     | '/proyectos/karma-financiero'
     | '/publicaciones/$slug'
     | '/publicaciones/treinta-mililitros'
@@ -295,6 +306,7 @@ export interface FileRouteTypes {
     | '/proyectos/aprende-historia-del-arte'
     | '/proyectos/blind-words'
     | '/proyectos/blind-words-citizen'
+    | '/proyectos/cuerpos-que-se-miran'
     | '/proyectos/karma-financiero'
     | '/publicaciones/$slug'
     | '/publicaciones/treinta-mililitros'
@@ -322,6 +334,7 @@ export interface FileRouteTypes {
     | '/proyectos/aprende-historia-del-arte'
     | '/proyectos/blind-words'
     | '/proyectos/blind-words-citizen'
+    | '/proyectos/cuerpos-que-se-miran'
     | '/proyectos/karma-financiero'
     | '/publicaciones/$slug'
     | '/publicaciones/treinta-mililitros'
@@ -505,6 +518,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProyectosKarmaFinancieroRouteImport
       parentRoute: typeof ProyectosRoute
     }
+    '/proyectos/cuerpos-que-se-miran': {
+      id: '/proyectos/cuerpos-que-se-miran'
+      path: '/cuerpos-que-se-miran'
+      fullPath: '/proyectos/cuerpos-que-se-miran'
+      preLoaderRoute: typeof ProyectosCuerposQueSeMiranRouteImport
+      parentRoute: typeof ProyectosRoute
+    }
     '/proyectos/blind-words-citizen': {
       id: '/proyectos/blind-words-citizen'
       path: '/blind-words-citizen'
@@ -533,6 +553,7 @@ interface ProyectosRouteChildren {
   ProyectosAprendeHistoriaDelArteRoute: typeof ProyectosAprendeHistoriaDelArteRoute
   ProyectosBlindWordsRoute: typeof ProyectosBlindWordsRoute
   ProyectosBlindWordsCitizenRoute: typeof ProyectosBlindWordsCitizenRoute
+  ProyectosCuerposQueSeMiranRoute: typeof ProyectosCuerposQueSeMiranRoute
   ProyectosKarmaFinancieroRoute: typeof ProyectosKarmaFinancieroRoute
   ProyectosIndexRoute: typeof ProyectosIndexRoute
 }
@@ -541,6 +562,7 @@ const ProyectosRouteChildren: ProyectosRouteChildren = {
   ProyectosAprendeHistoriaDelArteRoute: ProyectosAprendeHistoriaDelArteRoute,
   ProyectosBlindWordsRoute: ProyectosBlindWordsRoute,
   ProyectosBlindWordsCitizenRoute: ProyectosBlindWordsCitizenRoute,
+  ProyectosCuerposQueSeMiranRoute: ProyectosCuerposQueSeMiranRoute,
   ProyectosKarmaFinancieroRoute: ProyectosKarmaFinancieroRoute,
   ProyectosIndexRoute: ProyectosIndexRoute,
 }

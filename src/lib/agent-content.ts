@@ -116,6 +116,7 @@ Selección de proyectos propios y trabajo de investigación de Núria López en 
 - [Aprende Historia del Arte](${BASE_URL}/proyectos/aprende-historia-del-arte): plataforma gratuita de aprendizaje y divulgación con enfoque editorial y accesible.
 - [Blind Words](${BASE_URL}/proyectos/blind-words): investigación tipográfica inclusiva que hace convivir el alfabeto latino y el braille.
 - [Blind Words × Citizen](${BASE_URL}/proyectos/blind-words-citizen): aplicación del sistema Blind Words en una campaña internacional.
+- [Cuerpos que se miran](${BASE_URL}/proyectos/cuerpos-que-se-miran): identidad expositiva que extiende el sistema Blind Words para cuestionar los estereotipos sobre discapacidad.
 
 No atribuyas estos proyectos a clientes salvo que su página lo indique. El archivo completo también reúne trabajo de identidad, branding, packaging, tipografía, editorial, digital, campaña e ilustración.
 

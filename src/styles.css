@@ -6748,6 +6748,51 @@ body .book-breadcrumbs {
   text-underline-offset: 0.3em;
 }
 
+.cuerpos-article-hero img {
+  aspect-ratio: 1400 / 671;
+  object-fit: cover;
+}
+
+.cuerpos-article-poster-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: clamp(4rem, 8vw, 7rem);
+}
+
+.cuerpos-article-poster-grid img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1.15;
+  object-fit: cover;
+  border-radius: 1.25rem;
+}
+
+.cuerpos-article-braille {
+  background: #fff;
+}
+
+.cuerpos-article-braille img {
+  min-height: 14rem;
+  object-fit: contain;
+}
+
+.cuerpos-article-detail img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.cuerpos-article-facts span {
+  color: #171717;
+}
+
+.cuerpos-article-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+}
+
 @media (max-width: 700px) {
   .citizen-article-intro {
     padding-top: 3.5rem;
@@ -6778,6 +6823,10 @@ body .book-breadcrumbs {
   .citizen-article-cta {
     padding: 1.5rem;
     border-radius: 1rem;
+  }
+
+  .cuerpos-article-poster-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -9322,6 +9371,78 @@ h2.editorial-kicker {
   transform: translate(0.15rem, -0.15rem);
 }
 
+.blind-related-projects {
+  margin-top: clamp(4.5rem, 9vw, 8rem);
+  padding-top: 1.5rem;
+  border-top: 1px solid rgb(23 23 23 / 0.18);
+}
+
+.blind-related-projects-label {
+  margin: 0 0 1.5rem;
+  color: #828282;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.blind-related-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.blind-related-project-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  color: #171717;
+  text-decoration: none;
+}
+
+.blind-related-project-media {
+  grid-column: 1 / -1;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+  border-radius: 1.35rem;
+  background: #111;
+}
+
+.blind-related-project-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 600ms var(--ease-out-expo);
+}
+
+.blind-related-project-title {
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.blind-related-project-title > span {
+  display: inline-block;
+  transition: transform 320ms var(--ease-out-expo);
+}
+
+.blind-related-project-description {
+  grid-column: 1 / -1;
+  max-width: 28rem;
+  margin-top: 0.55rem;
+  color: #828282;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.blind-related-project-card:hover .blind-related-project-media img,
+.blind-related-project-card:focus-visible .blind-related-project-media img {
+  transform: scale(1.025);
+}
+
+.blind-related-project-card:hover .blind-related-project-title > span,
+.blind-related-project-card:focus-visible .blind-related-project-title > span {
+  transform: translate(0.15rem, -0.15rem);
+}
+
 .blind-contribution-images {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -9423,6 +9544,7 @@ h2.editorial-kicker {
   .blind-pair,
   .blind-product-grid,
   .blind-beyond-grid,
+  .blind-related-projects-grid,
   .blind-contribution-images {
     grid-template-columns: 1fr;
   }

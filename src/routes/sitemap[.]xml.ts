@@ -31,6 +31,12 @@ export const Route = createFileRoute("/sitemap.xml")({
             changefreq: "monthly",
             priority: "0.7",
           },
+          {
+            path: "/proyectos/cuerpos-que-se-miran",
+            lastmod: "2026-09-15",
+            changefreq: "monthly",
+            priority: "0.7",
+          },
           { path: "/servicios", changefreq: "monthly", priority: "0.9" },
           { path: "/contacto", changefreq: "monthly", priority: "0.7" },
           {
