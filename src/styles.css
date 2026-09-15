@@ -8755,3 +8755,706 @@ h2.editorial-kicker {
     transition: none;
   }
 }
+
+/* Blind Words: tactile editorial case study */
+.blind-case-study {
+  min-height: 100svh;
+  background: #f7f7f7;
+  color: #171717;
+}
+
+.blind-case-study-main {
+  width: 100%;
+  padding: 0 0 10rem;
+}
+
+.blind-case-study-cover {
+  background: #fff;
+}
+
+.blind-case-study-cover > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(var(--cover-zoom, 1));
+  transform-origin: center;
+  will-change: transform;
+}
+
+.blind-intro {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.22fr) minmax(0, 1fr);
+  column-gap: clamp(2rem, 8vw, 9rem);
+  padding: 0 0 clamp(6rem, 10vw, 9rem);
+}
+
+.blind-intro-aside {
+  display: grid;
+  align-content: start;
+  gap: 4.25rem;
+  margin: 5.9rem 0 0;
+  color: rgb(23 23 23 / 0.48);
+  font-size: 0.78rem;
+}
+
+.blind-intro-aside p {
+  margin: 0;
+}
+
+.blind-intro-label {
+  margin-bottom: 1.25rem !important;
+  color: #828282;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.blind-role-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.blind-role-list li {
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: #f4f4f5;
+  color: rgb(23 23 23 / 0.78);
+  font-size: 0.72rem;
+  line-height: 1.25;
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    transform 320ms var(--ease-out-expo);
+}
+
+.blind-role-list li:hover {
+  background: #171717;
+  color: #fff;
+  transform: translateX(0.3rem);
+}
+
+.blind-intro-content {
+  min-width: 0;
+}
+
+.blind-breadcrumb {
+  margin: 0 0 3.5rem;
+  color: #828282;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.blind-breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blind-breadcrumb a:hover,
+.blind-breadcrumb a:focus-visible {
+  color: #171717;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.blind-intro h1 {
+  max-width: none;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 72px !important;
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+
+.blind-intro h2 {
+  max-width: 820px;
+  margin: 2.25rem 0 2.5rem;
+  font-family: var(--font-sans);
+  font-size: 38px !important;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1.12 !important;
+}
+
+.blind-prose {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.blind-prose p {
+  max-width: 760px;
+  margin: 0;
+  color: rgb(23 23 23 / 0.72);
+  font-size: clamp(1rem, 1.25vw, 1.16rem);
+  line-height: 1.55;
+}
+
+.blind-intro-copy p {
+  max-width: 980px;
+  color: #171717;
+  line-height: 1.4;
+}
+
+.blind-gallery {
+  position: relative;
+  grid-column: 2;
+  width: calc(100% + max(0px, (100vw - 1180px) / 2));
+  margin-top: 4rem;
+}
+
+.blind-gallery::after {
+  position: absolute;
+  z-index: 2;
+  top: 4.5rem;
+  right: 0;
+  bottom: 0;
+  width: clamp(4rem, 9vw, 9rem);
+  background: linear-gradient(90deg, rgb(255 255 255 / 0), #fff 88%);
+  content: "";
+  pointer-events: none;
+}
+
+.blind-gallery-controls {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.blind-gallery-controls button {
+  display: grid;
+  width: 3.5rem;
+  height: 3.5rem;
+  place-items: center;
+  border: 1px solid rgb(23 23 23 / 0.14);
+  border-radius: 50%;
+  background: transparent;
+  color: #171717;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.4rem;
+  line-height: 1;
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    transform 260ms var(--ease-out-expo);
+}
+
+.blind-gallery-controls button:hover,
+.blind-gallery-controls button:focus-visible {
+  background: #171717;
+  color: #fff;
+  transform: translateY(-0.15rem);
+}
+
+.blind-gallery-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.blind-gallery-track::-webkit-scrollbar {
+  display: none;
+}
+
+.blind-gallery-track img {
+  display: block;
+  width: 82%;
+  flex: 0 0 82%;
+  aspect-ratio: 1.415;
+  border-radius: 1.75rem;
+  object-fit: cover;
+  scroll-snap-align: start;
+}
+
+.blind-section {
+  display: grid;
+  grid-template-columns: minmax(80px, 0.2fr) minmax(0, 1fr);
+  gap: clamp(2rem, 8vw, 9rem);
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  scroll-margin-top: 4rem;
+}
+
+.blind-section-body {
+  max-width: 900px;
+  min-width: 0;
+}
+
+.blind-section-number {
+  margin: 0 0 2rem;
+  color: #828282;
+  font-size: 0.72rem;
+  letter-spacing: 0.11em;
+}
+
+.blind-section h2 {
+  max-width: 760px;
+  margin: 0 0 2.5rem;
+  font-family: var(--font-sans);
+  font-size: 38px !important;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1.12 !important;
+}
+
+.blind-figure {
+  margin: 0;
+}
+
+.blind-figure img,
+.blind-artwork,
+.blind-pair > img,
+.blind-product-grid > img,
+.blind-beyond-grid > img,
+.blind-contribution-images > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1.5rem;
+}
+
+.blind-figure figcaption {
+  margin-top: 0.75rem;
+  color: #828282;
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+.blind-figure-wide {
+  margin-top: 4.5rem;
+}
+
+.blind-figure-dark img {
+  background: #111;
+}
+
+.blind-statement {
+  max-width: 760px;
+  margin: clamp(5rem, 9vw, 9rem) 0 0;
+  font-family: var(--font-display) !important;
+  font-size: 48px !important;
+  letter-spacing: -0.05em;
+  line-height: 1 !important;
+}
+
+.blind-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 4.5rem;
+}
+
+.blind-pair-search > :nth-child(2) {
+  margin-top: 4rem;
+}
+
+.blind-artwork-line {
+  margin-top: 4.5rem;
+  background: #fff;
+}
+
+.blind-pair-construction {
+  align-items: stretch;
+  margin-top: 1rem;
+}
+
+.blind-pair-construction img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.blind-alphabet {
+  margin-top: 4.5rem;
+  background: #fff;
+}
+
+.blind-design-principles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 1rem;
+  background: rgb(23 23 23 / 0.12);
+}
+
+.blind-design-principles span {
+  display: grid;
+  min-height: 7rem;
+  place-items: end start;
+  padding: 1rem;
+  background: #f5f5f5;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+.blind-product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 4.5rem;
+}
+
+.blind-product-grid-main {
+  grid-column: 1 / -1;
+}
+
+.blind-product-grid img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.blind-reading-figure {
+  margin-top: 1rem;
+}
+
+.blind-beyond-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 4.5rem;
+  padding: 1rem;
+  border-radius: 1.75rem;
+  background: #111;
+}
+
+.blind-credits {
+  margin-top: 4.5rem;
+  border-top: 1px solid rgb(23 23 23 / 0.18);
+}
+
+.blind-credits-section {
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.34fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  margin: 0;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgb(23 23 23 / 0.18);
+}
+
+.blind-credits-section h3 {
+  margin: 0;
+  font-family: var(--font-sans) !important;
+  font-size: 0.75rem !important;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  line-height: 1.35 !important;
+  text-transform: uppercase;
+}
+
+.blind-credit-list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+
+.blind-credit-list div {
+  display: grid;
+  grid-template-columns: minmax(8.5rem, 0.42fr) minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.blind-credit-list dt,
+.blind-credit-list dd {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
+.blind-credit-list dt,
+.blind-credit-meta {
+  color: #828282;
+}
+
+.blind-award-list,
+.blind-print-list {
+  display: grid;
+}
+
+.blind-award-list a,
+.blind-print-list a {
+  display: grid;
+  grid-template-columns: minmax(8.5rem, 0.42fr) minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: start;
+  padding: 0 0 1.5rem;
+  color: #171717;
+  text-decoration: none;
+}
+
+.blind-award-list a + a,
+.blind-print-list a + a {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgb(23 23 23 / 0.12);
+}
+
+.blind-award-list a:last-child,
+.blind-print-list a:last-child {
+  padding-bottom: 0;
+}
+
+.blind-award-list strong,
+.blind-award-list small {
+  display: block;
+}
+
+.blind-award-list strong,
+.blind-print-list strong {
+  font-size: 0.94rem;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.blind-award-list small {
+  margin-top: 0.35rem;
+  color: #828282;
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+
+.blind-credit-meta {
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.blind-credit-arrow {
+  transition: transform 320ms var(--ease-out-expo);
+}
+
+.blind-award-list a:hover .blind-credit-arrow,
+.blind-award-list a:focus-visible .blind-credit-arrow,
+.blind-print-list a:hover .blind-credit-arrow,
+.blind-print-list a:focus-visible .blind-credit-arrow {
+  transform: translate(0.15rem, -0.15rem);
+}
+
+.blind-media-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.blind-media-list a {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  min-height: 42px;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgb(23 23 23 / 0.18);
+  border-radius: 999px;
+  color: #171717;
+  font-size: 0.78rem;
+  line-height: 1.25;
+  text-decoration: none;
+  transition:
+    color 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease;
+}
+
+.blind-media-list a:hover,
+.blind-media-list a:focus-visible {
+  border-color: #171717;
+  background: #171717;
+  color: #fff;
+}
+
+.blind-beyond-grid img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.blind-internal-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 48px;
+  margin-top: 2.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  background: #171717;
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  transition:
+    background-color 220ms ease,
+    transform 320ms var(--ease-out-expo);
+}
+
+.blind-internal-link span {
+  transition: transform 320ms var(--ease-out-expo);
+}
+
+.blind-internal-link:hover,
+.blind-internal-link:focus-visible {
+  background: #333;
+  text-decoration: none;
+  transform: translateY(-0.2rem);
+}
+
+.blind-internal-link:hover span,
+.blind-internal-link:focus-visible span {
+  transform: translate(0.15rem, -0.15rem);
+}
+
+.blind-contribution-images {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1rem;
+  align-items: end;
+  margin-top: 4.5rem;
+}
+
+.blind-contribution-images > :nth-child(2) {
+  margin-bottom: 2rem;
+}
+
+.blind-closing {
+  padding: clamp(8rem, 17vw, 17rem) 0 clamp(6rem, 12vw, 12rem);
+}
+
+.blind-closing h3 {
+  max-width: 760px;
+  margin: 0 auto;
+  font-family: var(--font-display) !important;
+  font-size: 64px !important;
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  line-height: 0.95 !important;
+  text-align: center;
+}
+
+.blind-closing em {
+  font-style: italic;
+}
+
+@media (max-width: 720px) {
+  .blind-case-study-main {
+    padding: 0 0 6rem;
+  }
+
+  .blind-case-study-cover > img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .blind-intro {
+    grid-template-columns: 1fr;
+    padding-bottom: 5rem;
+  }
+
+  .blind-intro-aside {
+    display: none;
+  }
+
+  .blind-breadcrumb {
+    margin-bottom: 2.5rem;
+    font-size: 14px;
+  }
+
+  .blind-intro h1 {
+    font-size: 46px !important;
+  }
+
+  .blind-intro h2,
+  .blind-section h2 {
+    font-size: 30px !important;
+  }
+
+  .blind-gallery {
+    grid-column: 1;
+    width: 100%;
+    margin-top: 3rem;
+  }
+
+  .blind-gallery::after {
+    top: 3.75rem;
+    width: clamp(2.5rem, 14vw, 4rem);
+  }
+
+  .blind-gallery-controls button {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .blind-gallery-track img {
+    width: 88%;
+    flex-basis: 88%;
+    border-radius: 1.1rem;
+  }
+
+  .blind-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 4.5rem 0;
+  }
+
+  .blind-statement {
+    margin-top: 4rem;
+    font-size: 36px !important;
+  }
+
+  .blind-pair,
+  .blind-product-grid,
+  .blind-beyond-grid,
+  .blind-contribution-images {
+    grid-template-columns: 1fr;
+  }
+
+  .blind-pair-search > :nth-child(2),
+  .blind-contribution-images > :nth-child(2) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .blind-design-principles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .blind-credits-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .blind-credit-list div,
+  .blind-award-list a,
+  .blind-print-list a {
+    grid-template-columns: 1fr auto;
+  }
+
+  .blind-credit-list dt,
+  .blind-award-list .blind-credit-meta,
+  .blind-print-list .blind-credit-meta {
+    grid-column: 1 / -1;
+    margin-bottom: -0.45rem;
+  }
+
+  .blind-product-grid-main {
+    grid-column: auto;
+  }
+
+  .blind-figure img,
+  .blind-artwork,
+  .blind-pair > img,
+  .blind-product-grid > img,
+  .blind-beyond-grid > img,
+  .blind-contribution-images > img {
+    border-radius: 1.1rem;
+  }
+
+  .blind-closing h3 {
+    font-size: 42px !important;
+  }
+}
