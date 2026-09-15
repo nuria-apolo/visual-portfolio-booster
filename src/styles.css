@@ -744,18 +744,18 @@ body a {
 
 .site-float-menu {
   position: fixed;
-  top: max(1rem, env(safe-area-inset-top));
+  top: max(1.25rem, env(safe-area-inset-top));
   left: 50%;
   z-index: 100;
   width: max-content;
   max-width: calc(100vw - 2rem);
   transform: translateX(-50%);
-  border: 1px solid rgb(26 25 32 / 0.035);
+  border: 1px solid rgb(26 25 32 / 0.08);
   border-radius: 999px;
-  background: rgb(239 239 241 / 0.94);
+  background: rgb(235 235 237 / 0.92);
   box-shadow:
-    0 12px 30px rgb(36 33 48 / 0.08),
-    inset 0 1px 0 rgb(255 255 255 / 0.68);
+    0 10px 28px rgb(36 33 48 / 0.06),
+    inset 0 1px 0 rgb(255 255 255 / 0.82);
   backdrop-filter: blur(18px);
   animation: site-menu-enter 0.5s ease 0.2s both;
 }
@@ -764,41 +764,36 @@ body a {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.15rem;
+  gap: 0.2rem;
   margin: 0;
-  padding: 0.35rem;
+  padding: 0.38rem;
   list-style: none;
 }
 
 .site-float-menu-link {
   display: inline-flex;
-  min-height: 2.75rem;
+  min-height: 2.85rem;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  padding: 0.55rem 1.15rem;
-  color: rgb(25 24 31 / 0.7);
+  padding: 0.58rem 1.25rem;
+  color: rgb(25 24 31 / 0.76);
   font-family: var(--font-sans);
-  font-size: clamp(0.86rem, 1.5vw, 1rem);
-  font-weight: 500;
-  letter-spacing: -0.035em;
+  font-size: clamp(0.84rem, 1.35vw, 0.96rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
   text-decoration: none;
   white-space: nowrap;
-  transition:
-    background 240ms ease,
-    color 240ms ease,
-    transform 240ms var(--ease-out-expo);
+  box-shadow: 0 1px 2px rgb(36 33 48 / 0);
+  transition: background 240ms ease, color 240ms ease, box-shadow 240ms ease;
 }
 
 .site-float-menu-link:hover,
 .site-float-menu-link:focus-visible,
 .site-float-menu-link.is-active {
-  background: rgb(255 255 255 / 0.9);
+  background: rgb(255 255 255 / 0.96);
   color: #111019;
-}
-
-.site-float-menu-link:hover {
-  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgb(36 33 48 / 0.08), inset 0 1px 0 rgb(255 255 255 / 0.9);
 }
 
 .site-float-menu-link:focus-visible {
@@ -3563,21 +3558,26 @@ body:has(.construction-page) {
 
 .note-panel-row {
   display: grid;
-  grid-template-columns: 4.7rem minmax(0, 1fr) auto;
+  grid-template-columns: 3.25rem minmax(0, 1fr) auto;
   gap: 1rem;
   align-items: center;
-  padding: 1rem 0;
+  padding: 1.15rem 0;
   border-bottom: 1px solid rgba(23, 23, 23, 0.16);
   color: inherit;
   text-decoration: none;
 }
 
 .note-panel-row > span:first-child,
-.note-panel-duration {
+.note-panel-date {
   color: rgba(23, 23, 23, 0.5);
   font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.04em;
+}
+
+.note-panel-row-copy {
+  display: grid;
+  gap: 0.25rem;
 }
 
 .note-panel-row strong {
@@ -3585,6 +3585,18 @@ body:has(.construction-page) {
   font-weight: 400;
   line-height: 1.2;
   transition: color 200ms ease;
+}
+
+.note-panel-row-copy small {
+  max-width: 26rem;
+  color: rgba(23, 23, 23, 0.5);
+  font-size: 0.73rem;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.note-panel-date {
+  white-space: nowrap;
 }
 
 .note-panel-row:hover strong,
@@ -6031,11 +6043,12 @@ body:has(.construction-page) {
   }
 
   .note-panel-row {
-    grid-template-columns: 4rem minmax(0, 1fr);
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 0.75rem;
   }
 
-  .note-panel-duration {
-    display: none;
+  .note-panel-date {
+    grid-column: 2;
   }
 
   .publication-card-meta {
@@ -7250,7 +7263,7 @@ body .book-breadcrumbs {
   }
 
   .site-float-menu {
-    top: max(0.75rem, env(safe-area-inset-top));
+    top: max(0.85rem, env(safe-area-inset-top));
     left: 50%;
     width: max-content;
     max-width: calc(100vw - 1.5rem);
@@ -7261,8 +7274,8 @@ body .book-breadcrumbs {
   .site-float-menu-list {
     width: auto;
     justify-content: center;
-    gap: 0.15rem;
-    padding: 0.35rem;
+    gap: 0.12rem;
+    padding: 0.3rem;
   }
 
   .site-float-menu-list > li {
@@ -7273,11 +7286,12 @@ body .book-breadcrumbs {
     position: relative;
     flex: 0 0 auto;
     isolation: isolate;
-    min-height: 2.5rem;
+    min-height: 2.55rem;
     width: auto;
-    padding: 0.5rem 0.85rem;
-    font-size: 0.78rem;
-    letter-spacing: -0.045em;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: -0.035em;
   }
 
   .site-float-menu-link.is-active {
@@ -7296,7 +7310,7 @@ body .book-breadcrumbs {
     .site-float-menu-link {
       padding-right: 0.6rem;
       padding-left: 0.6rem;
-      font-size: 13px;
+      font-size: 12px;
     }
 
     .site-float-menu-link.is-active {

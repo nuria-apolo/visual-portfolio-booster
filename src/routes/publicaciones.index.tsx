@@ -11,19 +11,28 @@ const DESCRIPTION =
 
 const notePosts = [
   {
+    issue: "#21",
+    title: "El cuerpo no entiende de deadlines",
+    subtitle: "Sobre cansancio, productividad y el cuerpo que no miente",
+    date: "14 sep 2026",
+    dateTime: "2026-09-14",
+    href: "https://srtaserifa.substack.com/p/21-el-cuerpo-no-entiende-de-deadlines",
+  },
+  {
+    issue: "#20",
+    title: "No quiero optimizar mi vida",
+    subtitle: "Sobre volver, medirlo todo y dejar algunas cosas deliberadamente sin mejorar",
+    date: "3 sep 2026",
+    dateTime: "2026-09-03",
+    href: "https://srtaserifa.substack.com/p/20-no-quiero-optimizar-mi-vida",
+  },
+  {
     issue: "#19",
-    title: "Cuando nadie me ve",
+    title: "Cuando nadie me ve…",
+    subtitle: "Sobre letras, cultura y las decisiones que pasan desapercibidas",
+    date: "31 dic 2025",
+    dateTime: "2025-12-31",
     href: "https://srtaserifa.substack.com/p/19-cuando-nadie-me-ve",
-  },
-  {
-    issue: "#18",
-    title: "El hábitat del diseño",
-    href: "https://srtaserifa.substack.com/p/18-el-habitat-del-diseno",
-  },
-  {
-    issue: "#17",
-    title: "El diseño como dialecto",
-    href: "https://srtaserifa.substack.com/p/17-el-diseno-como-dialecto",
   },
 ] as const;
 
@@ -161,7 +170,7 @@ function PublicationsPage() {
                 <h2 id="note-panel-title">Note©</h2>
               </div>
               <a
-                href="https://grounded-focus-364680.framer.app"
+                href="https://srtaserifa.substack.com/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Abrir Note©"
@@ -193,10 +202,13 @@ function PublicationsPage() {
                   className="note-panel-row"
                 >
                   <span>{post.issue}</span>
-                  <strong>{post.title}</strong>
-                  <span className="note-panel-duration" aria-hidden="true">
-                    ◷ 2 m
+                  <span className="note-panel-row-copy">
+                    <strong>{post.title}</strong>
+                    <small>{post.subtitle}</small>
                   </span>
+                  <time className="note-panel-date" dateTime={post.dateTime}>
+                    {post.date}
+                  </time>
                 </a>
               ))}
             </div>
