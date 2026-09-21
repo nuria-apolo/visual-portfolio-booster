@@ -159,6 +159,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "https://www.instagram.com/srtaserifa/",
             "https://www.linkedin.com/in/srtaserifa/",
             "https://x.com/srtaserifa",
+            "https://www.behance.net/srtaserifa",
           ],
         }),
       },

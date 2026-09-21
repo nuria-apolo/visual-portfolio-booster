@@ -49,7 +49,7 @@ export const Route = createFileRoute("/")({
               name: "Srta Serifa",
               url: "https://srtaserifa.es/",
               description:
-                "Estudio de Núria López especializado en sistemas de marca, identidad y productos digitales.",
+                "Portfolio profesional de Núria López sobre sistemas de marca, identidad, estrategia y productos digitales.",
               logo: {
                 "@type": "ImageObject",
                 "@id": "https://srtaserifa.es/#logo",
@@ -82,6 +82,7 @@ export const Route = createFileRoute("/")({
                 "https://www.instagram.com/srtaserifa/",
                 "https://www.linkedin.com/in/srtaserifa/",
                 "https://x.com/srtaserifa",
+                "https://www.behance.net/srtaserifa",
               ],
             },
             {

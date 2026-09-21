@@ -100,6 +100,7 @@ export const Route = createFileRoute("/sobre-mi")({
               "https://www.linkedin.com/in/srtaserifa/",
               "https://www.instagram.com/srtaserifa/",
               "https://x.com/srtaserifa",
+              "https://www.behance.net/srtaserifa",
             ],
           },
         }),

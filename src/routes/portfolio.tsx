@@ -1,12 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Portfolio } from "./index";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/portfolio")({
-  head: () => ({
-    meta: [
-      { title: "Portfolio privado — Srta Serifa" },
-      { name: "robots", content: "noindex, nofollow" },
-    ],
-  }),
-  component: Portfolio,
+  beforeLoad: () => {
+    throw redirect({ to: "/proyectos", statusCode: 301 });
+  },
 });
