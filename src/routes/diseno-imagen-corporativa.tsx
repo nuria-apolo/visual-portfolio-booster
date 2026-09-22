@@ -4,6 +4,7 @@ import aprendeHistoriaArtePhoto from "@/assets/aprende-historia-arte-photo.png";
 import extravagantCorporateIdentity from "@/assets/extravagant-corporate-identity.webp";
 import figmaBadge from "@/assets/figma-badge.png";
 import karmaBrandSystem from "@/assets/karma-brand-system.jpg";
+import { ServiceRelatedArticles } from "@/components/ServiceRelatedArticles";
 import { SiteFooter } from "@/components/SiteFooter";
 import { absoluteAssetUrl } from "@/lib/seo";
 
@@ -235,7 +236,9 @@ function CorporateIdentityPage() {
         <section className="service-intro" aria-labelledby="service-intro-title">
           <div>
             <p className="editorial-kicker">Qué resuelve</p>
-            <h2 id="service-intro-title">La imagen corporativa no se resuelve en un logo aislado.</h2>
+            <h2 id="service-intro-title">
+              La imagen corporativa no se resuelve en un logo aislado.
+            </h2>
           </div>
           <p>
             Esta página se centra en la expresión visual de la marca. El reto no es solo que se vea
@@ -248,7 +251,9 @@ function CorporateIdentityPage() {
         <section className="service-section" aria-labelledby="service-services-title">
           <div className="service-section-heading">
             <p className="editorial-kicker">Qué puedo aportar</p>
-            <h2 id="service-services-title">La identidad necesita poder vivir en el mundo real.</h2>
+            <h2 id="service-services-title">
+              Qué puede incluir un servicio de diseño de imagen corporativa.
+            </h2>
           </div>
           <div className="service-card-grid">
             {services.map(([number, title, text]) => (
@@ -259,6 +264,20 @@ function CorporateIdentityPage() {
               </article>
             ))}
           </div>
+        </section>
+
+        <section className="service-proof" aria-labelledby="service-fit-title">
+          <p className="editorial-kicker">Cuándo tiene sentido</p>
+          <h2 id="service-fit-title">
+            Una empresa necesita imagen corporativa cuando su marca ya no explica bien quién es.
+          </h2>
+          <p>
+            Puede ocurrir después de un cambio de oferta, una etapa de crecimiento, una fusión o una
+            nueva web. También cuando cada pieza parece hecha por un equipo distinto o el logotipo
+            funciona, pero no existen reglas para convertirlo en presentaciones, contenidos,
+            interfaces y materiales comerciales. En esos casos, el objetivo no es sumar recursos
+            sueltos: es crear una identidad visual que el equipo pueda aplicar con criterio.
+          </p>
         </section>
 
         <section
@@ -390,6 +409,16 @@ function CorporateIdentityPage() {
             Hablemos de la marca ↗
           </a>
         </section>
+
+        <ServiceRelatedArticles
+          id="corporate-identity-related-articles"
+          heading="Lecturas para convertir una identidad en un sistema que se pueda aplicar."
+          slugs={[
+            "del-brand-system-al-design-system",
+            "una-marca-digital-necesita-reglas-no-aplicaciones",
+            "posicionamiento-de-marca",
+          ]}
+        />
       </main>
       <SiteFooter variant="floating" />
     </div>
