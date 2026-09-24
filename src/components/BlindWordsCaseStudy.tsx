@@ -1,22 +1,25 @@
 import { useRef } from "react";
-import blind01 from "@/assets/blind-words-case/blind-01.webp";
-import blind02 from "@/assets/blind-words-case/blind-02.webp";
-import blind03 from "@/assets/blind-words-case/blind-03.webp";
-import blind04 from "@/assets/blind-words-case/blind-04.webp";
-import blind05 from "@/assets/blind-words-case/blind-05.webp";
-import blind06 from "@/assets/blind-words-case/blind-06.webp";
-import blind07 from "@/assets/blind-words-case/blind-07.webp";
-import blind08 from "@/assets/blind-words-case/blind-08.webp";
+import blind01 from "@/assets/blind-words-case/blind-01-retouched.webp";
+import blind02 from "@/assets/blind-words-case/blind-02-retouched.webp";
+import blind03 from "@/assets/blind-words-case/blind-03-retouched.webp";
+import blind04 from "@/assets/blind-words-case/blind-04-retouched.webp";
+import blind05 from "@/assets/blind-words-case/blind-05-retouched.webp";
+import blind06 from "@/assets/blind-words-case/blind-06-retouched.webp";
+import blind07 from "@/assets/blind-words-case/blind-07-retouched.webp";
+import blind08 from "@/assets/blind-words-case/blind-08-retouched.webp";
 import blind09 from "@/assets/blind-words-case/blind-09.webp";
 import blind10 from "@/assets/blind-words-case/blind-10.webp";
 import blind11 from "@/assets/blind-words-case/blind-11.webp";
 import blind13 from "@/assets/blind-words-case/blind-13.webp";
-import blind14 from "@/assets/blind-words-case/blind-14.webp";
-import blind15 from "@/assets/blind-words-case/blind-15.webp";
-import blind16 from "@/assets/blind-words-case/blind-16.webp";
-import blind17 from "@/assets/blind-words-case/blind-17.webp";
-import blind19 from "@/assets/blind-words-case/blind-19.webp";
-import blind20 from "@/assets/blind-words-case/blind-20.webp";
+import blind14 from "@/assets/blind-words-case/blind-14-retouched.webp";
+import blind15 from "@/assets/blind-words-case/blind-15-retouched.webp";
+import blind16 from "@/assets/blind-words-case/blind-16-retouched.webp";
+import blind17 from "@/assets/blind-words-case/blind-17-retouched.webp";
+import blind19 from "@/assets/blind-words-case/blind-19-retouched.webp";
+import blind20 from "@/assets/blind-words-case/blind-20-retouched.webp";
+import blind3dAcrylic from "@/assets/blind-words-case/blind-3d-acrylic.jpg";
+import blind3dInstallation from "@/assets/blind-words-case/blind-3d-installation.jpg";
+import blindOnceKioskConcept from "@/assets/blind-words-case/blind-once-kiosk-concept.jpg";
 import citizenCampaign from "@/assets/blind-citizen-campaign.png";
 import cuerposHero from "@/assets/cuerpos-que-se-miran/cuerpos-hero.gif";
 import { OtherProjects } from "@/components/OtherProjects";
@@ -434,6 +437,50 @@ export function BlindWordsCaseStudy() {
                   El objeto final reúne investigación, construcción y experiencia.
                 </figcaption>
               </figure>
+              <div className="blind-concept-block">
+                <figure className="blind-figure blind-concept-kiosk">
+                  <img
+                    src={blindOnceKioskConcept}
+                    alt="Visualización conceptual de un quiosco de la ONCE con frases repetidas en Blind Type"
+                    width={1920}
+                    height={1080}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption>
+                    Visualización conceptual: Blind Type como revestimiento táctil y tipográfico
+                    de un quiosco urbano.
+                  </figcaption>
+                </figure>
+                <div className="blind-concept-pair">
+                  <figure className="blind-figure">
+                    <img
+                      src={blind3dAcrylic}
+                      alt="Exploración tridimensional en acrílico de una forma modular de Blind Type"
+                      width={1492}
+                      height={1054}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <figcaption>
+                      Estudio material: trazo, relieve y puntos táctiles en acrílico.
+                    </figcaption>
+                  </figure>
+                  <figure className="blind-figure">
+                    <img
+                      src={blind3dInstallation}
+                      alt="Instalación conceptual con el alfabeto modular de Blind Type en relieve"
+                      width={1492}
+                      height={1054}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <figcaption>
+                      Estudio espacial: el sistema tipográfico convertido en instalación.
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
             </div>
           </section>
 
