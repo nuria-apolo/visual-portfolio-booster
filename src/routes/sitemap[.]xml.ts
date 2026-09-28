@@ -15,7 +15,7 @@ export const Route = createFileRoute("/sitemap.xml")({
     handlers: {
       GET: async () => {
         const entries: SitemapEntry[] = [
-          { path: "/", changefreq: "weekly", priority: "1.0" },
+          { path: "/", lastmod: "2026-09-28", changefreq: "weekly", priority: "1.0" },
           { path: "/sobre-mi", changefreq: "monthly", priority: "0.8" },
           { path: "/rol", changefreq: "monthly", priority: "0.8" },
           { path: "/proyectos", changefreq: "monthly", priority: "0.9" },
@@ -60,7 +60,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           },
           {
             path: "/consultoria-inteligencia-artificial",
-            lastmod: "2026-08-14",
+            lastmod: "2026-09-28",
             changefreq: "monthly",
             priority: "0.8",
           },
@@ -82,7 +82,7 @@ export const Route = createFileRoute("/sitemap.xml")({
             changefreq: "monthly",
             priority: "0.8",
           },
-          { path: "/publicaciones", lastmod: "2026-08-14", changefreq: "monthly", priority: "0.8" },
+          { path: "/publicaciones", lastmod: "2026-09-28", changefreq: "monthly", priority: "0.8" },
           { path: "/blog", changefreq: "weekly", priority: "0.8" },
           { path: "/publicaciones/treinta-mililitros", changefreq: "monthly", priority: "0.8" },
           {

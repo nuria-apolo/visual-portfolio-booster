@@ -168,7 +168,12 @@ const constructionTags = [
     href: "https://universoapolo.com",
   },
   { kind: "pill", label: "Sistemas", color: "bg-[#f3f3f3]", href: "/publicaciones/del-brand-system-al-design-system" },
-  { kind: "pill", label: "IA", color: "bg-[#c8f36c]" },
+  {
+    kind: "pill",
+    label: "IA",
+    color: "bg-[#c8f36c]",
+    href: "/consultoria-inteligencia-artificial",
+  },
   { kind: "pill", label: "Branding", color: "bg-[#ff7848]", href: "/branding-estrategico" },
   { kind: "pill", label: "Marca", color: "bg-[#49d8a1]" },
   { kind: "pill", label: "Dirección", color: "bg-[#f4b5dc]", href: "/consultoria-de-diseno" },
